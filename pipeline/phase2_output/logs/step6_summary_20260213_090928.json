@@ -1,0 +1,22 @@
+{
+  "phase2": {
+    "total": 16983,
+    "success": 16983,
+    "errors": []
+  },
+  "phase3": {
+    "total": 26295,
+    "success": 26295,
+    "errors": []
+  },
+  "phase4": {
+    "total": 1063,
+    "success": 1063,
+    "errors": []
+  },
+  "phase5": {
+    "total": 2105,
+    "success": 2105,
+    "errors": []
+  }
+}

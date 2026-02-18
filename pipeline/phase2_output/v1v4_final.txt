@@ -1,0 +1,61 @@
+======================================================================
+  V1 잔여 26건 (1글자 한글) 최종 판별
+======================================================================
+  [Equipment] name='붓' spec='' rels=1 chunks=1 id=E-0760
+  [Equipment] name='잭' spec='' rels=2 chunks=1 id=E-1187
+  [Labor] name='인' spec='' rels=3 chunks=1 id=L-0178
+  [Material] name='개' spec='' rels=3 chunks=1 id=M-0332
+  [Material] name='공' spec='' rels=0 chunks=3 id=M-0401
+  [Material] name='납' spec='' rels=0 chunks=1 id=M-0500
+  [Material] name='눈' spec='분말상' rels=0 chunks=1 id=M-0515
+  [Material] name='돌' spec='65×305' rels=1 chunks=1 id=M-0557
+  [Material] name='떼' spec='소수 1자리' rels=0 chunks=1 id=M-0582
+  [Material] name='못' spec='길이cm' rels=0 chunks=1 id=M-0667
+  [Material] name='못' spec='60kg/통, 직경48cm' rels=0 chunks=1 id=M-0668
+  [Material] name='못' spec='' rels=0 chunks=1 id=M-0669
+  [Material] name='못' spec='잡재료 및 소모재료' rels=3 chunks=2 id=M-0670
+  [Material] name='물' spec='' rels=0 chunks=1 id=M-0676
+  [Material] name='물' spec='소모재료' rels=0 chunks=3 id=M-0677
+  [Material] name='물' spec='점토층 N 0~2' rels=0 chunks=1 id=M-0678
+  [Material] name='물' spec='살수용' rels=3 chunks=1 id=M-0679
+  [Material] name='비' spec='- 분기기 종류에 따라 다음의 할증을 적용한다' rels=0 chunks=1 id=M-0796
+  [Material] name='비' spec='- 인상높이는 기존 맨홀 뚜껑의 상단에서 보수 후 맨홀' rels=0 chunks=1 id=M-0797
+  [Material] name='슈' spec='' rels=1 chunks=1 id=M-0934
+  [Material] name='약' spec='' rels=0 chunks=1 id=M-1057
+  [Material] name='역' spec='굵은 자갈과 작은 자갈 혼합' rels=0 chunks=1 id=M-1069
+  [Material] name='정' spec='' rels=3 chunks=1 id=M-1279
+  [Material] name='탭' spec='' rels=3 chunks=1 id=M-1513
+  [Material] name='풀' spec='' rels=2 chunks=3 id=M-1592
+  [WorkType] name='벨' spec='' rels=2 chunks=1 id=W-2158
+
+  유효 (관계 있음): 12건
+  가비지 후보 (관계 없음): 14건
+  가비지 후보:
+    M-0401: '공' (Material) spec=''
+    M-0500: '납' (Material) spec=''
+    M-0515: '눈' (Material) spec='분말상'
+    M-0582: '떼' (Material) spec='소수 1자리'
+    M-0667: '못' (Material) spec='길이cm'
+    M-0668: '못' (Material) spec='60kg/통, 직경48cm'
+    M-0669: '못' (Material) spec=''
+    M-0676: '물' (Material) spec=''
+    M-0677: '물' (Material) spec='소모재료'
+    M-0678: '물' (Material) spec='점토층 N 0~2'
+    M-0796: '비' (Material) spec='- 분기기 종류에 따라 다음의 할증을 적용한다'
+    M-0797: '비' (Material) spec='- 인상높이는 기존 맨홀 뚜껑의 상단에서 보수 후 맨홀 뚜껑의 상단까지를 의미하며, 인상높이에 따라 다음의 할증률을 인력품에 가산한다.'
+    M-1057: '약' (Material) spec=''
+    M-1069: '역' (Material) spec='굵은 자갈과 작은 자갈 혼합'
+
+======================================================================
+  V4 의미없는 spec 분석
+======================================================================
+  의미없는 spec 총: 246건
+  관계 있음: 123건
+  관계 없음: 123건
+  타입별: {'Equipment': 102, 'Labor': 3, 'Material': 18, 'Note': 35, 'Standard': 4, 'WorkType': 84}
+
+======================================================================
+  V4 과잉분화 관계 유무
+======================================================================
+  과잉분화 그룹 엔티티: 1617
+  관계 없음: 1418 (87.7%)

@@ -1,0 +1,80 @@
+총 엔티티: 25,708
+
+[1. 타입별 전체 vs 고유 이름]
+  WorkType    : 전체  5,995 | 고유  3,791 | 중복률 36.8%
+  Labor       : 전체  4,270 | 고유    337 | 중복률 92.1%
+  Equipment   : 전체  2,706 | 고유  1,197 | 중복률 55.8%
+  Material    : 전체  2,618 | 고유  1,293 | 중복률 50.6%
+  Note        : 전체  6,912 | 고유  5,176 | 중복률 25.1%
+  Section     : 전체  2,105 | 고유  1,043 | 중복률 50.5%
+  Standard    : 전체  1,102 | 고유    571 | 중복률 48.2%
+
+[2. 가장 자주 등장 TOP 15]
+    736회: Labor::보통인부
+    525회: Labor::특별인부
+    255회: Labor::비계공
+    142회: Labor::중급기술자
+    126회: Equipment::크레인
+    119회: Labor::고급기술자
+    115회: Note::작업범위
+    107회: Labor::지적산업기사
+    104회: Note::공구손료및경장비기계경비
+    104회: Labor::초급기술자
+    104회: Labor::지적기사
+    102회: Labor::용접공
+     90회: Labor::배관공
+     89회: Labor::지적기능사
+     79회: Equipment::굴착기
+
+[3. 공백 변형 후보]
+  공백 변형 그룹: 435
+  [Labor] 초급기능사(측량): ['초급 기능사 (측량)', '초급 기능사(측량)', '초급기능사 (측량)', '초급기능사(측량)']
+  [Labor] 중급기능사(도화): ['중급 기능사 (도화)', '중급 기능사(도화)', '중급기능사 (도화)', '중급기능사(도화)']
+  [Equipment] 덤프트럭: ['덤 프 트 럭', '덤프 트럭', '덤프트럭']
+  [Note] 별도계상항목: ['별도 계상 항목', '별도계상 항목', '별도계상항목']
+  [Equipment] 트럭탑재형크레인: ['트럭 탑재형 크레인', '트럭탑재형 크레인', '트럭탑재형크레인']
+  [Note] 작업범위포함사항: ['작업 범위 포함 사항', '작업 범위 포함사항', '작업범위 포함사항']
+  [Labor] 중급기술자: ['중 급 기 술 자', '중급 기술자', '중급기술자']
+  [Equipment] 대형브레이커: ['대 형 브 레 이 커', '대형 브레이커', '대형브레이커']
+  [Equipment] 굴착기+대형브레이커: ['굴착기 + 대형 브레이커', '굴착기 + 대형브레이커', '굴착기+대형브레이커']
+  [Equipment] 모터그레이더(일반용): ['모 터 그 레이 더 ( 일 반 용 )', '모터그레이더 (일반용)', '모터그레이더(일반용)']
+
+[4. 관계 방향 오류]
+  총 방향 오류: 725
+    Equipment→Material (USES_MATERIAL): 291
+    Equipment→Labor (REQUIRES_LABOR): 156
+    Equipment→Equipment (REQUIRES_EQUIPMENT): 93
+    WorkType→WorkType (HAS_NOTE): 64
+    Material→Equipment (REQUIRES_EQUIPMENT): 37
+    Note→Note (HAS_NOTE): 33
+    Note→Equipment (REQUIRES_EQUIPMENT): 20
+    Standard→Labor (REQUIRES_LABOR): 12
+    Material→Material (USES_MATERIAL): 9
+    Note→Material (USES_MATERIAL): 5
+    Note→Labor (REQUIRES_LABOR): 3
+    Labor→Equipment (REQUIRES_EQUIPMENT): 1
+    Equipment→Equipment (HAS_NOTE): 1
+
+[5. 수량 이상치]
+  REQUIRES_LABOR: n=9385, min=0.00, max=646.45, p95=25.00, 음수=0, 이상치(>p95*3)=101
+  REQUIRES_EQUIPMENT: n=1472, min=0.00, max=1042936.00, p95=1100.00, 음수=0, 이상치(>p95*3)=39
+  USES_MATERIAL: n=1640, min=0.00, max=28728.00, p95=75.00, 음수=0, 이상치(>p95*3)=37
+
+[6. confidence 분포]
+  0.0~0.30:      0 (0.0%)
+  0.3~0.50:      0 (0.0%)
+  0.5~0.70:      0 (0.0%)
+  0.7~0.90:    266 (1.0%)
+  0.9~1.01: 25,442 (99.0%)
+
+빈 이름 엔티티: 0
+
+NFKC 정규화 대상: 753
+
+[7. 정규화 후 예상 고유 엔티티 수]
+  WorkType    : 전체  5,995 → 고유  4,552 (감소 1,443)
+  Labor       : 전체  4,270 → 고유    337 (감소 3,933)
+  Equipment   : 전체  2,706 → 고유  1,820 (감소   886)
+  Material    : 전체  2,618 → 고유  1,684 (감소   934)
+  Note        : 전체  6,912 → 고유  5,166 (감소 1,746)
+  Standard    : 전체  1,102 → 고유    569 (감소   533)

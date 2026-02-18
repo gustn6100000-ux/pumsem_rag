@@ -1,0 +1,21 @@
+# 환경변수 / 시크릿
+.env
+.env.*
+key.json
+*.key.json
+
+# Agent (skills, workflows, temp 등 프로젝트 외부)
+.agent/
+
+# n8n legacy (하드코딩 API 키 포함)
+archive/n8n-legacy/
+
+# System / temp
+.wrangler/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# Gemini brain (대화 아티팩트)
+.gemini/

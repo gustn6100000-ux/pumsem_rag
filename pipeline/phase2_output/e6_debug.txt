@@ -1,0 +1,52 @@
+======================================================================
+  E6 할루시네이션 원인 분석
+======================================================================
+  총 샘플: 201
+  매칭 실패: 91 (45.3%)
+
+  원인 분류:
+    not_in_source            :   59 (64.8%)
+    synthetic_note_id        :   26 (28.6%)
+    special_char_name        :    6 (6.6%)
+
+  타입×원인:
+    Note         × not_in_source       : 26
+    Note         × synthetic_note_id   : 26
+    WorkType     × not_in_source       : 20
+    Equipment    × not_in_source       : 8
+    Note         × special_char_name   : 3
+    Standard     × not_in_source       : 3
+    WorkType     × special_char_name   : 3
+    Material     × not_in_source       : 2
+
+  샘플 (최대 30건):
+  [not_in_source       ] Equipment    치즐                                       cid=C-0200-A-a
+  [not_in_source       ] Equipment    골재생산기계(5117-0005)                        cid=C-0297-I
+  [not_in_source       ] Equipment    기타기계 7205-0540                           cid=C-0299-D
+  [not_in_source       ] Equipment    크레인(타이어)50                               cid=C-0305-B
+  [not_in_source       ] Equipment    골재생산기계(5113-0001)                        cid=C-0297-D
+  [not_in_source       ] Equipment    스크레이퍼(자주식)11.5                           cid=C-0303-C
+  [not_in_source       ] Equipment    기타기계(7991-0100)                          cid=C-0299-X
+  [not_in_source       ] Equipment    노면파쇄기 2.0m                               cid=C-0309-A
+  [not_in_source       ] Material     드라이브 파이프(점토층 NX)                         cid=C-0490-B
+  [not_in_source       ] Material     구리합금관                                    cid=C-0790-A
+  [not_in_source       ] Note         규모기준_9-11-2                              cid=C-0560-B
+  [not_in_source       ] Note         작업 범위 포함 사항                              cid=C-1024
+  [synthetic_note_id   ] Note         note_1-2-7#3_3                           cid=C-1050
+  [not_in_source       ] Note         포설 및 고르기, 다짐 작업 포함                       cid=C-0340
+  [synthetic_note_id   ] Note         note_2-3-1#2_5                           cid=C-0382
+  [special_char_name   ] Note         높이 할증(10m~20m 미만)                        cid=C-0211
+  [synthetic_note_id   ] Note         note_13-1-5_5                            cid=C-0948-A
+  [special_char_name   ] Note         외벽 높이 할증_10~12층                          cid=C-0762
+  [not_in_source       ] Note         잡재료 산정                                   cid=C-0304-C
+  [not_in_source       ] Note         자갈상차 및 운반비 별도 계상                         cid=C-0404
+  [synthetic_note_id   ] Note         note_5-4-6_16                            cid=C-0682
+  [synthetic_note_id   ] Note         note_1-9-4_21                            cid=C-0374-A
+  [synthetic_note_id   ] Note         note_1-3-7_11                            cid=C-1063
+  [not_in_source       ] Note         준설토 운반 제외                                cid=C-1124
+  [synthetic_note_id   ] Note         note_8-2-1#4_4                           cid=C-0870
+  [not_in_source       ] Note         계수 B(스크린규격 1/2보다 작은 골재의 양 50%)           cid=C-0270-K
+  [synthetic_note_id   ] Note         note_13-1-6_4                            cid=C-0949
+  [synthetic_note_id   ] Note         note_8-2-3#3_7                           cid=C-0735
+  [synthetic_note_id   ] Note         note_2-1-12_13                           cid=C-1079
+  [not_in_source       ] Note         뿌리돌림 정의                                  cid=C-0172

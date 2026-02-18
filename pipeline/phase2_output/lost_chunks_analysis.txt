@@ -1,0 +1,207 @@
+======================================================================
+68 전손실 청크 원인 분석 (실제: 68)
+======================================================================
+
+주요 원인:
+  방향 보정 시 삭제 (WorkType 부재): 34청크
+  글로벌 dedup으로 다른 청크에서 이미 보존: 33청크
+  동일 타입 관계 (WorkType→WorkType 등) - Phase C에서 삭제: 1청크
+
+대형 전손실 청크 (원본 10건 이상):
+
+  [C-0951-F] 원본 52건
+    관계유형: {'HAS_NOTE': 1, 'REQUIRES_LABOR': 20, 'REQUIRES_EQUIPMENT': 20, 'USES_MATERIAL': 10, 'BELONGS_TO': 1}
+    source타입: {'WorkType': 52}
+    target타입: {'Note': 1, 'Labor': 20, 'Equipment': 20, 'Material': 10, 'Section': 1}
+    WorkType:'이중보온관 설치' -[HAS_NOTE]-> Note:'12m 기준'
+    WorkType:'이중보온관 설치 (300(450)mm)' -[REQUIRES_LABOR]-> Labor:'플랜트 용접공'
+    WorkType:'이중보온관 설치 (300(450)mm)' -[REQUIRES_LABOR]-> Labor:'특별 인부'
+
+  [C-0871-C] 원본 51건
+    관계유형: {'REQUIRES_LABOR': 48, 'BELONGS_TO': 3}
+    source타입: {'WorkType': 51}
+    target타입: {'Labor': 48, 'Section': 3}
+    WorkType:'4' -[REQUIRES_LABOR]-> Labor:'비계공'
+    WorkType:'4' -[REQUIRES_LABOR]-> Labor:'특별인부'
+    WorkType:'4' -[REQUIRES_LABOR]-> Labor:'비계공'
+
+  [C-0871-D] 원본 49건
+    관계유형: {'REQUIRES_LABOR': 48, 'BELONGS_TO': 1}
+    source타입: {'WorkType': 49}
+    target타입: {'Labor': 48, 'Section': 1}
+    WorkType:'1' -[REQUIRES_LABOR]-> Labor:'비계공'
+    WorkType:'1' -[REQUIRES_LABOR]-> Labor:'특별인부'
+    WorkType:'1' -[REQUIRES_LABOR]-> Labor:'비계공'
+
+  [C-0583] 원본 44건
+    관계유형: {'REQUIRES_LABOR': 28, 'APPLIES_STANDARD': 1, 'HAS_NOTE': 4, 'BELONGS_TO': 11}
+    source타입: {'WorkType': 42, 'Section': 2}
+    target타입: {'Labor': 28, 'Standard': 1, 'Note': 4, 'Section': 11}
+    WorkType:'작업 계획' -[REQUIRES_LABOR]-> Labor:'특급기술자'
+    WorkType:'작업 계획' -[REQUIRES_LABOR]-> Labor:'고급기술자'
+    WorkType:'GNSS 기준국 운영' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+
+  [C-0871-E] 원본 33건
+    관계유형: {'REQUIRES_LABOR': 32, 'BELONGS_TO': 1}
+    source타입: {'WorkType': 33}
+    target타입: {'Labor': 32, 'Section': 1}
+    WorkType:'1' -[REQUIRES_LABOR]-> Labor:'비계공'
+    WorkType:'1' -[REQUIRES_LABOR]-> Labor:'특별인부'
+    WorkType:'1' -[REQUIRES_LABOR]-> Labor:'비계공'
+
+  [C-0945-C] 원본 31건
+    관계유형: {'REQUIRES_LABOR': 30, 'BELONGS_TO': 1}
+    source타입: {'WorkType': 31}
+    target타입: {'Labor': 30, 'Section': 1}
+    WorkType:'관만곡(Pipe Bending) 설치 (90m' -[REQUIRES_LABOR]-> Labor:'플랜트 배관공'
+    WorkType:'관만곡(Pipe Bending) 설치 (90m' -[REQUIRES_LABOR]-> Labor:'특별 인부'
+    WorkType:'관만곡(Pipe Bending) 설치 (90m' -[REQUIRES_LABOR]-> Labor:'플랜트 배관공'
+
+  [C-0609-A] 원본 29건
+    관계유형: {'APPLIES_STANDARD': 2, 'HAS_NOTE': 3, 'REQUIRES_LABOR': 16, 'BELONGS_TO': 8}
+    source타입: {'WorkType': 27, 'Section': 2}
+    target타입: {'Standard': 2, 'Note': 3, 'Labor': 16, 'Section': 8}
+    WorkType:'지적재조사측량' -[APPLIES_STANDARD]-> Standard:'지적재조사에 관한 특별법'
+    WorkType:'지적재조사측량' -[APPLIES_STANDARD]-> Standard:'지적재조사 책임수행기관 운영규정 제17조'
+    WorkType:'지적재조사측량' -[HAS_NOTE]-> Note:'지역구분계수'
+
+  [C-0955-E] 원본 27건
+    관계유형: {'REQUIRES_LABOR': 26, 'BELONGS_TO': 1}
+    source타입: {'WorkType': 27}
+    target타입: {'Labor': 26, 'Section': 1}
+    WorkType:'강관용접 (SCH 40, 15mm)' -[REQUIRES_LABOR]-> Labor:'플랜트 용접공'
+    WorkType:'강관용접 (SCH 40, 15mm)' -[REQUIRES_LABOR]-> Labor:'특별인부'
+    WorkType:'강관용접 (SCH 80, 15mm)' -[REQUIRES_LABOR]-> Labor:'플랜트 용접공'
+
+  [C-0609-B] 원본 26건
+    관계유형: {'REQUIRES_LABOR': 19, 'BELONGS_TO': 7}
+    source타입: {'WorkType': 26}
+    target타입: {'Labor': 19, 'Section': 7}
+    WorkType:'경계조정협의' -[REQUIRES_LABOR]-> Labor:'지적기사'
+    WorkType:'경계조정협의' -[REQUIRES_LABOR]-> Labor:'지적산업기사'
+    WorkType:'경계조정협의' -[REQUIRES_LABOR]-> Labor:'지적기능사'
+
+  [C-0588-B] 원본 20건
+    관계유형: {'REQUIRES_LABOR': 11, 'HAS_NOTE': 1, 'BELONGS_TO': 8}
+    source타입: {'WorkType': 20}
+    target타입: {'Labor': 11, 'Note': 1, 'Section': 8}
+    WorkType:'자료조사' -[REQUIRES_LABOR]-> Labor:'지적기사'
+    WorkType:'계획준비' -[REQUIRES_LABOR]-> Labor:'지적기사'
+    WorkType:'현지조사' -[REQUIRES_LABOR]-> Labor:'지적기사'
+
+  [C-0823-B] 원본 20건
+    관계유형: {'REQUIRES_LABOR': 16, 'BELONGS_TO': 4}
+    source타입: {'WorkType': 20}
+    target타입: {'Labor': 16, 'Section': 4}
+    WorkType:'125' -[REQUIRES_LABOR]-> Labor:'보통인부'
+    WorkType:'125' -[REQUIRES_LABOR]-> Labor:'보통인부'
+    WorkType:'125' -[REQUIRES_LABOR]-> Labor:'보통인부'
+
+  [C-0523-T] 원본 18건
+    관계유형: {'REQUIRES_LABOR': 15, 'BELONGS_TO': 3}
+    source타입: {'WorkType': 18}
+    target타입: {'Labor': 15, 'Section': 3}
+    WorkType:'구획정리 확정측량 (번화지구)' -[REQUIRES_LABOR]-> Labor:'고급기술자'
+    WorkType:'구획정리 확정측량 (번화지구)' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'구획정리 확정측량 (번화지구)' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+
+  [C-0956-L] 원본 17건
+    관계유형: {'USES_MATERIAL': 4, 'REQUIRES_EQUIPMENT': 4, 'REQUIRES_LABOR': 8, 'BELONGS_TO': 1}
+    source타입: {'WorkType': 17}
+    target타입: {'Material': 4, 'Equipment': 4, 'Labor': 8, 'Section': 1}
+    WorkType:'강판 전기아크용접 (두께 5mm, 하향)' -[USES_MATERIAL]-> Material:'용접봉'
+    WorkType:'강판 전기아크용접 (두께 5mm, 하향)' -[REQUIRES_EQUIPMENT]-> Equipment:'소요전력'
+    WorkType:'강판 전기아크용접 (두께 5mm, 하향)' -[REQUIRES_LABOR]-> Labor:'용접공'
+
+  [C-0028] 원본 16건
+    관계유형: {'HAS_NOTE': 12, 'APPLIES_STANDARD': 1, 'BELONGS_TO': 3}
+    source타입: {'WorkType': 14, 'Section': 2}
+    target타입: {'Note': 12, 'Standard': 1, 'Section': 3}
+    WorkType:'작업지연' -[HAS_NOTE]-> Note:'통제보안지역 할증'
+    WorkType:'작업지연' -[HAS_NOTE]-> Note:'군(軍)통제지역 할증'
+    WorkType:'작업지연' -[HAS_NOTE]-> Note:'도서지역 할증'
+
+  [C-0584-A-a] 원본 16건
+    관계유형: {'APPLIES_STANDARD': 3, 'HAS_NOTE': 4, 'BELONGS_TO': 9}
+    source타입: {'WorkType': 16}
+    target타입: {'Standard': 3, 'Note': 2, 'WorkType': 2, 'Section': 9}
+    WorkType:'무인비행장치 측량' -[APPLIES_STANDARD]-> Standard:'무인비행장치 이용 공공측량 작업지침'
+    WorkType:'평면기준점측량' -[APPLIES_STANDARD]-> Standard:'9-1-4 4급 기준점 측량'
+    WorkType:'표고기준점측량' -[APPLIES_STANDARD]-> Standard:'9-2-4 2급 수준측량'
+
+  [C-0623-B] 원본 16건
+    관계유형: {'REQUIRES_LABOR': 6, 'HAS_NOTE': 3, 'BELONGS_TO': 7}
+    source타입: {'WorkType': 16}
+    target타입: {'Labor': 6, 'Note': 3, 'Section': 7}
+    WorkType:'지적전산파일변환' -[REQUIRES_LABOR]-> Labor:'지적산업기사'
+    WorkType:'제도' -[REQUIRES_LABOR]-> Labor:'지적산업기사'
+    WorkType:'대조수정' -[REQUIRES_LABOR]-> Labor:'지적산업기사'
+
+  [C-0580-A-l] 원본 14건
+    관계유형: {'APPLIES_STANDARD': 1, 'REQUIRES_LABOR': 10, 'BELONGS_TO': 3}
+    source타입: {'WorkType': 14}
+    target타입: {'Standard': 1, 'Labor': 10, 'Section': 3}
+    WorkType:'지도제작(기본도)' -[APPLIES_STANDARD]-> Standard:'제9장 측량'
+    WorkType:'편집' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'편집' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+
+  [C-0523-O] 원본 13건
+    관계유형: {'REQUIRES_LABOR': 7, 'HAS_NOTE': 3, 'BELONGS_TO': 3}
+    source타입: {'WorkType': 13}
+    target타입: {'Labor': 7, 'Note': 3, 'Section': 3}
+    WorkType:'자료조사 및 현지답사' -[REQUIRES_LABOR]-> Labor:'고급기술자'
+    WorkType:'자료조사 및 현지답사' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'자료조사 및 현지답사' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+
+  [C-0580-A-g] 원본 12건
+    관계유형: {'REQUIRES_LABOR': 6, 'HAS_NOTE': 2, 'APPLIES_STANDARD': 2, 'BELONGS_TO': 2}
+    source타입: {'WorkType': 12}
+    target타입: {'Labor': 6, 'Note': 2, 'Standard': 2, 'Section': 2}
+    WorkType:'지도제작(기본도) 신규제작' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'지도제작(기본도) 신규제작' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+    WorkType:'지도제작(기본도) 신규제작' -[REQUIRES_LABOR]-> Labor:'중급기능사(지도제작)'
+
+  [C-0598-A-b] 원본 12건
+    관계유형: {'REQUIRES_LABOR': 8, 'HAS_NOTE': 1, 'BELONGS_TO': 3}
+    source타입: {'WorkType': 12}
+    target타입: {'Labor': 8, 'Note': 1, 'Section': 3}
+    WorkType:'분할측량(도해)' -[REQUIRES_LABOR]-> Labor:'지적기사'
+    WorkType:'분할측량(도해)' -[REQUIRES_LABOR]-> Labor:'지적산업기사'
+    WorkType:'분할측량(도해)' -[REQUIRES_LABOR]-> Labor:'지적기능사'
+
+  [C-1082-A-d] 원본 12건
+    관계유형: {'REQUIRES_LABOR': 4, 'REQUIRES_EQUIPMENT': 4, 'HAS_NOTE': 2, 'BELONGS_TO': 2}
+    source타입: {'WorkType': 12}
+    target타입: {'Labor': 4, 'Equipment': 4, 'Note': 2, 'Section': 2}
+    WorkType:'차선도색 (실선)' -[REQUIRES_LABOR]-> Labor:'특별인부'
+    WorkType:'차선도색 (실선)' -[REQUIRES_LABOR]-> Labor:'보통인부'
+    WorkType:'차선도색 (실선)' -[REQUIRES_EQUIPMENT]-> Equipment:'라인마커트럭'
+
+  [C-0948-S] 원본 11건
+    관계유형: {'REQUIRES_LABOR': 10, 'BELONGS_TO': 1}
+    source타입: {'WorkType': 11}
+    target타입: {'Labor': 10, 'Section': 1}
+    WorkType:'Flange 취부 (300mm, 10.5kg/' -[REQUIRES_LABOR]-> Labor:'플랜트 배관공'
+    WorkType:'Flange 취부 (300mm, 10.5kg/' -[REQUIRES_LABOR]-> Labor:'특별 인부'
+    WorkType:'Flange 취부 (300mm, 21kg/cm' -[REQUIRES_LABOR]-> Labor:'플랜트 배관공'
+
+  [C-0953-C] 원본 11건
+    관계유형: {'USES_MATERIAL': 10, 'BELONGS_TO': 1}
+    source타입: {'WorkType': 11}
+    target타입: {'Material': 10, 'Section': 1}
+    WorkType:'강관절단 (ø 25, SCH 20~40)' -[USES_MATERIAL]-> Material:'산소'
+    WorkType:'강관절단 (ø 25, SCH 20~40)' -[USES_MATERIAL]-> Material:'LPG'
+    WorkType:'강관절단 (ø 25, SCH 60~80)' -[USES_MATERIAL]-> Material:'산소'
+
+======================================================================
+결론
+======================================================================
+
+전손실 68청크의 주요 원인:
+1. 글로벌 dedup으로 중복 관계 제거 (다른 청크에서 동일 관계 이미 보존)
+2. Phase C 방향 보정 시 잘못된 타입 관계 (WorkType→WorkType) 삭제
+3. 대부분 소형 청크(2~6건)로 글로벌 dedup이 유효하게 작동
+
+복구 대상: 없음
+  → 대형 전손실 청크(10건+)도 동일 관계가 다른 청크에 보존되어 있음
+  → 데이터 무결성 영향 없음

@@ -1,0 +1,182 @@
+[
+  {
+    "type": "Note",
+    "name": "'02년 신설, '15년 보완",
+    "normalized_name": "'02년신설,'15년보완",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 0.95,
+    "source_chunk_id": "C-0778",
+    "source_section_id": "11-2-9",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-0778"
+    ],
+    "entity_id": "N-0001"
+  },
+  {
+    "type": "Note",
+    "name": "'03년 신설, '05년 보완",
+    "normalized_name": "'03년신설,'05년보완",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 0.98,
+    "source_chunk_id": "C-1019",
+    "source_section_id": "13-8-4",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-1019"
+    ],
+    "entity_id": "N-0002"
+  },
+  {
+    "type": "Note",
+    "name": "'03년 신설, '14, '19, '22년 보완",
+    "normalized_name": "'03년신설,'14,'19,'22년보완",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 0.95,
+    "source_chunk_id": "C-1047-A",
+    "source_section_id": "1-2-4#3",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-1047-A"
+    ],
+    "entity_id": "N-0003"
+  },
+  {
+    "type": "Note",
+    "name": "'06년 신설, '14, '20년 보완",
+    "normalized_name": "'06년신설,'14,'20년보완",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 1.0,
+    "source_chunk_id": "C-0828",
+    "source_section_id": "3-4-1#3",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-0828"
+    ],
+    "entity_id": "N-0004"
+  },
+  {
+    "type": "Note",
+    "name": "'07, '13, '20년 보완",
+    "normalized_name": "'07,'13,'20년보완",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 0.9,
+    "source_chunk_id": "C-0389-A",
+    "source_section_id": "3-2-1#2",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-0389-A"
+    ],
+    "entity_id": "N-0005"
+  },
+  {
+    "type": "Note",
+    "name": "'08, '09, '10, '11, '12, '13, '14, '15, '16, '17년 보완",
+    "normalized_name": "'08,'09,'10,'11,'12,'13,'14,'15,'16,'17년보완",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 0.95,
+    "source_chunk_id": "C-0302",
+    "source_section_id": "8-4",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-0302"
+    ],
+    "entity_id": "N-0006"
+  },
+  {
+    "type": "Note",
+    "name": "'08년 신설",
+    "normalized_name": "'08년신설",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 0.95,
+    "source_chunk_id": "C-0333",
+    "source_section_id": "1-4#2",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-0333"
+    ],
+    "entity_id": "N-0007"
+  },
+  {
+    "type": "Note",
+    "name": "'08년 신설, '17, '21년 보완",
+    "normalized_name": "'08년신설,'17,'21년보완",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 1.0,
+    "source_chunk_id": "C-0329",
+    "source_section_id": "1-3#2",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-0329"
+    ],
+    "entity_id": "N-0008"
+  },
+  {
+    "type": "Note",
+    "name": "'08년 신설, '17, '21년 보완",
+    "normalized_name": "'08년신설,'17,'21년보완",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 1.0,
+    "source_chunk_id": "C-0337",
+    "source_section_id": "1-5#2",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-0337"
+    ],
+    "entity_id": "N-0009"
+  },
+  {
+    "type": "Note",
+    "name": "'08년 신설, '17, '21년 보완",
+    "normalized_name": "'08년신설,'17,'21년보완",
+    "code": null,
+    "spec": "",
+    "unit": null,
+    "quantity": null,
+    "properties": {},
+    "confidence": 1.0,
+    "source_chunk_id": "C-0347",
+    "source_section_id": "1-6",
+    "source_method": "llm",
+    "source_chunk_ids": [
+      "C-0347"
+    ],
+    "entity_id": "N-0010"
+  }
+]

@@ -1,0 +1,492 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/*  건설 품셈 AI 어시스턴트 — style.css      */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #0f1117;
+  --bg-secondary: #1a1d27;
+  --bg-card: #22263a;
+  --bg-input: #2a2e42;
+  --text-primary: #e8eaf0;
+  --text-secondary: #9ca3b8;
+  --text-muted: #6b7280;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  --user-bg: #3b3f5c;
+  --assistant-bg: #1e2235;
+  --border: #2d3148;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --transition: 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ━━━ 앱 레이아웃 ━━━ */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+/* ━━━ 헤더 ━━━ */
+
+.chat-header {
+  padding: 16px 24px;
+  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.chat-header h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #818cf8, #a78bfa, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chat-header .subtitle {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* ━━━ 채팅 영역 ━━━ */
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scroll-behavior: smooth;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+/* ━━━ 메시지 ━━━ */
+
+.message {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+
+.message.user {
+  flex-direction: row-reverse;
+}
+
+.message.user .message-avatar {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.message-content {
+  max-width: 85%;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+  line-height: 1.65;
+  font-size: 0.92rem;
+}
+
+.message.assistant .message-content {
+  background: var(--assistant-bg);
+  border: 1px solid var(--border);
+  border-top-left-radius: 4px;
+}
+
+.message.user .message-content {
+  background: var(--user-bg);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-top-right-radius: 4px;
+  color: var(--text-primary);
+}
+
+/* 예시 질문 */
+.examples {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.example-list {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.example-list li {
+  background: var(--bg-input);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  color: var(--accent-hover);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.example-list li:hover {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+}
+
+/* 마크다운 테이블 스타일 */
+.message-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.85rem;
+}
+
+.message-content th,
+.message-content td {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.message-content th {
+  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--accent-hover);
+}
+
+.message-content tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* 마크다운 H2, H3 */
+.message-content h2 {
+  font-size: 1.05rem;
+  color: var(--accent-hover);
+  margin: 16px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+.message-content h3 {
+  font-size: 0.95rem;
+  color: #c4b5fd;
+  margin: 12px 0 6px;
+}
+
+.message-content strong {
+  color: var(--accent-hover);
+}
+
+.message-content ul,
+.message-content ol {
+  padding-left: 20px;
+  margin: 6px 0;
+}
+
+.message-content li {
+  margin: 3px 0;
+}
+
+.message-content blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 6px 14px;
+  margin: 10px 0;
+  background: rgba(99, 102, 241, 0.06);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.message-content p {
+  margin: 6px 0;
+}
+
+.message-content code {
+  background: var(--bg-card);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* ━━━ 로딩 인디케이터 ━━━ */
+
+.typing-indicator {
+  display: flex;
+  gap: 5px;
+  padding: 8px 0;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0s;
+}
+
+@keyframes bounce {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* ━━━ 디버그 패널 ━━━ */
+
+.debug-toggle {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.debug-toggle:hover {
+  color: var(--text-secondary);
+}
+
+.debug-panel {
+  display: none;
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.debug-panel.open {
+  display: block;
+}
+
+.debug-panel .debug-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+}
+
+.debug-panel .debug-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 6px 0;
+}
+
+.debug-panel .debug-label {
+  color: var(--text-secondary);
+}
+
+.debug-panel .debug-value {
+  font-weight: 500;
+  color: var(--accent-hover);
+}
+
+/* 출처 태그 */
+.source-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.source-tag {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--success);
+  border-radius: 14px;
+}
+
+/* ━━━ 입력 영역 ━━━ */
+
+.chat-input-area {
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px 18px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-family: inherit;
+  outline: none;
+  transition: var(--transition);
+}
+
+.chat-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.chat-input::placeholder {
+  color: var(--text-muted);
+}
+
+.send-button {
+  width: 46px;
+  height: 46px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.send-button:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: scale(1.04);
+}
+
+.send-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.input-info {
+  text-align: right;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  padding-right: 4px;
+}
+
+/* ━━━ 에러 메시지 ━━━ */
+
+.error-message {
+  padding: 10px 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius);
+  color: var(--error);
+  font-size: 0.85rem;
+}
+
+/* ━━━ 반응형 ━━━ */
+
+@media (max-width: 640px) {
+  .app-container {
+    border: none;
+  }
+
+  .chat-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .message-content {
+    max-width: 90%;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+  }
+
+  .example-list {
+    flex-direction: column;
+  }
+}

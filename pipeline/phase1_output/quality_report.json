@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-02-10 22:32:31",
+  "summary": {
+    "total_chunks": 2105,
+    "total_sections_mapped": 1102,
+    "total_tables_parsed": 3279,
+    "avg_token_count": 762.0,
+    "max_token_count": 3536
+  },
+  "by_department": {
+    "토목부문": {
+      "chunks": 662,
+      "tables": 1049,
+      "sections": 257
+    },
+    "공통부문": {
+      "chunks": 641,
+      "tables": 1013,
+      "sections": 316
+    },
+    "건축부문": {
+      "chunks": 165,
+      "tables": 367,
+      "sections": 147
+    },
+    "기계설비부문": {
+      "chunks": 482,
+      "tables": 602,
+      "sections": 257
+    },
+    "유지관리부문": {
+      "chunks": 155,
+      "tables": 248,
+      "sections": 125
+    }
+  },
+  "checks": [
+    {
+      "check": "section_coverage",
+      "severity": "PASS",
+      "coverage_rate": 1.0,
+      "toc_sections": 1284,
+      "mapped_sections": 1284,
+      "missing_sections": [],
+      "missing_count": 0,
+      "extra_sections": [],
+      "threshold": 0.95
+    },
+    {
+      "check": "table_parse_rate",
+      "severity": "PASS",
+      "total_html_tables": 2992,
+      "parsed_tables": 2992,
+      "failed_tables": 0,
+      "success_rate": 1.0,
+      "threshold": 0.9
+    },
+    {
+      "check": "empty_chunks",
+      "severity": "PASS",
+      "total_chunks": 2105,
+      "empty_chunks": 2,
+      "empty_ratio": 0.001,
+      "empty_chunk_ids": [
+        "C-0759",
+        "C-1149"
+      ],
+      "threshold": 0.05
+    },
+    {
+      "check": "token_distribution",
+      "severity": "MEDIUM",
+      "avg_tokens": 762.0,
+      "min_tokens": 1,
+      "max_tokens": 3536,
+      "p95_tokens": 1569,
+      "over_limit_count": 7,
+      "over_limit_chunks": [
+        "C-0509-B",
+        "C-0512-C",
+        "C-0523-A-a",
+        "C-0528-A-a",
+        "C-0530-A-a",
+        "C-0533-A-a",
+        "C-0584-I"
+      ],
+      "issues": []
+    },
+    {
+      "check": "metadata_completeness",
+      "severity": "PASS",
+      "required_fields": [
+        "section_id",
+        "department",
+        "chapter",
+        "title"
+      ],
+      "missing_count": 0,
+      "missing_details": []
+    },
+    {
+      "check": "duplicate_chunks",
+      "severity": "PASS",
+      "unique_section_ids": 1102,
+      "duplicate_chunk_ids": []
+    }
+  ],
+  "issues": [
+    {
+      "severity": "MEDIUM",
+      "check": "token_distribution",
+      "message": "{\"avg_tokens\": 762.0, \"min_tokens\": 1, \"max_tokens\": 3536, \"p95_tokens\": 1569, \"over_limit_count\": 7, \"over_limit_chunks\": [\"C-0509-B\", \"C-0512-C\", \"C-0523-A-a\", \"C-0528-A-a\", \"C-0530-A-a\", \"C-0533-A-"
+    }
+  ]
+}

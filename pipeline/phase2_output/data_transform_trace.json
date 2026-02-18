@@ -1,0 +1,2717 @@
+{
+  "target_section": "13-2-3",
+  "expected_values": {
+    "φ200_SCH 20_용접공": 0.287,
+    "φ200_SCH 40_플랜트 용접공": 0.287,
+    "φ200_SCH 60_플랜트 용접공": 0.325,
+    "φ200_SCH 80_플랜트 용접공": 0.362,
+    "φ15_SCH 40_플랜트 용접공": 0.066,
+    "φ15_SCH 80_플랜트 용접공": 0.075,
+    "φ350_SCH 20_용접공": 0.442
+  },
+  "step_summary": {
+    "1. table_entities (step1 규칙)": {
+      "entity_count": 18,
+      "worktype_count": 0,
+      "relationship_count": 7
+    },
+    "2. llm_entities (step2 LLM)": {
+      "entity_count": 169,
+      "worktype_count": 110,
+      "relationship_count": 214
+    },
+    "3. merged_entities (step3 병합)": {
+      "entity_count": 171,
+      "worktype_count": 98,
+      "relationship_count": 319
+    },
+    "4. normalized_entities (step4 정규화)": {
+      "entity_count": 171,
+      "worktype_count": 98,
+      "relationship_count": 289
+    }
+  },
+  "trace_report": [
+    {
+      "diameter": "φ200",
+      "sch": "SCH 20",
+      "job": "용접공",
+      "expected": 0.287,
+      "step": "1. table_entities (step1 규칙)",
+      "found": false,
+      "matches": []
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 20",
+      "job": "용접공",
+      "expected": 0.287,
+      "step": "2. llm_entities (step2 LLM)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": true
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 100, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 120, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 140, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 160, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 20",
+      "job": "용접공",
+      "expected": 0.287,
+      "step": "3. merged_entities (step3 병합)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": true
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 100, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 120, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 140, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 160, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 20",
+      "job": "용접공",
+      "expected": 0.287,
+      "step": "4. normalized_entities (step4 정규화)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접(φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": true
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 20)",
+          "target": "플랜트용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 30)",
+          "target": "플랜트용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 40)",
+          "target": "플랜트용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 60)",
+          "target": "플랜트용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 80)",
+          "target": "플랜트용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 100, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 120, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 140, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 160, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 40",
+      "job": "플랜트 용접공",
+      "expected": 0.287,
+      "step": "1. table_entities (step1 규칙)",
+      "found": false,
+      "matches": []
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 40",
+      "job": "플랜트 용접공",
+      "expected": 0.287,
+      "step": "2. llm_entities (step2 LLM)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": true
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 100, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 120, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 140, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 160, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 40",
+      "job": "플랜트 용접공",
+      "expected": 0.287,
+      "step": "3. merged_entities (step3 병합)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": true
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 100, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 120, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 140, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 160, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 40",
+      "job": "플랜트 용접공",
+      "expected": 0.287,
+      "step": "4. normalized_entities (step4 정규화)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접(φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": true
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 20)",
+          "target": "플랜트용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 30)",
+          "target": "플랜트용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 40)",
+          "target": "플랜트용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 60)",
+          "target": "플랜트용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 80)",
+          "target": "플랜트용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 100, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 120, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 140, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 160, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 60",
+      "job": "플랜트 용접공",
+      "expected": 0.325,
+      "step": "1. table_entities (step1 규칙)",
+      "found": false,
+      "matches": []
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 60",
+      "job": "플랜트 용접공",
+      "expected": 0.325,
+      "step": "2. llm_entities (step2 LLM)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 100, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 120, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 140, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 160, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 60",
+      "job": "플랜트 용접공",
+      "expected": 0.325,
+      "step": "3. merged_entities (step3 병합)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 100, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 120, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 140, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 160, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 60",
+      "job": "플랜트 용접공",
+      "expected": 0.325,
+      "step": "4. normalized_entities (step4 정규화)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접(φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 20)",
+          "target": "플랜트용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 30)",
+          "target": "플랜트용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 40)",
+          "target": "플랜트용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 60)",
+          "target": "플랜트용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 80)",
+          "target": "플랜트용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 100, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 120, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 140, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 160, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 80",
+      "job": "플랜트 용접공",
+      "expected": 0.362,
+      "step": "1. table_entities (step1 규칙)",
+      "found": false,
+      "matches": []
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 80",
+      "job": "플랜트 용접공",
+      "expected": 0.362,
+      "step": "2. llm_entities (step2 LLM)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 100, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 120, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 140, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 160, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 80",
+      "job": "플랜트 용접공",
+      "expected": 0.362,
+      "step": "3. merged_entities (step3 병합)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (200, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 100, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 120, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 140, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 160, 200mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ200",
+      "sch": "SCH 80",
+      "job": "플랜트 용접공",
+      "expected": 0.362,
+      "step": "4. normalized_entities (step4 정규화)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접(φ 200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(200, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 100, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 120, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 140, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 160, 200mm)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(φ 200, SCH 20)",
+          "target": "용접공",
+          "quantity": 0.287,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 20)",
+          "target": "플랜트용접공",
+          "quantity": 0.244,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 30)",
+          "target": "플랜트용접공",
+          "quantity": 0.261,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 40)",
+          "target": "플랜트용접공",
+          "quantity": 0.294,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 60)",
+          "target": "플랜트용접공",
+          "quantity": 0.352,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(200, SCH 80)",
+          "target": "플랜트용접공",
+          "quantity": 0.416,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 100, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.479,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 120, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.557,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 140, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.617,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 160, 200mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.674,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ15",
+      "sch": "SCH 40",
+      "job": "플랜트 용접공",
+      "expected": 0.066,
+      "step": "1. table_entities (step1 규칙)",
+      "found": false,
+      "matches": []
+    },
+    {
+      "diameter": "φ15",
+      "sch": "SCH 40",
+      "job": "플랜트 용접공",
+      "expected": 0.066,
+      "step": "2. llm_entities (step2 LLM)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 15, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 20, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 40, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 80, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (15mm)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 15, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.066,
+          "match_qty": true
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 40, 15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.065,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 80, 15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.067,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 20, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.179,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 40, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.213,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 80, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.293,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.068,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ15",
+      "sch": "SCH 40",
+      "job": "플랜트 용접공",
+      "expected": 0.066,
+      "step": "3. merged_entities (step3 병합)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 15, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 20, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 40, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 80, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (15mm)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 15, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.066,
+          "match_qty": true
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 40, 15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.065,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 80, 15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.067,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 20, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.179,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 40, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.213,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 80, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.293,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.068,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ15",
+      "sch": "SCH 40",
+      "job": "플랜트 용접공",
+      "expected": 0.066,
+      "step": "4. normalized_entities (step4 정규화)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접(φ 15, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 20, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 40, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 80, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(15mm)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(φ 15, SCH 40)",
+          "target": "플랜트용접공",
+          "quantity": 0.066,
+          "match_qty": true
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 20, 150)",
+          "target": "플랜트용접공",
+          "quantity": 0.179,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 40, 150)",
+          "target": "플랜트용접공",
+          "quantity": 0.213,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 80, 150)",
+          "target": "플랜트용접공",
+          "quantity": 0.293,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(15mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.068,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ15",
+      "sch": "SCH 80",
+      "job": "플랜트 용접공",
+      "expected": 0.075,
+      "step": "1. table_entities (step1 규칙)",
+      "found": false,
+      "matches": []
+    },
+    {
+      "diameter": "φ15",
+      "sch": "SCH 80",
+      "job": "플랜트 용접공",
+      "expected": 0.075,
+      "step": "2. llm_entities (step2 LLM)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 15, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 20, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 40, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 80, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (15mm)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 15, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.066,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 40, 15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.065,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 80, 15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.067,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 20, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.179,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 40, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.213,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 80, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.293,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.068,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ15",
+      "sch": "SCH 80",
+      "job": "플랜트 용접공",
+      "expected": 0.075,
+      "step": "3. merged_entities (step3 병합)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 15, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 20, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 40, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (SCH 80, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (15mm)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 15, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.066,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 40, 15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.065,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 80, 15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.067,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 20, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.179,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 40, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.213,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (SCH 80, 150)",
+          "target": "플랜트 용접공",
+          "quantity": 0.293,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (15mm)",
+          "target": "플랜트 용접공",
+          "quantity": 0.068,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ15",
+      "sch": "SCH 80",
+      "job": "플랜트 용접공",
+      "expected": 0.075,
+      "step": "4. normalized_entities (step4 정규화)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접(φ 15, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 20, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 40, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(SCH 80, 150)",
+          "quantity": 1.0,
+          "type": "WorkType",
+          "match_qty": false
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(15mm)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(φ 15, SCH 40)",
+          "target": "플랜트용접공",
+          "quantity": 0.066,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 20, 150)",
+          "target": "플랜트용접공",
+          "quantity": 0.179,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 40, 150)",
+          "target": "플랜트용접공",
+          "quantity": 0.213,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(SCH 80, 150)",
+          "target": "플랜트용접공",
+          "quantity": 0.293,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(15mm)",
+          "target": "플랜트용접공",
+          "quantity": 0.068,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ350",
+      "sch": "SCH 20",
+      "job": "용접공",
+      "expected": 0.442,
+      "step": "1. table_entities (step1 규칙)",
+      "found": false,
+      "matches": []
+    },
+    {
+      "diameter": "φ350",
+      "sch": "SCH 20",
+      "job": "용접공",
+      "expected": 0.442,
+      "step": "2. llm_entities (step2 LLM)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 350, SCH 160)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 350, SCH 160)",
+          "target": "플랜트 용접공",
+          "quantity": 2.17,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.438,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.513,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.588,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.77,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.944,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ350",
+      "sch": "SCH 20",
+      "job": "용접공",
+      "expected": 0.442,
+      "step": "3. merged_entities (step3 병합)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접 (φ 350, SCH 160)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접 (350, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (φ 350, SCH 160)",
+          "target": "플랜트 용접공",
+          "quantity": 2.17,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 20)",
+          "target": "플랜트 용접공",
+          "quantity": 0.438,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 30)",
+          "target": "플랜트 용접공",
+          "quantity": 0.513,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 40)",
+          "target": "플랜트 용접공",
+          "quantity": 0.588,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 60)",
+          "target": "플랜트 용접공",
+          "quantity": 0.77,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접 (350, SCH 80)",
+          "target": "플랜트 용접공",
+          "quantity": 0.944,
+          "match_qty": false
+        }
+      ]
+    },
+    {
+      "diameter": "φ350",
+      "sch": "SCH 20",
+      "job": "용접공",
+      "expected": 0.442,
+      "step": "4. normalized_entities (step4 정규화)",
+      "found": true,
+      "matches": [
+        {
+          "where": "entity",
+          "name": "강관용접(φ 350, SCH 160)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(350, SCH 20)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(350, SCH 30)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(350, SCH 40)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(350, SCH 60)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "entity",
+          "name": "강관용접(350, SCH 80)",
+          "quantity": null,
+          "type": "WorkType",
+          "match_qty": null
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(φ 350, SCH 160)",
+          "target": "플랜트용접공",
+          "quantity": 2.17,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(350, SCH 20)",
+          "target": "플랜트용접공",
+          "quantity": 0.438,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(350, SCH 30)",
+          "target": "플랜트용접공",
+          "quantity": 0.513,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(350, SCH 40)",
+          "target": "플랜트용접공",
+          "quantity": 0.588,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(350, SCH 60)",
+          "target": "플랜트용접공",
+          "quantity": 0.77,
+          "match_qty": false
+        },
+        {
+          "where": "relationship",
+          "source": "강관용접(350, SCH 80)",
+          "target": "플랜트용접공",
+          "quantity": 0.944,
+          "match_qty": false
+        }
+      ]
+    }
+  ]
+}

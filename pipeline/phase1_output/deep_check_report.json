@@ -1,0 +1,683 @@
+{
+  "generated_at": "2026-02-10 22:54:09",
+  "overall_severity": "WARN",
+  "sample_mode": false,
+  "total_chunks_checked": 2105,
+  "checks": [
+    {
+      "check": "D1_text_fidelity",
+      "severity": "PASS",
+      "metric": "containment",
+      "checked_sections": 1165,
+      "avg_containment": 0.9879,
+      "pass_count": 1155,
+      "pass_rate": 0.9914,
+      "threshold": 0.7,
+      "failures": [
+        {
+          "section_id": "8-5-1",
+          "source_file": "20260208_205-345 OKOK.md",
+          "containment": 0.474,
+          "chunk_count": 3,
+          "chunk_tokens": 228,
+          "matched_tokens": 108,
+          "orig_tokens": 224
+        },
+        {
+          "section_id": "8-5-2",
+          "source_file": "20260208_205-345 OKOK.md",
+          "containment": 0.388,
+          "chunk_count": 1,
+          "chunk_tokens": 80,
+          "matched_tokens": 31,
+          "orig_tokens": 84
+        },
+        {
+          "section_id": "8-5-3",
+          "source_file": "20260208_205-345 OKOK.md",
+          "containment": 0.485,
+          "chunk_count": 3,
+          "chunk_tokens": 196,
+          "matched_tokens": 95,
+          "orig_tokens": 199
+        },
+        {
+          "section_id": "8-5-4",
+          "source_file": "20260208_205-345 OKOK.md",
+          "containment": 0.582,
+          "chunk_count": 1,
+          "chunk_tokens": 98,
+          "matched_tokens": 57,
+          "orig_tokens": 100
+        },
+        {
+          "section_id": "8-5-5",
+          "source_file": "20260208_205-345 OKOK.md",
+          "containment": 0.372,
+          "chunk_count": 1,
+          "chunk_tokens": 86,
+          "matched_tokens": 32,
+          "orig_tokens": 91
+        },
+        {
+          "section_id": "8-5-6",
+          "source_file": "20260208_205-345 OKOK.md",
+          "containment": 0.458,
+          "chunk_count": 3,
+          "chunk_tokens": 179,
+          "matched_tokens": 82,
+          "orig_tokens": 185
+        },
+        {
+          "section_id": "8-5-7",
+          "source_file": "20260208_205-345 OKOK.md",
+          "containment": 0.542,
+          "chunk_count": 2,
+          "chunk_tokens": 216,
+          "matched_tokens": 117,
+          "orig_tokens": 214
+        },
+        {
+          "section_id": "8-5-8",
+          "source_file": "20260208_205-345 OKOK.md",
+          "containment": 0.622,
+          "chunk_count": 3,
+          "chunk_tokens": 333,
+          "matched_tokens": 207,
+          "orig_tokens": 318
+        },
+        {
+          "section_id": "8-5-10",
+          "source_file": "20260208_205-345 OKOK.md",
+          "containment": 0.367,
+          "chunk_count": 2,
+          "chunk_tokens": 180,
+          "matched_tokens": 66,
+          "orig_tokens": 181
+        },
+        {
+          "section_id": "6-6-3#2",
+          "source_file": "20260208_397-427 OKOK.md",
+          "containment": 0.652,
+          "chunk_count": 1,
+          "chunk_tokens": 23,
+          "matched_tokens": 15,
+          "orig_tokens": 81
+        }
+      ],
+      "failure_count": 10
+    },
+    {
+      "check": "D2_table_accuracy",
+      "severity": "WARN",
+      "checked_sections": 920,
+      "avg_accuracy": 0.9741,
+      "pass_count": 844,
+      "pass_rate": 0.9174,
+      "threshold": 0.9,
+      "failures": [
+        {
+          "section_id": "2-6-3",
+          "source_file": "20260207_84-113 OKOK.md",
+          "accuracy": 0.814,
+          "orig_cells": 43,
+          "parsed_cells": 58,
+          "matched": 35,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "4-3-1",
+          "source_file": "20260207_114-143 OKOK.md",
+          "accuracy": 0.718,
+          "orig_cells": 78,
+          "parsed_cells": 72,
+          "matched": 56,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "6-4-2",
+          "source_file": "20260208_170-199 OKOK.md",
+          "accuracy": 0.602,
+          "orig_cells": 93,
+          "parsed_cells": 86,
+          "matched": 56,
+          "chunk_count": 2
+        },
+        {
+          "section_id": "6-5-1",
+          "source_file": "20260208_170-199 OKOK.md",
+          "accuracy": 0.897,
+          "orig_cells": 29,
+          "parsed_cells": 39,
+          "matched": 26,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "6-6-1",
+          "source_file": "20260208_170-199 OKOK.md",
+          "accuracy": 0.806,
+          "orig_cells": 31,
+          "parsed_cells": 28,
+          "matched": 25,
+          "chunk_count": 3
+        },
+        {
+          "section_id": "6-6-2",
+          "source_file": "20260208_170-199 OKOK.md",
+          "accuracy": 0.818,
+          "orig_cells": 33,
+          "parsed_cells": 52,
+          "matched": 27,
+          "chunk_count": 4
+        },
+        {
+          "section_id": "8-2-13",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.776,
+          "orig_cells": 67,
+          "parsed_cells": 66,
+          "matched": 52,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "8-2-21",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.733,
+          "orig_cells": 15,
+          "parsed_cells": 22,
+          "matched": 11,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "8-2-22",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.73,
+          "orig_cells": 141,
+          "parsed_cells": 112,
+          "matched": 103,
+          "chunk_count": 6
+        },
+        {
+          "section_id": "8-2-29",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.579,
+          "orig_cells": 297,
+          "parsed_cells": 139,
+          "matched": 172,
+          "chunk_count": 9
+        },
+        {
+          "section_id": "8-2-30",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.891,
+          "orig_cells": 119,
+          "parsed_cells": 110,
+          "matched": 106,
+          "chunk_count": 6
+        },
+        {
+          "section_id": "8-2-31",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.653,
+          "orig_cells": 49,
+          "parsed_cells": 31,
+          "matched": 32,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "8-3-1",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.887,
+          "orig_cells": 204,
+          "parsed_cells": 212,
+          "matched": 181,
+          "chunk_count": 13
+        },
+        {
+          "section_id": "8-3-2",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.879,
+          "orig_cells": 116,
+          "parsed_cells": 126,
+          "matched": 102,
+          "chunk_count": 6
+        },
+        {
+          "section_id": "8-4-1",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.828,
+          "orig_cells": 169,
+          "parsed_cells": 161,
+          "matched": 140,
+          "chunk_count": 4
+        },
+        {
+          "section_id": "8-4-2",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.865,
+          "orig_cells": 104,
+          "parsed_cells": 90,
+          "matched": 90,
+          "chunk_count": 4
+        },
+        {
+          "section_id": "8-4-3",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.875,
+          "orig_cells": 160,
+          "parsed_cells": 135,
+          "matched": 140,
+          "chunk_count": 5
+        },
+        {
+          "section_id": "8-4-4",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.887,
+          "orig_cells": 106,
+          "parsed_cells": 106,
+          "matched": 94,
+          "chunk_count": 3
+        },
+        {
+          "section_id": "8-4-5",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.778,
+          "orig_cells": 18,
+          "parsed_cells": 18,
+          "matched": 14,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "8-4-6",
+          "source_file": "20260208_205-345 OKOK.md",
+          "accuracy": 0.819,
+          "orig_cells": 105,
+          "parsed_cells": 102,
+          "matched": 86,
+          "chunk_count": 2
+        }
+      ],
+      "failure_count": 76
+    },
+    {
+      "check": "D3_section_boundary",
+      "severity": "WARN",
+      "contaminated_count": 158,
+      "threshold": 0,
+      "contaminated": [
+        {
+          "chunk_id": "C-0047-A",
+          "own_section": "2-2-3",
+          "foreign_section": "2-2-5"
+        },
+        {
+          "chunk_id": "C-0051",
+          "own_section": "2-2-7",
+          "foreign_section": "2-2-2"
+        },
+        {
+          "chunk_id": "C-0073",
+          "own_section": "2-7-4",
+          "foreign_section": "2-2-5"
+        },
+        {
+          "chunk_id": "C-0078",
+          "own_section": "2-8-3",
+          "foreign_section": "2-2-5"
+        },
+        {
+          "chunk_id": "C-0115",
+          "own_section": "2-12-1",
+          "foreign_section": "2-9-2"
+        },
+        {
+          "chunk_id": "C-0118",
+          "own_section": "3-1",
+          "foreign_section": "8-2"
+        },
+        {
+          "chunk_id": "C-0161",
+          "own_section": "3-11-2",
+          "foreign_section": "8-1-2"
+        },
+        {
+          "chunk_id": "C-0169",
+          "own_section": "4-2-1",
+          "foreign_section": "4-3-2"
+        },
+        {
+          "chunk_id": "C-0198-A",
+          "own_section": "5-3-3",
+          "foreign_section": "5-3-1"
+        },
+        {
+          "chunk_id": "C-0214",
+          "own_section": "6-3-3",
+          "foreign_section": "6-3-1"
+        },
+        {
+          "chunk_id": "C-0226",
+          "own_section": "6-5-2",
+          "foreign_section": "5-2-4"
+        },
+        {
+          "chunk_id": "C-0243",
+          "own_section": "7-1-1",
+          "foreign_section": "3-4-4"
+        },
+        {
+          "chunk_id": "C-0243",
+          "own_section": "7-1-1",
+          "foreign_section": "3-4-5"
+        },
+        {
+          "chunk_id": "C-0244",
+          "own_section": "7-1-2",
+          "foreign_section": "3-4-4"
+        },
+        {
+          "chunk_id": "C-0244",
+          "own_section": "7-1-2",
+          "foreign_section": "3-4-5"
+        },
+        {
+          "chunk_id": "C-0247-A",
+          "own_section": "7-2-2",
+          "foreign_section": "3-4-4"
+        },
+        {
+          "chunk_id": "C-0247-A",
+          "own_section": "7-2-2",
+          "foreign_section": "1-3-3"
+        },
+        {
+          "chunk_id": "C-0247-A",
+          "own_section": "7-2-2",
+          "foreign_section": "3-4-5"
+        },
+        {
+          "chunk_id": "C-0290",
+          "own_section": "8-2-32",
+          "foreign_section": "8-2-30"
+        },
+        {
+          "chunk_id": "C-0345",
+          "own_section": "1-5-8",
+          "foreign_section": "1-5-6"
+        }
+      ]
+    },
+    {
+      "check": "D4_crossref_validity",
+      "severity": "PASS",
+      "total_refs": 0,
+      "valid_refs": 0,
+      "validity_rate": 1.0,
+      "threshold": 1.0,
+      "invalid_refs": []
+    },
+    {
+      "check": "D5_notes_recall",
+      "severity": "PASS",
+      "total_note_sections": 814,
+      "matched_sections": 814,
+      "recall": 1.0,
+      "threshold": 0.95,
+      "missed": [],
+      "missed_count": 0
+    },
+    {
+      "check": "D6_numeric_preservation",
+      "severity": "WARN",
+      "checked_sections": 1166,
+      "avg_preservation": 0.9613,
+      "pass_count": 1001,
+      "pass_rate": 0.8585,
+      "threshold": 0.93,
+      "failures": [
+        {
+          "section_id": "1-5-4",
+          "source_file": "20260206_53-83 OKOK_p17-31.md",
+          "preservation_rate": 0.9,
+          "total_numbers": 10,
+          "preserved": 9,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "1-5-9",
+          "source_file": "20260206_53-83 OKOK_p17-31.md",
+          "preservation_rate": 0.857,
+          "total_numbers": 7,
+          "preserved": 6,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "2-2-7",
+          "source_file": "20260207_84-113 OKOK.md",
+          "preservation_rate": 0.909,
+          "total_numbers": 11,
+          "preserved": 10,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "2-5-4",
+          "source_file": "20260207_84-113 OKOK.md",
+          "preservation_rate": 0.9,
+          "total_numbers": 10,
+          "preserved": 9,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "2-6-3",
+          "source_file": "20260207_84-113 OKOK.md",
+          "preservation_rate": 0.859,
+          "total_numbers": 64,
+          "preserved": 55,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "2-9-1",
+          "source_file": "20260207_84-113 OKOK.md",
+          "preservation_rate": 0.9,
+          "total_numbers": 10,
+          "preserved": 9,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "2-9-10",
+          "source_file": "20260207_84-113 OKOK.md",
+          "preservation_rate": 0.833,
+          "total_numbers": 6,
+          "preserved": 5,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "3-3-9",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.9,
+          "total_numbers": 40,
+          "preserved": 36,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "3-6",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.5,
+          "total_numbers": 4,
+          "preserved": 2,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "3-7-1",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.3,
+          "total_numbers": 10,
+          "preserved": 3,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "3-8",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.818,
+          "total_numbers": 22,
+          "preserved": 18,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "3-8-1",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.9,
+          "total_numbers": 10,
+          "preserved": 9,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "3-11-4",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.917,
+          "total_numbers": 12,
+          "preserved": 11,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "4-1-4",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.92,
+          "total_numbers": 25,
+          "preserved": 23,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "4-1-5",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.9,
+          "total_numbers": 10,
+          "preserved": 9,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "4-3-1",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.69,
+          "total_numbers": 87,
+          "preserved": 60,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "4-4-5",
+          "source_file": "20260207_114-143 OKOK.md",
+          "preservation_rate": 0.889,
+          "total_numbers": 9,
+          "preserved": 8,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "5-1-6",
+          "source_file": "20260207_144-168 OKOK.md",
+          "preservation_rate": 0.783,
+          "total_numbers": 23,
+          "preserved": 18,
+          "chunk_count": 1
+        },
+        {
+          "section_id": "5-2-2",
+          "source_file": "20260207_144-168 OKOK.md",
+          "preservation_rate": 0.879,
+          "total_numbers": 91,
+          "preserved": 80,
+          "chunk_count": 6
+        },
+        {
+          "section_id": "6-1-3",
+          "source_file": "20260208_170-199 OKOK.md",
+          "preservation_rate": 0.833,
+          "total_numbers": 30,
+          "preserved": 25,
+          "chunk_count": 1
+        }
+      ],
+      "failure_count": 165
+    },
+    {
+      "check": "D7_department_isolation",
+      "severity": "PASS",
+      "multi_dept_base_ids": 213,
+      "contaminated_count": 0,
+      "contaminated": [],
+      "multi_dept_details": {
+        "1-1": [
+          "건축부문",
+          "공통부문",
+          "기계설비부문",
+          "유지관리부문",
+          "토목부문"
+        ],
+        "1-1-1": [
+          "건축부문",
+          "공통부문",
+          "기계설비부문",
+          "유지관리부문",
+          "토목부문"
+        ],
+        "1-1-2": [
+          "건축부문",
+          "공통부문",
+          "기계설비부문",
+          "유지관리부문",
+          "토목부문"
+        ],
+        "1-1-3": [
+          "건축부문",
+          "공통부문",
+          "기계설비부문",
+          "유지관리부문"
+        ],
+        "1-2": [
+          "건축부문",
+          "공통부문",
+          "기계설비부문",
+          "유지관리부문",
+          "토목부문"
+        ],
+        "1-2-1": [
+          "건축부문",
+          "공통부문",
+          "기계설비부문",
+          "유지관리부문"
+        ],
+        "1-2-2": [
+          "건축부문",
+          "공통부문",
+          "기계설비부문",
+          "유지관리부문",
+          "토목부문"
+        ],
+        "1-2-3": [
+          "건축부문",
+          "공통부문",
+          "유지관리부문",
+          "토목부문"
+        ],
+        "1-2-4": [
+          "건축부문",
+          "공통부문",
+          "유지관리부문"
+        ],
+        "1-2-5": [
+          "건축부문",
+          "공통부문",
+          "유지관리부문"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "D1_text_fidelity": "PASS",
+    "D2_table_accuracy": "WARN",
+    "D3_section_boundary": "WARN",
+    "D4_crossref_validity": "PASS",
+    "D5_notes_recall": "PASS",
+    "D6_numeric_preservation": "WARN",
+    "D7_department_isolation": "PASS"
+  }
+}

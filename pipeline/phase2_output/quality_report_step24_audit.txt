@@ -1,0 +1,25 @@
+========================================================================
+Step 2.4 Independent Audit
+========================================================================
+[Counts]
+entities=16,364, relationships=24,649
+entity_type_counts={'Equipment': 1795, 'Labor': 335, 'Material': 1667, 'Note': 6249, 'Section': 1218, 'Standard': 569, 'WorkType': 4531}
+relationship_type_counts={'APPLIES_STANDARD': 907, 'BELONGS_TO': 4237, 'HAS_CHILD': 1061, 'HAS_NOTE': 6292, 'REFERENCES': 2, 'REQUIRES_EQUIPMENT': 2315, 'REQUIRES_LABOR': 7958, 'USES_MATERIAL': 1877}
+
+[Core Checks]
+direction_errors_relaxed=0
+direction_errors_strict=60
+strict_direction_top5=[('Section->Material (USES_MATERIAL)', 60)]
+duplicates_extkey_groups=0, rows=0
+outliers_flagged=161, outliers_unflagged=0
+
+[Consistency Checks]
+meta_total_entities=16364, actual=16364
+meta_total_relationships=24649, actual=24649
+stats_output_entities=16364, actual=16364
+stats_dedup_removed=9344, input-output=9344
+
+[Verdict]
+PASS
+[Warnings]
+- strict direction errors=60 (relaxed=0). Section->Material USES_MATERIAL policy needs explicit documentation.

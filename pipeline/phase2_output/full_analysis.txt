@@ -1,0 +1,272 @@
+======================================================================
+1. 가비지 엔티티 전수 식별
+======================================================================
+
+  가비지 식별: 32건
+    숫자만WorkType: 19
+    숫자+단위만: 8
+    특수문자이름: 3
+    콜론시작: 2
+    E-0001: 숫자+단위만: '040040'
+    E-0002: 숫자+단위만: '060040'
+    E-0003: 숫자+단위만: '076045'
+    E-0004: 숫자+단위만: '076063'
+    E-0005: 숫자+단위만: '076076'
+    E-0007: 숫자+단위만: '101063'
+    E-0008: 숫자+단위만: '104076'
+    E-0015: 숫자+단위만: '139076'
+    L-0005: 특수문자이름: '-'
+    L-0008: 콜론시작: ': 보통인부'
+    M-0001: 특수문자이름: '"'
+    M-0030: 콜론시작: ': 목도'
+    M-0238: 특수문자이름: '→'
+    W-0001: 숫자만WorkType: '1'
+    W-0004: 숫자만WorkType: '100'
+    W-0005: 숫자만WorkType: '125'
+    W-0006: 숫자만WorkType: '150'
+    W-0014: 숫자만WorkType: '2'
+    W-0015: 숫자만WorkType: '20'
+    W-0016: 숫자만WorkType: '200'
+
+======================================================================
+2. 비정상 단위 패턴 분석
+======================================================================
+
+  유니크 단위: 152
+  TOP 30:
+    '인': 7536
+    '%': 733
+    '대': 712
+    'kg': 325
+    'hr': 289
+    '개': 191
+    '인/ton': 176
+    'L/hr': 161
+    'm²': 153
+    '시간': 125
+    '일': 119
+    '10^-7': 93
+    'm': 92
+    'kWh': 89
+    'L': 85
+    '매': 77
+    '인/개': 58
+    'm³': 56
+    '병': 47
+    '인/m²': 46
+    '본': 35
+    '인/일': 35
+    '₩': 33
+    '인/대': 32
+    '계수': 31
+    '부': 28
+    'T': 27
+    '통': 25
+    '조': 23
+    '분': 21
+
+  비정상 단위: 120종, 총 1197건
+  TOP 20:
+    '인/ton': 176
+    'L/hr': 161
+    '10^-7': 93
+    'kWh': 89
+    '인/개': 58
+    '인/m²': 46
+    '인/일': 35
+    '₩': 33
+    '인/대': 32
+    '계수': 31
+    'T': 27
+    '분': 21
+    'km/hr': 19
+    '인·일/t': 16
+    '소수자리': 14
+    '10⁻⁷': 14
+    '조/개': 14
+    '조/ton': 13
+    '개소': 12
+    '인/m³': 12
+
+======================================================================
+3. 관계 전손실 63청크 원인 분석
+======================================================================
+
+  전손실 청크: 63개
+
+  [C-0028] 원본 관계 16건:
+    WorkType:'작업지연' -[HAS_NOTE]-> Note:'통제보안지역 할증'
+    WorkType:'작업지연' -[HAS_NOTE]-> Note:'군(軍)통제지역 할증'
+    WorkType:'작업지연' -[HAS_NOTE]-> Note:'도서지역 할증'
+    WorkType:'작업지연' -[HAS_NOTE]-> Note:'공항지역 할증'
+    WorkType:'본선상 작업' -[HAS_NOTE]-> Note:'본선상 작업 할증 (13회 이하)'
+
+  [C-0281-A-f] 원본 관계 6건:
+    WorkType:'유압 파일 해머' -[REQUIRES_EQUIPMENT]-> WorkType:'유압 파일 해머'
+    WorkType:'유압 파일 해머 (1.5t 급)' -[REQUIRES_EQUIPMENT]-> WorkType:'크레인 (20ton)'
+    WorkType:'유압 파일 해머 (2.2t 급)' -[REQUIRES_EQUIPMENT]-> WorkType:'크레인 (25ton)'
+    WorkType:'유압 파일 해머 (3.2t 급)' -[REQUIRES_EQUIPMENT]-> WorkType:'크레인 (30ton)'
+    WorkType:'유압 파일 해머 (4.0t 급)' -[REQUIRES_EQUIPMENT]-> WorkType:'크레인 (35ton)'
+
+  [C-0292-I] 원본 관계 5건:
+    WorkType:'토공기계' -[REQUIRES_EQUIPMENT]-> WorkType:'토공기계'
+    WorkType:'토공기계' -[HAS_NOTE]-> Note:'규격은 버킷용량을 말한다'
+    WorkType:'토공기계' -[HAS_NOTE]-> Note:'삽날, 타이어는 운전경비에서 별도 계상한다'
+    WorkType:'토공기계' -[APPLIES_STANDARD]-> Standard:'제8장 건설기계'
+    WorkType:'토공기계' -[BELONGS_TO]-> Section:'[00]토공기계'
+
+  [C-0301-M] 원본 관계 3건:
+    WorkType:'해상장비' -[REQUIRES_EQUIPMENT]-> WorkType:'해상장비'
+    WorkType:'해상장비' -[HAS_NOTE]-> Note:'해상장비 산정 기준'
+    WorkType:'해상장비' -[BELONGS_TO]-> Section:'[90]해상장비'
+
+  [C-0304-A] 원본 관계 2건:
+    WorkType:'다짐기계' -[APPLIES_STANDARD]-> Standard:'제8장 건설기계'
+    WorkType:'다짐기계' -[BELONGS_TO]-> Section:'[10]다짐기계'
+
+  [C-0315-B] 원본 관계 2건:
+    WorkType:'운반 및 하역기계' -[REQUIRES_EQUIPMENT]-> Equipment:'트럭탑재형 크레인'
+    WorkType:'운반 및 하역기계' -[BELONGS_TO]-> Section:'[20]운반 및 하역기계'
+
+  [C-0523-O] 원본 관계 13건:
+    WorkType:'자료조사 및 현지답사' -[REQUIRES_LABOR]-> Labor:'고급기술자'
+    WorkType:'자료조사 및 현지답사' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'자료조사 및 현지답사' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+    WorkType:'작업계획 또는 준비' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'작업계획 또는 준비' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+
+  [C-0523-T] 원본 관계 18건:
+    WorkType:'구획정리 확정측량 (번화지구)' -[REQUIRES_LABOR]-> Labor:'고급기술자'
+    WorkType:'구획정리 확정측량 (번화지구)' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'구획정리 확정측량 (번화지구)' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+    WorkType:'구획정리 확정측량 (번화지구)' -[REQUIRES_LABOR]-> Labor:'초급기능사(측량)'
+    WorkType:'구획정리 확정측량 (번화지구)' -[REQUIRES_LABOR]-> Labor:'인부'
+
+  [C-0535-A-e] 원본 관계 6건:
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'시가지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'교외지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'농경지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'구릉지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'산악지 계수'
+
+  [C-0553-A-e] 원본 관계 4건:
+    WorkType:'분할측량(도해)' -[HAS_NOTE]-> Note:'토지 계수'
+    WorkType:'분할측량(도해)' -[HAS_NOTE]-> Note:'임야 계수'
+    WorkType:'분할측량(도해)' -[APPLIES_STANDARD]-> Standard:'제9장 측량'
+    WorkType:'분할측량(도해)' -[BELONGS_TO]-> Section:'분할측량(도해)'
+
+  [C-0580-A-d] 원본 관계 7건:
+    WorkType:'지도제작(기본도)' -[APPLIES_STANDARD]-> Standard:'제9장 측량'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'시가지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'교외지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'농경지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'구릉지 계수'
+
+  [C-0580-A-e] 원본 관계 7건:
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'시가지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'교외지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'농경지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'구릉지 계수'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'산악지 계수'
+
+  [C-0580-A-f] 원본 관계 4건:
+    WorkType:'지도제작(기본도)' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'지도제작(기본도)' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+    WorkType:'지도제작(기본도)' -[REQUIRES_LABOR]-> Labor:'중급기능사(지도제작)'
+    WorkType:'지도제작(기본도)' -[BELONGS_TO]-> Section:'지도제작(기본도)'
+
+  [C-0580-A-g] 원본 관계 12건:
+    WorkType:'지도제작(기본도) 신규제작' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'지도제작(기본도) 신규제작' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+    WorkType:'지도제작(기본도) 신규제작' -[REQUIRES_LABOR]-> Labor:'중급기능사(지도제작)'
+    WorkType:'지도제작(기본도) 수정제작' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'지도제작(기본도) 수정제작' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+
+  [C-0580-A-i] 원본 관계 6건:
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'시가지'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'교외지'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'농경지'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'구릉지'
+    WorkType:'지도제작(기본도)' -[HAS_NOTE]-> Note:'산악지'
+
+  [C-0580-A-k] 원본 관계 7건:
+    WorkType:'지도제작(기본도)' -[REQUIRES_LABOR]-> Labor:'중급 기술자'
+    WorkType:'지도제작(기본도)' -[REQUIRES_LABOR]-> Labor:'초급 기술자'
+    WorkType:'지도제작(기본도)' -[REQUIRES_LABOR]-> Labor:'중급기능사 (지도제작)'
+    WorkType:'지도제작(기본도)' -[REQUIRES_LABOR]-> Labor:'초급기능사 (지도제작)'
+    WorkType:'지도제작(기본도)' -[REQUIRES_LABOR]-> Labor:'사진 제판공'
+
+  [C-0580-A-l] 원본 관계 14건:
+    WorkType:'지도제작(기본도)' -[APPLIES_STANDARD]-> Standard:'제9장 측량'
+    WorkType:'편집' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'편집' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+    WorkType:'편집' -[REQUIRES_LABOR]-> Labor:'중급기능사(지도제작)'
+    WorkType:'편집' -[REQUIRES_LABOR]-> Labor:'초급기능사(지도제작)'
+
+  [C-0580-A-n] 원본 관계 3건:
+    WorkType:'지도제작(기본도) - 제도' -[REQUIRES_LABOR]-> Labor:'초급기술자'
+    WorkType:'지도제작(기본도) - 제도' -[REQUIRES_LABOR]-> Labor:'중급기능사(지도제작)'
+    WorkType:'지도제작(기본도) - 제도' -[BELONGS_TO]-> Section:'지도제작(기본도)'
+
+  [C-0582-A] 원본 관계 2건:
+    WorkType:'상각비 산정' -[HAS_NOTE]-> Note:'상각비 산정 가격 기준'
+    WorkType:'상각비 산정' -[BELONGS_TO]-> Section:'상각비 산정'
+
+  [C-0583] 원본 관계 44건:
+    WorkType:'작업 계획' -[REQUIRES_LABOR]-> Labor:'특급기술자'
+    WorkType:'작업 계획' -[REQUIRES_LABOR]-> Labor:'고급기술자'
+    WorkType:'GNSS 기준국 운영' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+    WorkType:'MMS 자료 수집' -[REQUIRES_LABOR]-> Labor:'고급기술자'
+    WorkType:'MMS 자료 수집' -[REQUIRES_LABOR]-> Labor:'중급기술자'
+
+  손실 관계 유형:
+    REQUIRES_LABOR: 34
+    HAS_NOTE: 30
+    REQUIRES_EQUIPMENT: 8
+    BELONGS_TO: 8
+    APPLIES_STANDARD: 5
+
+======================================================================
+4. 고아 엔티티 심층 분석
+======================================================================
+  고아: 3991건
+  고아 중 가비지: 4건
+  고아 타입별: {'Equipment': 769, 'Labor': 28, 'Material': 946, 'Note': 1417, 'Section': 60, 'Standard': 68, 'WorkType': 703}
+
+  고아 WorkType 703건: spec 있음=550, 없음=153
+  source_method: {'llm': 443, 'table_rule': 260}
+
+======================================================================
+5. 관계 로직 전수 검증
+======================================================================
+  자기참조: 2건
+    S-0815 -[HAS_CHILD]-> self
+    S-1002 -[HAS_CHILD]-> self
+  HAS_CHILD 순환: 0건
+  BELONGS_TO 다중 소속: 177건 (WorkType → 2+ Section)
+  source이면서 target: 668건
+
+======================================================================
+6. NFKC 정규화 수정 영향도
+======================================================================
+  수정 대상: 18건
+  관계 참조: 18건
+  → NFKC 적용 시 관계의 source/target 이름도 함께 갱신 필요
+    S-0273: '건물 및 지상물체 항공사진 ｢판독작업｣' → '건물 및 지상물체 항공사진 「판독작업」'
+    S-0317: '관목시비(灌⽊施肥)' → '관목시비(灌木施肥)'
+    S-0336: '교목시비(喬⽊施肥)' → '교목시비(喬木施肥)'
+    S-0578: '버팀목 설치･해체' → '버팀목 설치・해체'
+    S-0774: '암발파(대규모발파 TYPE-Ⅵ)' → '암발파(대규모발파 TYPE-VI)'
+    S-0776: '암발파(미진동굴착 TYPE-Ⅰ)' → '암발파(미진동굴착 TYPE-I)'
+    S-0778: '암발파(소규모진동제어발파 TYPE-Ⅲ)' → '암발파(소규모진동제어발파 TYPE-III)'
+    S-0781: '암발파(일반발파 TYPE-Ⅴ)' → '암발파(일반발파 TYPE-V)'
+    S-0783: '암발파(정밀진동제어발파 TYPE-Ⅱ)' → '암발파(정밀진동제어발파 TYPE-II)'
+    S-0785: '암발파(중규모진동제어발파 TYPE-Ⅳ)' → '암발파(중규모진동제어발파 TYPE-IV)'
+    S-0893: '입･출력장치(I/O Equipment) 설치' → '입・출력장치(I/O Equipment) 설치'
+    S-0921: '재도장 시 바탕처리(콘크리트･모르타르면)' → '재도장 시 바탕처리(콘크리트・모르타르면)'
+    S-0975: '주철제･강관제 버터플라이 제수밸브 부설 및 접합' → '주철제・강관제 버터플라이 제수밸브 부설 및 접합'
+    S-1094: '콘크리트･모르타르면 바탕만들기' → '콘크리트・모르타르면 바탕만들기'
+    S-1122: '터널 철재거푸집 설치･해체･이동' → '터널 철재거푸집 설치・해체・이동'
+    S-1149: '평･귀규준틀 설치 및 철거' → '평・귀규준틀 설치 및 철거'
+    S-1208: '활성탄･반응조제 및 소석회 공급설비 설치' → '활성탄・반응조제 및 소석회 공급설비 설치'
+    S-1213: '흙막이판 설치･철거' → '흙막이판 설치・철거'

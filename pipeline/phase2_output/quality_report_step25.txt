@@ -1,0 +1,70 @@
+======================================================================
+  Step 2.5 품질 검증 리포트
+======================================================================
+  검증 일시: 2026-02-13T10:56:53.477715
+  입력: 엔티티 16,983, 관계 27,358, 청크 2,105
+
+━━━ E1. 엔티티 커버리지 ━━━
+  2,018/2,105 = 95.9%
+  판정: PASS
+  covered_chunks: 2018
+  total_chunks: 2105
+  uncovered_count: 87
+
+━━━ E2. 관계 참조 무결성 ━━━
+  유효 27,358/27,358 | src_orphan=0, tgt_orphan=0
+  판정: PASS
+  total_rels: 27358
+  src_orphan: 0
+  tgt_orphan: 0
+
+━━━ E3. 수량-단위 완전성 ━━━
+  핵심 관계: 12,683/12,850 = 98.7% | 전체 단위 누락: 568건 ({'USES_MATERIAL': 136, 'HAS_NOTE': 395, 'REQUIRES_EQUIPMENT': 10, 'REQUIRES_LABOR': 21, 'APPLIES_STANDARD': 6})
+  판정: PASS
+  core_qty_rels: 12850
+  core_missing_unit: 167
+  all_qty_rels: 14361
+  all_missing_unit: 568
+  missing_by_type: {'USES_MATERIAL': 136, 'HAS_NOTE': 395, 'REQUIRES_EQUIPMENT': 10, 'REQUIRES_LABOR': 21, 'APPLIES_STANDARD': 6}
+
+━━━ E4. 고아 노드 비율 ━━━
+  3,656/16,983 = 21.5% (기준: ≤30%)
+  판정: PASS
+  orphan_count: 3656
+  total_entities: 16983
+  by_type: {'Note': 1287, 'Material': 895, 'Equipment': 679, 'WorkType': 641, 'Section': 60, 'Standard': 49, 'Labor': 45}
+
+━━━ E5. LLM 샘플 감사 ━━━
+  가중평균 0.586 (기준: ≥0.85) | comp=0.42 acc=0.67 hal=0.69 rel=0.53
+  판정: FAIL
+  samples_evaluated: 50
+  errors: 0
+  avg_completeness: 0.42
+  avg_accuracy: 0.674
+  avg_no_hallucination: 0.69
+  avg_relationship_quality: 0.53
+  weighted_avg: 0.586
+
+━━━ E6. 할루시네이션 검출 ━━━
+  미매칭 93/201 = 46.3% (LLM추론 67 제외 → 의심 26/201 = 12.9%) (기준: 의심 ≤20%)
+  판정: PASS
+  total_samples: 201
+  not_matched: 93
+  total_mismatch_rate: 46.3
+  llm_inferred: 67
+  truly_suspicious: 26
+  suspicious_rate: 12.9
+  excluded_synthetic_notes: 1829
+  match_stages: {'exact': 45, 'token': 40, 'normalized': 23}
+  note: Section/합성NoteID 제외. 6단계 매칭. LLM 추론(테이블 코드→장비명)은 정당한 추출로 판정 제외. LLM추론 67건 제외, 의심 26건만 판정 대상.
+
+======================================================================
+  종합 판정: PASS
+======================================================================
+  5/6 PASS, 1/6 FAIL
+  ✅ E1: 2,018/2,105 = 95.9%
+  ✅ E2: 유효 27,358/27,358 | src_orphan=0, tgt_orphan=0
+  ✅ E3: 핵심 관계: 12,683/12,850 = 98.7% | 전체 단위 누락: 568건 ({'USES_MATERIAL': 136, 'HAS_NOTE': 395, 'REQUIRES_EQUIPMENT': 10, 'REQUIRES_LABOR': 21, 'APPLIES_STANDARD': 6})
+  ✅ E4: 3,656/16,983 = 21.5% (기준: ≤30%)
+  ❌ E5: 가중평균 0.586 (기준: ≥0.85) | comp=0.42 acc=0.67 hal=0.69 rel=0.53
+  ✅ E6: 미매칭 93/201 = 46.3% (LLM추론 67 제외 → 의심 26/201 = 12.9%) (기준: 의심 ≤20%)

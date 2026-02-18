@@ -1,0 +1,137 @@
+============================================================
+이슈 1: HAS_CHILD source 미매핑
+============================================================
+
+미매핑 source 유니크: 18
+미매핑 target 건수: 206
+
+미매핑 source 이름:
+  '기계손료': 20건
+  '추락재해방지시설': 17건
+  '거푸집': 17건
+  '교통시설공': 15건
+  '암발파 및 파쇄': 15건
+  '교목': 15건
+  '조립식 구조물 설치공': 14건
+  '차수': 11건
+  '석재판 붙임': 10건
+  '현장관리': 9건
+  '포스트텐션(Post Tension) 구조물 제작': 8건
+  '부속자재': 7건
+  '쓰레기소각 기계설비': 7건
+  '비탈면 보호공': 5건
+  '노선측량': 5건
+  '스마트 토공': 4건
+  '소방용 유량계': 1건
+  '피난기구': 1건
+
+원본 merged에서 존재 여부:
+  '교통시설공': merged에 존재=False
+  '부속자재': merged에 존재=False
+  '소방용 유량계': merged에 존재=False
+  '피난기구': merged에 존재=False
+  '쓰레기소각 기계설비': merged에 존재=False
+  '현장관리': merged에 존재=False
+  '추락재해방지시설': merged에 존재=False
+  '스마트 토공': merged에 존재=False
+  '암발파 및 파쇄': merged에 존재=False
+  '비탈면 보호공': merged에 존재=False
+  '교목': merged에 존재=False
+  '차수': merged에 존재=False
+  '거푸집': merged에 존재=False
+  '포스트텐션(Post Tension) 구조물 제작': merged에 존재=True
+  '조립식 구조물 설치공': merged에 존재=False
+  '석재판 붙임': merged에 존재=False
+  '기계손료': merged에 존재=False
+  '노선측량': merged에 존재=False
+
+미매핑 target 유니크: 203
+  '교통통제 및 안전처리': 3건, sections에 있음=False
+  '철도안전처리': 2건, sections에 있음=False
+  '기본철골공수': 1건, sections에 있음=False
+  '제초': 1건, sections에 있음=False
+  '교목시비(喬⽊施肥)': 1건, sections에 있음=False
+  '관목시비(灌⽊施肥)': 1건, sections에 있음=False
+  '잔디시비': 1건, sections에 있음=False
+  '은행나무 과실채취': 1건, sections에 있음=False
+  '앵커 볼트 설치': 1건, sections에 있음=False
+  '살수차관수': 1건, sections에 있음=False
+
+============================================================
+이슈 2: 방향 경고 125건
+============================================================
+
+방향 삭제 경고: 125건
+영향 청크: 9개
+
+삭제 패턴:
+  No WorkType for Equipment→Material (USES_MATERIAL): 88
+  No WorkType for Equipment→Labor (REQUIRES_LABOR): 36
+  Unhandled Note→Equipment (APPLIES_STANDARD): 1
+
+경고 청크 상위 10 분석:
+
+  C-0310-B (경고 50건):
+    엔티티: {'Equipment': 18, 'Labor': 1, 'Material': 3, 'Section': 1}
+    관계: {'REQUIRES_LABOR': 14, 'USES_MATERIAL': 36}
+    section: 8-4-8
+    경고: No WorkType for Equipment→Labor (REQUIRES_LABOR)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+
+  C-0303-D (경고 33건):
+    엔티티: {'Equipment': 11, 'Labor': 1, 'Material': 2, 'Section': 1}
+    관계: {'REQUIRES_LABOR': 11, 'USES_MATERIAL': 22}
+    section: 8-4-1
+    경고: No WorkType for Equipment→Labor (REQUIRES_LABOR)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+
+  C-0303-B (경고 15건):
+    엔티티: {'Equipment': 15, 'Labor': 1, 'Material': 2, 'Section': 1}
+    관계: {'REQUIRES_LABOR': 5, 'USES_MATERIAL': 10}
+    section: 8-4-1
+    경고: No WorkType for Equipment→Labor (REQUIRES_LABOR)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+
+  C-0305-E (경고 15건):
+    엔티티: {'Equipment': 5, 'Labor': 1, 'Material': 2, 'Note': 1, 'Section': 1}
+    관계: {'REQUIRES_LABOR': 5, 'USES_MATERIAL': 10, 'HAS_NOTE': 1}
+    section: 8-4-3
+    경고: No WorkType for Equipment→Labor (REQUIRES_LABOR)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+
+  C-0310-D (경고 7건):
+    엔티티: {'Equipment': 5, 'Labor': 1, 'Material': 2, 'Section': 1}
+    관계: {'USES_MATERIAL': 6, 'REQUIRES_LABOR': 1}
+    section: 8-4-8
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+
+  C-0310-C (경고 2건):
+    엔티티: {'Equipment': 2, 'Material': 1, 'Note': 1, 'Section': 1}
+    관계: {'USES_MATERIAL': 2, 'HAS_NOTE': 2}
+    section: 8-4-8
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+
+  C-0044-C (경고 1건):
+    엔티티: {'WorkType': 2, 'Equipment': 3, 'Note': 4, 'Standard': 1, 'Section': 1}
+    관계: {'HAS_NOTE': 5, 'APPLIES_STANDARD': 3, 'BELONGS_TO': 2}
+    section: 2-1-2
+    경고: Unhandled Note→Equipment (APPLIES_STANDARD)
+
+  C-0299-A-a (경고 1건):
+    엔티티: {'Equipment': 15, 'Material': 3, 'Note': 4, 'Section': 1}
+    관계: {'HAS_NOTE': 5, 'USES_MATERIAL': 1}
+    section: 8-3-8
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)
+
+  C-0310-E (경고 1건):
+    엔티티: {'Equipment': 1, 'Material': 1, 'Note': 1, 'Section': 1}
+    관계: {'USES_MATERIAL': 1, 'HAS_NOTE': 1}
+    section: 8-4-8
+    경고: No WorkType for Equipment→Material (USES_MATERIAL)

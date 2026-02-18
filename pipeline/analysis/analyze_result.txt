@@ -1,0 +1,82 @@
+﻿=== TOKEN DISTRIBUTION ===
+Total chunks: 1906
+Mean: 777
+Median (p50): 744
+p75: 1243, p90: 1439, p95: 1564, p99: 1930
+Min: 1, Max: 3536
+
+=== TOKEN RANGE DISTRIBUTION ===
+    0-   50:   186 (  9.8%)
+   50-  200:   158 (  8.3%)
+  200-  500:   351 ( 18.4%)
+  500- 1000:   492 ( 25.8%)
+ 1000- 1500:   599 ( 31.4%)
+ 1500- 2000:   113 (  5.9%)
+ 2000-10000:     7 (  0.4%)
+
+=== BY DEPARTMENT ===
+공통부문: chunks=632, avg_tok=803, max_tok=1982, tables=1005, tiny(<=10tok)=19, w/notes=150
+토목부문: chunks=514, avg_tok=812, max_tok=3536, tables=818, tiny(<=10tok)=23, w/notes=157
+건축부문: chunks=169, avg_tok=526, max_tok=1939, tables=364, tiny(<=10tok)=18, w/notes=45
+기계설비부문: chunks=458, avg_tok=821, max_tok=2036, tables=575, tiny(<=10tok)=23, w/notes=100
+유지관리부문: chunks=133, avg_tok=688, max_tok=1971, tables=229, tiny(<=10tok)=5, w/notes=67
+
+=== TINY CHUNKS (<=10 tokens) ===
+Count: 88
+  C-0001 | 1-1 | tok=9 | "1-1 일반사항"
+  C-0008-D | 1-2-3 | tok=9 | "→
+
+8 공통부문"
+  C-0031 | 1-5 | tok=6 | "1-5 기타"
+  C-0065 | 2-6 | tok=8 | "2-6 동바리"
+  C-0068 | 2-7 | tok=6 | "2-7 비계"
+  C-0113 | 2-12 | tok=9 | "2-12 공통장비"
+  C-0119 | 3-2 | tok=8 | "3-2 굴착"
+  C-0132 | 3-4 | tok=7 | "3-4 쌓기"
+  C-0155 | 3-9 | tok=9 | "3-9 벌개제근"
+  C-0158 | 3-10 | tok=5 | "3-10 개간"
+  C-0167 | 4-2 | tok=5 | "4-2 관목"
+  C-0207 | 6-2 | tok=7 | "6-2 철근"
+  C-0221-A-e | 6-4-1 | tok=1 | ""
+  C-0241 | 7-1 | tok=9 | "7-1 돌쌓기"
+  C-0244 | 7-2 | tok=8 | "7-2 돌붙임"
+  C-0264-B | 8-2-7 | tok=7 | "170 공통부문"
+  C-0279-A-c | 8-2-22 | tok=1 | ""
+  C-0281-A-g | 8-2-24 | tok=1 | ""
+  C-0298-A-e | 8-3-8 | tok=1 | ""
+  C-0322 | 1-1#2 | tok=10 | "1-1 공통사항"
+
+=== OVER 2000 TOKENS ===
+  C-0508-B | sec=9-1-2 | tok=3204 | tables=1 | notes=0 | "1급 기준점 측량"
+  C-0511-C | sec=9-1-5 | tok=3331 | tables=1 | notes=0 | "4급 기준점 측량"
+  C-0522-A-a | sec=9-3-4 | tok=2256 | tables=0 | notes=11 | "구획정리 확정측량"
+  C-0527-A-a | sec=9-4-3 | tok=2822 | tables=0 | notes=19 | "디지털 도로대장 작성"
+  C-0529-A-a | sec=9-5-1 | tok=3536 | tables=0 | notes=37 | "항공사진촬영"
+  C-0532-A-a | sec=9-5-4 | tok=3186 | tables=0 | notes=30 | "수치지도 작성"
+  C-0913-W | sec=13-2-7 | tok=2036 | tables=1 | notes=0 | "아세틸렌량의 환산"
+
+=== CROSS REFERENCES ===
+Chunks with cross_refs: 8 (0.4%)
+
+=== TOP REVISION YEARS ===
+  2021: 106
+  2008: 61
+  2012: 59
+  2010: 54
+  2004: 47
+  1992: 44
+  2023: 43
+  2025: 40
+  2011: 39
+  2015: 34
+
+=== TABLE TYPE DISTRIBUTION ===
+  D_기타: 1787
+  A_품셈: 1062
+  B_규모기준: 90
+  C_구분설명: 52
+
+=== TRULY EMPTY (no text, no tables) ===
+Count: 2
+  C-0713 | 10-3 | "유리"
+  C-1103 | 3-4-5#2 | "타일 교체"

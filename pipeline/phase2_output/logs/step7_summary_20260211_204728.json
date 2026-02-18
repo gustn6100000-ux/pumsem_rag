@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-02-11T20:47:28.683001",
+  "model": "gemini-embedding-001",
+  "dimension": 768,
+  "batch_size": 100,
+  "dry_run": true,
+  "elapsed_seconds": 6.7,
+  "results": {
+    "entities": {
+      "total": 16364,
+      "success": 0,
+      "errors": [],
+      "skipped": 0,
+      "dry_run": true
+    },
+    "chunks": {
+      "total": 2105,
+      "success": 0,
+      "errors": [],
+      "skipped": 0,
+      "dry_run": true
+    }
+  },
+  "totals": {
+    "success": 0,
+    "skipped": 0,
+    "errors": 0
+  }
+}

@@ -1,0 +1,467 @@
+{
+  "sample_size": 20,
+  "summary": {
+    "gemini_total_entities": 243,
+    "deepseek_total_entities": 190,
+    "gemini_total_relationships": 172,
+    "deepseek_total_relationships": 180,
+    "entity_ratio": 0.78,
+    "rel_ratio": 1.05
+  },
+  "comparisons": [
+    {
+      "chunk_id": "C-0251",
+      "title": "건설기계 선정기준",
+      "gemini": {
+        "entities": 31,
+        "relationships": 33,
+        "types": {
+          "WorkType": 11,
+          "Equipment": 16,
+          "Note": 4
+        }
+      },
+      "deepseek": {
+        "entities": 30,
+        "relationships": 46,
+        "types": {
+          "Standard": 1,
+          "WorkType": 13,
+          "Equipment": 16
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0761",
+      "title": "커튼월",
+      "gemini": {
+        "entities": 7,
+        "relationships": 9,
+        "types": {
+          "WorkType": 2,
+          "Labor": 2,
+          "Note": 3
+        }
+      },
+      "deepseek": {
+        "entities": 5,
+        "relationships": 4,
+        "types": {
+          "WorkType": 1,
+          "Labor": 2,
+          "Standard": 2
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0280-A-d",
+      "title": "디젤 파일 해머",
+      "gemini": {
+        "entities": 11,
+        "relationships": 2,
+        "types": {
+          "WorkType": 1,
+          "Equipment": 4,
+          "Standard": 6
+        }
+      },
+      "deepseek": {
+        "entities": 6,
+        "relationships": 12,
+        "types": {
+          "WorkType": 1,
+          "Equipment": 4,
+          "Standard": 1
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0329",
+      "title": "보조기층",
+      "gemini": {
+        "entities": 2,
+        "relationships": 1,
+        "types": {
+          "WorkType": 1,
+          "Note": 1
+        }
+      },
+      "deepseek": {
+        "entities": 1,
+        "relationships": 0,
+        "types": {
+          "WorkType": 1
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-1009",
+      "title": "가열로 본체 및 Recuperator실 조립설치",
+      "gemini": {
+        "entities": 23,
+        "relationships": 12,
+        "types": {
+          "WorkType": 2,
+          "Labor": 15,
+          "Note": 6
+        }
+      },
+      "deepseek": {
+        "entities": 19,
+        "relationships": 7,
+        "types": {
+          "WorkType": 2,
+          "Labor": 15,
+          "Note": 2
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0294-C",
+      "title": "[20]운반 및 하역기계",
+      "gemini": {
+        "entities": 12,
+        "relationships": 4,
+        "types": {
+          "WorkType": 1,
+          "Equipment": 7,
+          "Note": 4
+        }
+      },
+      "deepseek": {
+        "entities": 8,
+        "relationships": 7,
+        "types": {
+          "Standard": 1,
+          "Equipment": 7
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-1000",
+      "title": "노정장입 장치 기기 설치",
+      "gemini": {
+        "entities": 9,
+        "relationships": 8,
+        "types": {
+          "WorkType": 1,
+          "Labor": 8
+        }
+      },
+      "deepseek": {
+        "entities": 10,
+        "relationships": 9,
+        "types": {
+          "WorkType": 1,
+          "Labor": 9
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0406",
+      "title": "궤광조립",
+      "gemini": {
+        "entities": 3,
+        "relationships": 2,
+        "types": {
+          "WorkType": 1,
+          "Note": 2
+        }
+      },
+      "deepseek": {
+        "entities": 8,
+        "relationships": 0,
+        "types": {
+          "WorkType": 6,
+          "Note": 1,
+          "Standard": 1
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0953-C",
+      "title": "강관절단",
+      "gemini": {
+        "entities": 21,
+        "relationships": 37,
+        "types": {
+          "WorkType": 18,
+          "Material": 2,
+          "Standard": 1
+        }
+      },
+      "deepseek": {
+        "entities": 9,
+        "relationships": 8,
+        "types": {
+          "WorkType": 1,
+          "Material": 2,
+          "Standard": 6
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0389-C",
+      "title": "터널굴착 1발파당 싸이클 시간(Cycle Time)",
+      "gemini": {
+        "entities": 13,
+        "relationships": 6,
+        "types": {
+          "WorkType": 7,
+          "Standard": 3,
+          "Note": 3
+        }
+      },
+      "deepseek": {
+        "entities": 12,
+        "relationships": 18,
+        "types": {
+          "WorkType": 6,
+          "Standard": 3,
+          "Note": 3
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0315-A",
+      "title": "[20]운반 및 하역기계",
+      "gemini": {
+        "entities": 37,
+        "relationships": 3,
+        "types": {
+          "WorkType": 1,
+          "Equipment": 36
+        }
+      },
+      "deepseek": {
+        "entities": 0,
+        "relationships": 0,
+        "types": {},
+        "error": "Expecting property name enclosed in double quotes: line 522 column 1 (char 15653)"
+      }
+    },
+    {
+      "chunk_id": "C-0267-B",
+      "title": "롤러",
+      "gemini": {
+        "entities": 11,
+        "relationships": 4,
+        "types": {
+          "WorkType": 1,
+          "Equipment": 9,
+          "Note": 1
+        }
+      },
+      "deepseek": {
+        "entities": 10,
+        "relationships": 9,
+        "types": {
+          "Equipment": 9,
+          "Standard": 1
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-1088",
+      "title": "교통 안전표지판 철거",
+      "gemini": {
+        "entities": 8,
+        "relationships": 8,
+        "types": {
+          "WorkType": 4,
+          "Material": 2,
+          "Note": 1,
+          "Standard": 1
+        }
+      },
+      "deepseek": {
+        "entities": 10,
+        "relationships": 6,
+        "types": {
+          "Standard": 1,
+          "WorkType": 3,
+          "Material": 6
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0973-C",
+      "title": "터빈 설치",
+      "gemini": {
+        "entities": 6,
+        "relationships": 5,
+        "types": {
+          "WorkType": 2,
+          "Labor": 4
+        }
+      },
+      "deepseek": {
+        "entities": 8,
+        "relationships": 7,
+        "types": {
+          "WorkType": 2,
+          "Labor": 5,
+          "Standard": 1
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-1103",
+      "title": "레일교환(인력)",
+      "gemini": {
+        "entities": 8,
+        "relationships": 6,
+        "types": {
+          "WorkType": 2,
+          "Labor": 2,
+          "Note": 4
+        }
+      },
+      "deepseek": {
+        "entities": 12,
+        "relationships": 19,
+        "types": {
+          "WorkType": 1,
+          "Labor": 8,
+          "Standard": 1,
+          "Note": 2
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0598-A-f",
+      "title": "분할측량(도해)",
+      "gemini": {
+        "entities": 6,
+        "relationships": 5,
+        "types": {
+          "WorkType": 1,
+          "Standard": 1,
+          "Note": 4
+        }
+      },
+      "deepseek": {
+        "entities": 6,
+        "relationships": 5,
+        "types": {
+          "Standard": 1,
+          "WorkType": 1,
+          "Note": 4
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0281-A-a",
+      "title": "유압 파일 해머",
+      "gemini": {
+        "entities": 15,
+        "relationships": 11,
+        "types": {
+          "WorkType": 3,
+          "Equipment": 2,
+          "Note": 7,
+          "Standard": 3
+        }
+      },
+      "deepseek": {
+        "entities": 10,
+        "relationships": 0,
+        "types": {
+          "Standard": 7,
+          "Note": 1,
+          "WorkType": 2
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0726",
+      "title": "염화비닐 선홈통 설치",
+      "gemini": {
+        "entities": 7,
+        "relationships": 6,
+        "types": {
+          "WorkType": 1,
+          "Labor": 2,
+          "Equipment": 1,
+          "Note": 3
+        }
+      },
+      "deepseek": {
+        "entities": 8,
+        "relationships": 7,
+        "types": {
+          "WorkType": 1,
+          "Labor": 2,
+          "Note": 2,
+          "Material": 2,
+          "Equipment": 1
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0282-A-g",
+      "title": "진동파일 해머",
+      "gemini": {
+        "entities": 3,
+        "relationships": 2,
+        "types": {
+          "WorkType": 1,
+          "Note": 2
+        }
+      },
+      "deepseek": {
+        "entities": 3,
+        "relationships": 2,
+        "types": {
+          "WorkType": 1,
+          "Material": 2
+        },
+        "error": null
+      }
+    },
+    {
+      "chunk_id": "C-0436",
+      "title": "타이튼 접합 및 부설",
+      "gemini": {
+        "entities": 10,
+        "relationships": 8,
+        "types": {
+          "WorkType": 1,
+          "Labor": 2,
+          "Equipment": 1,
+          "Material": 3,
+          "Note": 2,
+          "Standard": 1
+        }
+      },
+      "deepseek": {
+        "entities": 15,
+        "relationships": 14,
+        "types": {
+          "WorkType": 1,
+          "Labor": 8,
+          "Equipment": 2,
+          "Note": 4
+        },
+        "error": null
+      }
+    }
+  ]
+}

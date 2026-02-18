@@ -1,0 +1,24 @@
+﻿
+  Step 2.1: ?뚯씠釉?湲곕컲 洹쒖튃 異붿텧
+  ==================================================
+  ??? 2105媛?泥?겕
+
+  寃곌낵:
+    泥섎━ 泥?겕: 2105/2105
+    珥??뷀떚?? 8655
+      Labor: 2105
+      Note: 2047
+      Section: 1741
+      Material: 1714
+      Equipment: 538
+      WorkType: 510
+    珥?愿怨? 2841
+      HAS_NOTE: 1942
+      REQUIRES_LABOR: 625
+      BELONGS_TO: 152
+      REQUIRES_EQUIPMENT: 122
+
+    ?뷀떚??而ㅻ쾭由ъ?: 82.7% (1741/2105)
+    寃쎄퀬: 391嫄?
+
+  ??? G:\???쒕씪?대툕\Antigravity\python_code\phase2_output\table_entities.json

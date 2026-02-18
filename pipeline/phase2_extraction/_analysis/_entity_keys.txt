@@ -1,0 +1,19 @@
+['type', 'name', 'normalized_name', 'code', 'spec', 'unit', 'quantity', 'properties', 'confidence', 'source_chunk_id', 'source_section_id', 'source_method', 'source_chunk_ids', 'entity_id']
+{
+  "type": "Equipment",
+  "name": "100m3",
+  "normalized_name": "100m3",
+  "code": null,
+  "spec": "100",
+  "unit": "대",
+  "quantity": null,
+  "properties": {},
+  "confidence": 0.95,
+  "source_chunk_id": "C-0301-J",
+  "source_section_id": "8-3-10",
+  "source_method": "llm",
+  "source_chunk_ids": [
+    "C-0301-J"
+  ],
+  "entity_id": "E-0001"
+}

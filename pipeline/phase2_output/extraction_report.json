@@ -1,0 +1,259 @@
+{
+  "verdict": "PASS",
+  "timestamp": "2026-02-13T10:56:53.477715",
+  "input": {
+    "entities": 16983,
+    "relationships": 27358,
+    "chunks": 2105
+  },
+  "scores": {
+    "E1": 0.9586698337292161,
+    "E2": 1.0,
+    "E3": 0.9870038910505836,
+    "E4": 0.2152740976270388,
+    "E5": 0.5857,
+    "E6": 0.12935323383084577
+  },
+  "thresholds": {
+    "E1": 0.9,
+    "E2": 1.0,
+    "E3": 0.95,
+    "E4": 0.3,
+    "E5": 0.85,
+    "E6": 0.2
+  },
+  "passed": {
+    "E1": true,
+    "E2": true,
+    "E3": true,
+    "E4": true,
+    "E5": false,
+    "E6": true
+  },
+  "details": {
+    "E1": {
+      "covered_chunks": 2018,
+      "total_chunks": 2105,
+      "uncovered_count": 87,
+      "uncovered_sample": [
+        "C-0009-D",
+        "C-0023",
+        "C-0265-B",
+        "C-0323",
+        "C-0375",
+        "C-0381",
+        "C-0385",
+        "C-0388",
+        "C-0396",
+        "C-0399"
+      ]
+    },
+    "E2": {
+      "total_rels": 27358,
+      "src_orphan": 0,
+      "tgt_orphan": 0,
+      "orphan_samples": []
+    },
+    "E3": {
+      "core_qty_rels": 12850,
+      "core_missing_unit": 167,
+      "all_qty_rels": 14361,
+      "all_missing_unit": 568,
+      "missing_by_type": {
+        "USES_MATERIAL": 136,
+        "HAS_NOTE": 395,
+        "REQUIRES_EQUIPMENT": 10,
+        "REQUIRES_LABOR": 21,
+        "APPLIES_STANDARD": 6
+      },
+      "sample": [
+        {
+          "type": "USES_MATERIAL",
+          "qty": 75.0,
+          "src": "냉온수배관 - 기계실",
+          "tgt": "관 이 음 부 속_소"
+        },
+        {
+          "type": "USES_MATERIAL",
+          "qty": 70.0,
+          "src": "냉온수배관 - 기계실",
+          "tgt": "관 이 음 부 속_중"
+        },
+        {
+          "type": "USES_MATERIAL",
+          "qty": 65.0,
+          "src": "냉온수배관 - 기계실",
+          "tgt": "관 이 음 부 속_대"
+        },
+        {
+          "type": "USES_MATERIAL",
+          "qty": 30.0,
+          "src": "냉온수배관 - 기계실",
+          "tgt": "관지지물_소"
+        },
+        {
+          "type": "USES_MATERIAL",
+          "qty": 15.0,
+          "src": "냉온수배관 - 기계실",
+          "tgt": "관지지물_중"
+        }
+      ]
+    },
+    "E4": {
+      "orphan_count": 3656,
+      "total_entities": 16983,
+      "by_type": {
+        "Note": 1287,
+        "Material": 895,
+        "Equipment": 679,
+        "WorkType": 641,
+        "Section": 60,
+        "Standard": 49,
+        "Labor": 45
+      }
+    },
+    "E5": {
+      "samples_evaluated": 50,
+      "errors": 0,
+      "avg_completeness": 0.42,
+      "avg_accuracy": 0.674,
+      "avg_no_hallucination": 0.69,
+      "avg_relationship_quality": 0.53,
+      "weighted_avg": 0.586,
+      "low_samples": [
+        [
+          "C-0978-A",
+          0.0
+        ],
+        [
+          "C-0320-A",
+          0.0
+        ],
+        [
+          "C-0997",
+          0.0
+        ],
+        [
+          "C-0328",
+          0.275
+        ],
+        [
+          "C-0063",
+          0.275
+        ]
+      ],
+      "error_details": []
+    },
+    "E6": {
+      "total_samples": 201,
+      "not_matched": 93,
+      "total_mismatch_rate": 46.3,
+      "llm_inferred": 67,
+      "truly_suspicious": 26,
+      "suspicious_rate": 12.9,
+      "excluded_synthetic_notes": 1829,
+      "match_stages": {
+        "exact": 45,
+        "token": 40,
+        "normalized": 23
+      },
+      "samples": [
+        {
+          "name": "GPS측량기",
+          "type": "Equipment",
+          "entity_id": "E-0052",
+          "source_method": "llm",
+          "chunk_ids": [
+            "C-0509-A",
+            "C-0510-A-a",
+            "C-0511"
+          ]
+        },
+        {
+          "name": "토공기계 24ton",
+          "type": "Equipment",
+          "entity_id": "E-1519",
+          "source_method": "llm",
+          "chunk_ids": [
+            "C-0292-L"
+          ]
+        },
+        {
+          "name": "토공기계 0.57m3",
+          "type": "Equipment",
+          "entity_id": "E-1509",
+          "source_method": "llm",
+          "chunk_ids": [
+            "C-0292-H"
+          ]
+        },
+        {
+          "name": "골재생산기계 5118-0006",
+          "type": "Equipment",
+          "entity_id": "E-0210",
+          "source_method": "llm",
+          "chunk_ids": [
+            "C-0297-J"
+          ]
+        },
+        {
+          "name": "토공기계 2.87m3",
+          "type": "Equipment",
+          "entity_id": "E-1517",
+          "source_method": "llm",
+          "chunk_ids": [
+            "C-0292-H"
+          ]
+        },
+        {
+          "name": "골재생산기계(5115-0030)",
+          "type": "Equipment",
+          "entity_id": "E-0179",
+          "source_method": "llm",
+          "chunk_ids": [
+            "C-0297-G"
+          ]
+        },
+        {
+          "name": "골재생산기계(7.0m)",
+          "type": "Equipment",
+          "entity_id": "E-0192",
+          "source_method": "llm",
+          "chunk_ids": [
+            "C-0297-S"
+          ]
+        },
+        {
+          "name": "대형브레이커 + 굴착기 0.7m3",
+          "type": "Equipment",
+          "entity_id": "E-0448",
+          "source_method": "llm",
+          "chunk_ids": [
+            "C-0390"
+          ]
+        },
+        {
+          "name": "유압 파일 해머 2.2t 급",
+          "type": "Equipment",
+          "entity_id": "E-1035",
+          "source_method": "llm",
+          "chunk_ids": [
+            "C-0281-A-e"
+          ]
+        },
+        {
+          "name": "5만m2_초급기술자",
+          "type": "Labor",
+          "entity_id": "L-0102",
+          "source_method": "table_rule",
+          "chunk_ids": [
+            "C-0523-D",
+            "C-0523-E",
+            "C-0523-F"
+          ]
+        }
+      ],
+      "note": "Section/합성NoteID 제외. 6단계 매칭. LLM 추론(테이블 코드→장비명)은 정당한 추출로 판정 제외. LLM추론 67건 제외, 의심 26건만 판정 대상."
+    }
+  }
+}

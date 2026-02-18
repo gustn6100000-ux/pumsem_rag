@@ -1,0 +1,14 @@
+{
+  "source": "조서작성",
+  "source_type": "WorkType",
+  "target": "지적산업기사",
+  "target_type": "Labor",
+  "type": "REQUIRES_LABOR",
+  "quantity": 0.04,
+  "unit": "인",
+  "per_unit": null,
+  "properties": {},
+  "source_chunk_id": "C-0001",
+  "source_entity_id": "W-3526",
+  "target_entity_id": "L-0249"
+}
