@@ -335,17 +335,51 @@ export async function targetSearch(
         : (analysis.work_name ? [analysis.work_name] : []);
 
     if (searchTerms.length > 0) {
-        const pattern = "%" + searchTerms.join("%") + "%";
+        // ⭐ ILIKE 검색에는 noise가 적은 키워드만 사용
+        //    - 한글 키워드: 항상 포함 (PE관, PE드럼, 폴리에틸렌 등)
+        //    - 영문 키워드 ≥ 4자: 포함 (HDPE 등)
+        //    - 영문 키워드 ≤ 3자: 제외 (PE → Type, Pipe, Speed 등 noise)
+        const dedupTerms = [...new Set(searchTerms.filter(t => t.length >= 2))];
+        const ilikeTerms = dedupTerms.filter(t => {
+            const isAllEnglish = /^[A-Za-z]+$/.test(t);
+            return !isAllEnglish || t.length >= 4;  // 영문만이면 4자 이상만
+        });
+
+        if (ilikeTerms.length === 0 && dedupTerms.length > 0) {
+            // 전부 짧은 영문 → work_name 폴백
+            ilikeTerms.push(...dedupTerms);
+        }
+
+        const orClauses = ilikeTerms
+            .map(t => `name.ilike.%${t}%`)
+            .join(",");
         const { data } = await supabase
             .from("graph_entities")
             .select("id, name, type, properties, source_section")
             .in("type", ["WorkType", "Section"])
-            .or(`name.ilike.${pattern},properties->>"korean_alias".ilike.${pattern}`)
-            .limit(5);
+            .or(orClauses)
+            .limit(50);
 
         if (data && data.length > 0) {
-            console.log(`[targetSearch] 2단계 키워드 매칭: ${data.length}건`);
-            return toEntityResults(data, 0.95);
+            // 관련도 정렬: 매칭 키워드 수 + 원문 질문어 매칭 보너스
+            const questionKorean = question.match(/[가-힣]+/g) || [];
+            const scored = data.map((e: any) => {
+                let score = 0;
+                const nameLower = e.name.toLowerCase();
+                // 모든 키워드(짧은 영문 포함) 매칭 카운트
+                for (const t of dedupTerms) {
+                    if (nameLower.includes(t.toLowerCase())) score += 2;
+                }
+                // 원문 한글어 매칭 보너스 (예: "관" → "PE관", "폴리에틸렌관" 가중)
+                for (const k of questionKorean) {
+                    if (nameLower.includes(k)) score += 1;
+                }
+                return { ...e, _score: score };
+            });
+            scored.sort((a: any, b: any) => b._score - a._score);
+            const top = scored.slice(0, 20);
+            console.log(`[targetSearch] 2단계 키워드 매칭: ${data.length}건 → 상위 ${top.length}건 (scores: ${top.slice(0, 5).map((s: any) => s._score).join(',')})`);
+            return toEntityResults(top, 0.95);
         }
 
         // 2단계 실패 → work_name 단독 재시도 (keywords에 규격이 포함되어 못 찾는 경우)
@@ -356,7 +390,7 @@ export async function targetSearch(
                 .select("id, name, type, properties, source_section")
                 .in("type", ["WorkType", "Section"])
                 .or(`name.ilike.${wnPattern},properties->>"korean_alias".ilike.${wnPattern}`)
-                .limit(5);
+                .limit(20);
 
             if (wnData && wnData.length > 0) {
                 console.log(`[targetSearch] 2단계 work_name 폴백: ${wnData.length}건`);

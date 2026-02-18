@@ -322,12 +322,17 @@ async function resolveBySearch(
     }
 
     // 전략 2: WorkType 직접 탐색
-    const workPattern = "%" + searchTerms.join("%") + "%";
+    const safeWorkTerms = searchTerms.filter((t: string) => {
+        const isAllEng = /^[A-Za-z]+$/.test(t);
+        return t.length >= 2 && (!isAllEng || t.length >= 4);
+    });
+    const wTerms = safeWorkTerms.length > 0 ? safeWorkTerms : searchTerms.filter((t: string) => t.length >= 2);
+    const workOrClauses = wTerms.map((t: string) => `name.ilike.%${t}%`).join(",");
     const { data: workTypes } = await supabase
         .from("graph_entities")
         .select("id, name, type, source_section, properties")
         .eq("type", "WorkType")
-        .or(`name.ilike.${workPattern},properties->>korean_alias.ilike.${workPattern}`)
+        .or(workOrClauses)
         .limit(200);
 
     // 전략 3: 키워드별 독립 검색 (범용 동사 제외)

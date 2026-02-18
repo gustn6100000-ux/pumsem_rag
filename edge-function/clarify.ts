@@ -82,9 +82,10 @@ const INTENT_SYSTEM_PROMPT = `당신은 건설 공사 품셈 검색 시스템의
   예: "크러셔 운전" → work_name: "Crusher", "플랜지 취부" → work_name: "Flange 취부"
 - 규격 정규화: "200mm" → "200", "SCH40" → "SCH 40"
 - 불용어 제외: "품셈", "알려줘", "얼마", "인력", "투입", "관련"
-- 동의어 확장: "PE관" → ["PE관", "HDPE관"], "HDPE관" → ["HDPE관", "PE관", "PE", "폴리에틸렌"]
-- ⭐ 약어/접두어 확장: HDPE는 PE의 하위 종류이므로 반드시 PE도 keywords에 포함
-  예: "HDPE관" → keywords: ["HDPE관", "PE관", "PE", "폴리에틸렌"], work_name: "PE"
+- 동의어 확장: "PE관" → ["PE관", "HDPE관"], "HDPE관" → ["HDPE관", "PE관", "PE드럼", "폴리에틸렌"]
+- ⭐ 약어/접두어 확장: HDPE는 PE의 하위 종류이므로 반드시 PE관 등 한글 복합어로 keywords에 포함
+  예: "HDPE관" → keywords: ["HDPE관", "PE관", "PE드럼", "폴리에틸렌"], work_name: "PE관"
+- ⛔ 금지: "PE", "PV" 같은 2글자 영문 약어를 단독으로 keywords에 넣지 마세요! 반드시 한글과 결합한 복합어로 (PE관, PE드럼, PVC관)
 
 ## 대화 히스토리 활용
 - 이전 대화에서 확정된 공종명을 후속 질문에 복원
@@ -149,10 +150,10 @@ export function ruleBasedIntent(question: string): IntentAnalysis {
     const engKeywords = englishWords.filter(w => !engStopWords.has(w) && w.length >= 2);
     allKeywords.push(...engKeywords);
 
-    // ⭐ 영문 약어 확장 (HDPE→PE, PVC→PE 등)
+    // ⭐ 영문 약어 확장 (HDPE→PE관, PVC→PVC관 등 한글 복합어로)
     const ENG_EXPAND: Record<string, string[]> = {
-        "HDPE": ["PE", "폴리에틸렌"], "hdpe": ["PE", "폴리에틸렌"],
-        "PVC": ["PVC관"], "pvc": ["PVC관"],
+        "HDPE": ["PE관", "PE드럼", "HDPE관", "폴리에틸렌"],
+        "PVC": ["PVC관"],
     };
     for (const ek of engKeywords) {
         const upper = ek.toUpperCase();
