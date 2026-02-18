@@ -82,7 +82,9 @@ const INTENT_SYSTEM_PROMPT = `당신은 건설 공사 품셈 검색 시스템의
   예: "크러셔 운전" → work_name: "Crusher", "플랜지 취부" → work_name: "Flange 취부"
 - 규격 정규화: "200mm" → "200", "SCH40" → "SCH 40"
 - 불용어 제외: "품셈", "알려줘", "얼마", "인력", "투입", "관련"
-- 동의어 확장: "PE관" → ["PE관", "HDPE관"]
+- 동의어 확장: "PE관" → ["PE관", "HDPE관"], "HDPE관" → ["HDPE관", "PE관", "PE", "폴리에틸렌"]
+- ⭐ 약어/접두어 확장: HDPE는 PE의 하위 종류이므로 반드시 PE도 keywords에 포함
+  예: "HDPE관" → keywords: ["HDPE관", "PE관", "PE", "폴리에틸렌"], work_name: "PE"
 
 ## 대화 히스토리 활용
 - 이전 대화에서 확정된 공종명을 후속 질문에 복원
@@ -107,6 +109,7 @@ export const KO_EN_DICT: Record<string, string[]> = {
     "콤프레서": ["Compressor"], "컴프레셔": ["Compressor"],
     "펌프": ["Pump"], "밸브": ["Valve"],
     "보일러": ["Boiler"], "덕트": ["Duct"],
+    "에이치디피이": ["HDPE", "PE"], "피이": ["PE"],
     "트랜스": ["Transformer"], "케이블": ["Cable"],
     "브레이커": ["Breaker"], "불도저": ["Bulldozer"],
     "로더": ["Loader"], "덤프": ["Dump"],
@@ -145,6 +148,16 @@ export function ruleBasedIntent(question: string): IntentAnalysis {
     const engStopWords = new Set(["SCH", "mm", "ton", "help"]);
     const engKeywords = englishWords.filter(w => !engStopWords.has(w) && w.length >= 2);
     allKeywords.push(...engKeywords);
+
+    // ⭐ 영문 약어 확장 (HDPE→PE, PVC→PE 등)
+    const ENG_EXPAND: Record<string, string[]> = {
+        "HDPE": ["PE", "폴리에틸렌"], "hdpe": ["PE", "폴리에틸렌"],
+        "PVC": ["PVC관"], "pvc": ["PVC관"],
+    };
+    for (const ek of engKeywords) {
+        const upper = ek.toUpperCase();
+        if (ENG_EXPAND[upper]) allKeywords.push(...ENG_EXPAND[upper]);
+    }
 
     // 규격 추출 (2t, 200mm, SCH 40, D110 등)
     let spec: string | null = null;
