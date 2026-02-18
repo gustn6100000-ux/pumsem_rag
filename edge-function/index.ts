@@ -393,23 +393,32 @@ async function handleChat(
         console.log(`[handleChat] section_id=${sectionId} → 섹션 내 탐색`);
 
         // full_view: 섹션 전체 원문을 컨텍스트로 답변 생성
-        const isFullView = question.includes("전체") || question.includes("목록");
+        // Why: sub_section 클릭(":sub=" 포함)은 사용자가 이미 특정 분류를 선택한 것
+        //       → 추가 선택 없이 바로 해당 sub_section의 전체 데이터를 출력
+        const isSubSection = sectionId.includes(":sub=");
+        const isFullView = isSubSection || question.includes("전체") || question.includes("목록");
         if (isFullView) {
-            console.log(`[handleChat] full_view: ${sectionId} 전체 원문 조회`);
+            // ── sub_section 파싱: "13-2-4:sub=1. 전기아크용접(V형)" → base="13-2-4", sub 키워드 추출
+            // Why: DB의 section_id는 "13-2-4"이므로 ":sub=" 이전의 base id로 조회해야 매칭됨
+            //       프론트엔드에서 URL 인코딩된 상태로 전달될 수 있으므로 디코딩 필수
+            const decodedSectionId = decodeURIComponent(sectionId);
+            const subMatch = decodedSectionId.match(/^(.+?):sub=(.+)$/);
+            const baseSectionId = subMatch ? subMatch[1] : decodedSectionId;
+            const subKeyword = subMatch ? subMatch[2].replace(/^\d+\.\s*/, '') : null;
+
+            console.log(`[handleChat] full_view: base=${baseSectionId}, sub=${subKeyword || 'none'} 전체 원문 조회`);
             // ─── 전체 chunk 로딩 (기존 .limit(1) → 전체) ───
             // Why: 강관용접 등은 11개 chunk에 tables 분산 저장 → 전체 필요
             const { data: chunkData } = await supabase
                 .from("graph_chunks")
                 .select("id, section_id, title, department, chapter, section, text, tables")
-                .eq("section_id", sectionId)
+                .eq("section_id", baseSectionId)
                 .limit(20);
 
             let allChunks = (chunkData || []) as any[];
 
-            // sub_section 필터: sectionId에 ":sub=" 포함 시 관련 chunk만 선별
-            // Why: "13-2-3:sub=2. TIG용접" → TIG 관련 chunk만 선택하여 context 크기 관리
-            const subMatch = sectionId.match(/:sub=(.+)$/);
-            const subKeyword = subMatch ? subMatch[1].replace(/^\d+\.\s*/, '') : null;
+            // sub_section 필터: subKeyword가 있으면 관련 chunk만 선별
+            // Why: "13-2-4:sub=1. 전기아크용접(V형)" → V형 관련 chunk만 선택하여 context 크기 관리
             if (subKeyword && allChunks.length > 1) {
                 const filtered = allChunks.filter(c =>
                     (c.text && c.text.includes(subKeyword)) ||
@@ -443,11 +452,11 @@ async function handleChat(
                     .from("graph_entities")
                     .select("id, name, type, properties, source_section")
                     .eq("type", "WorkType")
-                    .eq("source_section", sectionId)
+                    .eq("source_section", baseSectionId)
                     .limit(20);
 
                 const sectionWTs = (sectionWTData || []) as any[];
-                console.log(`[handleChat] full_view: WorkType ${sectionWTs.length}건 (sectionId=${sectionId})`);
+                console.log(`[handleChat] full_view: WorkType ${sectionWTs.length}건 (baseSectionId=${baseSectionId})`);
 
                 let wtEntities: EntityResult[] = [];
                 let relationsAll: any[][] = [];
@@ -467,7 +476,7 @@ async function handleChat(
                     // Why: 품셈서에서 "잡철물 제작 및 설치" 같은 표는 건축/기계설비 등
                     //      여러 부문에 동일 내용으로 중복 수록됨. 한 쪽에만 WorkType이
                     //      등록된 경우, 다른 쪽에서 차용하여 실제 품셈 데이터 제공
-                    console.log(`[handleChat] full_view: sectionId=${sectionId} WorkType 0건 → cross-reference 탐색`);
+                    console.log(`[handleChat] full_view: baseSectionId=${baseSectionId} WorkType 0건 → cross-reference 탐색`);
 
                     const { data: siblingWTs } = await supabase
                         .from("graph_entities")
@@ -483,7 +492,7 @@ async function handleChat(
                                 return [...new Set(
                                     (siblings || [])
                                         .map((s: any) => s.section_id)
-                                        .filter((sid: string) => sid !== sectionId)
+                                        .filter((sid: string) => sid !== baseSectionId)
                                 )];
                             })()
                         )
@@ -503,8 +512,8 @@ async function handleChat(
                         // Fix B0-fv: cross-ref 실패 → 하위 절(children) WorkType 탐색
                         // Why: "2-12 공통장비" 같은 상위 절은 본인 WT 0건, cross-ref도 없지만
                         //      하위 절 "2-12-1 건설용리프트", "2-12-2 마스트" 등에 데이터 존재
-                        const baseSectionId = sectionId.includes('#') ? sectionId.split('#')[0] : sectionId;
-                        const childPrefix = baseSectionId + '-';
+                        const childBaseSectionId = baseSectionId.includes('#') ? baseSectionId.split('#')[0] : baseSectionId;
+                        const childPrefix = childBaseSectionId + '-';
                         console.log(`[handleChat] full_view: cross-ref 실패 → 하위 절 탐색 (prefix=${childPrefix})`);
 
                         const { data: childWTs } = await supabase
@@ -549,7 +558,7 @@ async function handleChat(
                                 .from("graph_entities")
                                 .select("id, name, type, properties, source_section")
                                 .eq("type", "Section")
-                                .eq("source_section", sectionId)
+                                .eq("source_section", baseSectionId)
                                 .limit(1);
 
                             if (sectionEntity && sectionEntity.length > 0) {
@@ -594,9 +603,9 @@ async function handleChat(
                 });
             } else {
                 // I-8: chunk 미발견 시 명시적 안내 (full_view 요청인데 원문 없음)
-                console.warn(`[handleChat] full_view: section_id=${sectionId} 원문 없음 → 안내`);
+                console.warn(`[handleChat] full_view: section_id=${baseSectionId} 원문 없음 → 안내`);
                 return makeAnswerResponse(
-                    `해당 절(${sectionId})의 원문 데이터를 찾을 수 없습니다.\n다른 작업을 선택하거나, 다시 검색해 주세요.`,
+                    `해당 절(${baseSectionId})의 원문 데이터를 찾을 수 없습니다.\n다른 작업을 선택하거나, 다시 검색해 주세요.`,
                     startTime
                 );
             }

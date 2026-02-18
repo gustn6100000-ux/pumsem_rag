@@ -147,7 +147,7 @@ export async function generateAnswer(
                     model: "deepseek-chat",
                     messages,
                     temperature: 0.3,
-                    max_tokens: 2048,
+                    max_tokens: 4096,
                 }),
             });
 
@@ -186,7 +186,7 @@ export async function generateAnswer(
         body: JSON.stringify({
             system_instruction: { parts: [{ text: systemContent }] },
             contents,
-            generationConfig: { temperature: 0.3, maxOutputTokens: 2048 },
+            generationConfig: { temperature: 0.3, maxOutputTokens: 4096 },
         }),
     });
 
