@@ -6,7 +6,7 @@
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 import { supabase } from "./config.ts";
-import { chunkTextFallbackSearch } from "./search.ts";
+import { chunkTextFallbackSearch, expandMixedTerms } from "./search.ts";
 import type {
     IntentAnalysis, ClarifyOption, ClarifyResult,
     SelectorPanel, SelectorItem, FilterAxis,
@@ -327,7 +327,12 @@ async function resolveBySearch(
         return t.length >= 2 && (!isAllEng || t.length >= 4);
     });
     const wTerms = safeWorkTerms.length > 0 ? safeWorkTerms : searchTerms.filter((t: string) => t.length >= 2);
-    const workOrClauses = wTerms.map((t: string) => `name.ilike.%${t}%`).join(",");
+    // Why: "PE관" → "%PE관%" 매칭 실패 대비, 영한 혼합어 완화 패턴("%PE%관%")도 추가
+    const mixedExp = expandMixedTerms(wTerms);
+    const workOrClauses = [
+        ...wTerms.map((t: string) => `name.ilike.%${t}%`),
+        ...mixedExp.map(p => `name.ilike.${p}`),
+    ].join(",");
     const { data: workTypes } = await supabase
         .from("graph_entities")
         .select("id, name, type, source_section, properties")

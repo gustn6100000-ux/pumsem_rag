@@ -28,6 +28,27 @@ export function expandAbbreviations(question: string): string[] {
     return expanded;
 }
 
+// ─── 영한 혼합어 분리 패턴 생성 ───
+// Why: "PE관" 검색 시 ILIKE '%PE관%'은 "가스용 폴리에틸렌(PE)관"에 매칭 안 됨
+//      PE와 관 사이에 ')' 괄호가 존재하기 때문.
+//      "PE관" → "%PE%관%" 로 분리하여 중간 문자를 허용하는 완화 패턴 생성
+export function expandMixedTerms(terms: string[]): string[] {
+    const extra: string[] = [];
+    for (const t of terms) {
+        // 영문+한글 경계에서 분리: "PE관" → ["PE", "관"], "HDPE관" → ["HDPE", "관"]
+        const parts = t.match(/[A-Za-z0-9]+|[가-힣]+/g);
+        if (parts && parts.length >= 2) {
+            // 원본("PE관")과 다른 완화 패턴("%PE%관%") 추가
+            const relaxed = "%" + parts.join("%") + "%";
+            const strict = `%${t}%`;
+            if (relaxed !== strict) {
+                extra.push(relaxed);
+            }
+        }
+    }
+    return extra;
+}
+
 // ─── 질문에서 규격 숫자 추출 ───
 // "강관용접 200mm SCH 40" → ["200", "SCH 40"]
 // "강관용접 φ350 SCH 20"  → ["350", "SCH 20"]
@@ -298,12 +319,19 @@ export async function targetSearch(
         }
 
         // 1단계 실패 → work_name만으로 재시도 (spec이 엔티티명에 없는 경우)
+        // Why: "PE관" → "%PE관%" 매칭 실패 대비, 영한 혼합어 완화 패턴도 추가
         const fallbackPattern = `%${analysis.work_name}%`;
+        const mixedPatterns = expandMixedTerms([analysis.work_name]);
+        const fallbackOrClauses = [
+            `name.ilike.${fallbackPattern}`,
+            `properties->>"korean_alias".ilike.${fallbackPattern}`,
+            ...mixedPatterns.map(p => `name.ilike.${p}`),
+        ].join(",");
         const { data: fallback } = await supabase
             .from("graph_entities")
             .select("id, name, type, properties, source_section")
             .in("type", ["WorkType", "Section"])
-            .or(`name.ilike.${fallbackPattern},properties->>"korean_alias".ilike.${fallbackPattern}`)
+            .or(fallbackOrClauses)
             .limit(5);
 
         if (fallback && fallback.length > 0) {
@@ -350,9 +378,14 @@ export async function targetSearch(
             ilikeTerms.push(...dedupTerms);
         }
 
-        const orClauses = ilikeTerms
-            .map(t => `name.ilike.%${t}%`)
-            .join(",");
+        // ─── 영한 혼합어 완화 패턴 추가 ───
+        // Why: "PE관" → ILIKE '%PE관%' 은 "가스용 폴리에틸렌(PE)관"에 매칭 안 됨
+        //      PE와 관 사이에 ')' 괄호가 있기 때문 → '%PE%관%' 패턴 추가
+        const mixedExpansions = expandMixedTerms(ilikeTerms);
+        const orClauses = [
+            ...ilikeTerms.map(t => `name.ilike.%${t}%`),
+            ...mixedExpansions.map(p => `name.ilike.${p}`),
+        ].join(",");
         const { data } = await supabase
             .from("graph_entities")
             .select("id, name, type, properties, source_section")
