@@ -195,18 +195,20 @@ def clean_tables(dry_run: bool = False):
     """기존 데이터 전체 삭제 (FK 의존성 순서 준수)
     Why: 재추출 시 이전 관계/엔티티가 누적되는 문제 방지
     """
-    tables = [
-        'graph_relationships',
-        'graph_global_relationships',
-        'graph_entities',
-        'graph_chunks',
-    ]
-    for table in tables:
+    # Why: SERIAL PK 테이블과 TEXT PK 테이블의 삭제 전략이 달라야 함
+    #      SERIAL(정수)에 .neq('id', '__impossible__')는 22P02 에러 발생
+    serial_pk_tables = ['graph_relationships', 'graph_global_relationships']
+    text_pk_tables = ['graph_entities', 'graph_chunks']
+
+    for table in serial_pk_tables + text_pk_tables:
         if dry_run:
             count_resp = supabase.table(table).select('id', count='exact').limit(1).execute()
             log(f"  [DRY RUN] {table}: {count_resp.count}건 삭제 예정")
         else:
-            supabase.table(table).delete().neq('id', '__impossible__').execute()
+            if table in serial_pk_tables:
+                supabase.table(table).delete().gt('id', 0).execute()
+            else:
+                supabase.table(table).delete().neq('id', '__impossible__').execute()
             log(f"  🗑️ {table} 전체 삭제 완료")
             time.sleep(0.5)
 

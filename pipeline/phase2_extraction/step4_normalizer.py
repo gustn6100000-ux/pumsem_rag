@@ -520,7 +520,13 @@ def phase_e(
             qty = rel.get("quantity")
             unit = rel.get("unit", "")
             per_unit = rel.get("per_unit", "")
-            dedup_key = (new_src, src_type, new_tgt, tgt_type,
+
+            # Why: properties에 은닉된 spec을 안전 추출하여 PE관 15건 보존
+            props = rel.get("properties") or {}
+            sspec = normalize_spec(props.get("source_spec", ""))
+            tspec = normalize_spec(props.get("target_spec", ""))
+
+            dedup_key = (new_src, src_type, sspec, new_tgt, tgt_type, tspec,
                          rel.get("type", ""), qty, unit, per_unit)
             if dedup_key in seen_keys:
                 dedup_removed += 1
@@ -541,13 +547,19 @@ def phase_e(
 # ════════════════════════════════════════════════════════════════
 #  Phase F: 엔티티 ID 부여
 # ════════════════════════════════════════════════════════════════
-def phase_f(entities: list[dict]) -> dict[tuple[str, str], str]:
-    """글로벌 유니크 ID 부여. Returns: {(type, name) → entity_id}."""
-    counters = Counter()
-    id_map: dict[tuple[str, str], str] = {}
+def phase_f(entities: list[dict]) -> tuple[dict[tuple, str], dict[tuple[str, str], str]]:
+    """글로벌 유니크 ID 부여.
 
-    # 타입별 정렬 후 순번 부여
-    entities.sort(key=lambda e: (e["type"], e.get("normalized_name", "")))
+    Returns:
+        exact_map:    {(type, name, spec) → entity_id}  정확 매칭용
+        fallback_map: {(type, name) → entity_id}        spec 없는 관계 대비 대체용
+    """
+    counters = Counter()
+    exact_map: dict[tuple, str] = {}
+    fallback_map: dict[tuple[str, str], str] = {}
+
+    # Why: type + name + spec 순으로 정렬하여 ID 발급 일관성 확보
+    entities.sort(key=lambda e: (e["type"], e.get("normalized_name", ""), e.get("spec", "")))
 
     for ent in entities:
         etype = ent["type"]
@@ -555,18 +567,28 @@ def phase_f(entities: list[dict]) -> dict[tuple[str, str], str]:
         counters[etype] += 1
         eid = f"{prefix}-{counters[etype]:04d}"
         ent["entity_id"] = eid
-        id_map[(etype, ent["name"])] = eid
+
+        # Why: spec을 포함한 3단 식별자 맵핑 (PE관 15개 규격 각각 고유 ID 보존)
+        spec = normalize_spec(ent.get("spec"))
+        exact_map[(etype, ent["name"], spec)] = eid
+
+        # Why: spec이 없는 LLM 관계(REQUIRES_LABOR 등)가 고아 노드가 되지 않도록
+        #      최초 1회만 등록하여 대표 ID로 fallback
+        if (etype, ent["name"]) not in fallback_map:
+            fallback_map[(etype, ent["name"])] = eid
 
         # Why: Section은 code/title/name 등 다양한 키로 참조됨 (HAS_CHILD에서)
         if etype == "Section":
             code = ent.get("code", "")
             title = ent.get("title", "")
             if code:
-                id_map[("Section", code)] = eid
+                exact_map[("Section", code, "")] = eid
+                fallback_map[("Section", code)] = eid
             if title and title != ent["name"]:
-                id_map[("Section", title)] = eid
+                exact_map[("Section", title, "")] = eid
+                fallback_map[("Section", title)] = eid
 
-    return id_map
+    return exact_map, fallback_map
 
 
 # ════════════════════════════════════════════════════════════════
@@ -660,27 +682,46 @@ def main():
 
     # ── Phase F ──
     print("\n  [Phase F] 엔티티 ID 부여...")
-    id_map = phase_f(deduped_ents)
-    print(f"    ID 부여: {len(id_map):,}")
+    exact_map, fallback_map = phase_f(deduped_ents)
+    print(f"    ID 부여 (Exact: {len(exact_map):,}, Fallback: {len(fallback_map):,})")
 
-    # 관계에 entity_id 매핑
+    # Why: BELONGS_TO는 properties.source_spec으로 정확한 ID를 찾고,
+    #      REQUIRES_LABOR(spec 없는 관계)는 fallback으로 대표 ID에 안전하게 매핑
+    def get_eid(etype: str, ename: str, espec: str) -> str:
+        norm_spec = normalize_spec(espec)
+        # 1. spec이 일치하는 정확한 ID 찾기
+        eid = exact_map.get((etype, ename, norm_spec))
+        if eid:
+            return eid
+        # 2. spec이 없거나 불일치하면 name 기준 대표 ID로 Fallback (관계 고아 방지)
+        return fallback_map.get((etype, ename), "")
+
+    # 관계에 entity_id 매핑 (청크)
     for ext in extractions:
         for rel in ext.get("relationships", []):
-            rel["source_entity_id"] = id_map.get(
-                (rel.get("source_type", ""), rel.get("source", "")), ""
+            props = rel.get("properties") or {}
+            sspec = props.get("source_spec", "")
+            tspec = props.get("target_spec", "")
+
+            rel["source_entity_id"] = get_eid(
+                rel.get("source_type", ""), rel.get("source", ""), sspec
             )
-            rel["target_entity_id"] = id_map.get(
-                (rel.get("target_type", ""), rel.get("target", "")), ""
+            rel["target_entity_id"] = get_eid(
+                rel.get("target_type", ""), rel.get("target", ""), tspec
             )
 
     # global 관계도 ID 매핑
     for rel_type, rels in global_rels.items():
         for rel in rels:
-            rel["source_entity_id"] = id_map.get(
-                (rel.get("source_type", ""), rel.get("source", "")), ""
+            props = rel.get("properties") or {}
+            sspec = props.get("source_spec", "")
+            tspec = props.get("target_spec", "")
+
+            rel["source_entity_id"] = get_eid(
+                rel.get("source_type", ""), rel.get("source", ""), sspec
             )
-            rel["target_entity_id"] = id_map.get(
-                (rel.get("target_type", ""), rel.get("target", "")), ""
+            rel["target_entity_id"] = get_eid(
+                rel.get("target_type", ""), rel.get("target", ""), tspec
             )
     # ── 글로벌 dedup: entity_id 기반 (Phase F 이후) ──
     # Why: 동일 entity_id 쌍이 서로 다른 청크에서 반복되는 관계 제거

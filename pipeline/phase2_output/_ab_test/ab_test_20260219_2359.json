@@ -1,0 +1,7342 @@
+{
+  "timestamp": "20260219_2359",
+  "sample_count": 12,
+  "report": {
+    "총_청크수": 12,
+    "deepseek": {
+      "성공": 12,
+      "실패": 0,
+      "총_엔티티": 109,
+      "총_관계": 258,
+      "엔티티_유형별": {
+        "WorkType": 12,
+        "Labor": 23,
+        "Note": 36,
+        "Equipment": 13,
+        "Standard": 5,
+        "Material": 20
+      },
+      "관계_유형별": {
+        "REQUIRES_LABOR": 110,
+        "HAS_NOTE": 46,
+        "REQUIRES_EQUIPMENT": 61,
+        "APPLIES_STANDARD": 5,
+        "USES_MATERIAL": 36
+      },
+      "총_시간_초": 452.25000000000006,
+      "평균_TPS": 54.2,
+      "source_spec_포함": 210,
+      "총_output_tokens": 24521
+    },
+    "solar": {
+      "성공": 12,
+      "실패": 0,
+      "총_엔티티": 150,
+      "총_관계": 232,
+      "엔티티_유형별": {
+        "WorkType": 22,
+        "Labor": 21,
+        "Material": 29,
+        "Note": 57,
+        "Standard": 6,
+        "Equipment": 15
+      },
+      "관계_유형별": {
+        "REQUIRES_LABOR": 116,
+        "USES_MATERIAL": 39,
+        "HAS_NOTE": 52,
+        "APPLIES_STANDARD": 6,
+        "REQUIRES_EQUIPMENT": 19
+      },
+      "총_시간_초": 723.3900000000001,
+      "평균_TPS": 89.5,
+      "source_spec_포함": 203,
+      "총_output_tokens": 64778
+    },
+    "청크별_비교": [
+      {
+        "chunk_id": "C-0944-B",
+        "section_id": "13-1-1",
+        "category": "text_only",
+        "title": "플랜트 배관 설치",
+        "deepseek_entities": 16,
+        "solar_entities": 27,
+        "deepseek_relations": 19,
+        "solar_relations": 26,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 44.34,
+        "solar_sec": 88.74,
+        "deepseek_scratchpad": "3개 규격(63mm, 75mm, 200mm) × 2개 직종(플랜트 배관공, 특별인부) = 6개 관계. 모두 전개.",
+        "solar_scratchpad": ""
+      },
+      {
+        "chunk_id": "C-0112",
+        "section_id": "2-11-8",
+        "category": "text_only",
+        "title": "지능형 CCTV 설치 및 해체",
+        "deepseek_entities": 6,
+        "solar_entities": 5,
+        "deepseek_relations": 5,
+        "solar_relations": 4,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.9,
+        "deepseek_sec": 15.04,
+        "solar_sec": 74.23,
+        "deepseek_scratchpad": "",
+        "solar_scratchpad": ""
+      },
+      {
+        "chunk_id": "C-0010-B",
+        "section_id": "1-2-4",
+        "category": "text_only",
+        "title": "재료 및 자재의 단가",
+        "deepseek_entities": 6,
+        "solar_entities": 8,
+        "deepseek_relations": 5,
+        "solar_relations": 7,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 12.58,
+        "solar_sec": 38.52,
+        "deepseek_scratchpad": "",
+        "solar_scratchpad": ""
+      },
+      {
+        "chunk_id": "C-0493",
+        "section_id": "8-2-1#2",
+        "category": "a_table",
+        "title": "표준관입시험",
+        "deepseek_entities": 13,
+        "solar_entities": 11,
+        "deepseek_relations": 12,
+        "solar_relations": 10,
+        "deepseek_confidence": 0.95,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 24.06,
+        "solar_sec": 68.21,
+        "deepseek_scratchpad": "",
+        "solar_scratchpad": ""
+      },
+      {
+        "chunk_id": "C-0414",
+        "section_id": "4-5-2",
+        "category": "a_table",
+        "title": "테르밋 용접",
+        "deepseek_entities": 17,
+        "solar_entities": 19,
+        "deepseek_relations": 22,
+        "solar_relations": 18,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 42.35,
+        "solar_sec": 65.43,
+        "deepseek_scratchpad": "테이블 3은 2개 규격(50kg, 60kg) × 6개 자재(테르밋 용재, 몰드, 골무, 퓨즈, 산소, 프로판 가스) = 12개 관계. 모두 전개.",
+        "solar_scratchpad": ""
+      },
+      {
+        "chunk_id": "C-0372-B",
+        "section_id": "1-9-1",
+        "category": "a_table",
+        "title": "방음벽 설치",
+        "deepseek_entities": 5,
+        "solar_entities": 10,
+        "deepseek_relations": 23,
+        "solar_relations": 21,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 42.22,
+        "solar_sec": 67.67,
+        "deepseek_scratchpad": "매트릭스 표 감지: 가로축에 4개 규격(방음벽 개당 면적_1m² 이하, 2m² 이하, 3m² 이하, 4m² 이하) × 세로축에 7개 행(철공 3m이하, 보통인부 3m이하, 트럭탑재형크레인 3m이하, 철공 5m이하, 보통인부 7m이하, 트럭탑재형크레인 9m이하, 고소작업차 11m이하) = 28개 관계. 모든 규격에 대해 독립된 관계 객체를 100% 전개.",
+        "solar_scratchpad": "7개 규격(높이 조건) × 4개 직종(철공, 보통인부, 트럭탑재형크레인, 고소작업차) = 28개 관계. 모든 행/열 전개."
+      },
+      {
+        "chunk_id": "C-0281-A-b",
+        "section_id": "8-2-23",
+        "category": "d_matrix",
+        "title": "유압 파일 해머",
+        "deepseek_entities": 9,
+        "solar_entities": 3,
+        "deepseek_relations": 6,
+        "solar_relations": 6,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.85,
+        "deepseek_sec": 17.7,
+        "solar_sec": 58.48,
+        "deepseek_scratchpad": "2개 규격(파일해머규격: 1.5ton 급, 2.2ton 급) × 6개 규격(파일경: 250mm, 300mm, 350mm, 400mm, 450mm, 500mm) = 12개 관계 가능. 실제 데이터는 6개 관계(1.5ton 급: 250mm, 300mm, 350mm; 2.2ton 급: 400mm, 450mm, 500mm). 모두 전개.",
+        "solar_scratchpad": "2개 규격(파일해머 1.5ton 급, 2.2ton 급) × 6개 파일경(250mm, 300mm, 350mm, 400mm, 450mm, 500mm) = 12개 관계. 모든 규격 조합 전개."
+      },
+      {
+        "chunk_id": "C-1007",
+        "section_id": "13-7-13",
+        "category": "d_matrix",
+        "title": "Castable Spray 공사",
+        "deepseek_entities": 8,
+        "solar_entities": 4,
+        "deepseek_relations": 19,
+        "solar_relations": 14,
+        "deepseek_confidence": 0.95,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 34.83,
+        "solar_sec": 50.61,
+        "deepseek_scratchpad": "7개 규격(15, 25, 40, 50, 65, 80, 100) × 2개 직종(보온공, 특별인부) = 14개 관계. 모두 전개.",
+        "solar_scratchpad": "7개 규격(15, 25, 40, 50, 65, 80, 100) × 2개 직종(보 온 공, 특 별 인 부) = 14개 관계. 모두 전개."
+      },
+      {
+        "chunk_id": "C-0270-D",
+        "section_id": "8-2-12",
+        "category": "d_matrix",
+        "title": "크러셔",
+        "deepseek_entities": 9,
+        "solar_entities": 37,
+        "deepseek_relations": 46,
+        "solar_relations": 30,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 57.17,
+        "solar_sec": 66.72,
+        "deepseek_scratchpad": "매트릭스 표 감지: 가로축 규격 8개(040040, 060040, 076045, 076063, 076076, 101063, 104076, 139076) × 세로축 출구 간격 6개(45mm, 40mm, 25mm, 19mm, 13mm, 6mm) = 48개 관계. 모두 전개.",
+        "solar_scratchpad": "8개 규격(040040, 060040, 076045, 076063, 076076, 101063, 104076, 139076) × 6개 출구 간격(45, 40, 25, 19, 13, 6) = 48개 관계. 모든 규격과 출구 간격 조합에 대해 전개."
+      },
+      {
+        "chunk_id": "C-0959-N",
+        "section_id": "13-2-7",
+        "category": "empty_text",
+        "title": "아세틸렌량의 환산",
+        "deepseek_entities": 9,
+        "solar_entities": 10,
+        "deepseek_relations": 62,
+        "solar_relations": 60,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 98.74,
+        "solar_sec": 59.73,
+        "deepseek_scratchpad": "5개 규격(125mm, 150mm, 200mm, 250mm, 300mm) × 12개 항목(관(m당)_보온공, 관(m당)_특별인부, Fitting(개당)_보온공, Fitting(개당)_특별인부, Hanger(개당)_보온공, Hanger(개당)_특별인부, Valve 및 Flange(개당)_보온공, Valve 및 Flange(개당)_특별인부, 직관의 물량_성형물(m), 직관의 물량_철선(m), 직관의 물량_Lagging Sheet(m²), 직관의 물량_Sheet Metal Screw(개)) = 60개 관계. 모두 전개.",
+        "solar_scratchpad": "5개 규격(125mm,150mm,200mm,250mm,300mm) × 12개 직종/자재 = 60개 관계. 모두 전개."
+      },
+      {
+        "chunk_id": "C-0619-A-c",
+        "section_id": "9-16-2",
+        "category": "empty_text",
+        "title": "도시계획선명시 측량(수치)",
+        "deepseek_entities": 5,
+        "solar_entities": 11,
+        "deepseek_relations": 34,
+        "solar_relations": 33,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 49.91,
+        "solar_sec": 61.57,
+        "deepseek_scratchpad": "3개 규격(지적기사, 지적산업기사, 지적기능사) × 11개 작업(측량계획 및 준비, 측량준비도 작성, 현지측량 준비, 현지측량, 성과설명, 측량결과도 등 측량성과물 작성, 측량성과 관련서류 작성, 측량성과 검사 요청, 지적측량 성과도교부, 외업, 내업) = 33개 관계. 모두 전개. 합계 행은 별도 작업으로 간주하지 않고 각 작업별 수치를 기반으로 관계 생성.",
+        "solar_scratchpad": ""
+      },
+      {
+        "chunk_id": "C-0281-A-h",
+        "section_id": "8-2-23",
+        "category": "empty_text",
+        "title": "유압 파일 해머",
+        "deepseek_entities": 6,
+        "solar_entities": 5,
+        "deepseek_relations": 5,
+        "solar_relations": 3,
+        "deepseek_confidence": 0.9,
+        "solar_confidence": 0.95,
+        "deepseek_sec": 13.31,
+        "solar_sec": 23.48,
+        "deepseek_scratchpad": "표는 매트릭스 형태가 아닌 단일 규격(유압 파일 해머)에 대한 인력 구성 표입니다. 1개 규격 × 3개 직종(비계공, 보통인부, 용접공) = 3개 관계. 단, 용접공은 강관파일 경우에만 적용되며, 용접기 2대 사용 시 수량이 2로 변경됨.",
+        "solar_scratchpad": "1개 규격(없음) × 3개 직종(비계공, 보 통 인 부, 용접공) = 3개 관계. 모두 전개."
+      }
+    ]
+  },
+  "deepseek_raw": [
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "플랜트 배관 설치",
+          "spec": null,
+          "unit": "100m",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "플랜트 배관공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "Raw Material 기준, 소운반, 절단, Edge Cutting, 나사내기, 배열, Fitting재 취부, Valve류 취부, 용접, 나사접합, Hangering, Supporting, Flushing, 기밀시험, 내압시험 포함",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "Fitting류, Bracket류, Support류, Valve류 중량을 전체배관 설치중량의 30%로 간주, 10% 증감마다 10%씩 가감(매설배관 제외), 공장 제작조립시 30% 범위 내 감액",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "배관설치 높이 지상 4m 초과시 매 4m 증가마다 3%씩 가산",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "기계실 옥내 옥외매설 구분 불명시 옥내 적용",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "기계실배관은 옥내배관의 50% 가산, 옥외매설관은 옥외배관의 30% 감액",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "공구손료, 소모자재작업, 정밀배관 Oil Flushing 별도 계상",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "예열 및 응력제거 필요시 별도 계상",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "Alloy Steel(합금강)인 경우 용접식은 용접공, 나사식은 배관공량에 별표 할증률 적용 가산",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "규격 같고 두께 다를 경우 단위 중량에 비례 계상",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "외경은 참고 치수",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "고소배관 작업시 중량물 상량 조치 필요시 특수 비계공 별도 계상 가능",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "비파괴검사시 KS 1급 기준인 경우 본 품에 100% 범위 내 가산 적용",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "유해가스 없고 설계압력 5㎏/㎠ 미만 배관공사시 플랜트 용접공을 용접공, 플랜트 배관공을 배관공으로 적용",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "플랜트 배관 설치",
+          "target": "플랜트 배관공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.184,
+          "unit": "인",
+          "properties": {
+            "source_spec": "63mm"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "플랜트 배관공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.184,
+          "unit": "인",
+          "properties": {
+            "source_spec": "75mm"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "플랜트 배관공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.521,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.052,
+          "unit": "인",
+          "properties": {
+            "source_spec": "63mm"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.052,
+          "unit": "인",
+          "properties": {
+            "source_spec": "75mm"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "Raw Material 기준, 소운반, 절단, Edge Cutting, 나사내기, 배열, Fitting재 취부, Valve류 취부, 용접, 나사접합, Hangering, Supporting, Flushing, 기밀시험, 내압시험 포함",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "Fitting류, Bracket류, Support류, Valve류 중량을 전체배관 설치중량의 30%로 간주, 10% 증감마다 10%씩 가감(매설배관 제외), 공장 제작조립시 30% 범위 내 감액",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "배관설치 높이 지상 4m 초과시 매 4m 증가마다 3%씩 가산",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "기계실 옥내 옥외매설 구분 불명시 옥내 적용",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "기계실배관은 옥내배관의 50% 가산, 옥외매설관은 옥외배관의 30% 감액",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "공구손료, 소모자재작업, 정밀배관 Oil Flushing 별도 계상",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "예열 및 응력제거 필요시 별도 계상",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "Alloy Steel(합금강)인 경우 용접식은 용접공, 나사식은 배관공량에 별표 할증률 적용 가산",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "규격 같고 두께 다를 경우 단위 중량에 비례 계상",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "외경은 참고 치수",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "고소배관 작업시 중량물 상량 조치 필요시 특수 비계공 별도 계상 가능",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "비파괴검사시 KS 1급 기준인 경우 본 품에 100% 범위 내 가산 적용",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "유해가스 없고 설계압력 5㎏/㎠ 미만 배관공사시 플랜트 용접공을 용접공, 플랜트 배관공을 배관공으로 적용",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "플랜트 배관 설치 100m당 규격별(63mm, 75mm, 200mm) 인력투입 기준 및 13개 주석 조건",
+      "confidence": 0.9,
+      "scratchpad": "3개 규격(63mm, 75mm, 200mm) × 2개 직종(플랜트 배관공, 특별인부) = 6개 관계. 모두 전개.",
+      "elapsed_sec": 44.34,
+      "input_tokens": 2987,
+      "output_tokens": 2378,
+      "tps": 53.6,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "지능형 CCTV 설치 및 해체",
+          "spec": "고정형",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "인력",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "공구손료 및 경장비",
+          "spec": "전동드릴 등",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "본 품은 CCTV설치 및 결선, 유무선연결, 시운전 및 교정을 포함하며 라인포설, 고정대(용접) 또는 폴대설치 등은 제외한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "브라켓 및 고정대 등 용접 작업, 고소작업차 등은 필요 시 별도 계상한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "공구손료 및 경장비(전동드릴 등)의 기계경비는 인력품의 1.0%로 계상한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "지능형 CCTV 설치 및 해체",
+          "target": "인력",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "고정형"
+          }
+        },
+        {
+          "source": "지능형 CCTV 설치 및 해체",
+          "target": "공구손료 및 경장비",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "고정형"
+          }
+        },
+        {
+          "source": "지능형 CCTV 설치 및 해체",
+          "target": "본 품은 CCTV설치 및 결선, 유무선연결, 시운전 및 교정을 포함하며 라인포설, 고정대(용접) 또는 폴대설치 등은 제외한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "고정형"
+          }
+        },
+        {
+          "source": "지능형 CCTV 설치 및 해체",
+          "target": "브라켓 및 고정대 등 용접 작업, 고소작업차 등은 필요 시 별도 계상한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "고정형"
+          }
+        },
+        {
+          "source": "지능형 CCTV 설치 및 해체",
+          "target": "공구손료 및 경장비(전동드릴 등)의 기계경비는 인력품의 1.0%로 계상한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "고정형"
+          }
+        }
+      ],
+      "summary": "지능형 CCTV(고정형) 설치 및 해체 작업의 범위, 제외사항, 별도 계상 항목, 기계경비 할증률을 포함한 기준",
+      "confidence": 0.9,
+      "scratchpad": "",
+      "elapsed_sec": 15.04,
+      "input_tokens": 2329,
+      "output_tokens": 781,
+      "tps": 51.9,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "재료 및 자재의 단가",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "국가를당사자로하는계약에관한법률시행규칙",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "기획재정부 회계예규",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "한국산업규격표시품(KS)",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "우수재활용제품(GR)",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "건설기술진흥법 제60조제1항",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "국가를당사자로하는계약에관한법률시행규칙",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "기획재정부 회계예규",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "한국산업규격표시품(KS)",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "우수재활용제품(GR)",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "건설기술진흥법 제60조제1항",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "재료 및 자재 단가에 적용되는 법률, 규정, 기준 추출",
+      "confidence": 0.9,
+      "scratchpad": "",
+      "elapsed_sec": 12.58,
+      "input_tokens": 2380,
+      "output_tokens": 610,
+      "tps": 48.5,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "표준관입시험",
+          "spec": null,
+          "unit": "회당",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "중급기술자",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.02
+        },
+        {
+          "type": "Labor",
+          "name": "보링공",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.07
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.06
+        },
+        {
+          "type": "Labor",
+          "name": "보통인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.07
+        },
+        {
+          "type": "Material",
+          "name": "슈",
+          "spec": null,
+          "unit": "개",
+          "quantity": 0.1
+        },
+        {
+          "type": "Material",
+          "name": "샘플러",
+          "spec": null,
+          "unit": "개",
+          "quantity": 0.015
+        },
+        {
+          "type": "Material",
+          "name": "경유",
+          "spec": null,
+          "unit": "ℓ",
+          "quantity": 1.0
+        },
+        {
+          "type": "Material",
+          "name": "잡유",
+          "spec": null,
+          "unit": "%",
+          "quantity": 30.0
+        },
+        {
+          "type": "Note",
+          "name": "보링과 병행하여 시행할 경우이며 목적에 따라서 관입시험을 시행할 경우에는 별도로 계상한다",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "채취시료의 운반비 및 시료 조작비는 별도 계상한다",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "시료 조작비는 시료포장, 시료상자, 시료병, 표본시료제작비 등을 말한다",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "잡재료는 별도 계상한다",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "표준관입시험",
+          "target": "중급기술자",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "보링공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.07,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.06,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.07,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "슈",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 0.1,
+          "unit": "개",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "샘플러",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 0.015,
+          "unit": "개",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "경유",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "ℓ",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "잡유",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 30.0,
+          "unit": "%",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "보링과 병행하여 시행할 경우이며 목적에 따라서 관입시험을 시행할 경우에는 별도로 계상한다",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "채취시료의 운반비 및 시료 조작비는 별도 계상한다",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "시료 조작비는 시료포장, 시료상자, 시료병, 표본시료제작비 등을 말한다",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "잡재료는 별도 계상한다",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "표준관입시험(회당)의 인력, 자재 투입 및 주석 조건",
+      "confidence": 0.95,
+      "scratchpad": "",
+      "elapsed_sec": 24.06,
+      "input_tokens": 2454,
+      "output_tokens": 1300,
+      "tps": 54.0,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "테르밋 용접",
+          "spec": "레일(50kg~60kg) 장대화 용접",
+          "unit": "개소",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "용접공",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.34
+        },
+        {
+          "type": "Labor",
+          "name": "궤도공",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.23
+        },
+        {
+          "type": "Labor",
+          "name": "보통인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.12
+        },
+        {
+          "type": "Labor",
+          "name": "열차감시원(보통인부)",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.11
+        },
+        {
+          "type": "Material",
+          "name": "테르밋 용재",
+          "spec": "점화용",
+          "unit": "포",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "몰드",
+          "spec": "점화용",
+          "unit": "개",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "골무",
+          "spec": "점화용",
+          "unit": "개",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "퓨즈",
+          "spec": "점화용",
+          "unit": "개",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "산소",
+          "spec": "점화용",
+          "unit": "kℓ",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "프로판 가스",
+          "spec": "점화용",
+          "unit": "kg",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "본 품은 시공 현장에서 레일(50kg~60kg)을 장대화 용접하는 기준이다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "용접작업, 레일연마, 용접부 육안검사 작업을 포함한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "외부검사비용, 운전경비, 기계경비는 별도 계상한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "운행선 공사의 경우 열차감시원(보통인부) 0.11인을 개소당 추가 계상한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "기타 재료비는 주재료비의 30% 범위 내에서 계상한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "산소량은 대기압상태의 기준량이며, 압축산소는 35℃에서 150기압으로 압축용기에 넣어 사용하는 것을 기준한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "테르밋 용접",
+          "target": "용접공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.34,
+          "unit": "인",
+          "properties": {
+            "source_spec": "레일(50kg~60kg) 장대화 용접"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "궤도공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.23,
+          "unit": "인",
+          "properties": {
+            "source_spec": "레일(50kg~60kg) 장대화 용접"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.12,
+          "unit": "인",
+          "properties": {
+            "source_spec": "레일(50kg~60kg) 장대화 용접"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "열차감시원(보통인부)",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.11,
+          "unit": "인",
+          "properties": {
+            "source_spec": "운행선 공사"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "테르밋 용재",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "포",
+          "properties": {
+            "source_spec": "50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "테르밋 용재",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "포",
+          "properties": {
+            "source_spec": "60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "몰드",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "몰드",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "골무",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "골무",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "퓨즈",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "퓨즈",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "산소",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.5,
+          "unit": "kℓ",
+          "properties": {
+            "source_spec": "50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "산소",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.8,
+          "unit": "kℓ",
+          "properties": {
+            "source_spec": "60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "프로판 가스",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.5,
+          "unit": "kg",
+          "properties": {
+            "source_spec": "50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "프로판 가스",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.8,
+          "unit": "kg",
+          "properties": {
+            "source_spec": "60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "본 품은 시공 현장에서 레일(50kg~60kg)을 장대화 용접하는 기준이다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "용접작업, 레일연마, 용접부 육안검사 작업을 포함한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "외부검사비용, 운전경비, 기계경비는 별도 계상한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "운행선 공사의 경우 열차감시원(보통인부) 0.11인을 개소당 추가 계상한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "기타 재료비는 주재료비의 30% 범위 내에서 계상한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "산소량은 대기압상태의 기준량이며, 압축산소는 35℃에서 150기압으로 압축용기에 넣어 사용하는 것을 기준한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "테르밋 용접(레일 50kg~60kg) 개소당 인력투입 및 규격별(50kg, 60kg) 소모재료 기준 — 전체 전개",
+      "confidence": 0.9,
+      "scratchpad": "테이블 3은 2개 규격(50kg, 60kg) × 6개 자재(테르밋 용재, 몰드, 골무, 퓨즈, 산소, 프로판 가스) = 12개 관계. 모두 전개.",
+      "elapsed_sec": 42.35,
+      "input_tokens": 2816,
+      "output_tokens": 2310,
+      "tps": 54.5,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "방음벽 설치",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "철공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "보통인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "트럭탑재형크레인",
+          "spec": "5ton",
+          "unit": "대",
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "고소작업차",
+          "spec": "3ton",
+          "unit": "대",
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "방음벽 설치",
+          "target": "철공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_1m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_2m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_3m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_4m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_1m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_2m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_3m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_4m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_1m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_2m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_3m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "지주높이 3m이하, 방음벽 개당 면적_4m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 5m이하, 방음벽 개당 면적_1m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 5m이하, 방음벽 개당 면적_2m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 5m이하, 방음벽 개당 면적_3m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 5m이하, 방음벽 개당 면적_4m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 3.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 7m이하, 방음벽 개당 면적_1m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 3.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 7m이하, 방음벽 개당 면적_2m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 3.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지주높이 7m이하, 방음벽 개당 면적_3m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "지주높이 9m이하, 방음벽 개당 면적_1m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "지주높이 9m이하, 방음벽 개당 면적_2m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "고소작업차",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "지주높이 11m이하, 방음벽 개당 면적_1m² 이하"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "고소작업차",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "지주높이 11m이하, 방음벽 개당 면적_2m² 이하"
+          }
+        }
+      ],
+      "summary": "방음벽 설치 공종에 대한 지주높이 및 방음벽 면적별 인력/장비 투입 기준 — 매트릭스 표 전체 전개",
+      "confidence": 0.9,
+      "scratchpad": "매트릭스 표 감지: 가로축에 4개 규격(방음벽 개당 면적_1m² 이하, 2m² 이하, 3m² 이하, 4m² 이하) × 세로축에 7개 행(철공 3m이하, 보통인부 3m이하, 트럭탑재형크레인 3m이하, 철공 5m이하, 보통인부 7m이하, 트럭탑재형크레인 9m이하, 고소작업차 11m이하) = 28개 관계. 모든 규격에 대해 독립된 관계 객체를 100% 전개.",
+      "elapsed_sec": 42.22,
+      "input_tokens": 2554,
+      "output_tokens": 2314,
+      "tps": 54.8,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "유압 파일 해머",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "파일해머규격",
+          "spec": "1.5ton 급",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "파일해머규격",
+          "spec": "2.2ton 급",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "파일경",
+          "spec": "250mm",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "파일경",
+          "spec": "300mm",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "파일경",
+          "spec": "350mm",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "파일경",
+          "spec": "400mm",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "파일경",
+          "spec": "450mm",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "파일경",
+          "spec": "500mm",
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머규격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 0.6,
+          "unit": null,
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머규격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 0.8,
+          "unit": null,
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머규격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "350mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머규격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 0.6,
+          "unit": null,
+          "properties": {
+            "source_spec": "400mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머규격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 0.8,
+          "unit": null,
+          "properties": {
+            "source_spec": "450mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머규격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "500mm"
+          }
+        }
+      ],
+      "summary": "유압 파일 해머 작업의 파일해머규격별(1.5ton 급, 2.2ton 급) 및 파일경별(250mm~500mm) 장비 투입 기준 — 전체 전개",
+      "confidence": 0.9,
+      "scratchpad": "2개 규격(파일해머규격: 1.5ton 급, 2.2ton 급) × 6개 규격(파일경: 250mm, 300mm, 350mm, 400mm, 450mm, 500mm) = 12개 관계 가능. 실제 데이터는 6개 관계(1.5ton 급: 250mm, 300mm, 350mm; 2.2ton 급: 400mm, 450mm, 500mm). 모두 전개.",
+      "elapsed_sec": 17.7,
+      "input_tokens": 2292,
+      "output_tokens": 899,
+      "tps": 50.8,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "Castable Spray 공사",
+          "spec": null,
+          "unit": "m²",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "보온공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "기계로 Spray하는 것을 기준한 품",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "공구손료 및 경비는 별도 계상",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "벽, 천장 Spray시는 본 품의 15% 가산",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "비계사용시 높이 6~9m까지 15% 가산",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "비계사용시 높이 9m초과하는 경우 매 3m 증가마다 품의 5%씩 가산",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "Castable Spray 공사",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.18,
+          "unit": "인",
+          "properties": {
+            "source_spec": "15"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.245,
+          "unit": "인",
+          "properties": {
+            "source_spec": "25"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.336,
+          "unit": "인",
+          "properties": {
+            "source_spec": "40"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.396,
+          "unit": "인",
+          "properties": {
+            "source_spec": "50"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.48,
+          "unit": "인",
+          "properties": {
+            "source_spec": "65"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.576,
+          "unit": "인",
+          "properties": {
+            "source_spec": "80"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.656,
+          "unit": "인",
+          "properties": {
+            "source_spec": "100"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.36,
+          "unit": "인",
+          "properties": {
+            "source_spec": "15"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.49,
+          "unit": "인",
+          "properties": {
+            "source_spec": "25"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.672,
+          "unit": "인",
+          "properties": {
+            "source_spec": "40"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.632,
+          "unit": "인",
+          "properties": {
+            "source_spec": "50"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.96,
+          "unit": "인",
+          "properties": {
+            "source_spec": "65"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.152,
+          "unit": "인",
+          "properties": {
+            "source_spec": "80"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.312,
+          "unit": "인",
+          "properties": {
+            "source_spec": "100"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "기계로 Spray하는 것을 기준한 품",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "공구손료 및 경비는 별도 계상",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "벽, 천장 Spray시는 본 품의 15% 가산",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "비계사용시 높이 6~9m까지 15% 가산",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "비계사용시 높이 9m초과하는 경우 매 3m 증가마다 품의 5%씩 가산",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "Castable Spray 공사 두께별(15~100) 인력투입 기준 및 주석 — 전체 전개",
+      "confidence": 0.95,
+      "scratchpad": "7개 규격(15, 25, 40, 50, 65, 80, 100) × 2개 직종(보온공, 특별인부) = 14개 관계. 모두 전개.",
+      "elapsed_sec": 34.83,
+      "input_tokens": 2999,
+      "output_tokens": 1877,
+      "tps": 53.9,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "크러셔",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "크러셔",
+          "spec": "040040",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "크러셔",
+          "spec": "060040",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "크러셔",
+          "spec": "076045",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "크러셔",
+          "spec": "076063",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "크러셔",
+          "spec": "076076",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "크러셔",
+          "spec": "101063",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "크러셔",
+          "spec": "104076",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "크러셔",
+          "spec": "139076",
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 291.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "060040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 327.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076045"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 456.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 548.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 482.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "101063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 548.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "104076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 548.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "139076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 249.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "060040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 282.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076045"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 390.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 468.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 413.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "101063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 468.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "104076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 468.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "139076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 168.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "040040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 168.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "060040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 186.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076045"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 261.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 312.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 274.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "101063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 312.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "104076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 312.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "139076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 126.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "040040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 126.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "060040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 141.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076045"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 165.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 234.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 205.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "101063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 234.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "104076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 234.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "139076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 84.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "040040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 84.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "060040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 93.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076045"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 129.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 156.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 139.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "101063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 156.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "104076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 156.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "139076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 42.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "040040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 42.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "060040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 45.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076045"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 96.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 78.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "076076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 69.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "101063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 78.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "104076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "크러셔",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 78.0,
+          "unit": null,
+          "properties": {
+            "source_spec": "139076"
+          }
+        }
+      ],
+      "summary": "크러셔 공종에 대한 규격별(8종) 및 출구 간격별(6종) 장비 투입량 기준 — 전체 48개 관계 전개",
+      "confidence": 0.9,
+      "scratchpad": "매트릭스 표 감지: 가로축 규격 8개(040040, 060040, 076045, 076063, 076076, 101063, 104076, 139076) × 세로축 출구 간격 6개(45mm, 40mm, 25mm, 19mm, 13mm, 6mm) = 48개 관계. 모두 전개.",
+      "elapsed_sec": 57.17,
+      "input_tokens": 2513,
+      "output_tokens": 3096,
+      "tps": 54.2,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "아세틸렌량의 환산",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "보온공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "성형물",
+          "spec": null,
+          "unit": "m",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "철선",
+          "spec": null,
+          "unit": "m",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Lagging Sheet",
+          "spec": null,
+          "unit": "m²",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Sheet Metal Screw",
+          "spec": null,
+          "unit": "개",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "Prefabricated Sheet로 Lagging할 때는 본 품에 50%를 가산한다. 2매이상 겹쳐 보온하는 경우에는 전체 두께를 1회 보온하는 품에 50%를 가산한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "컬러강판, 아연도강판, 스테인리스 강판, 알루미늄판 등 외장재 (Rawmaterial)로 시공할 때는 본 품에 100%를 가산한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.142,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.212,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.255,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.277,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.036,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.036,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.59,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.59,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 7.27,
+          "unit": "m",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 0.934,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.149,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.223,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.325,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.349,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.039,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.039,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.615,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.615,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 7.91,
+          "unit": "m",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.014,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.182,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.272,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.512,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.556,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.042,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.042,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.625,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.625,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 9.24,
+          "unit": "m",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.18,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.206,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.31,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.728,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.788,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.046,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.046,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.695,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.695,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.5,
+          "unit": "m",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.339,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.226,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.338,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.955,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.035,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.051,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.051,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.77,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.77,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 11.8,
+          "unit": "m",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.501,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Prefabricated Sheet로 Lagging할 때는 본 품에 50%를 가산한다. 2매이상 겹쳐 보온하는 경우에는 전체 두께를 1회 보온하는 품에 50%를 가산한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "컬러강판, 아연도강판, 스테인리스 강판, 알루미늄판 등 외장재 (Rawmaterial)로 시공할 때는 본 품에 100%를 가산한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "아세틸렌량의 환산 공종에 대해 5개 규격(125mm~300mm)별 인력투입(보온공, 특별인부) 및 자재사용(성형물, 철선, Lagging Sheet, Sheet Metal Screw) 기준과 주석(할증조건)을 전개",
+      "confidence": 0.9,
+      "scratchpad": "5개 규격(125mm, 150mm, 200mm, 250mm, 300mm) × 12개 항목(관(m당)_보온공, 관(m당)_특별인부, Fitting(개당)_보온공, Fitting(개당)_특별인부, Hanger(개당)_보온공, Hanger(개당)_특별인부, Valve 및 Flange(개당)_보온공, Valve 및 Flange(개당)_특별인부, 직관의 물량_성형물(m), 직관의 물량_철선(m), 직관의 물량_Lagging Sheet(m²), 직관의 물량_Sheet Metal Screw(개)) = 60개 관계. 모두 전개.",
+      "elapsed_sec": 98.74,
+      "input_tokens": 4137,
+      "output_tokens": 5508,
+      "tps": 55.8,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "도시계획선명시 측량(수치)",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "지적기사",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "지적산업기사",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "지적기능사",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "내업임",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.04,
+          "unit": "인",
+          "properties": {
+            "source_spec": "측량계획 및 준비"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "측량계획 및 준비"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.01,
+          "unit": "인",
+          "properties": {
+            "source_spec": "측량준비도 작성"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "측량준비도 작성"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.01,
+          "unit": "인",
+          "properties": {
+            "source_spec": "현지측량 준비"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "현지측량 준비"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.01,
+          "unit": "인",
+          "properties": {
+            "source_spec": "현지측량 준비"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.33,
+          "unit": "인",
+          "properties": {
+            "source_spec": "현지측량"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.33,
+          "unit": "인",
+          "properties": {
+            "source_spec": "현지측량"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.33,
+          "unit": "인",
+          "properties": {
+            "source_spec": "현지측량"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.04,
+          "unit": "인",
+          "properties": {
+            "source_spec": "성과설명"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.06,
+          "unit": "인",
+          "properties": {
+            "source_spec": "측량결과도 등 측량성과물 작성"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.12,
+          "unit": "인",
+          "properties": {
+            "source_spec": "측량결과도 등 측량성과물 작성"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "측량성과 관련서류 작성"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.03,
+          "unit": "인",
+          "properties": {
+            "source_spec": "측량성과 검사 요청"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.04,
+          "unit": "인",
+          "properties": {
+            "source_spec": "측량성과 검사 요청"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적측량 성과도교부"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.01,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적측량 성과도교부"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.38,
+          "unit": "인",
+          "properties": {
+            "source_spec": "외업"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.35,
+          "unit": "인",
+          "properties": {
+            "source_spec": "외업"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.34,
+          "unit": "인",
+          "properties": {
+            "source_spec": "외업"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.2,
+          "unit": "인",
+          "properties": {
+            "source_spec": "내업"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.27,
+          "unit": "인",
+          "properties": {
+            "source_spec": "내업"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "측량계획 및 준비"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "측량준비도 작성"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "현지측량 준비"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "현지측량"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "성과설명"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "측량결과도 등 측량성과물 작성"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "측량성과 관련서류 작성"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "측량성과 검사 요청"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "지적측량 성과도교부"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "외업"
+          }
+        },
+        {
+          "source": "도시계획선명시 측량(수치)",
+          "target": "내업임",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "내업"
+          }
+        }
+      ],
+      "summary": "도시계획선명시 측량(수치) 작업별(11개) 인력투입 기준(지적기사, 지적산업기사, 지적기능사) 및 내업 조건 — 전체 전개",
+      "confidence": 0.9,
+      "scratchpad": "3개 규격(지적기사, 지적산업기사, 지적기능사) × 11개 작업(측량계획 및 준비, 측량준비도 작성, 현지측량 준비, 현지측량, 성과설명, 측량결과도 등 측량성과물 작성, 측량성과 관련서류 작성, 측량성과 검사 요청, 지적측량 성과도교부, 외업, 내업) = 33개 관계. 모두 전개. 합계 행은 별도 작업으로 간주하지 않고 각 작업별 수치를 기반으로 관계 생성.",
+      "elapsed_sec": 49.91,
+      "input_tokens": 2703,
+      "output_tokens": 2757,
+      "tps": 55.2,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "유압 파일 해머",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "비계공",
+          "spec": null,
+          "unit": "인",
+          "quantity": 3.0
+        },
+        {
+          "type": "Labor",
+          "name": "보통인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": 2.0
+        },
+        {
+          "type": "Labor",
+          "name": "용접공",
+          "spec": null,
+          "unit": "인",
+          "quantity": 1.0
+        },
+        {
+          "type": "Note",
+          "name": "용접공은 강관파일의 경우에만 적용",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "용접기 2대 사용 시 용접공 2인",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "유압 파일 해머",
+          "target": "비계공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 3.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "용접공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "용접공은 강관파일의 경우에만 적용",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "용접기 2대 사용 시 용접공 2인",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "유압 파일 해머 작업 인력 구성: 비계공 3인, 보통인부 2인, 용접공 1인(강관파일 한정, 용접기 2대 시 2인)",
+      "confidence": 0.9,
+      "scratchpad": "표는 매트릭스 형태가 아닌 단일 규격(유압 파일 해머)에 대한 인력 구성 표입니다. 1개 규격 × 3개 직종(비계공, 보통인부, 용접공) = 3개 관계. 단, 용접공은 강관파일 경우에만 적용되며, 용접기 2대 사용 시 수량이 2로 변경됨.",
+      "elapsed_sec": 13.31,
+      "input_tokens": 2344,
+      "output_tokens": 691,
+      "tps": 51.9,
+      "error": null
+    }
+  ],
+  "solar_raw": [
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "플랜트 배관 설치",
+          "spec": "Raw Material 기준",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "보통인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "플랜트 용접공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "플랜트 배관공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "비계공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Raw Material",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Fitting류",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Bracket류",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Support류",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Valve류",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Alloy Steel",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "주('93, '95, '98년, '03년 보완)",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "①",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "②",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "③",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "④",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "⑤",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "⑥",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "⑦",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "⑧",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "⑨",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "⑩",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "⑪",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "⑫",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "⑬",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "KS 1급",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "플랜트 배관 설치",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "보통인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "플랜트 용접공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "플랜트 배관공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "비계공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "Raw Material",
+          "relation_type": "USES_MATERIAL",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "Fitting류",
+          "relation_type": "USES_MATERIAL",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "Bracket류",
+          "relation_type": "USES_MATERIAL",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "Support류",
+          "relation_type": "USES_MATERIAL",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "Valve류",
+          "relation_type": "USES_MATERIAL",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "Alloy Steel",
+          "relation_type": "USES_MATERIAL",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "주('93, '95, '98년, '03년 보완)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "①",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "②",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "③",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "④",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "⑤",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "⑥",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "⑦",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "⑧",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "⑨",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "⑩",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "⑪",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "⑫",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "⑬",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        },
+        {
+          "source": "플랜트 배관 설치",
+          "target": "KS 1급",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "Raw Material 기준"
+          }
+        }
+      ],
+      "summary": "플랜트 배관 설치(Raw Material 기준) 작업과 관련된 인력, 자재, 주석, KS 1급 적용 관계 추출",
+      "confidence": 0.95,
+      "scratchpad": "",
+      "elapsed_sec": 88.74,
+      "input_tokens": 2458,
+      "output_tokens": 6677,
+      "tps": 75.2,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "지능형 CCTV 설치 및 해체",
+          "spec": "고정형",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "고소작업차",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "전동드릴",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "제외 항목",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "기계경비 비율",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "지능형 CCTV 설치 및 해체",
+          "target": "고소작업차",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "지능형 CCTV 설치 및 해체",
+          "target": "전동드릴",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "지능형 CCTV 설치 및 해체",
+          "target": "제외 항목",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "지능형 CCTV 설치 및 해체",
+          "target": "기계경비 비율",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "지능형 CCTV 설치 및 해체(고정형) 기준, 고소작업차 및 전동드릴 필요 시 별도 계상, 제외 항목 및 기계경비 비율 포함",
+      "confidence": 0.9,
+      "scratchpad": "",
+      "elapsed_sec": 74.23,
+      "input_tokens": 2008,
+      "output_tokens": 4606,
+      "tps": 62.0,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "재료 및 자재의 단가",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "국가를당사자로하는계약에관한법률시행규칙",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "기획재정부 회계예규",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "한국산업규격표시품(KS)",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "우수재활용제품(GR)",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Standard",
+          "name": "국·공립시험기관",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "자재구입은 필요에 따라 시방서를 작성하고 그 물건의 기능, 특징, 용량, 제작방법, 성능, 시험방법, 부속품 등에 관하여 명시하여야 한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "국내에서 생산되는 자재를 우선적으로 사용함을 원칙으로 하고 그 중에서도 한국산업규격표시품(KS), 우수재활용제품(GR) 또는 건설기술진흥법 제60조제1항의 규정에 의한 국·공립시험기관의 시험결과",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "국가를당사자로하는계약에관한법률시행규칙",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "국가를당사자로하는계약에관한법률시행규칙"
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "기획재정부 회계예규",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "기획재정부 회계예규"
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "한국산업규격표시품(KS)",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "한국산업규격표시품(KS)"
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "우수재활용제품(GR)",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "우수재활용제품(GR)"
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "국·공립시험기관",
+          "relation_type": "APPLIES_STANDARD",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "국·공립시험기관"
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "자재구입은 필요에 따라 시방서를 작성하고 그 물건의 기능, 특징, 용량, 제작방법, 성능, 시험방법, 부속품 등에 관하여 명시하여야 한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "자재구입은 필요에 따라 시방서를 작성하고 그 물건의 기능, 특징, 용량, 제작방법, 성능, 시험방법, 부속품 등에 관하여 명시하여야 한다."
+          }
+        },
+        {
+          "source": "재료 및 자재의 단가",
+          "target": "국내에서 생산되는 자재를 우선적으로 사용함을 원칙으로 하고 그 중에서도 한국산업규격표시품(KS), 우수재활용제품(GR) 또는 건설기술진흥법 제60조제1항의 규정에 의한 국·공립시험기관의 시험결과",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "국내에서 생산되는 자재를 우선적으로 사용함을 원칙으로 하고 그 중에서도 한국산업규격표시품(KS), 우수재활용제품(GR) 또는 건설기술진흥법 제60조제1항의 규정에 의한 국·공립시험기관의 시험결과"
+          }
+        }
+      ],
+      "summary": "재료 및 자재의 단가 섹션은 관련 법규·예규·KS·GR·국·공립시험기관 적용 및 자재구입 조건 명시",
+      "confidence": 0.95,
+      "scratchpad": "",
+      "elapsed_sec": 38.52,
+      "input_tokens": 2027,
+      "output_tokens": 2371,
+      "tps": 61.6,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "표준관입시험",
+          "spec": null,
+          "unit": "회당",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "중 급 기 술 자",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.02
+        },
+        {
+          "type": "Labor",
+          "name": "보 링 공",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.07
+        },
+        {
+          "type": "Labor",
+          "name": "특 별 인 부",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.06
+        },
+        {
+          "type": "Labor",
+          "name": "보 통 인 부",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.07
+        },
+        {
+          "type": "Equipment",
+          "name": "슈",
+          "spec": null,
+          "unit": "개",
+          "quantity": 0.1
+        },
+        {
+          "type": "Material",
+          "name": "경 유",
+          "spec": null,
+          "unit": "ℓ",
+          "quantity": 1.0
+        },
+        {
+          "type": "Note",
+          "name": "보링과 병행하여 시행할 경우이며 목적에 따라서 관입시험을 시행할 경우에는 별도로 계상한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "채취시료의 운반비 및 시료 조작비는 별도 계상한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "시료 조작비는 시료포장, 시료상자, 시료병, 표본시료제작비 등을 말한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "잡재료는 별도 계상한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "표준관입시험",
+          "target": "중 급 기 술 자",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "보 링 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.07,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "특 별 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.06,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "보 통 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.07,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "슈",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 0.1,
+          "unit": "개",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "경 유",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "ℓ",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "보링과 병행하여 시행할 경우이며 목적에 따라서 관입시험을 시행할 경우에는 별도로 계상한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "채취시료의 운반비 및 시료 조작비는 별도 계상한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "시료 조작비는 시료포장, 시료상자, 시료병, 표본시료제작비 등을 말한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "표준관입시험",
+          "target": "잡재료는 별도 계상한다.",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "표준관입시험(회당) 1회당 인력·장비·자재 투입 및 주석 조건",
+      "confidence": 0.95,
+      "scratchpad": "",
+      "elapsed_sec": 68.21,
+      "input_tokens": 2134,
+      "output_tokens": 5325,
+      "tps": 78.1,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "테르밋 용접",
+          "spec": "개소당",
+          "unit": "개소당",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "용 접 공",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.34
+        },
+        {
+          "type": "Labor",
+          "name": "궤 도 공",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.23
+        },
+        {
+          "type": "Labor",
+          "name": "보 통 인 부",
+          "spec": null,
+          "unit": "인",
+          "quantity": 0.12
+        },
+        {
+          "type": "Note",
+          "name": "운행선 공사 추가 보통인부 0.11인",
+          "spec": "운행선 공사",
+          "unit": "인",
+          "quantity": 0.11
+        },
+        {
+          "type": "Note",
+          "name": "외부검사비용, 운전경비, 기계경비 별도 계상",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "산소량 기준: 대기압, 압축산소 35℃ 150기압",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "테르밋 용 재",
+          "spec": "레일규격_50kg",
+          "unit": "포",
+          "quantity": 1.0
+        },
+        {
+          "type": "Material",
+          "name": "테르밋 용 재",
+          "spec": "레일규격_60kg",
+          "unit": "포",
+          "quantity": 1.0
+        },
+        {
+          "type": "Material",
+          "name": "몰 드",
+          "spec": "레일규격_50kg",
+          "unit": "개",
+          "quantity": 1.0
+        },
+        {
+          "type": "Material",
+          "name": "몰 드",
+          "spec": "레일규격_60kg",
+          "unit": "개",
+          "quantity": 1.0
+        },
+        {
+          "type": "Material",
+          "name": "골 무",
+          "spec": "레일규격_50kg",
+          "unit": "\"",
+          "quantity": 1.0
+        },
+        {
+          "type": "Material",
+          "name": "골 무",
+          "spec": "레일규격_60kg",
+          "unit": "\"",
+          "quantity": 1.0
+        },
+        {
+          "type": "Material",
+          "name": "퓨 즈",
+          "spec": "레일규격_50kg",
+          "unit": "\"",
+          "quantity": 1.0
+        },
+        {
+          "type": "Material",
+          "name": "퓨 즈",
+          "spec": "레일규격_60kg",
+          "unit": "\"",
+          "quantity": 1.0
+        },
+        {
+          "type": "Material",
+          "name": "산 소",
+          "spec": "레일규격_50kg",
+          "unit": "kℓ",
+          "quantity": 1.5
+        },
+        {
+          "type": "Material",
+          "name": "산 소",
+          "spec": "레일규격_60kg",
+          "unit": "kℓ",
+          "quantity": 1.8
+        },
+        {
+          "type": "Material",
+          "name": "프 로 판 가 스",
+          "spec": "레일규격_50kg",
+          "unit": "kg",
+          "quantity": 1.5
+        },
+        {
+          "type": "Material",
+          "name": "프 로 판 가 스",
+          "spec": "레일규격_60kg",
+          "unit": "kg",
+          "quantity": 1.8
+        }
+      ],
+      "relationships": [
+        {
+          "source": "테르밋 용접",
+          "target": "용 접 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.34,
+          "unit": "인",
+          "properties": {
+            "source_spec": "개소당"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "궤 도 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.23,
+          "unit": "인",
+          "properties": {
+            "source_spec": "개소당"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "보 통 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.12,
+          "unit": "인",
+          "properties": {
+            "source_spec": "개소당"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "Note",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "운행선 공사"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "Note",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "Note",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "테르밋 용 재",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "포",
+          "properties": {
+            "source_spec": "레일규격_50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "테르밋 용 재",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "포",
+          "properties": {
+            "source_spec": "레일규격_60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "몰 드",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "레일규격_50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "몰 드",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "레일규격_60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "골 무",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "\"",
+          "properties": {
+            "source_spec": "레일규격_50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "골 무",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "\"",
+          "properties": {
+            "source_spec": "레일규격_60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "퓨 즈",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "\"",
+          "properties": {
+            "source_spec": "레일규격_50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "퓨 즈",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "\"",
+          "properties": {
+            "source_spec": "레일규격_60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "산 소",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.5,
+          "unit": "kℓ",
+          "properties": {
+            "source_spec": "레일규격_50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "산 소",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.8,
+          "unit": "kℓ",
+          "properties": {
+            "source_spec": "레일규격_60kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "프 로 판 가 스",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.5,
+          "unit": "kg",
+          "properties": {
+            "source_spec": "레일규격_50kg"
+          }
+        },
+        {
+          "source": "테르밋 용접",
+          "target": "프 로 판 가 스",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.8,
+          "unit": "kg",
+          "properties": {
+            "source_spec": "레일규격_60kg"
+          }
+        }
+      ],
+      "summary": "테르밋 용접(개소당) 인력 및 레일규격별(50kg, 60kg) 자재 투입 기준",
+      "confidence": 0.95,
+      "scratchpad": "",
+      "elapsed_sec": 65.43,
+      "input_tokens": 2437,
+      "output_tokens": 6162,
+      "tps": 94.2,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "방음벽 설치",
+          "spec": null,
+          "unit": "일당",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "철 공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "보 통 인 부",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "트럭탑재형크레인",
+          "spec": "5ton",
+          "unit": "대",
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "고 소 작 업 차",
+          "spec": "3ton",
+          "unit": "대",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "3m이하",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "5m이하",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "7m이하",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "9m이하",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "11m이하",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "방음벽 설치",
+          "target": "철 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "철 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 4.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보 통 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보 통 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보 통 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "보 통 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "5ton"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "5ton"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "5ton"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "트럭탑재형크레인",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "5ton"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "고 소 작 업 차",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "3ton"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "고 소 작 업 차",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "3ton"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "고 소 작 업 차",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "3ton"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "고 소 작 업 차",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": 1.0,
+          "unit": "대",
+          "properties": {
+            "source_spec": "3ton"
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "3m이하",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "5m이하",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "7m이하",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "9m이하",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        },
+        {
+          "source": "방음벽 설치",
+          "target": "11m이하",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": null
+          }
+        }
+      ],
+      "summary": "방음벽 설치 일당 기준, 철공·보통인부·크레인·고소작업차 인력·장비 투입량 및 높이 조건별 관계 전개",
+      "confidence": 0.95,
+      "scratchpad": "7개 규격(높이 조건) × 4개 직종(철공, 보통인부, 트럭탑재형크레인, 고소작업차) = 28개 관계. 모든 행/열 전개.",
+      "elapsed_sec": 67.67,
+      "input_tokens": 2277,
+      "output_tokens": 5621,
+      "tps": 83.1,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "유압 파일 해머",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "1.5ton 급 파일해머",
+          "spec": "1.5ton",
+          "unit": "ton",
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "2.2ton 급 파일해머",
+          "spec": "2.2ton",
+          "unit": "ton",
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머 운전공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.6,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머 운전공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.8,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머 운전공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "350mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머 운전공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.6,
+          "unit": "인",
+          "properties": {
+            "source_spec": "400mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머 운전공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.8,
+          "unit": "인",
+          "properties": {
+            "source_spec": "450mm"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "파일해머 운전공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "500mm"
+          }
+        }
+      ],
+      "summary": "유압 파일 해머 작업 시 파일경별(250mm~500mm) 1.5ton/2.2ton 급 장비별 인력투입 기준",
+      "confidence": 0.85,
+      "scratchpad": "2개 규격(파일해머 1.5ton 급, 2.2ton 급) × 6개 파일경(250mm, 300mm, 350mm, 400mm, 450mm, 500mm) = 12개 관계. 모든 규격 조합 전개.",
+      "elapsed_sec": 58.48,
+      "input_tokens": 2029,
+      "output_tokens": 4733,
+      "tps": 80.9,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "Castable Spray 공사",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "보 온 공",
+          "spec": null,
+          "unit": "인/m²",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "특 별 인 부",
+          "spec": null,
+          "unit": "인/m²",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "벽·천장 및 비계 사용 가산",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "Castable Spray 공사",
+          "target": "보 온 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.18,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "15"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보 온 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.245,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "25"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보 온 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.336,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "40"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보 온 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.396,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "50"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보 온 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.48,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "65"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보 온 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.576,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "80"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "보 온 공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.656,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "100"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특 별 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.36,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "15"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특 별 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.49,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "25"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특 별 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.672,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "40"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특 별 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.632,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "50"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특 별 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.96,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "65"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특 별 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.152,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "80"
+          }
+        },
+        {
+          "source": "Castable Spray 공사",
+          "target": "특 별 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.312,
+          "unit": "인/m²",
+          "properties": {
+            "source_spec": "100"
+          }
+        }
+      ],
+      "summary": "Castable Spray 공사(두께별) 인력투입 기준 — 전체 전개",
+      "confidence": 0.95,
+      "scratchpad": "7개 규격(15, 25, 40, 50, 65, 80, 100) × 2개 직종(보 온 공, 특 별 인 부) = 14개 관계. 모두 전개.",
+      "elapsed_sec": 50.61,
+      "input_tokens": 2632,
+      "output_tokens": 5393,
+      "tps": 106.6,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "크러셔",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "규 격",
+          "spec": "040040",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "규 격",
+          "spec": "060040",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "규 격",
+          "spec": "076045",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "규 격",
+          "spec": "076063",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "규 격",
+          "spec": "076076",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "규 격",
+          "spec": "101063",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "규 격",
+          "spec": "104076",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Equipment",
+          "name": "규 격",
+          "spec": "139076",
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "출구 간격 (mm)",
+          "spec": "45mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "출구 간격 (mm)",
+          "spec": "40mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "출구 간격 (mm)",
+          "spec": "25mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "출구 간격 (mm)",
+          "spec": "19mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "출구 간격 (mm)",
+          "spec": "13mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "출구 간격 (mm)",
+          "spec": "6mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "최대출구간격(cm)",
+          "spec": "28cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "최대출구간격(cm)",
+          "spec": "47cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "최대출구간격(cm)",
+          "spec": "66cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "최대출구간격(cm)",
+          "spec": "66cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "최대출구간격(cm)",
+          "spec": "66cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "최대출구간격(cm)",
+          "spec": "82cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "최대출구간격(cm)",
+          "spec": "82cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "최대출구간격(cm)",
+          "spec": "82cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "상용출구간격(cm)",
+          "spec": "19cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "상용출구간격(cm)",
+          "spec": "40cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "상용출구간격(cm)",
+          "spec": "56cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "상용출구간격(cm)",
+          "spec": "56cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "상용출구간격(cm)",
+          "spec": "56cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "상용출구간격(cm)",
+          "spec": "80cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "상용출구간격(cm)",
+          "spec": "80cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "상용출구간격(cm)",
+          "spec": "80cm",
+          "unit": "cm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "출구 간격 (mm)",
+          "spec": "45mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "출구 간격 (mm)",
+          "spec": "40mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "출구 간격 (mm)",
+          "spec": "25mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "출구 간격 (mm)",
+          "spec": "19mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "출구 간격 (mm)",
+          "spec": "13mm",
+          "unit": "mm",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "출구 간격 (mm)",
+          "spec": "6mm",
+          "unit": "mm",
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "크러셔",
+          "target": "규 격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "040040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "규 격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "060040"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "규 격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "076045"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "규 격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "076063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "규 격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "076076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "규 격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "101063"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "규 격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "104076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "규 격",
+          "relation_type": "REQUIRES_EQUIPMENT",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "139076"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "출구 간격 (mm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "45mm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "출구 간격 (mm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "40mm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "출구 간격 (mm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "25mm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "출구 간격 (mm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "19mm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "출구 간격 (mm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "13mm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "출구 간격 (mm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "6mm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "최대출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "28cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "최대출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "47cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "최대출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "66cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "최대출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "66cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "최대출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "66cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "최대출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "82cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "최대출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "82cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "최대출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "82cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "상용출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "19cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "상용출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "40cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "상용출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "56cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "상용출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "56cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "상용출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "56cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "상용출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "80cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "상용출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "80cm"
+          }
+        },
+        {
+          "source": "크러셔",
+          "target": "상용출구간격(cm)",
+          "relation_type": "HAS_NOTE",
+          "quantity": null,
+          "unit": null,
+          "properties": {
+            "source_spec": "80cm"
+          }
+        }
+      ],
+      "summary": "크러셔 작업에서 8개 규격과 6개 출구 간격 조합에 대한 최대·상용 출구간격 및 출구 간격(mm) 기준 전개",
+      "confidence": 0.95,
+      "scratchpad": "8개 규격(040040, 060040, 076045, 076063, 076076, 101063, 104076, 139076) × 6개 출구 간격(45, 40, 25, 19, 13, 6) = 48개 관계. 모든 규격과 출구 간격 조합에 대해 전개.",
+      "elapsed_sec": 66.72,
+      "input_tokens": 2368,
+      "output_tokens": 7132,
+      "tps": 106.9,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "아세틸렌량의 환산",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "보온공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "성형물",
+          "spec": null,
+          "unit": "m",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "철선",
+          "spec": null,
+          "unit": "m",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Lagging Sheet",
+          "spec": null,
+          "unit": "m²",
+          "quantity": null
+        },
+        {
+          "type": "Material",
+          "name": "Sheet Metal Screw",
+          "spec": null,
+          "unit": "개",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "Prefabricated Sheet로 Lagging할 때는 본 품에 50%를 가산한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "2매이상 겹쳐 보온하는 경우에는 전체 두께를 1회 보온하는 품에 50%를 가산한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "컬러강판, 아연도강판, 스테인리스 강판, 알루미늄판 등 외장재 (Rawmaterial)로 시공할 때는 본 품에 100%를 가산한다.",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.142,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.212,
+          "unit": "인",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.255,
+          "unit": "개",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.277,
+          "unit": "개",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.036,
+          "unit": "개",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.036,
+          "unit": "개",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.59,
+          "unit": "개",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.59,
+          "unit": "개",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 7.27,
+          "unit": "m",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 0.934,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "125mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.149,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.223,
+          "unit": "인",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.325,
+          "unit": "개",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.349,
+          "unit": "개",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.039,
+          "unit": "개",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.039,
+          "unit": "개",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.615,
+          "unit": "개",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.615,
+          "unit": "개",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 7.91,
+          "unit": "m",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.014,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "150mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.182,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.272,
+          "unit": "인",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.512,
+          "unit": "개",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.556,
+          "unit": "개",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.042,
+          "unit": "개",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.042,
+          "unit": "개",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.625,
+          "unit": "개",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.625,
+          "unit": "개",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 9.24,
+          "unit": "m",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.18,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "200mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.206,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.31,
+          "unit": "인",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.728,
+          "unit": "개",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.788,
+          "unit": "개",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.046,
+          "unit": "개",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.046,
+          "unit": "개",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.695,
+          "unit": "개",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.695,
+          "unit": "개",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.5,
+          "unit": "m",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.339,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "250mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.226,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.338,
+          "unit": "인",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.955,
+          "unit": "개",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.035,
+          "unit": "개",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.051,
+          "unit": "개",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.051,
+          "unit": "개",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "보온공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.77,
+          "unit": "개",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "특별인부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.77,
+          "unit": "개",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "성형물",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.0,
+          "unit": "m",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "철선",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 11.8,
+          "unit": "m",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Lagging Sheet",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 1.501,
+          "unit": "m²",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        },
+        {
+          "source": "아세틸렌량의 환산",
+          "target": "Sheet Metal Screw",
+          "relation_type": "USES_MATERIAL",
+          "quantity": 10.0,
+          "unit": "개",
+          "properties": {
+            "source_spec": "300mm"
+          }
+        }
+      ],
+      "summary": "아세틸렌량 환산(파이프 보온 및 자재) 기준별(125mm~300mm) 인력·자재 투입량 전개",
+      "confidence": 0.95,
+      "scratchpad": "5개 규격(125mm,150mm,200mm,250mm,300mm) × 12개 직종/자재 = 60개 관계. 모두 전개.",
+      "elapsed_sec": 59.73,
+      "input_tokens": 3499,
+      "output_tokens": 7353,
+      "tps": 123.1,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "측량 계획 및 준비",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "측량 준비 도 작성",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "현지 측량 준비",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "현지 측량",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "성과 설명",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "측량결과도 등 측량성과물 작성",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "측량성과 관련서류 작성",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "측량성과 검사 요청",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "지적측량 성과도교부",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "외 업",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "WorkType",
+          "name": "내 업",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "측량 계획 및 준비",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.04,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량 계획 및 준비",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량 계획 및 준비",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "측량 준비 도 작성",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.01,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량 준비 도 작성",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량 준비 도 작성",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "현지 측량 준비",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.01,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "현지 측량 준비",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "현지 측량 준비",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.01,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "현지 측량",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.33,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "현지 측량",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.33,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "현지 측량",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.33,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "성과 설명",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.04,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "성과 설명",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "성과 설명",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "측량결과도 등 측량성과물 작성",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.06,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량결과도 등 측량성과물 작성",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.12,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량결과도 등 측량성과물 작성",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "측량성과 관련서류 작성",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량성과 관련서류 작성",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량성과 관련서류 작성",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "측량성과 검사 요청",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.03,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량성과 검사 요청",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.04,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "측량성과 검사 요청",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "지적측량 성과도교부",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.02,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "지적측량 성과도교부",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.01,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "지적측량 성과도교부",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "외 업",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.38,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "외 업",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.35,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "외 업",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.34,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        },
+        {
+          "source": "내 업",
+          "target": "지적기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.2,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기사_(0.04)"
+          }
+        },
+        {
+          "source": "내 업",
+          "target": "지적산업기사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 0.27,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적산업기사_(0.04)"
+          }
+        },
+        {
+          "source": "내 업",
+          "target": "지적기능사",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": null,
+          "unit": "인",
+          "properties": {
+            "source_spec": "지적기능사"
+          }
+        }
+      ],
+      "summary": "도시계획선명시 측량(수치) 작업별 인력 투입 기준",
+      "confidence": 0.95,
+      "scratchpad": "",
+      "elapsed_sec": 61.57,
+      "input_tokens": 2412,
+      "output_tokens": 6966,
+      "tps": 113.1,
+      "error": null
+    },
+    {
+      "success": true,
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "유압 파일 해머",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "비계공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "보 통 인 부",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Labor",
+          "name": "용접공",
+          "spec": null,
+          "unit": "인",
+          "quantity": null
+        },
+        {
+          "type": "Note",
+          "name": "용접공 적용 조건",
+          "spec": null,
+          "unit": null,
+          "quantity": null
+        }
+      ],
+      "relationships": [
+        {
+          "source": "유압 파일 해머",
+          "target": "비계공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 3.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "3"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "보 통 인 부",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 2.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "2"
+          }
+        },
+        {
+          "source": "유압 파일 해머",
+          "target": "용접공",
+          "relation_type": "REQUIRES_LABOR",
+          "quantity": 1.0,
+          "unit": "인",
+          "properties": {
+            "source_spec": "1(2)"
+          }
+        }
+      ],
+      "summary": "유압 파일 해머 작업 시 비계공 3인, 보통인부 2인, 용접공 1(2)인 투입 기준",
+      "confidence": 0.95,
+      "scratchpad": "1개 규격(없음) × 3개 직종(비계공, 보 통 인 부, 용접공) = 3개 관계. 모두 전개.",
+      "elapsed_sec": 23.48,
+      "input_tokens": 2035,
+      "output_tokens": 2439,
+      "tps": 103.9,
+      "error": null
+    }
+  ],
+  "sample_chunk_ids": [
+    "C-0944-B",
+    "C-0112",
+    "C-0010-B",
+    "C-0493",
+    "C-0414",
+    "C-0372-B",
+    "C-0281-A-b",
+    "C-1007",
+    "C-0270-D",
+    "C-0959-N",
+    "C-0619-A-c",
+    "C-0281-A-h"
+  ]
+}

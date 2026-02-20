@@ -71,10 +71,21 @@ class LLMRelationship(BaseModel):
     relation_type: str = Field(description="관계: REQUIRES_LABOR, REQUIRES_EQUIPMENT, USES_MATERIAL, HAS_NOTE, APPLIES_STANDARD 중 하나")
     quantity: Optional[float] = Field(None, description="투입 수량")
     unit: Optional[str] = Field(None, description="투입 단위")
+    # 💡 [Track A] 규격별 수량 추적을 위한 자유형 Dict
+    # Why: 매트릭스(2D) 표에서 동일 source-target 쌍이 규격별로 다른 수량을 가질 때
+    #       {"source_spec": "200mm"} 형태로 규격을 기록하여 관계를 고유하게 식별
+    properties: Optional[dict] = Field(default_factory=dict, description="추가 속성 (source_spec 등)")
 
 
 class LLMExtractionResult(BaseModel):
     """LLM 추출 전체 결과"""
+    # 💡 [Track A] Chain-of-Thought 버퍼
+    # Why: 매트릭스 표 파싱 시 LLM이 "몇 개 규격을 전개할 것인지" 사고 과정을 기록
+    #       이를 통해 누락 여부를 사후 검증할 수 있음 (디버깅용, 파이프라인에 영향 없음)
+    matrix_analysis_scratchpad: Optional[str] = Field(
+        default="",
+        description="다중 규격 표 파싱 시 LLM의 사고 과정 기록"
+    )
     entities: list[LLMEntity] = Field(default_factory=list)
     relationships: list[LLMRelationship] = Field(default_factory=list)
     summary: str = Field(default="", description="청크 내용 1줄 요약 (한국어)")
@@ -107,12 +118,26 @@ SYSTEM_PROMPT = """당신은 건설 표준품셈 문서에서 엔티티(개체)�
 4. 테이블이 있으면 행/열 구조를 정확히 해석한다
 5. '1m³당', '100m당' 등 기준 단위도 추출한다
 6. 확실하지 않은 정보는 confidence를 낮게 설정한다
+7. 🚨 **[매트릭스 표 전개 규칙]** 가로축에 여러 규격(63mm, 75mm, 200mm 등)이 나열된 표는
+   절대 중간 규격을 생략하거나 "등"으로 묶지 마십시오.
+   **모든 규격에 대해 독립된 관계(relationship) 객체를 100% 전개(Unroll)**해야 합니다.
+8. 각 관계의 `properties.source_spec`에 해당 수량의 **정확한 규격 문자열**을 반드시 기록하십시오.
+9. 매트릭스 표가 감지되면 `matrix_analysis_scratchpad`에 "[규격 수] × [직종 수] = [총 관계 수]"
+   형태로 사고 과정을 기록한 뒤 전개를 시작하십시오.
 
 ## 출력 JSON 스키마 (반드시 이 형식으로 출력)
 ```json
 {
+  "matrix_analysis_scratchpad": "다중 규격 표가 있으면 사고 과정을 여기에 기록",
   "entities": [{"type": "WorkType|Labor|Equipment|Material|Note|Standard", "name": "문자열", "spec": "문자열 or null", "unit": "문자열 or null", "quantity": 숫자 or null}],
-  "relationships": [{"source": "출발엔티티명", "target": "도착엔티티명", "relation_type": "REQUIRES_LABOR|REQUIRES_EQUIPMENT|USES_MATERIAL|HAS_NOTE|APPLIES_STANDARD", "quantity": 숫자 or null, "unit": "문자열 or null"}],
+  "relationships": [{
+    "source": "출발엔티티명",
+    "target": "도착엔티티명",
+    "relation_type": "REQUIRES_LABOR|REQUIRES_EQUIPMENT|USES_MATERIAL|HAS_NOTE|APPLIES_STANDARD",
+    "quantity": 숫자 or null,
+    "unit": "문자열 or null",
+    "properties": {"source_spec": "해당 수량의 규격 (예: 200mm)"}
+  }],
   "summary": "1줄 요약 (한국어)",
   "confidence": 0.0~1.0
 }
@@ -120,7 +145,7 @@ SYSTEM_PROMPT = """당신은 건설 표준품셈 문서에서 엔티티(개체)�
 
 
 FEW_SHOT_EXAMPLE = """
-## 예시
+## 예시 1: 단일 규격 (기존)
 
 ### 입력
 섹션: 콘크리트 타설 (레미콘 25-24-15)
@@ -128,6 +153,7 @@ FEW_SHOT_EXAMPLE = """
 
 ### 출력
 {
+  "matrix_analysis_scratchpad": "",
   "entities": [
     {"type": "WorkType", "name": "콘크리트 타설", "spec": "레미콘 25-24-15", "unit": "m³", "quantity": null},
     {"type": "Labor", "name": "특별인부", "spec": null, "unit": "인", "quantity": 0.33},
@@ -135,11 +161,39 @@ FEW_SHOT_EXAMPLE = """
     {"type": "Labor", "name": "콘크리트공", "spec": null, "unit": "인", "quantity": 0.15}
   ],
   "relationships": [
-    {"source": "콘크리트 타설", "target": "특별인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.33, "unit": "인"},
-    {"source": "콘크리트 타설", "target": "보통인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.67, "unit": "인"},
-    {"source": "콘크리트 타설", "target": "콘크리트공", "relation_type": "REQUIRES_LABOR", "quantity": 0.15, "unit": "인"}
+    {"source": "콘크리트 타설", "target": "특별인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.33, "unit": "인", "properties": {"source_spec": "레미콘 25-24-15"}},
+    {"source": "콘크리트 타설", "target": "보통인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.67, "unit": "인", "properties": {"source_spec": "레미콘 25-24-15"}},
+    {"source": "콘크리트 타설", "target": "콘크리트공", "relation_type": "REQUIRES_LABOR", "quantity": 0.15, "unit": "인", "properties": {"source_spec": "레미콘 25-24-15"}}
   ],
   "summary": "콘크리트 타설(레미콘 25-24-15) 1m³당 인력투입 기준",
+  "confidence": 0.95
+}
+
+## 예시 2: 매트릭스 표 전개 (🚨 핵심)
+
+### 입력
+섹션: 가스용 폴리에틸렌(PE)관 접합 및 부설
+
+| 구분 | 63mm | 200mm |
+| --- | --- | --- |
+| 배관공 | 0.184 | 0.521 |
+| 특별인부 | 0.052 | 0.113 |
+
+### 출력
+{
+  "matrix_analysis_scratchpad": "2개 규격(63mm, 200mm) × 2개 직종(배관공, 특별인부) = 4개 관계. 모두 전개.",
+  "entities": [
+    {"type": "WorkType", "name": "가스용 폴리에틸렌(PE)관 접합 및 부설", "spec": null, "unit": null, "quantity": null},
+    {"type": "Labor", "name": "배관공", "spec": null, "unit": "인", "quantity": null},
+    {"type": "Labor", "name": "특별인부", "spec": null, "unit": "인", "quantity": null}
+  ],
+  "relationships": [
+    {"source": "가스용 폴리에틸렌(PE)관 접합 및 부설", "target": "배관공", "relation_type": "REQUIRES_LABOR", "quantity": 0.184, "unit": "인", "properties": {"source_spec": "63mm"}},
+    {"source": "가스용 폴리에틸렌(PE)관 접합 및 부설", "target": "배관공", "relation_type": "REQUIRES_LABOR", "quantity": 0.521, "unit": "인", "properties": {"source_spec": "200mm"}},
+    {"source": "가스용 폴리에틸렌(PE)관 접합 및 부설", "target": "특별인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.052, "unit": "인", "properties": {"source_spec": "63mm"}},
+    {"source": "가스용 폴리에틸렌(PE)관 접합 및 부설", "target": "특별인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.113, "unit": "인", "properties": {"source_spec": "200mm"}}
+  ],
+  "summary": "가스용 PE관 접합 규격별(63mm, 200mm) 인력투입 기준 — 전체 전개",
   "confidence": 0.95
 }
 """
@@ -233,6 +287,7 @@ async def extract_single_chunk(
                     ],
                     response_format={"type": "json_object"},
                     temperature=LLM_TEMPERATURE,
+                    max_tokens=8192,  # 💡 [Track A] 매트릭스 전개 시 출력 토큰 부족(Truncation) 방지
                 )
                 response = await asyncio.wait_for(
                     api_call, timeout=API_TIMEOUT_SECONDS
@@ -282,6 +337,7 @@ async def extract_single_chunk(
                         type=rtype,
                         quantity=lr.quantity,
                         unit=lr.unit,
+                        properties=lr.properties if lr.properties else {},  # 💡 [Track A] source_spec 전달
                         source_chunk_id=chunk_id,
                     )
                     relationships.append(rel)

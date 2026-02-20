@@ -35,18 +35,34 @@ MERGED_FILE = PHASE2_OUTPUT / "merged_entities.json"
 # ═══════════════════════════════════════════════════════════════
 
 def _entity_key(ent: dict) -> str:
-    """엔티티 동일성 판별 키. type + normalized_name 기반."""
+    """엔티티 동일성 판별 키. type + normalized_name (+ spec) 기반."""
     norm = ent.get("normalized_name", ent["name"].replace(" ", ""))
+    spec = ent.get("spec", "")
+
+    # Why: PE관처럼 name이 동일하고 spec(관경)만 다른 엔티티의 과잉 병합 방지
+    if ent["type"] in ("WorkType", "Equipment", "Material") and spec:
+        safe_spec = str(spec).replace(" ", "").lower()
+        return f"{ent['type']}::{norm.lower()}::{safe_spec}"
+
     return f"{ent['type']}::{norm.lower()}"
 
 
 def _rel_key(rel: dict) -> str:
-    """관계 동일성 판별 키."""
-    return (
-        f"{rel['type']}::"
-        f"{rel['source'].replace(' ','').lower()}::"
-        f"{rel['target'].replace(' ','').lower()}"
-    )
+    """관계 동일성 판별 키. (properties 내 spec 참조로 스키마 안전)"""
+    src = rel['source'].replace(' ', '').lower()
+    tgt = rel['target'].replace(' ', '').lower()
+
+    # Why: properties에 은닉된 spec을 안전하게 추출 (방어 코드 — 향후 Step 2 개선 시 활성화)
+    props = rel.get("properties") or {}
+    src_spec = str(props.get("source_spec", "")).replace(' ', '').lower()
+    tgt_spec = str(props.get("target_spec", "")).replace(' ', '').lower()
+
+    if src_spec:
+        src = f"{src}::{src_spec}"
+    if tgt_spec:
+        tgt = f"{tgt}::{tgt_spec}"
+
+    return f"{rel['type']}::{src}::{tgt}"
 
 
 def merge_chunk_extractions(table_ext: dict | None, llm_ext: dict | None) -> dict:
@@ -283,6 +299,7 @@ def generate_belongs_to(
         # 이 청크의 모든 WorkType → Section
         work_types = [e for e in ext.get("entities", []) if e["type"] == "WorkType"]
         for wt in work_types:
+            spec = wt.get("spec") or ""
             rel = {
                 "source": wt["name"],
                 "source_type": "WorkType",
@@ -292,16 +309,21 @@ def generate_belongs_to(
                 "quantity": None,
                 "unit": None,
                 "per_unit": None,
-                "properties": {"section_id": norm_sid},
+                # Why: 스키마 위반 없이 properties 내부에 규격 은닉 (PE관 15건 분리용)
+                "properties": {
+                    "section_id": norm_sid,
+                    "source_spec": spec,
+                },
                 "source_chunk_id": chunk_id,
             }
             belongs_to_rels.append(rel)
 
-    # 중복 BELONGS_TO 제거
+    # Why: name만으로 dedup하면 PE관 15건이 1건으로 축소됨 → spec 포함 키 사용
     seen = set()
     unique_rels = []
     for r in belongs_to_rels:
-        key = f"{r['source']}::{r['target']}"
+        r_spec = (r.get("properties") or {}).get("source_spec", "")
+        key = f"{r['source']}::{r_spec}::{r['target']}"
         if key not in seen:
             unique_rels.append(r)
             seen.add(key)
@@ -509,25 +531,36 @@ def run_step3():
             ext["entities"].append(section_ent_map[norm_sid])
 
         # BELONGS_TO 보장: 청크 내 모든 WorkType에 대해
-        existing_bt = {r["source"] for r in ext.get("relationships", []) if r["type"] == "BELONGS_TO"}
+        # Why: (name, spec) 튜플로 검색해야 PE관 15건이 각각 독립된 BELONGS_TO를 갖음
+        existing_bt = {
+            (r["source"], (r.get("properties") or {}).get("source_spec", ""))
+            for r in ext.get("relationships", [])
+            if r["type"] == "BELONGS_TO"
+        }
         section_name = section_ent_map.get(norm_sid, {}).get("name", norm_sid)
 
         for ent in ext.get("entities", []):
-            if ent["type"] == "WorkType" and ent["name"] not in existing_bt:
-                bt_rel = {
-                    "source": ent["name"],
-                    "source_type": "WorkType",
-                    "target": section_name,
-                    "target_type": "Section",
-                    "type": "BELONGS_TO",
-                    "quantity": None,
-                    "unit": None,
-                    "per_unit": None,
-                    "properties": {"section_id": norm_sid},
-                    "source_chunk_id": cid,
-                }
-                ext["relationships"].append(bt_rel)
-                total_bt_added += 1
+            if ent["type"] == "WorkType":
+                ent_spec = ent.get("spec") or ""
+                if (ent["name"], ent_spec) not in existing_bt:
+                    bt_rel = {
+                        "source": ent["name"],
+                        "source_type": "WorkType",
+                        "target": section_name,
+                        "target_type": "Section",
+                        "type": "BELONGS_TO",
+                        "quantity": None,
+                        "unit": None,
+                        "per_unit": None,
+                        # Why: 스키마 보호 — properties에 규격 캡슐화
+                        "properties": {
+                            "section_id": norm_sid,
+                            "source_spec": ent_spec,
+                        },
+                        "source_chunk_id": cid,
+                    }
+                    ext["relationships"].append(bt_rel)
+                    total_bt_added += 1
 
     print(f"    BELONGS_TO 추가 보강: {total_bt_added}개")
 
