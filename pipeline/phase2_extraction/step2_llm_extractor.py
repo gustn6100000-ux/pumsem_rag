@@ -19,6 +19,7 @@ llm-structured-extraction 스킬 적용:
 import asyncio
 import json
 import os
+import re
 import sys
 import time
 from collections import Counter
@@ -32,12 +33,18 @@ from pydantic import BaseModel, Field
 
 from config import (
     CHUNKS_FILE, PHASE2_OUTPUT, TABLE_ENTITIES_FILE, LLM_ENTITIES_FILE,
-    LLM_MODEL, LLM_TEMPERATURE, LLM_CONCURRENCY, LLM_RETRY_COUNT,
+    LLM_MODEL, LLM_TEMPERATURE, LLM_CONCURRENCY, LLM_RETRY_COUNT, LLM_MAX_TOKENS,
 )
 from schemas import (
     Entity, Relationship, ChunkExtraction, BatchResult,
     EntityType, RelationType,
 )
+
+ISOLATED_CHUNKS = {
+    "C-0172", "C-0578-A", "C-0578-B", 
+    "C-0623-A", "C-0623-B", "C-0759", 
+    "C-0923", "C-1124", "C-1149"
+}
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -69,8 +76,10 @@ class LLMRelationship(BaseModel):
     source: str = Field(description="출발 엔티티 이름")
     target: str = Field(description="도착 엔티티 이름")
     relation_type: str = Field(description="관계: REQUIRES_LABOR, REQUIRES_EQUIPMENT, USES_MATERIAL, HAS_NOTE, APPLIES_STANDARD 중 하나")
+    relation_type: str = Field(description="관계: REQUIRES_LABOR, REQUIRES_EQUIPMENT, USES_MATERIAL, HAS_NOTE, APPLIES_STANDARD 중 하나")
     quantity: Optional[float] = Field(None, description="투입 수량")
     unit: Optional[str] = Field(None, description="투입 단위")
+    per_unit: Optional[str] = Field(None, description="기준 단위 (예: '1m3당', '100m당')")
     # 💡 [Track A] 규격별 수량 추적을 위한 자유형 Dict
     # Why: 매트릭스(2D) 표에서 동일 source-target 쌍이 규격별로 다른 수량을 가질 때
     #       {"source_spec": "200mm"} 형태로 규격을 기록하여 관계를 고유하게 식별
@@ -116,7 +125,7 @@ SYSTEM_PROMPT = """당신은 건설 표준품셈 문서에서 엔티티(개체)�
 2. 수량은 반드시 원본의 숫자를 그대로 사용한다
 3. 같은 엔티티를 다른 이름으로 중복 추출하지 않는다
 4. 테이블이 있으면 행/열 구조를 정확히 해석한다
-5. '1m³당', '100m당' 등 기준 단위도 추출한다
+5. '1m³당', '100m당' 등 기준 단위(per_unit)도 반드시 포함하여 추출한다.
 6. 확실하지 않은 정보는 confidence를 낮게 설정한다
 7. 🚨 **[매트릭스 표 전개 규칙]** 가로축에 여러 규격(63mm, 75mm, 200mm 등)이 나열된 표는
    절대 중간 규격을 생략하거나 "등"으로 묶지 마십시오.
@@ -136,6 +145,7 @@ SYSTEM_PROMPT = """당신은 건설 표준품셈 문서에서 엔티티(개체)�
     "relation_type": "REQUIRES_LABOR|REQUIRES_EQUIPMENT|USES_MATERIAL|HAS_NOTE|APPLIES_STANDARD",
     "quantity": 숫자 or null,
     "unit": "문자열 or null",
+    "per_unit": "문자열 or null",
     "properties": {"source_spec": "해당 수량의 규격 (예: 200mm)"}
   }],
   "summary": "1줄 요약 (한국어)",
@@ -161,9 +171,9 @@ FEW_SHOT_EXAMPLE = """
     {"type": "Labor", "name": "콘크리트공", "spec": null, "unit": "인", "quantity": 0.15}
   ],
   "relationships": [
-    {"source": "콘크리트 타설", "target": "특별인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.33, "unit": "인", "properties": {"source_spec": "레미콘 25-24-15"}},
-    {"source": "콘크리트 타설", "target": "보통인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.67, "unit": "인", "properties": {"source_spec": "레미콘 25-24-15"}},
-    {"source": "콘크리트 타설", "target": "콘크리트공", "relation_type": "REQUIRES_LABOR", "quantity": 0.15, "unit": "인", "properties": {"source_spec": "레미콘 25-24-15"}}
+    {"source": "콘크리트 타설", "target": "특별인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.33, "unit": "인", "per_unit": "1m³당", "properties": {"source_spec": "레미콘 25-24-15"}},
+    {"source": "콘크리트 타설", "target": "보통인부", "relation_type": "REQUIRES_LABOR", "quantity": 0.67, "unit": "인", "per_unit": "1m³당", "properties": {"source_spec": "레미콘 25-24-15"}},
+    {"source": "콘크리트 타설", "target": "콘크리트공", "relation_type": "REQUIRES_LABOR", "quantity": 0.15, "unit": "인", "per_unit": "1m³당", "properties": {"source_spec": "레미콘 25-24-15"}}
   ],
   "summary": "콘크리트 타설(레미콘 25-24-15) 1m³당 인력투입 기준",
   "confidence": 0.95
@@ -199,7 +209,7 @@ FEW_SHOT_EXAMPLE = """
 """
 
 
-def build_user_prompt(chunk: dict) -> str:
+def build_user_prompt(chunk: dict, all_chunks: list[dict] = []) -> str:
     """청크 데이터 → LLM 입력 프롬프트 생성"""
     parts = []
 
@@ -212,10 +222,25 @@ def build_user_prompt(chunk: dict) -> str:
     if chunk.get('unit_basis'):
         parts.append(f"- 기준단위: {chunk['unit_basis']}")
 
-    # 본문 텍스트
+    # 본문 텍스트 (빈 텍스트면 형제 찾아서 주입)
     text = chunk.get("text", "").strip()
     if text:
         parts.append(f"\n## 본문 텍스트\n{text}")
+    else:
+        # 빈 텍스트일 때 형제 청크에서 컨텍스트 복원
+        chunk_id = chunk.get("chunk_id", "")
+        match = re.match(r"(C-\d+)", chunk_id)
+        if match and all_chunks:
+            base_id = match.group(1)
+            siblings = [c for c in all_chunks 
+                        if c.get("chunk_id", "").startswith(base_id) and c.get("text", "").strip()]
+            if siblings:
+                sibling_text = siblings[0].get("text", "").strip()
+                sibling_id = siblings[0].get("chunk_id", "")
+                parts.append(f"\n## 관련 컨텍스트 (동일 섹션 {sibling_id}에서 참조)")
+                parts.append(sibling_text)
+                parts.append(f"\n⚠️ 위 텍스트는 동일 섹션의 다른 청크에서 가져온 참조 컨텍스트입니다. "
+                             f"테이블에 실제로 존재하는 데이터만 추출하세요 (형제의 다른 규격을 함부로 혼용하지 말 것).")
 
     # 테이블 데이터 → Markdown 형식으로 변환
     tables = chunk.get("tables", [])
@@ -266,13 +291,14 @@ API_TIMEOUT_SECONDS = 120
 async def extract_single_chunk(
     chunk: dict,
     semaphore: asyncio.Semaphore,
+    all_chunks: list[dict] = [],
 ) -> ChunkExtraction:
     """단일 청크에 대해 LLM 추출 실행 (비동기, 타임아웃+재시도 포함)"""
     chunk_id = chunk["chunk_id"]
     section_id = chunk["section_id"]
 
     async with semaphore:
-        user_prompt = build_user_prompt(chunk)
+        user_prompt = build_user_prompt(chunk, all_chunks)
 
         for attempt in range(LLM_RETRY_COUNT):
             try:
@@ -287,7 +313,7 @@ async def extract_single_chunk(
                     ],
                     response_format={"type": "json_object"},
                     temperature=LLM_TEMPERATURE,
-                    max_tokens=8192,  # 💡 [Track A] 매트릭스 전개 시 출력 토큰 부족(Truncation) 방지
+                    max_tokens=LLM_MAX_TOKENS,  # 💡 [Track A] 매트릭스 전개 시 출력 토큰 부족(Truncation) 방지, 16384 확장
                 )
                 response = await asyncio.wait_for(
                     api_call, timeout=API_TIMEOUT_SECONDS
@@ -300,6 +326,10 @@ async def extract_single_chunk(
                 # LLM 결과 → Phase 2 스키마로 변환
                 entities = []
                 relationships = []
+
+                base_conf = llm_result.confidence
+                if chunk_id in ISOLATED_CHUNKS:
+                    base_conf = min(0.7, base_conf)
 
                 for le in llm_result.entities:
                     try:
@@ -316,7 +346,7 @@ async def extract_single_chunk(
                         source_chunk_id=chunk_id,
                         source_section_id=section_id,
                         source_method="llm",
-                        confidence=llm_result.confidence,
+                        confidence=base_conf,
                     )
                     entities.append(entity)
 
@@ -337,6 +367,7 @@ async def extract_single_chunk(
                         type=rtype,
                         quantity=lr.quantity,
                         unit=lr.unit,
+                        per_unit=lr.per_unit,
                         properties=lr.properties if lr.properties else {},  # 💡 [Track A] source_spec 전달
                         source_chunk_id=chunk_id,
                     )
@@ -351,7 +382,7 @@ async def extract_single_chunk(
                     entities=entities,
                     relationships=relationships,
                     summary=llm_result.summary,
-                    confidence=llm_result.confidence,
+                    confidence=base_conf,
                     source_method="llm",
                 )
 
@@ -512,12 +543,13 @@ def load_existing_extractions() -> list[ChunkExtraction]:
     return list(seen.values())
 
 
-async def run_step2_async(sample: bool = False, resume: bool = False) -> BatchResult:
+async def run_step2_async(sample: bool = False, resume: bool = False, section_filter: str = None) -> BatchResult:
     """Step 2.2 비동기 실행
 
     Args:
         sample: True면 20개만 처리
         resume: True면 기존 결과에서 이어서 처리
+        section_filter: 지정된 문자열이 section_id 에 포함된 청크만 추출
     """
     print("\n  Step 2.2: LLM 기반 엔티티/관계 추출 (DeepSeek-V3)")
     print("  " + "=" * 55)
@@ -535,18 +567,23 @@ async def run_step2_async(sample: bool = False, resume: bool = False) -> BatchRe
         print(f"  Step 2.1 결과 로드: {step1_result.total_entities} 엔티티")
 
     # 대상 청크 선별
-    targets, reasons = select_llm_target_chunks(chunks, step1_result)
+    if section_filter:
+        targets = [c for c in chunks if section_filter in c.get("section_id", "") or section_filter in c.get("subsection", "") or section_filter in c.get("title", "")]
+        reasons = Counter({"섹션 필터 강제 지정": len(targets)})
+        print(f"  [섹션 필터] '{section_filter}' 적용: 강제 추출 대상 {len(targets)}개 청크 발견")
+    else:
+        targets, reasons = select_llm_target_chunks(chunks, step1_result)
 
     # 이어하기: 기존 결과 로드
     existing_extractions = []
-    if resume:
+    if resume and not section_filter:  # 섹션 지정 테스트 시에는 이어하기 스킵
         done_ids = load_existing_chunk_ids()
         existing_extractions = load_existing_extractions()
         before = len(targets)
         targets = [c for c in targets if c["chunk_id"] not in done_ids]
         print(f"  [이어하기] 기존 {len(done_ids)}건 스킵, 잔여 {len(targets)}/{before}건")
 
-    if sample:
+    if sample and not section_filter:
         targets = targets[:20]
         print(f"  [샘플 모드] {len(targets)}개 청크만 처리")
 
@@ -575,7 +612,7 @@ async def run_step2_async(sample: bool = False, resume: bool = False) -> BatchRe
     sys.stdout.flush()
     start_time = time.time()
 
-    tasks = [extract_single_chunk(c, semaphore) for c in targets]
+    tasks = [extract_single_chunk(c, semaphore, chunks) for c in targets]
 
     # 진행률 표시 + 중간 저장
     completed = 0
@@ -655,12 +692,18 @@ def _finalize_result(result: BatchResult):
         PARTIAL_SAVE_FILE.unlink()
 
 
-def run_step2(sample: bool = False, resume: bool = False) -> BatchResult:
+def run_step2(sample: bool = False, resume: bool = False, section_filter: str = None) -> BatchResult:
     """동기 래퍼"""
-    return asyncio.run(run_step2_async(sample, resume))
+    return asyncio.run(run_step2_async(sample, resume, section_filter))
 
 
 if __name__ == "__main__":
     sample_mode = "--sample" in sys.argv
     resume_mode = "--resume" in sys.argv
-    run_step2(sample=sample_mode, resume=resume_mode)
+    
+    section_arg = None
+    if "--section" in sys.argv:
+        idx = sys.argv.index("--section")
+        section_arg = sys.argv[idx + 1]
+        
+    run_step2(sample=sample_mode, resume=resume_mode, section_filter=section_arg)

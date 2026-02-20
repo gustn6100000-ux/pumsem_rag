@@ -62,7 +62,13 @@ def _rel_key(rel: dict) -> str:
     if tgt_spec:
         tgt = f"{tgt}::{tgt_spec}"
 
-    return f"{rel['type']}::{src}::{tgt}"
+    per_unit = str(rel.get("per_unit", "")).replace(' ', '').lower()
+    
+    parts = [rel['type'], src, tgt]
+    if per_unit:
+        parts.append(per_unit)
+
+    return "::".join(parts)
 
 
 def merge_chunk_extractions(table_ext: dict | None, llm_ext: dict | None) -> dict:

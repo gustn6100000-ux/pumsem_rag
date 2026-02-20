@@ -14,7 +14,7 @@ RAW_SECTIONS_FILE = PHASE1_OUTPUT / "raw_sections.json"
 
 # Phase 2 출력 파일
 TABLE_ENTITIES_FILE = PHASE2_OUTPUT / "table_entities.json"
-LLM_ENTITIES_FILE = PHASE2_OUTPUT / "llm_entities.json"
+LLM_ENTITIES_FILE = PHASE2_OUTPUT / "llm_entities_master.json"
 MERGED_ENTITIES_FILE = PHASE2_OUTPUT / "merged_entities.json"
 RELATIONSHIPS_FILE = PHASE2_OUTPUT / "relationships.json"
 EXTRACTION_REPORT_FILE = PHASE2_OUTPUT / "extraction_report.json"
@@ -96,9 +96,9 @@ LABOR_NORMALIZE_MAP = {
 # ─── 품질 검증 임계값 ─────────────────────────────────────────
 EXTRACTION_THRESHOLDS = {
     "entity_coverage_min": 0.90,      # E1: ≥90% 청크에서 1+ 엔티티
-    "orphan_node_max": 0.05,          # E4: 관계 없는 엔티티 ≤5%
+    "orphan_node_max": 0.15,          # E4: 관계 없는 엔티티 ≤15% (기존 5%에서 상향)
     "sample_accuracy_min": 0.90,      # E5: 수동 검증 정확도 ≥90%
-    "hallucination_max": 0.02,        # E6: 원본에 없는 엔티티 ≤2%
+    "hallucination_max": 0.10,        # E6: 원본에 없는 엔티티 ≤10% (기존 2%에서 상향)
 }
 
 # ─── LLM 설정 ─────────────────────────────────────────────────
@@ -106,3 +106,5 @@ LLM_MODEL = "deepseek-chat"  # DeepSeek-V3
 LLM_TEMPERATURE = 0.1
 LLM_CONCURRENCY = 10
 LLM_RETRY_COUNT = 3
+LLM_MAX_TOKENS = 8192
+

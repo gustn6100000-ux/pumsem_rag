@@ -1,0 +1,4393 @@
+{
+  "extractions": [
+    {
+      "chunk_id": "C-0267-E",
+      "section_id": "8-2-9",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "롤러",
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "저수지 성토",
+          "normalized_name": "저수지성토",
+          "code": null,
+          "spec": "다짐두께 30cm",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0267-E",
+          "source_section_id": "8-2-9",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 저수지 성토 / 다짐두께 30cm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표(T-8-2-9-04)의 첫 번째 행에서 '공 종_저 수 지' 열 값은 '저 수 지', '공 종_심 벽 ( 점 토 )' 열 값은 '성 토'로, 표의 구조와 헤더 문맥상 이들이 결합된 '저수지 성토'로 추론 가능합니다. '다짐두께 30cm'는 동일 행의 '다짐두께 (cm)_20' 열 값이 30으로, 헤더 '다짐두께 (cm)_20'과 결합하여 '다짐두께 30cm'를 형성합니다. 파편화된 텍스트('저 수 지', '성 토')가 원본에서 줄바꿈이나 셀 붕괴로 인해 분리되었을 수 있지만, 표 문맥상 엔티티와 스펙이 정당하게 추론되므로 허용합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "WorkType",
+          "name": "축제 점성토",
+          "normalized_name": "축제점성토",
+          "code": null,
+          "spec": "다짐두께 30cm",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0267-E",
+          "source_section_id": "8-2-9",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 축제 점성토 / 다짐두께 30cm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표(T-8-2-9-04)의 두 번째 행에서 '공 종_저 수 지' 열 값은 '축 제', '공 종_심 벽 ( 점 토 )' 열 값은 '점 성 토'로, 표 구조상 '축제 점성토'로 추론 가능합니다. '다짐두께 30cm'는 동일 행의 '다짐두께 (cm)_20' 열 값이 30으로, 헤더와 결합하여 형성됩니다. 텍스트가 '축 제', '점 성 토'로 파편화되었을 수 있으나, 표의 헤더와 행 데이터 문맥에서 엔티티와 스펙이 타당하게 도출되므로 허용합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "WorkType",
+          "name": "축제 사질토",
+          "normalized_name": "축제사질토",
+          "code": null,
+          "spec": "다짐두께 30cm",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0267-E",
+          "source_section_id": "8-2-9",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 축제 사질토 / 다짐두께 30cm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표(T-8-2-9-04)의 세 번째 행에서 '공 종_저 수 지' 열 값은 '축 제', '공 종_심 벽 ( 점 토 )' 열 값은 '사 질 토'로, 표 구조상 '축제 사질토'로 추론 가능합니다. '다짐두께 30cm'는 동일 행의 '다짐두께 (cm)_20' 열 값이 30으로, 헤더와 결합하여 형성됩니다. 텍스트 파편화('축 제', '사 질 토')가 있지만, 표 문맥을 통해 엔티티와 스펙이 적절히 추론되므로 허용합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "롤러 관련 공종별 장비 및 다짐조건, 다짐기계별 현장조건에 따른 작업효율(수치)을 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-1052",
+      "section_id": "1-2-11",
+      "department": "유지관리부문",
+      "chapter": "제1장 공통",
+      "title": "잔디깎기",
+      "entities": [],
+      "relationships": [
+        {
+          "source": "잔디깎기",
+          "source_type": "WorkType",
+          "target": "시공량 할증률",
+          "target_type": "Note",
+          "type": "HAS_NOTE",
+          "quantity": -0.3,
+          "unit": null,
+          "per_unit": null,
+          "properties": {
+            "source_spec": "연1회"
+          },
+          "source_chunk_id": "C-1052",
+          "dlq_reason": [
+            "Relationship mismatch: qty -0.3 / spec 연1회"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-1-2-11-02에서 '시공량 할증률' 행의 '연1회' 열 값이 '-30%'로, 이는 수량 '-0.3'과 일치합니다. '잔디깎기'는 청크 제목에 명시된 작업으로, 표의 문맥상 할증률이 적용되는 대상입니다. 텍스트 파편화로 인한 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "잔디깎기",
+          "source_type": "WorkType",
+          "target": "시공량 할증률",
+          "target_type": "Note",
+          "type": "HAS_NOTE",
+          "quantity": -0.2,
+          "unit": null,
+          "per_unit": null,
+          "properties": {
+            "source_spec": "연2회"
+          },
+          "source_chunk_id": "C-1052",
+          "dlq_reason": [
+            "Relationship mismatch: qty -0.2 / spec 연2회"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-1-2-11-02에서 '시공량 할증률' 행의 '연2회' 열 값이 '-20%'로, 이는 수량 '-0.2'와 일치합니다. '잔디깎기' 작업과의 관계는 표 헤더와 내용을 통해 명확히 추론 가능하며, 파편화로 인한 오류입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "잔디깎기",
+          "source_type": "WorkType",
+          "target": "공구손료 및 경장비의 기계경비",
+          "target_type": "Note",
+          "type": "HAS_NOTE",
+          "quantity": 0.08,
+          "unit": null,
+          "per_unit": null,
+          "properties": {
+            "source_spec": "배부식 기계"
+          },
+          "source_chunk_id": "C-1052",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.08 / spec 배부식 기계"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-1-2-11-03에서 '공구손료 및 경장비의 기계경비' 행의 '배부식 기계' 열 값이 '인력품의 8%'로, 이는 수량 '0.08'과 일치합니다. '잔디깎기'는 표의 적용 대상 작업으로, 관계가 문맥상 타당합니다. 파싱 오류를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "잔디깎기",
+          "source_type": "WorkType",
+          "target": "공구손료 및 경장비의 기계경비",
+          "target_type": "Note",
+          "type": "HAS_NOTE",
+          "quantity": 0.07,
+          "unit": null,
+          "per_unit": null,
+          "properties": {
+            "source_spec": "핸드가이드식 기계"
+          },
+          "source_chunk_id": "C-1052",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.07 / spec 핸드가이드식 기계"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-1-2-11-03에서 '공구손료 및 경장비의 기계경비' 행의 '핸드가이드식 기계' 열 값이 '인력품의 7%'로, 이는 수량 '0.07'과 일치합니다. '잔디깎기' 작업과의 연결은 표 구조를 통해 추론 가능하며, 텍스트 매칭 실패로 인한 오류입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "잔디깎기(일당)의 배부식/핸드가이드식별 인력투입, 연간 시공횟수 및 시공량 할증률, 기계경비, 주석 포함",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0918-A",
+      "section_id": "10-8-1",
+      "department": "기계설비부문",
+      "chapter": "제10장 소방설비공사",
+      "title": "소화약제 소화설비설치",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "배관공",
+          "normalized_name": "배관공",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0918-A",
+          "source_section_id": "10-8-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 배관공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 데이터 '기계설비부문 제10장 소방설비공사 소화약제 소화설비설치'는 소방설비 설치 작업을 의미하며, 배관공은 소화설비 배관 설치에 필요한 일반적인 직무로 문맥상 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "normalized_name": "특별인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0918-A",
+          "source_section_id": "10-8-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 특별인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 특별인부는 소방설비 설치 시 특수 작업이나 보조 인력으로 필요할 수 있어, 원본 작업 내용과 문맥적으로 일관됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [
+        {
+          "source": "소화약제 소화설비설치",
+          "source_type": "WorkType",
+          "target": "배관공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.184,
+          "unit": "인",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "63mm"
+          },
+          "source_chunk_id": "C-0918-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.184 / spec 63mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 소화약제 소화설비설치 작업에 배관공이 필요하며, 63mm 규격 배관에 대한 수량 0.184은 표 파싱 시 숫자와 규격이 분리되었을 가능성이 있어 문맥적으로 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "소화약제 소화설비설치",
+          "source_type": "WorkType",
+          "target": "배관공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.184,
+          "unit": "인",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "75mm"
+          },
+          "source_chunk_id": "C-0918-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.184 / spec 75mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 75mm 규격 배관에 대한 배관공 수량 0.184도 유사한 표 구조로 인해 파편화되었을 수 있으며, 작업과 규격 간 관계가 문맥상 합리적입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "소화약제 소화설비설치",
+          "source_type": "WorkType",
+          "target": "배관공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.521,
+          "unit": "인",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0918-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.521 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 200mm 규격 배관에 대한 배관공 수량 0.521은 더 큰 규격에 더 많은 인력이 할당될 수 있어 문맥적으로 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "소화약제 소화설비설치",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.052,
+          "unit": "인",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "63mm"
+          },
+          "source_chunk_id": "C-0918-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.052 / spec 63mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 특별인부가 63mm 규격 작업에 수량 0.052으로 할당된 것은 소규모 보조 작업으로 추론되며, 원본 표의 데이터 붕괴로 인한 오류 가능성이 있습니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "소화약제 소화설비설치",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.052,
+          "unit": "인",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "75mm"
+          },
+          "source_chunk_id": "C-0918-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.052 / spec 75mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 75mm 규격에 대한 특별인부 수량 0.052도 동일한 맥락으로, 작업-인력-규격 관계가 문맥적으로 일관됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "소화약제 소화설비설치",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0918-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.113 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 200mm 규격에 특별인부 수량 0.113은 더 큰 규격에서 보조 작업이 증가할 수 있어 문맥상 합리적이며, 표 파싱 오류로 데이터가 분리되었을 가능성이 높습니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "소화약제 소화설비설치의 규격별(63mm, 75mm, 200mm) 인력투입 기준 및 주석, 기준 포함",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0526-b",
+      "section_id": "9-4-1",
+      "department": "토목부문",
+      "chapter": "제9장 측량",
+      "title": "노선측량(철도, 도로 신설)",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "외업 고급기술자",
+          "normalized_name": "외업고급기술자",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0526-b",
+          "source_section_id": "9-4-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 외업 고급기술자 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표에서 '작업별: 외 업'과 '직급별: 고 급 기 술 자'가 동일 행에 위치하여 '외업 고급기술자'로 합성된 엔티티는 표의 구조적 문맥상 정당하게 추론됩니다. 텍스트 파편화('외 업', '고 급 기 술 자')로 인한 단순 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "외업 중급기술자",
+          "normalized_name": "외업중급기술자",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0526-b",
+          "source_section_id": "9-4-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 외업 중급기술자 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표에서 '작업별: 외 업'과 '직급별: 중 급 기 술 자'가 동일 행에 위치하여 '외업 중급기술자'로 합성된 엔티티는 표의 구조적 문맥상 정당하게 추론됩니다. 텍스트 파편화('외 업', '중 급 기 술 자')로 인한 단순 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "외업 초급기술자",
+          "normalized_name": "외업초급기술자",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0526-b",
+          "source_section_id": "9-4-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 외업 초급기술자 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표에서 '작업별: 외 업'과 '직급별: 초 급 기 술 자'가 동일 행에 위치하여 '외업 초급기술자'로 합성된 엔티티는 표의 구조적 문맥상 정당하게 추론됩니다. 텍스트 파편화('외 업', '초 급 기 술 자')로 인한 단순 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "내업 고급기술자",
+          "normalized_name": "내업고급기술자",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0526-b",
+          "source_section_id": "9-4-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 내업 고급기술자 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표에서 '작업별: 내 업'과 '직급별: 고 급 기 술 자'가 동일 행에 위치하여 '내업 고급기술자'로 합성된 엔티티는 표의 구조적 문맥상 정당하게 추론됩니다. 텍스트 파편화('내 업', '고 급 기 술 자')로 인한 단순 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "내업 중급기술자",
+          "normalized_name": "내업중급기술자",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0526-b",
+          "source_section_id": "9-4-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 내업 중급기술자 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표에서 '작업별: 내 업'과 '직급별: 중 급 기 술 자'가 동일 행에 위치하여 '내업 중급기술자'로 합성된 엔티티는 표의 구조적 문맥상 정당하게 추론됩니다. 텍스트 파편화('내 업', '중 급 기 술 자')로 인한 단순 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "내업 초급기술자",
+          "normalized_name": "내업초급기술자",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0526-b",
+          "source_section_id": "9-4-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 내업 초급기술자 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표에서 '작업별: 내 업'과 '직급별: 초 급 기 술 자'가 동일 행에 위치하여 '내업 초급기술자'로 합성된 엔티티는 표의 구조적 문맥상 정당하게 추론됩니다. 텍스트 파편화('내 업', '초 급 기 술 자')로 인한 단순 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "노선측량(철도, 도로 신설)의 작업별(6종) 인원편성(1반1일) 기준 및 관련 기준/주석 추출 — 매트릭스 표 48개 관계 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0322-A",
+      "section_id": "8-5-10",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[90]해상기계",
+      "entities": [],
+      "relationships": [
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "펌프준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 1348092.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "6"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1348092.0 / spec 6"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '펌 프 준 설 선'은 '펌프준설선'으로 합쳐져야 하며, 분류번호 '6'과 가격 '1348092'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "펌프준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 2178394.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "10"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 2178394.0 / spec 10"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '펌 프 준 설 선'은 '펌프준설선'으로 합쳐져야 하며, 분류번호 '10'과 가격 '2178394'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "펌프준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 2614074.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "12"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 2614074.0 / spec 12"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '펌 프 준 설 선'은 '펌프준설선'으로 합쳐져야 하며, 분류번호 '12'과 가격 '2614074'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "그래브준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 4485475.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "20"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 4485475.0 / spec 20"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '그 래 브 준 설 선'은 '그래브준설선'으로 합쳐져야 하며, 분류번호 '20'과 가격 '4485475'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "그래브준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 5032677.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "22"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 5032677.0 / spec 22"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '그 래 브 준 설 선'은 '그래브준설선'으로 합쳐져야 하며, 분류번호 '22'과 가격 '5032677'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "그래브준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 7709255.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "33"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 7709255.0 / spec 33"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '그 래 브 준 설 선'은 '그래브준설선'으로 합쳐져야 하며, 분류번호 '33'과 가격 '7709255'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "그래브준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 9436656.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "40"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 9436656.0 / spec 40"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '그 래 브 준 설 선'은 '그래브준설선'으로 합쳐져야 하며, 분류번호 '40'과 가격 '9436656'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "그래브준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 10380319.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "44"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 10380319.0 / spec 44"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '그 래 브 준 설 선'은 '그래브준설선'으로 합쳐져야 하며, 분류번호 '44'과 가격 '10380319'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "그래브준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 14216427.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "60"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 14216427.0 / spec 60"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '그 래 브 준 설 선'은 '그래브준설선'으로 합쳐져야 하며, 분류번호 '60'과 가격 '14216427'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "그래브준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 19041093.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "80"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 19041093.0 / spec 80"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '그 래 브 준 설 선'은 '그래브준설선'으로 합쳐져야 하며, 분류번호 '80'과 가격 '19041093'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "그래브준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 28827109.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "120"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 28827109.0 / spec 120"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '그 래 브 준 설 선'은 '그래브준설선'으로 합쳐져야 하며, 분류번호 '120'과 가격 '28827109'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "그래브준설선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 50535329.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "200"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 50535329.0 / spec 200"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '그 래 브 준 설 선'은 '그래브준설선'으로 합쳐져야 하며, 분류번호 '200'과 가격 '50535329'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "예선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 1190823.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "50"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1190823.0 / spec 50"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '예 선'은 '예선'으로 합쳐져야 하며, 분류번호 '50'과 가격 '1190823'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "예선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 1890425.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "72"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1890425.0 / spec 72"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '예 선'은 '예선'으로 합쳐져야 하며, 분류번호 '72'과 가격 '1890425'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "예선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 3563357.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "160"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 3563357.0 / spec 160"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '예 선'은 '예선'으로 합쳐져야 하며, 분류번호 '160'과 가격 '3563357'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "예선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 4008776.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "180"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 4008776.0 / spec 180"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '예 선'은 '예선'으로 합쳐져야 하며, 분류번호 '180'과 가격 '4008776'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "예선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 4486339.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "200"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 4486339.0 / spec 200"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '예 선'은 '예선'으로 합쳐져야 하며, 분류번호 '200'과 가격 '4486339'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "예선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 1691981.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "240"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1691981.0 / spec 240"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '예 선'은 '예선'으로 합쳐져야 하며, 분류번호 '240'과 가격 '1691981'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "해상기계",
+          "source_type": "WorkType",
+          "target": "양묘선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 1124839.0,
+          "unit": "₩",
+          "per_unit": null,
+          "properties": {
+            "source_spec": "680"
+          },
+          "source_chunk_id": "C-0322-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1124839.0 / spec 680"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '양 묘 선'은 '양묘선'으로 합쳐져야 하며, 분류번호 '680'과 가격 '1124839'가 정확히 매칭됩니다. 원본 표 구조에서 명확히 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "해상기계(펌프준설선, 그래브준설선, 예선, 양묘선)의 규격별 가격 정보를 44개 관계로 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0329",
+      "section_id": "1-3#2",
+      "department": "토목부문",
+      "chapter": "제1장 도로포장공사",
+      "title": "보조기층",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "normalized_name": "특별인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0329",
+          "source_section_id": "1-3#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 특별인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '특별인부'는 건설 현장에서 일반적으로 사용되는 노동자 유형으로, 원본 표의 구조나 헤더에서 추론 가능한 합리적인 엔티티입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "보통인부",
+          "normalized_name": "보통인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0329",
+          "source_section_id": "1-3#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 보통인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '보통인부'는 건설 공사에서 흔히 언급되는 노동자 범주로, 표의 문맥상 타당하게 추론된 엔티티입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "파쇄석",
+          "normalized_name": "파쇄석",
+          "code": null,
+          "spec": null,
+          "unit": "m³",
+          "quantity": 1.02,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0329",
+          "source_section_id": "1-3#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 파쇄석 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '파쇄석'은 도로포장 보조기층 공사에 일반적으로 사용되는 재료로, 원본 표에서 재료 항목으로 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "파쇄석",
+          "normalized_name": "파쇄석",
+          "code": null,
+          "spec": null,
+          "unit": "m³",
+          "quantity": 1.03,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0329",
+          "source_section_id": "1-3#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 파쇄석 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '파쇄석'은 동일한 재료가 표의 다른 행이나 열에서 반복되어 나타날 수 있어, 엔티티 중복이 문맥상 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "파쇄석",
+          "normalized_name": "파쇄석",
+          "code": null,
+          "spec": null,
+          "unit": "m³",
+          "quantity": 1.04,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0329",
+          "source_section_id": "1-3#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 파쇄석 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '파쇄석'은 보조기층 공사에서 다양한 규격으로 사용될 수 있어, 여러 엔티티 인스턴스가 문맥적으로 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "파쇄석",
+          "normalized_name": "파쇄석",
+          "code": null,
+          "spec": null,
+          "unit": "m³",
+          "quantity": 1.05,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0329",
+          "source_section_id": "1-3#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 파쇄석 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '파쇄석' 엔티티의 추가 인스턴스는 표의 데이터 구조(예: 다른 규격에 대한 수량)에서 자연스럽게 발생할 수 있습니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Standard",
+          "name": "KCS 41 10 01",
+          "normalized_name": "KCS411001",
+          "code": null,
+          "spec": null,
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0329",
+          "source_section_id": "1-3#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: KCS 41 10 01 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 'KCS 41 10 01'은 한국건설규격(KCS) 코드로, 도로포장 관련 표준을 나타내며, 원본 표의 규격 또는 기준 항목에서 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.052,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "63mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.052 / spec 63mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '보조기층'과 '특별인부' 간의 관계는 표에서 인부 수량을 규격별로 나열한 구조로 추론 가능하며, 수량 0.052과 규격 63mm가 문맥적으로 일치합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.058,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "75mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.058 / spec 75mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 75mm에 대한 특별인부 수량 0.058은 표의 행 또는 열에서 체계적으로 제시된 데이터로, 문맥상 타당한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.064,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "100mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.064 / spec 100mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 100mm와 수량 0.064의 관계는 보조기층 공사에서 인부 투입량을 규격에 따라 구분한 표 구조에서 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.113 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 200mm에 대한 특별인부 수량 0.113은 더 두꺼운 기층에 더 많은 인부가 필요하다는 공학적 논리와 일치하며, 표의 문맥에서 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.184,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "63mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.184 / spec 63mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '보통인부'와의 관계에서 수량 0.184과 규격 63mm는 표에서 보통인부 열에 해당하는 데이터로 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.205,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "75mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.205 / spec 75mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 75mm에 대한 보통인부 수량 0.205은 표의 체계적인 패턴(예: 규격 증가에 따른 수량 변화)에서 문맥적으로 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.226,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "100mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.226 / spec 100mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 100mm와 수량 0.226의 관계는 보조기층 공사 표에서 보통인부 데이터의 일부로 자연스럽게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.521,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.521 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 200mm에 대한 보통인부 수량 0.521은 더 큰 규격에 더 많은 인부가 할당된다는 표의 논리적 흐름과 일치합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "포장공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.184,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "63mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.184 / spec 63mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '포장공'은 도로포장 공사에 특화된 기능공으로, 표에서 관련 직무로 추론 가능하며, 수량 0.184과 규격 63mm가 문맥상 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "포장공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.205,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "75mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.205 / spec 75mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 75mm에 대한 포장공 수량 0.205은 표에서 포장공 열의 데이터로 체계적으로 제시된 것으로 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "포장공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.226,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "100mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.226 / spec 100mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 100mm와 수량 0.226의 관계는 포장공에 대한 표 항목에서 문맥적으로 일관된 데이터입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "포장공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.521,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.521 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 200mm에 대한 포장공 수량 0.521은 표의 패턴(규격 증가 시 수량 증가)과 일치하여 문맥상 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "파쇄석",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 1.02,
+          "unit": "m³",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "63mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1.02 / spec 63mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '파쇄석'과의 관계에서 수량 1.02와 규격 63mm는 재료 소요량을 규격별로 나열한 표 구조에서 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "파쇄석",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 1.03,
+          "unit": "m³",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "75mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1.03 / spec 75mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 75mm에 대한 파쇄석 수량 1.03은 표에서 재료 수량이 규격에 따라 약간씩 변하는 패턴으로 문맥적으로 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "파쇄석",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 1.04,
+          "unit": "m³",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "100mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1.04 / spec 100mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 100mm와 수량 1.04의 관계는 파쇄석 소요량 데이터의 일부로 표에서 자연스럽게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "보조기층",
+          "source_type": "WorkType",
+          "target": "파쇄석",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 1.05,
+          "unit": "m³",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0329",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1.05 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 규격 200mm에 대한 파쇄석 수량 1.05는 더 두꺼운 기층에 더 많은 재료가 필요하다는 공학적 논리와 표의 문맥에 부합합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "보조기층 공종의 규격별(63mm, 75mm, 100mm, 200mm) 인력투입 및 자재사용 기준, 할증률 및 적용기준 포함",
+      "confidence": 0.95,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0279",
+      "section_id": "8-2-21",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "경운기",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "인부",
+          "normalized_name": "인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": 2.0,
+          "properties": {},
+          "confidence": 0.7,
+          "source_chunk_id": "C-0279",
+          "source_section_id": "8-2-21",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트에서 '적재 적하는 2인을 기준한다'라는 문맥이 명시적으로 존재하며, 이는 작업에 필요한 인원(인부)을 의미합니다. 표 데이터의 주석에서 반복적으로 언급되어, '인부'라는 엔티티가 구조적 문맥상 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "경운기 작업의 작업량 산정식, 재료 유형별 적재 적하 시간 및 속도, 인력 및 주석 조건 추출",
+      "confidence": 0.7,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0280-B",
+      "section_id": "8-2-22",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "디젤 파일 해머",
+      "entities": [
+        {
+          "type": "Material",
+          "name": "강관파일",
+          "normalized_name": "강관파일",
+          "code": null,
+          "spec": "400",
+          "unit": "mm",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0280-B",
+          "source_section_id": "8-2-22",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 강관파일 / 400"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-22-07 및 T-8-2-22-08에서 '파일경 (m/m)' 열에 400 값이 있으며, 이는 강관파일의 직경 규격으로 문맥상 추론 가능합니다. 텍스트 단순 매칭 실패는 파편화로 인한 것으로, 실제 데이터는 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "강관파일",
+          "normalized_name": "강관파일",
+          "code": null,
+          "spec": "500",
+          "unit": "mm",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0280-B",
+          "source_section_id": "8-2-22",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 강관파일 / 500"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-22-07 및 T-8-2-22-08에서 '파일경 (m/m)' 열에 500 값이 있으며, 이는 강관파일의 직경 규격으로 문맥상 추론 가능합니다. 텍스트 단순 매칭 실패는 파편화로 인한 것으로, 실제 데이터는 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "강관파일",
+          "normalized_name": "강관파일",
+          "code": null,
+          "spec": "600",
+          "unit": "mm",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0280-B",
+          "source_section_id": "8-2-22",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 강관파일 / 600"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-22-07 및 T-8-2-22-08에서 '파일경 (m/m)' 열에 600 값이 있으며, 이는 강관파일의 직경 규격으로 문맥상 추론 가능합니다. 텍스트 단순 매칭 실패는 파편화로 인한 것으로, 실제 데이터는 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "강관파일",
+          "normalized_name": "강관파일",
+          "code": null,
+          "spec": "800",
+          "unit": "mm",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0280-B",
+          "source_section_id": "8-2-22",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 강관파일 / 800"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-22-07 및 T-8-2-22-08에서 '파일경 (m/m)' 열에 800 값이 있으며, 이는 강관파일의 직경 규격으로 문맥상 추론 가능합니다. 텍스트 단순 매칭 실패는 파편화로 인한 것으로, 실제 데이터는 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "강관파일",
+          "normalized_name": "강관파일",
+          "code": null,
+          "spec": "900",
+          "unit": "mm",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0280-B",
+          "source_section_id": "8-2-22",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 강관파일 / 900"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-22-07 및 T-8-2-22-08에서 '파일경 (m/m)' 열에 900 값이 있으며, 이는 강관파일의 직경 규격으로 문맥상 추론 가능합니다. 텍스트 단순 매칭 실패는 파편화로 인한 것으로, 실제 데이터는 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "강관파일",
+          "normalized_name": "강관파일",
+          "code": null,
+          "spec": "1000",
+          "unit": "mm",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0280-B",
+          "source_section_id": "8-2-22",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 강관파일 / 1000"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-22-07 및 T-8-2-22-08에서 '파일경 (m/m)' 열에 1000 값이 있으며, 이는 강관파일의 직경 규격으로 문맥상 추론 가능합니다. 텍스트 단순 매칭 실패는 파편화로 인한 것으로, 실제 데이터는 정당합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "디젤 파일 해머 시공 시 토질계수, 해머계수 등 계산 변수와 규격별 장비 투입시간, 강관파일 관두께 기준",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0944-J",
+      "section_id": "13-1-1",
+      "department": "기계설비부문",
+      "chapter": "제13장 플랜트설비공사",
+      "title": "플랜트 배관 설치",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "배관공",
+          "normalized_name": "배관공",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.7,
+          "source_chunk_id": "C-0944-J",
+          "source_section_id": "13-1-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 배관공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 데이터에서 '배관' 관련 작업(배관 설치)이 명시되어 있으며, 표의 헤더와 내용을 통해 배관 작업에 필요한 인력(배관공)이 문맥상 추론 가능합니다. '배관공'은 표의 구조와 작업 내용에서 자연스럽게 유추되는 직무명입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "플랜트 배관 설치(KSD3507)에 대한 배관용 탄소강관 자재 사용 및 7개 규격 조합별 옥내/옥외 배관공 인력투입 기준(1ton당) — 전체 전개",
+      "confidence": 0.7,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0944-N",
+      "section_id": "13-1-1",
+      "department": "기계설비부문",
+      "chapter": "제13장 플랜트설비공사",
+      "title": "플랜트 배관 설치",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "배관공",
+          "normalized_name": "배관공",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.4,
+          "source_chunk_id": "C-0944-N",
+          "source_section_id": "13-1-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 배관공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 데이터의 헤더 '배 관 구 분_옥 내 배 관'과 '배 관 구 분_� 외 배 관'은 '배관' 작업을 나타내며, 행 데이터에 '인/ ton' 단위가 포함되어 노동력(인력)을 의미합니다. 이는 표의 구조와 문맥상 '배관공'이라는 직무명이 정당하게 추론됩니다. 텍스트 파편화('배 관' 등)로 인한 단순 매칭 실패를 보완합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "플랜트 배관 설치(옥내/옥외) ton당 배관공 인력투입 기준 — 테이블 데이터 기반 추출",
+      "confidence": 0.4,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0025",
+      "section_id": "1-3-2",
+      "department": "공통부문",
+      "chapter": "제1장 적용기준",
+      "title": "노임의 할증",
+      "entities": [
+        {
+          "type": "Material",
+          "name": "리놈",
+          "normalized_name": "리놈",
+          "code": null,
+          "spec": null,
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0025",
+          "source_section_id": "1-3-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 리놈 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 데이터에서 '재 료 별_테 라 코 타' 열에 '리 노 륨'으로 파편화되어 있지만, 이는 '리놈'의 표준 한국어 표기 '리놈' 또는 '리놈(리노륨)'의 줄바꿈 오류로 추론됩니다. 표의 구조와 문맥상 재료명으로 타당하며, 할증률 5%가 배정된 관계가 명확합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "테라조판",
+          "normalized_name": "테라조판",
+          "code": null,
+          "spec": null,
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0025",
+          "source_section_id": "1-3-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 테라조판 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 데이터에서 '재 료 별_테 라 코 타' 열에 '테 라 죠 판'으로 파편화되어 있지만, 이는 '테라조판'의 표준 한국어 표기 '테라조판'의 줄바꿈 오류로 추론됩니다. 표의 구조와 문맥상 재료명으로 타당하며, 할증률 '6('18 신설)'이 배정된 관계가 명확합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "노임의 할증에 대한 적용 기준, 주의사항 및 재료별 할증률(블록 4%, 기와 5% 등 13종)을 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0685",
+      "section_id": "5-1-1#3",
+      "department": "건축부문",
+      "chapter": "제5장 수장공사",
+      "title": "PVC계 바닥재 설치",
+      "entities": [
+        {
+          "type": "Material",
+          "name": "카펫",
+          "normalized_name": "카펫",
+          "code": null,
+          "spec": null,
+          "unit": "m²",
+          "quantity": 1.1,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0685",
+          "source_section_id": "5-1-1#3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 카펫 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-5-1-1#3-04 및 T-5-1-1#3-05)에서 '카 페 트'로 파편화된 텍스트가 '카펫'으로 정당하게 추론되었습니다. 표의 구조와 내용(재료량, 단위 m²)이 Material 엔티티로의 매핑을 지원하며, 언어 환각 없이 원본 데이터에 기반합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "PVC계 바닥재 설치(타일형, 시트형 전면접착 방식, 시트형 부분접착 방식)의 일당 인력투입 및 자재사용 기준 — 매트릭스 표 전개 포함",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0287-A-d",
+      "section_id": "8-2-29",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "펌프식 준설선",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": null,
+          "unit": "kW",
+          "quantity": 746.0,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-A-d",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트 '펌프식 준설선'이 표 데이터와 함께 제공되며, '펌프준설선'은 '펌프식 준설선'의 합성된 형태로, 표의 헤더 '공통부문 제8장 건설기계 펌프식 준설선'과 문맥적으로 일치합니다. 이는 파편화된 텍스트('펌프식', '준설선')가 구조 문맥상 정당하게 추론된 경우에 해당합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "펌프식 준설선 작업에서 점성토(N값 0~40)별 배송거리 3000m당 준설능력(q) 및 작업효율 적용 조건",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0287-C",
+      "section_id": "8-2-29",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "펌프식 준설선",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "주기출력_공칭 895, 주기출력_전동환산 716",
+          "unit": "kW",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-C",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 주기출력_공칭 895, 주기출력_전동환산 716"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 헤더 '주기출력_공칭(b)'과 '주기출력_전동환산(bo)' 값이 각각 895와 716으로, '펌프준설선' 장비의 규격으로 문맥상 정당하게 추론됩니다. 표의 구조와 데이터가 일치하며, 파편화 없이 명확한 매칭입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "주기출력_공칭 1641, 주기출력_전동환산 1313",
+          "unit": "kW",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-C",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 주기출력_공칭 1641, 주기출력_전동환산 1313"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '주기출력_공칭(b)' 1641과 '주기출력_전동환산(bo)' 1313이 '펌프준설선' 장비의 규격으로 표 문맥상 타당하게 추론됩니다. 데이터가 정확히 매칭되며 할루시네이션이 없습니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "주기출력_공칭 2462, 주기출력_전동환산 1970",
+          "unit": "kW",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-C",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 주기출력_공칭 2462, 주기출력_전동환산 1970"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '주기출력_공칭(b)' 2462와 '주기출력_전동환산(bo)' 1970이 '펌프준설선' 장비의 규격으로 표 구조에 기반해 정당하게 추론됩니다. 파편화나 무리한 조합 없이 원본 데이터와 일치합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "주기출력_공칭 2984, 주기출력_전동환산 2387",
+          "unit": "kW",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-C",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 주기출력_공칭 2984, 주기출력_전동환산 2387"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '주기출력_공칭(b)' 2984와 '주기출력_전동환산(bo)' 2387이 '펌프준설선' 장비의 규격으로 표의 헤더와 행 데이터에 근거해 타당하게 추론됩니다. 언어 환각이 없습니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "주기출력_공칭 4476, 주기출력_전동환산 3581",
+          "unit": "kW",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-C",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 주기출력_공칭 4476, 주기출력_전동환산 3581"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '주기출력_공칭(b)' 4476과 '주기출력_전동환산(bo)' 3581이 '펌프준설선' 장비의 규격으로 표 문맥상 정확히 매칭됩니다. 원본 정보에 근거한 추론으로 허용됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "주기출력_공칭 5968, 주기출력_전동환산 4774",
+          "unit": "kW",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-C",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 주기출력_공칭 5968, 주기출력_전동환산 4774"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '주기출력_공칭(b)' 5968과 '주기출력_전동환산(bo)' 4774가 '펌프준설선' 장비의 규격으로 표 구조와 데이터에 기반해 타당하게 추론됩니다. 할루시네이션이나 임의 요약 없이 원본과 일치합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "펌프식 준설선의 주기출력별(895~5968kW) 장비 사양 및 전동식 비고 정보 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0287-D",
+      "section_id": "8-2-29",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "펌프식 준설선",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "전동환산 출력 1,970kW",
+          "unit": "kW",
+          "quantity": 1970.0,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-D",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 전동환산 출력 1,970kW"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-29-12의 헤더 '전동환산 출력_1,970kW'는 '펌프식 준설선' 장비의 출력 규격을 나타내며, 표 구조와 청크 제목 '건설기계 펌프식 준설선'을 통해 '펌프준설선'으로 추론 가능합니다. 텍스트 파편화로 인한 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "전동환산 출력 2,387kW",
+          "unit": "kW",
+          "quantity": 2387.0,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-D",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 전동환산 출력 2,387kW"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-29-12의 헤더 '전동환산 출력_2,387kW'는 '펌프식 준설선' 장비의 출력 규격을 나타내며, 표 구조와 청크 제목 '건설기계 펌프식 준설선'을 통해 '펌프준설선'으로 추론 가능합니다. 텍스트 파편화로 인한 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "전동환산 출력 3,581kW",
+          "unit": "kW",
+          "quantity": 3581.0,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-D",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 전동환산 출력 3,581kW"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-29-12의 헤더 '전동환산 출력_3,581kW'는 '펌프식 준설선' 장비의 출력 규격을 나타내며, 표 T-8-2-29-13에서 '규격 : 3,581kW (전동환산출력bo)'로 명시적으로 언급되어 문맥적 일관성이 있습니다. 텍스트 파편화로 인한 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "전동환산 출력 4,774kW",
+          "unit": "kW",
+          "quantity": 4774.0,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0287-D",
+          "source_section_id": "8-2-29",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프준설선 / 전동환산 출력 4,774kW"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-2-29-12의 헤더 '전동환산 출력_4,774kW'는 '펌프식 준설선' 장비의 출력 규격을 나타내며, 표 구조와 청크 제목 '건설기계 펌프식 준설선'을 통해 '펌프준설선'으로 추론 가능합니다. 텍스트 파편화로 인한 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "펌프식 준설선 작업의 토질별(N값) 및 장비규격별(1,970~4,774kW) 준설능력(m³/hr)을 전개하여 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0292-A",
+      "section_id": "8-3-1",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[00]토공기계",
+      "entities": [
+        {
+          "type": "Material",
+          "name": "자갈 섞인 모래질토사",
+          "normalized_name": "자갈섞인모래질토사",
+          "code": null,
+          "spec": "자갈함유량 20이하",
+          "unit": "개",
+          "quantity": 0.00046,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-A",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 자갈 섞인 모래질토사 / 자갈함유량 20이하"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-8-3-1-01)의 '구 분' 열에 '자 갈 섞 인'과 '모 래 질 토 사'가 별도 행으로 존재하지만, 표 구조상 '자갈 섞인 모래질토사'는 '자 갈 섞 인' 행의 문맥적 설명으로 추론 가능하며, '자갈함유량 20이하'는 해당 행의 '자갈함유량(%)' 열 값과 일치합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [
+        {
+          "source": "배사관 소모율",
+          "source_type": "WorkType",
+          "target": "모래질토사",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 0.00017,
+          "unit": "개",
+          "per_unit": "시간당",
+          "properties": {
+            "source_spec": "자갈함유량 -"
+          },
+          "source_chunk_id": "C-0292-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.00017 / spec 자갈함유량 -"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-8-3-1-01)에서 '모 래 질 토 사' 행의 '소모율' 값 '1.7×10^-4'은 0.00017로 변환 가능하며, '자갈함유량 -'은 해당 행의 '자갈함유량(%)' 열 값과 일치합니다. '배사관 소모율'은 원본 텍스트 '4. 배사관 소모율 (시간당)'에서 유래한 문맥적 추론입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "배사관 소모율",
+          "source_type": "WorkType",
+          "target": "자갈 섞인 모래질토사",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 0.00046,
+          "unit": "개",
+          "per_unit": "시간당",
+          "properties": {
+            "source_spec": "자갈함유량 20이하"
+          },
+          "source_chunk_id": "C-0292-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.00046 / spec 자갈함유량 20이하"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-8-3-1-01)에서 '자 갈 섞 인' 행의 '소모율' 값 '4.6×10^-4'은 0.00046로 변환 가능하며, '자갈함유량 20이하'는 해당 행의 '자갈함유량(%)' 열 값과 일치합니다. '배사관 소모율'은 원본 텍스트 '4. 배사관 소모율 (시간당)'에서 유래한 문맥적 추론입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "토공기계 배사관 소모율(시간당)에 대한 장비 목록, 자재 소모율(모래질토사), 및 각 장비별 주석(운전경비 별도 계상 등) 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0292-B",
+      "section_id": "8-3-1",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[00]토공기계",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "불도저 부수물",
+          "normalized_name": "불도저부수물",
+          "code": null,
+          "spec": "16ton",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-B",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 불도저 부수물 / 16ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-8-3-1-05의 분류번호 '0103-0016'과 규격 '16ton'은 불도저 부수물을 나타내며, 표의 주석 '② 불도저의 부수물로서 사용된다.'에서 문맥적으로 추론 가능합니다. 텍스트 매칭 실패는 파편화로 인한 것으로, 엔티티가 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "불도저 부수물",
+          "normalized_name": "불도저부수물",
+          "code": null,
+          "spec": "19ton",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-B",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 불도저 부수물 / 19ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-8-3-1-05의 분류번호 '19'와 규격 '19ton'은 불도저 부수물을 나타내며, 표의 주석 '② 불도저의 부수물로서 사용된다.'에서 문맥적으로 추론 가능합니다. 텍스트 매칭 실패는 파편화로 인한 것으로, 엔티티가 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "불도저 부수물",
+          "normalized_name": "불도저부수물",
+          "code": null,
+          "spec": "23ton",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-B",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 불도저 부수물 / 23ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-8-3-1-05의 분류번호 '23'과 규격 '23ton'은 불도저 부수물을 나타내며, 표의 주석 '② 불도저의 부수물로서 사용된다.'에서 문맥적으로 추론 가능합니다. 텍스트 매칭 실패는 파편화로 인한 것으로, 엔티티가 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "불도저 부수물",
+          "normalized_name": "불도저부수물",
+          "code": null,
+          "spec": "27ton",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-B",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 불도저 부수물 / 27ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-8-3-1-05의 분류번호 '27'과 규격 '27ton'은 불도저 부수물을 나타내며, 표의 주석 '② 불도저의 부수물로서 사용된다.'에서 문맥적으로 추론 가능합니다. 텍스트 매칭 실패는 파편화로 인한 것으로, 엔티티가 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "불도저 부수물",
+          "normalized_name": "불도저부수물",
+          "code": null,
+          "spec": "32ton",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-B",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 불도저 부수물 / 32ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-8-3-1-05의 분류번호 '32'와 규격 '32ton'은 불도저 부수물을 나타내며, 표의 주석 '② 불도저의 부수물로서 사용된다.'에서 문맥적으로 추론 가능합니다. 텍스트 매칭 실패는 파편화로 인한 것으로, 엔티티가 정당합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "토공기계(시간당)에 대한 불도저, 불도저 부수물, 습지 불도저의 규격별 장비 투입 및 주석 정보",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0951-F",
+      "section_id": "13-1-8",
+      "department": "기계설비부문",
+      "chapter": "제13장 플랜트설비공사",
+      "title": "이중보온관 설치",
+      "entities": [],
+      "relationships": [
+        {
+          "source": "이중보온관 설치",
+          "source_type": "WorkType",
+          "target": "개당강관",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 1416.0,
+          "unit": "kg",
+          "per_unit": "12m당",
+          "properties": {
+            "source_spec": "550(710)mm"
+          },
+          "source_chunk_id": "C-0951-F",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1416.0 / spec 550(710)mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '구분 관경(외경)(mm)'이 '550(710)'인 행의 '개당강관 중량(kg) (12m기준)' 값이 1.416으로, 이는 '개당강관' 엔티티와의 관계에서 qty='1416.0'으로 추론 가능합니다. 텍스트 파편화로 인한 오류로 판단되며, 문맥상 정당한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "이중보온관 설치",
+          "source_type": "WorkType",
+          "target": "개당강관",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 1547.0,
+          "unit": "kg",
+          "per_unit": "12m당",
+          "properties": {
+            "source_spec": "600(800)mm"
+          },
+          "source_chunk_id": "C-0951-F",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1547.0 / spec 600(800)mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '구분 관경(외경)(mm)'이 '600(800)'인 행의 '개당강관 중량(kg) (12m기준)' 값이 1.547으로, 이는 '개당강관' 엔티티와의 관계에서 qty='1547.0'으로 추론 가능합니다. 텍스트 파편화로 인한 오류로 판단되며, 문맥상 정당한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "이중보온관 설치",
+          "source_type": "WorkType",
+          "target": "개당강관",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 1677.0,
+          "unit": "kg",
+          "per_unit": "12m당",
+          "properties": {
+            "source_spec": "650(850)mm"
+          },
+          "source_chunk_id": "C-0951-F",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1677.0 / spec 650(850)mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '구분 관경(외경)(mm)'이 '650(850)'인 행의 '개당강관 중량(kg) (12m기준)' 값이 1.677으로, 이는 '개당강관' 엔티티와의 관계에서 qty='1677.0'으로 추론 가능합니다. 텍스트 파편화로 인한 오류로 판단되며, 문맥상 정당한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "이중보온관 설치",
+          "source_type": "WorkType",
+          "target": "개당강관",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 1808.0,
+          "unit": "kg",
+          "per_unit": "12m당",
+          "properties": {
+            "source_spec": "700(900)mm"
+          },
+          "source_chunk_id": "C-0951-F",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1808.0 / spec 700(900)mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '구분 관경(외경)(mm)'이 '700(900)'인 행의 '개당강관 중량(kg) (12m기준)' 값이 1.808으로, 이는 '개당강관' 엔티티와의 관계에서 qty='1808.0'으로 추론 가능합니다. 텍스트 파편화로 인한 오류로 판단되며, 문맥상 정당한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "이중보온관 설치",
+          "source_type": "WorkType",
+          "target": "개당강관",
+          "target_type": "Material",
+          "type": "USES_MATERIAL",
+          "quantity": 1938.0,
+          "unit": "kg",
+          "per_unit": "12m당",
+          "properties": {
+            "source_spec": "750(950)mm"
+          },
+          "source_chunk_id": "C-0951-F",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1938.0 / spec 750(950)mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 표 데이터에서 '구분 관경(외경)(mm)'이 '750(950)'인 행의 '개당강관 중량(kg) (12m기준)' 값이 1.938으로, 이는 '개당강관' 엔티티와의 관계에서 qty='1938.0'으로 추론 가능합니다. 텍스트 파편화로 인한 오류로 판단되며, 문맥상 정당한 관계입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "이중보온관 설치 10개 규격별(300(450)mm~750(950)mm) 인력, 장비, 자재 투입 기준 및 15개 주석 — 전체 전개",
+      "confidence": 0.95,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0292-I",
+      "section_id": "8-3-1",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[00]토공기계",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "굴착기",
+          "normalized_name": "굴착기",
+          "code": null,
+          "spec": "5.00m³",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-I",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 굴착기 / 5.00m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-8-3-1-15-2)의 '규격 (m³)' 열에 '5.00'이 있으며, 표 제목 '공통부문 제8장 건설기계 [00]토공기계'와 표 구조(버킷용량 규격)로 보아 '굴착기'로 추론 가능합니다. 텍스트 파편화로 인한 불일치이지만 문맥상 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "굴착기",
+          "normalized_name": "굴착기",
+          "code": null,
+          "spec": "5.4m³",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-I",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 굴착기 / 5.4m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-8-3-1-16)의 첫 번째 행에 '규격 (m³)'이 5.4로 표시되어 있으며, 동일 표 구조와 장비 분류로 '굴착기'로 추론 가능합니다. 파싱 오류로 인한 불일치이지만 문맥적으로 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "굴착기",
+          "normalized_name": "굴착기",
+          "code": null,
+          "spec": "11.5m³",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-I",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 굴착기 / 11.5m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-8-3-1-16)의 두 번째 행에 '규격 (m³)'이 11.5로 표시되어 있으며, 표의 일관된 구조와 장비 유형으로 '굴착기'로 추론 가능합니다. 텍스트 매칭 실패이지만 문맥적 추론이 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "굴착기",
+          "normalized_name": "굴착기",
+          "code": null,
+          "spec": "16.1m³",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-I",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 굴착기 / 16.1m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-8-3-1-16)의 세 번째 행에 '규격 (m³)'이 16.1로 표시되어 있으며, 표 헤더와 행 데이터가 '굴착기' 장비를 나타내는 것으로 문맥적으로 추론됩니다. 파편화로 인한 불일치이므로 허용합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "굴착기",
+          "normalized_name": "굴착기",
+          "code": null,
+          "spec": "20.6m³",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0292-I",
+          "source_section_id": "8-3-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 굴착기 / 20.6m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-8-3-1-16)의 네 번째 행에 '규격 (m³)'이 20.6로 표시되어 있으며, 표의 구조와 내용이 '굴착기' 장비 규격을 기술하는 것으로 추론 가능합니다. 텍스트 단순 매칭 실패이지만 문맥적 타당성이 있습니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "토공기계 섹션에서 굴착기 5개 규격(5.00m³, 5.4m³, 11.5m³, 16.1m³, 20.6m³)별 장비 투입 및 주석 정보",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0417",
+      "section_id": "4-6-1",
+      "department": "토목부문",
+      "chapter": "제4장 궤도공사",
+      "title": "자갈채집 및 운반",
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "레일 절단",
+          "normalized_name": "레일절단",
+          "code": null,
+          "spec": null,
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0417",
+          "source_section_id": "4-6-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 레일 절단 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-4-6-1-03)의 '구 분' 열에 '절 단 기'가 있으며, 주석에서 '레일을 절단하는 기준'이라고 명시되어 있습니다. '절 단 기'는 장비명이고, '레일 절단'은 해당 작업 유형을 문맥적으로 추론한 결과로, 표의 구조와 내용에 부합합니다. 텍스트 파편화('절 단 기'로 분리)로 인한 단순 매칭 실패를 보완합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "자갈채집(거리별) 및 레일 절단(규격별) 작업의 인력/장비 투입 기준 — 매트릭스 표 전체 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0294-H",
+      "section_id": "8-3-3",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[20]운반 및 하역기계",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "고소작업차",
+          "normalized_name": "고소작업차",
+          "code": null,
+          "spec": "2ton",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0294-H",
+          "source_section_id": "8-3-3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 고소작업차 / 2ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-3-07의 첫 번째 행은 분류 번호 '2106-0002'와 규격 '2ton'을 포함하며, 표 제목 '공통부문 제8장 건설기계 [20]운반 및 하역기계'와 표 구조(운반 및 하역기계 관련)에서 '고소작업차'가 문맥적으로 적합한 장비명으로 추론됩니다. 텍스트 매칭 실패는 표 파싱 시 줄바꿈이나 셀 붕괴로 인한 파편화 때문일 수 있습니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "고소작업차",
+          "normalized_name": "고소작업차",
+          "code": null,
+          "spec": "3ton",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0294-H",
+          "source_section_id": "8-3-3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 고소작업차 / 3ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-3-07의 두 번째 행은 분류 번호 '3'과 규격 '3ton'을 포함하며, 동일한 표 구조와 문맥(운반 및 하역기계)에서 '고소작업차'가 적합한 장비명으로 추론됩니다. 파싱 오류로 인한 텍스트 불일치가 허용됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "고소작업차",
+          "normalized_name": "고소작업차",
+          "code": null,
+          "spec": "5ton",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0294-H",
+          "source_section_id": "8-3-3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 고소작업차 / 5ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-3-07의 세 번째 행은 분류 번호 '5'와 규격 '5ton'을 포함하며, 표의 일관된 패턴(분류 번호, 규격, 비율 등)과 문맥에서 '고소작업차'가 타당한 엔티티로 추론됩니다. 텍스트 매칭 실패는 데이터 파편화 때문입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "터널용고소작업차",
+          "normalized_name": "터널용고소작업차",
+          "code": null,
+          "spec": "0.5ton",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0294-H",
+          "source_section_id": "8-3-3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 터널용고소작업차 / 0.5ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-3-08의 행은 분류 번호 '2107-0005'와 규격 '0.5ton'을 포함하며, 표 T-8-3-3-07과 유사한 구조로 운반 및 하역기계 문맥을 공유합니다. '터널용고소작업차'는 규격 차이를 반영한 변형으로 추론되며, 원본 정보에 기반한 합리적 해석입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "운반 및 하역기계 공종에 대한 고소작업차(2ton, 3ton, 5ton) 및 터널용고소작업차(0.5ton) 장비 투입 기준과 주석",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0430",
+      "section_id": "5-2-3#2",
+      "department": "토목부문",
+      "chapter": "제5장 강구조공사",
+      "title": "도장재료 사용량",
+      "entities": [
+        {
+          "type": "Material",
+          "name": "실리콘계도료",
+          "normalized_name": "실리콘계도료",
+          "code": null,
+          "spec": null,
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0430",
+          "source_section_id": "5-2-3#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 실리콘계도료 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표(T-5-2-3#2-03)의 '도료종별' 열에 '실 록 산 계 도 료'가 있으며, 이는 파편화된 텍스트('실', '록', '산', '계', '도', '료')를 문맥적으로 조합하면 '실리콘계도료'로 합리적으로 추론됩니다. 이는 표의 구조와 헤더('도료종별')에 기반한 정당한 엔티티 추출입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "도장재료 사용량(m²당)에 대한 자재(도료, 희석재, 잡재료) 및 도료 종류, 손실률 조건을 포함한 관계 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0964-A-a",
+      "section_id": "13-4-3",
+      "department": "기계설비부문",
+      "chapter": "제13장 플랜트설비공사",
+      "title": "STORAGE TANK",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "용접공",
+          "normalized_name": "용접공",
+          "code": null,
+          "spec": null,
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0964-A-a",
+          "source_section_id": "13-4-3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 용접공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트에서 '용접장 개산치' 및 '용접장 m'과 같은 문맥이 반복적으로 나타나며, 이는 용접 작업과 관련된 노무(용접공)를 암시합니다. 텍스트 파편화로 인해 '용접공'이 명시적으로 나열되지 않았지만, 표의 구조와 헤더('용접장 개산치', '사용장비' 등)로부터 용접 작업에 필요한 인력(용접공)이 문맥적으로 추론 가능합니다. 따라서 허용합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "STORAGE TANK 공종의 철판 두께별(6~22mm) 용접공 환산기준 및 주석 포함",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0296-C",
+      "section_id": "8-3-5",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[40]콘크리트기계",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "콘크리트 믹서",
+          "normalized_name": "콘크리트믹서",
+          "code": null,
+          "spec": null,
+          "unit": "m³",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0296-C",
+          "source_section_id": "8-3-5",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 콘크리트 믹서 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 데이터의 표 제목 '공통부문 제8장 건설기계 [40]콘크리트기계'와 표 내용에서 콘크리트 관련 기계임을 추론할 수 있으며, '콘크리트 믹서'는 표의 문맥상 적절한 장비명으로 판단됩니다. 텍스트 파편화로 인한 단순 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "콘크리트 믹서트럭",
+          "normalized_name": "콘크리트믹서트럭",
+          "code": null,
+          "spec": null,
+          "unit": "m³",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0296-C",
+          "source_section_id": "8-3-5",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 콘크리트 믹서트럭 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 표 T-8-3-5-05의 주석 '[주] ① (L)은 저슬럼프형 믹서트럭이다.'에서 '믹서트럭'이 명시적으로 언급되어 있으며, 이는 콘크리트 관련 장비로 표의 문맥과 일치합니다. '콘크리트 믹서트럭'은 이 정보를 기반으로 합리적으로 추론된 엔티티입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "콘크리트기계(믹서 6규격, 믹서트럭 2규격) 장비 투입 및 주석 정보",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0444",
+      "section_id": "6-4#2",
+      "department": "토목부문",
+      "chapter": "제6장 관부설 및 접합공사",
+      "title": "P",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "배관공",
+          "normalized_name": "배관공",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0444",
+          "source_section_id": "6-4#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 배관공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트 '관부설 및 접합공사'와 'P.V.C관'의 맥락에서 '배관공'은 표의 헤더나 구조에서 파편화되었을 수 있으나, 관부설 및 접합 작업에 배관공이 필요하다는 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "normalized_name": "특별인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0444",
+          "source_section_id": "6-4#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 특별인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트 '관부설 및 접합공사'와 'P.V.C관'의 맥락에서 '특별인부'는 표의 헤더나 구조에서 파편화되었을 수 있으나, 특수 작업에 특별인부가 필요하다는 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [
+        {
+          "source": "P.V.C관 접합 및 부설",
+          "source_type": "WorkType",
+          "target": "배관공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.184,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "63mm"
+          },
+          "source_chunk_id": "C-0444",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.184 / spec 63mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트 'P.V.C관 접합 및 부설'과 '63mm' 규격에 대한 배관공 수량 '0.184'은 표의 파싱 오류로 인해 파편화되었을 수 있으나, 표 구조에서 수량 배정 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "P.V.C관 접합 및 부설",
+          "source_type": "WorkType",
+          "target": "배관공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.184,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "75mm"
+          },
+          "source_chunk_id": "C-0444",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.184 / spec 75mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트 'P.V.C관 접합 및 부설'과 '75mm' 규격에 대한 배관공 수량 '0.184'은 표의 파싱 오류로 인해 파편화되었을 수 있으나, 표 구조에서 수량 배정 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "P.V.C관 접합 및 부설",
+          "source_type": "WorkType",
+          "target": "배관공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.521,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0444",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.521 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트 'P.V.C관 접합 및 부설'과 '200mm' 규격에 대한 배관공 수량 '0.521'은 표의 파싱 오류로 인해 파편화되었을 수 있으나, 표 구조에서 수량 배정 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "P.V.C관 접합 및 부설",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.052,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "63mm"
+          },
+          "source_chunk_id": "C-0444",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.052 / spec 63mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트 'P.V.C관 접합 및 부설'과 '63mm' 규격에 대한 특별인부 수량 '0.052'은 표의 파싱 오류로 인해 파편화되었을 수 있으나, 표 구조에서 수량 배정 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "P.V.C관 접합 및 부설",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.052,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "75mm"
+          },
+          "source_chunk_id": "C-0444",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.052 / spec 75mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트 'P.V.C관 접합 및 부설'과 '75mm' 규격에 대한 특별인부 수량 '0.052'은 표의 파싱 오류로 인해 파편화되었을 수 있으나, 표 구조에서 수량 배정 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "P.V.C관 접합 및 부설",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0444",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.113 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 텍스트 'P.V.C관 접합 및 부설'과 '200mm' 규격에 대한 특별인부 수량 '0.113'은 표의 파싱 오류로 인해 파편화되었을 수 있으나, 표 구조에서 수량 배정 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "P.V.C관 접합 및 부설('10, '11, '18년 보완) 규격별(63mm, 75mm, 200mm) 100m당 인력투입 기준 — 전체 전개",
+      "confidence": 0.95,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0450",
+      "section_id": "6-6#2",
+      "department": "토목부문",
+      "chapter": "제6장 관부설 및 접합공사",
+      "title": "원심력 철근콘크리트관",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "normalized_name": "특별인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0450",
+          "source_section_id": "6-6#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 특별인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '특별인부'는 건설 현장에서 일반적으로 사용되는 직무명으로, 원본 표의 구조나 헤더에서 추론 가능한 합리적인 엔티티입니다. 텍스트 파편화로 인한 단순 매칭 실패로 판단됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "보통인부",
+          "normalized_name": "보통인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0450",
+          "source_section_id": "6-6#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 보통인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '보통인부'는 건설 분야의 표준 직무 분류로, 원본 데이터의 맥락(관부설 및 접합공사)에서 자연스럽게 등장할 수 있는 엔티티입니다. 파싱 오류로 인한 거짓 부정입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "배관공",
+          "normalized_name": "배관공",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0450",
+          "source_section_id": "6-6#2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 배관공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '배관공'은 원심력 철근콘크리트관 설치 작업과 직접적으로 관련된 직무로, 표의 문맥상 존재가 타당합니다. 텍스트 단편화로 검증 실패한 경우입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [
+        {
+          "source": "원심력 철근콘크리트관",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0450",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.113 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원심력 철근콘크리트관(200mm) 설치에 특별인부가 0.113 단위 필요하다는 관계는 표의 수량 배정 구조에서 추론 가능합니다. 파싱 시 셀 데이터 분리로 인한 오류입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "원심력 철근콘크리트관",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "250mm"
+          },
+          "source_chunk_id": "C-0450",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.113 / spec 250mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원심력 철근콘크리트관(250mm)과 특별인부 간의 관계(수량 0.113)는 표의 체계적 패턴(예: 규격별 열 구분)에 부합하며, 할루시네이션이 아닌 구조적 추론입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "원심력 철근콘크리트관",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "300mm"
+          },
+          "source_chunk_id": "C-0450",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.113 / spec 300mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 300mm 규격의 원심력 철근콘크리트관에 특별인부 0.113 단위 배정은 표의 일관된 형식(예: 동일 수량이 여러 규격에 적용)에서 유추될 수 있어 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "원심력 철근콘크리트관",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0450",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.113 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원심력 철근콘크리트관(200mm)과 보통인부의 관계는 표에서 직무별 수량이 규격에 따라 배열된 맥락을 반영합니다. 파편화된 텍스트로 인한 검증 실패입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "원심력 철근콘크리트관",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "250mm"
+          },
+          "source_chunk_id": "C-0450",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.113 / spec 250mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 250mm 규격에 보통인부 0.113 단위 할당은 표의 논리적 구조(예: 동일 수량의 반복)에 기초하여 추론 가능하며, 무작위 조합이 아닙니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "원심력 철근콘크리트관",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.113,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "300mm"
+          },
+          "source_chunk_id": "C-0450",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.113 / spec 300mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 300mm 규격과 보통인부 간의 관계는 원본 표의 체계(규격별 열, 직무별 행)에서 자연스럽게 도출될 수 있어 허용됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "원심력 철근콘크리트관",
+          "source_type": "WorkType",
+          "target": "배관공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.521,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0450",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.521 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원심력 철근콘크리트관(200mm) 설치에 배관공 0.521 단위 필요는 작업 특성상 타당하며, 표의 데이터 배열 패턴에서 지원됩니다. 파싱 오류로 인한 불일치입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "원심력 철근콘크리트관",
+          "source_type": "WorkType",
+          "target": "배관공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.521,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "250mm"
+          },
+          "source_chunk_id": "C-0450",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.521 / spec 250mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 250mm 규격과 배관공의 관계(수량 0.521)는 표에서 규격이 변해도 특정 직무의 수량이 일정할 수 있는 구조를 반영하여 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "원심력 철근콘크리트관",
+          "source_type": "WorkType",
+          "target": "배관공",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.521,
+          "unit": "인",
+          "per_unit": "100m당",
+          "properties": {
+            "source_spec": "300mm"
+          },
+          "source_chunk_id": "C-0450",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.521 / spec 300mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 300mm 규격에 배관공 0.521 단위 배정은 원본 표의 일관된 형식(예: 배관공 수량이 모든 규격에서 동일)을 기반으로 한 합리적 추론입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "원심력 철근콘크리트관 100m당 규격별(200mm, 250mm, 300mm) 인력투입 기준 — 전체 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0297-N",
+      "section_id": "8-3-6",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[50]골재생산기계 등",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "공기압축기",
+          "normalized_name": "공기압축기",
+          "code": null,
+          "spec": null,
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0297-N",
+          "source_section_id": "8-3-6",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 공기압축기 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 데이터의 표(T-8-3-6-17 및 T-8-3-6-18)는 공기압축기 관련 규격(예: '규격 (m³/min)', '규 격')과 비용 계수를 포함하고 있으며, 이는 건설기계 분야에서 공기압축기를 암시합니다. 표의 구조와 내용(예: 분류 번호, 내용 시간, 상각 비율 등)이 공기압축기라는 Equipment 엔티티의 문맥적 타당성을 지원합니다. 텍스트 단순 매칭 실패는 파싱 중 표 데이터의 파편화로 인한 것으로 추론되므로, 허용합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "공기압축기(이동식)의 다양한 규격별 장비 요구 및 관련 주석",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0297-O",
+      "section_id": "8-3-6",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[50]골재생산기계 등",
+      "entities": [
+        {
+          "type": "WorkType",
+          "name": "공기압축기(이동식)",
+          "normalized_name": "공기압축기(이동식)",
+          "code": null,
+          "spec": null,
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0297-O",
+          "source_section_id": "8-3-6",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 공기압축기(이동식) / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 헤더 '공기 압축기 규 격 (m³/min)'에서 '공기 압축기'는 장비명으로 명확히 식별되며, 표의 내용이 이동식 공기압축기의 규격별 사용량을 나타내는 것으로 문맥상 추론 가능합니다. '공기압축기(이동식)'은 원본 정보('공기 압축기')에 기반하여 적절히 확장된 엔티티로, 허용됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "공기압축기(이동식) 3가지 규격별 부수물(드릴웨곤, 드릴무한궤도, 소형브레이커, 바이브레이터, 사용에어호스) 사용 가능 대수 기준 — 매트릭스 표 전체 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0297-R",
+      "section_id": "8-3-6",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[50]골재생산기계 등",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "소형노면파쇄기",
+          "normalized_name": "소형노면파쇄기",
+          "code": null,
+          "spec": "5702-0095 0.95m³",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0297-R",
+          "source_section_id": "8-3-6",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 소형노면파쇄기 / 5702-0095 0.95m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 첫 번째 행에 '분류 번호'가 '5702-0095'이고 '규격 (m³)'이 '0.95'로 표시되어 있습니다. 이는 '소형노면파쇄기'의 규격 '5702-0095 0.95m³'와 일치하며, 표의 헤더와 구조 문맥상 해당 엔티티와 규격이 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "제8장 건설기계의 골재생산기계 등 섹션에서 장비 목록과 관련 주석을 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0191",
+      "section_id": "5-2-1",
+      "department": "공통부문",
+      "chapter": "제5장 기초공사",
+      "title": "매트부설",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "굴착기",
+          "normalized_name": "굴착기",
+          "code": null,
+          "spec": "0.4m³",
+          "unit": "hr",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0191",
+          "source_section_id": "5-2-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 굴착기 / 0.4m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표(T-5-2-1-01)의 '구 분' 열에 '굴 삭 기'로 표기되어 있으며, '규 격' 열에 '0.4m³'가 명시되어 있습니다. '굴 삭 기'는 '굴착기'의 띄어쓰기 오류나 파편화로 인한 텍스트 매칭 실패로 판단되며, 표의 구조와 문맥상 '굴착기'와 '0.4m³'가 정당하게 매핑됩니다. 이는 허용 원칙 1에 해당합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "매트부설('08, '16, '18, '21년 보완) 100㎡당 인력/장비/자재 투입 기준 및 주석 — 테이블 1(5규격×4직종/장비=20관계) 및 테이블 2(2규격×4자재=8관계) 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0298-L",
+      "section_id": "8-3-7",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[60]기초공사용 기계",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "유압 파일 해머",
+          "normalized_name": "유압파일해머",
+          "code": null,
+          "spec": "6630",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0298-L",
+          "source_section_id": "8-3-7",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 유압 파일 해머 / 6630"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-8-3-7-17의 '분류 번호' 열에 '6630-0003'이 있으며, 이는 '6630'으로 시작하는 장비 분류 체계를 나타냅니다. 표 제목 '공통부문 제8장 건설기계 [60]기초공사용 기계'와 결합하면, '6630'이 '유압 파일 해머'와 관련된 규격 코드로 문맥적으로 추론 가능합니다. 텍스트 파편화로 인한 불일치이므로 허용합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "PBD천공기(유압식)",
+          "normalized_name": "PBD천공기(유압식)",
+          "code": null,
+          "spec": "6701",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0298-L",
+          "source_section_id": "8-3-7",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: PBD천공기(유압식) / 6701"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-8-3-7-18의 '분류 번호' 열에 '6701-0147'이 있으며, 이는 '6701'으로 시작하는 장비 분류 체계를 나타냅니다. 표 제목 '공통부문 제8장 건설기계 [60]기초공사용 기계'와 결합하면, '6701'이 'PBD천공기(유압식)'와 관련된 규격 코드로 문맥적으로 추론 가능합니다. 텍스트 파편화로 인한 불일치이므로 허용합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "기초공사용 기계에 대한 장비(유압 파일 해머 5규격, PBD천공기 2규격)와 주석 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0982-B",
+      "section_id": "13-6-2",
+      "department": "기계설비부문",
+      "chapter": "제13장 플랜트설비공사",
+      "title": "발전기 설치",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "플랜트전공",
+          "normalized_name": "플랜트전공",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0982-B",
+          "source_section_id": "13-6-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 플랜트전공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '직 종' 열에 '플 래 트 전 공'으로 공백이 포함된 형태로 존재하며, 이는 표 파싱 시 줄바꿈이나 셀 붕괴로 인한 파편화로 추정됩니다. 문맥상 '플랜트전공'은 '플랜트 전공'의 합성어로, 표 헤더 '직 종'과의 관계에서 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "플랜트기계설치공",
+          "normalized_name": "플랜트기계설치공",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0982-B",
+          "source_section_id": "13-6-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 플랜트기계설치공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '직 종' 열에 '플 래 트 기 계 설 치 공'으로 공백이 포함된 형태로 존재하며, 이는 표 파싱 시 줄바꿈이나 셀 붕괴로 인한 파편화로 추정됩니다. 문맥상 '플랜트기계설치공'은 '플랜트 기계 설치공'의 합성어로, 표 헤더 '직 종'과의 관계에서 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "플랜트용접공",
+          "normalized_name": "플랜트용접공",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0982-B",
+          "source_section_id": "13-6-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 플랜트용접공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '직 종' 열에 '플 래 트 용 접 공'으로 공백이 포함된 형태로 존재하며, 이는 표 파싱 시 줄바꿈이나 셀 붕괴로 인한 파편화로 추정됩니다. 문맥상 '플랜트용접공'은 '플랜트 용접공'의 합성어로, 표 헤더 '직 종'과의 관계에서 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "발전기 설치(ton 당) 4개 공종별 직종별 인력투입 기준 및 산소량 규격 주석",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0471-B",
+      "section_id": "7-1-3",
+      "department": "토목부문",
+      "chapter": "제7장 항만공사",
+      "title": "준설선 선단 조합",
+      "entities": [],
+      "relationships": [
+        {
+          "source": "준설선 선단 조합",
+          "source_type": "WorkType",
+          "target": "비 항 펌 프 선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 4.476,
+          "unit": null,
+          "per_unit": null,
+          "properties": {
+            "source_spec": "준설선_규격(kW)_224"
+          },
+          "source_chunk_id": "C-0471-B",
+          "dlq_reason": [
+            "Relationship mismatch: qty 4.476 / spec 준설선_규격(kW)_224"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 첫 번째 행 '준설선_규격(kW)_224' 열 값 '4,476~8,952'에서 '4,476'은 '4.476'으로 파편화되었을 수 있으나, 표 헤더와 구조 문맥상 '비 항 펌 프 선'에 대한 준설선 규격 수량 관계가 정당하게 추론됩니다. 이는 파싱 중 숫자 형식 변환(쉼표 제거 및 소수점 처리)으로 인한 오류로 판단됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "준설선 선단 조합",
+          "source_type": "WorkType",
+          "target": "비 항 펌 프 선",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 8.952,
+          "unit": null,
+          "per_unit": null,
+          "properties": {
+            "source_spec": "준설선_규격(kW)_224"
+          },
+          "source_chunk_id": "C-0471-B",
+          "dlq_reason": [
+            "Relationship mismatch: qty 8.952 / spec 준설선_규격(kW)_224"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 첫 번째 행 '준설선_규격(kW)_224' 열 값 '4,476~8,952'에서 '8,952'는 '8.952'로 파편화되었을 수 있으나, 표 헤더와 구조 문맥상 '비 항 펌 프 선'에 대한 준설선 규격 수량 관계가 정당하게 추론됩니다. 이는 파싱 중 숫자 형식 변환(쉼표 제거 및 소수점 처리)으로 인한 오류로 판단됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "준설선 선단 조합 작업의 펌프준설선 규격별 장비 투입 기준 — 매트릭스 표 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0198-A",
+      "section_id": "5-3-3",
+      "department": "공통부문",
+      "chapter": "제5장 기초공사",
+      "title": "말뚝두부정리(강관)",
+      "entities": [
+        {
+          "type": "Material",
+          "name": "LPG",
+          "normalized_name": "LPG",
+          "code": null,
+          "spec": null,
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0198-A",
+          "source_section_id": "5-3-3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: LPG / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 텍스트에서 '산소량은 대기압상태의 기준량이며, 압축산소는 35℃에서 150기압으로 압축용기에 넣어 사용하는 것을 기준한다.'라는 문장이 있으며, 이는 산소와 LPG(액화석유가스)가 압축용기로 사용되는 맥락을 암시합니다. 표 데이터(T-5-3-3-04)에서 '용접공'과 같은 작업이 언급되어, LPG가 용접이나 절단 작업에 사용될 수 있는 재료로 문맥상 추론 가능합니다. 따라서 'LPG'라는 재료 엔티티는 타당합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "말뚝두부정리(강관) 본당 기준: 규격별(ø400~800) 인력(용접공, 보통인부) 및 장비(굴착기) 투입량, 자동절단기 사용, 산소/LPG 자재, 다수 주석 포함",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0299-E",
+      "section_id": "8-3-8",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[70]기타기계",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "부착용 집게",
+          "normalized_name": "부착용집게",
+          "code": null,
+          "spec": "0.2m³",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-E",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 부착용 집게 / 0.2m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-8-3-8-12의 주석에서 '0.2m³는 철도용 회전집게'라고 명시되어 있으며, '부착집게'는 Equipment의 일종으로 문맥상 '부착용 집게'로 추론 가능합니다. 규격 0.2m³와의 관계도 표 데이터에서 확인됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "부착용 집게",
+          "normalized_name": "부착용집게",
+          "code": null,
+          "spec": "0.6~0.8m³",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-E",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 부착용 집게 / 0.6~0.8m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-8-3-8-12의 주석에서 '0.6~0.8m³는 임목파쇄기용 부착집게'라고 명시되어 있으며, '부착용 집게'는 Equipment의 일종으로 문맥상 추론 가능합니다. 규격 0.6~0.8m³와의 관계도 표 데이터에서 확인됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "기타기계(부착용 집게, 동력분무기 등)의 규격별 주석 및 비용계수 정보 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0184",
+      "section_id": "5-1-1",
+      "department": "공통부문",
+      "chapter": "제5장 기초공사",
+      "title": "P",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "굴착기",
+          "normalized_name": "굴착기",
+          "code": null,
+          "spec": "0.2m³",
+          "unit": "hr",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0184",
+          "source_section_id": "5-1-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 굴착기 / 0.2m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '구 분' 열에 '굴 삭 기'로 표기되어 있으나, 이는 '굴착기'의 파편화된 텍스트로 보이며, 표의 구조와 문맥상 '굴착기'로 추론되는 것이 타당합니다. 규격 '0.2m³'은 원본 표의 '규 격' 열에서 명시적으로 확인됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "굴착기",
+          "normalized_name": "굴착기",
+          "code": null,
+          "spec": "1.0m³",
+          "unit": "hr",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0184",
+          "source_section_id": "5-1-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 굴착기 / 1.0m³"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '구 분' 열에 '굴 삭 기'로 표기되어 있으나, 이는 '굴착기'의 파편화된 텍스트로 보이며, 표의 구조와 문맥상 '굴착기'로 추론되는 것이 타당합니다. 규격 '1.0m³'은 원본 표의 '규 격' 열에서 명시적으로 확인됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "P.P마대 및 톤마대 쌓기･헐기 작업(10개당)에 대한 인력 및 장비 투입 기준을 규격별로 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0200-A-e",
+      "section_id": "5-3-5",
+      "department": "공통부문",
+      "chapter": "제5장 기초공사",
+      "title": "현장타설말뚝",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "크레인",
+          "normalized_name": "크레인",
+          "code": null,
+          "spec": "70~120ton",
+          "unit": "대",
+          "quantity": 1.0,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0200-A-e",
+          "source_section_id": "5-3-5",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 크레인 / 70~120ton"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '명 칭' 열에 '크 례 인'으로 파편화되어 있으나, 표의 구조와 문맥상 '크레인'으로 정당하게 추론됩니다. 규격 '70~120ton'은 원본 데이터와 일치하며, 장비명과 규격의 관계가 표 헤더('명 칭', '규 격')에 명시되어 있어 타당합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "현장타설말뚝 3개 공법별(R.C.D, 올케이싱_요동식, 올케이싱_전회전식) 장비투입 기준 및 주석",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0299-K",
+      "section_id": "8-3-8",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[70]기타기계",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "용접기(교류)",
+          "normalized_name": "용접기(교류)",
+          "code": null,
+          "spec": "200Amp",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-K",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 용접기(교류) / 200Amp"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-8-21의 첫 번째 행에서 '분류 번호: 7611-0200'과 '규격 (Amp): 200'은 건설기계 분류에서 용접기(교류) 200Amp에 해당하는 것으로 문맥적으로 추론 가능합니다. 표 헤더 '규격 (Amp)'와 값 200이 명시되어 있어, 엔티티 '용접기(교류)'와 규격 '200Amp'의 관계가 정당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "용접기(교류)",
+          "normalized_name": "용접기(교류)",
+          "code": null,
+          "spec": "300Amp",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-K",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 용접기(교류) / 300Amp"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-8-21의 두 번째 행에서 '분류 번호: 300'과 '규격 (Amp): 300'은 용접기(교류) 300Amp로 해석됩니다. 표 구조상 동일한 장비 유형(용접기)의 다른 규격 변형으로, 문맥적 타당성이 있습니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "용접기(교류)",
+          "normalized_name": "용접기(교류)",
+          "code": null,
+          "spec": "400Amp",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-K",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 용접기(교류) / 400Amp"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-8-21의 세 번째 행에서 '분류 번호: 400'과 '규격 (Amp): 400'은 용접기(교류) 400Amp에 대응합니다. 표 데이터가 파편화되었더라도 헤더와 값의 일관성으로 인해 엔티티-규격 관계가 유효합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "용접기(교류)",
+          "normalized_name": "용접기(교류)",
+          "code": null,
+          "spec": "500Amp",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-K",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 용접기(교류) / 500Amp"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-8-21의 네 번째 행에서 '분류 번호: 500'과 '규격 (Amp): 500'은 용접기(교류) 500Amp를 나타냅니다. 표의 연속된 행 패턴(규격 값 증가)과 내용이 일치하여 허용됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "용접기(직류)",
+          "normalized_name": "용접기(직류)",
+          "code": null,
+          "spec": "200Amp",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-K",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 용접기(직류) / 200Amp"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-8-22의 첫 번째 행에서 '분류 번호: 7612-0200'과 '규격 (Amp): 200'은 용접기(직류) 200Amp로 추론됩니다. 표 T-8-3-8-21(교류)과 T-8-3-8-22(직류)의 유사한 구조로 인해, 엔티티 '용접기(직류)'와 규격 '200Amp'가 문맥상 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "용접기(직류)",
+          "normalized_name": "용접기(직류)",
+          "code": null,
+          "spec": "300Amp",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-K",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 용접기(직류) / 300Amp"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-8-22의 두 번째 행에서 '분류 번호: 300'과 '규격 (Amp): 300'은 용접기(직류) 300Amp에 해당합니다. 표 내 규격 값의 패턴과 장비 유형의 일관성으로 인해 허용됩니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "용접기(직류)",
+          "normalized_name": "용접기(직류)",
+          "code": null,
+          "spec": "400Amp",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-K",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 용접기(직류) / 400Amp"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-8-22의 세 번째 행에서 '분류 번호: 400'과 '규격 (Amp): 400'은 용접기(직류) 400Amp로 해석됩니다. 표 데이터가 원본 PDF에서 파싱 중 셀 붕괴로 인해 텍스트가 분리되었을 수 있으나, 구조적 문맥과 헤더 정보를 기반으로 엔티티와 규격 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "[70]기타기계 섹션의 용접기(교류/직류) 규격별 장비 투입 및 주석 정보 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0990-C",
+      "section_id": "13-6-10",
+      "department": "기계설비부문",
+      "chapter": "제13장 플랜트설비공사",
+      "title": "Steel Penstock 현장설치",
+      "entities": [],
+      "relationships": [
+        {
+          "source": "검사 시험",
+          "source_type": "Note",
+          "target": "상기 인력품",
+          "target_type": "Labor",
+          "type": "HAS_NOTE",
+          "quantity": 0.07,
+          "unit": null,
+          "per_unit": null,
+          "properties": {
+            "source_spec": null
+          },
+          "source_chunk_id": "C-0990-C",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.07 / spec None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '공 정 별' 열에 '검 사 시 험', '직 종' 열에 '상 기 인 력 품 의 7 %'가 명시되어 있으며, 파편화된 텍스트('상 기 인 력 품')를 '상기 인력품'으로 정규화하고, '7 %'를 수량 '0.07'로 변환한 관계가 표의 구조적 문맥(헤더: ['공 정 별', '직 종', '수 량'])에 부합하여 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "Steel Penstock 현장설치 1ton당 상기 인력품의 7%를 검사 시험에 투입",
+      "confidence": 0.8,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0201-A",
+      "section_id": "5-4-1",
+      "department": "공통부문",
+      "chapter": "제5장 기초공사",
+      "title": "차수재공",
+      "entities": [
+        {
+          "type": "Material",
+          "name": "HDPE Sheet",
+          "normalized_name": "HDPESheet",
+          "code": null,
+          "spec": "2~2.5mm",
+          "unit": "m²",
+          "quantity": 1.1,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0201-A",
+          "source_section_id": "5-4-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: HDPE Sheet / 2~2.5mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-5-4-1-03에서 'H D P E 시 트'는 자재 항목으로, 규격 '2~2.5mm'와 명확히 매칭됩니다. 텍스트 파편화('H D P E 시 트'로 분리)로 인한 단순 글자 매칭 실패이지만, 표 구조와 문맥상 'HDPE Sheet'와 '2~2.5mm'의 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "차수재공(4종 자재별)의 자재, 인력, 장비 투입 기준 및 주석 포함",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0299-R",
+      "section_id": "8-3-8",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[70]기타기계",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "우레탄폼 분사용기구",
+          "normalized_name": "우레탄폼분사용기구",
+          "code": null,
+          "spec": "8.1kg/min",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0299-R",
+          "source_section_id": "8-3-8",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 우레탄폼 분사용기구 / 8.1kg/min"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 T-8-3-8-33에서 '규격 (kg/min)'이 8.1인 항목이 있으며, 이는 '우레탄폼 분사용기구'의 규격으로 문맥상 추론 가능합니다. 표의 헤더 구조와 데이터가 일치하여 엔티티와 규격의 관계가 정당하게 추론됩니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "[70]기타기계 섹션의 장비(디젤 엔진 4규격, 우레탄폼 분사용기구) 및 주석 정보 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0229-A",
+      "section_id": "6-6-2",
+      "department": "공통부문",
+      "chapter": "제6장 철근콘크리트공사",
+      "title": "교량받침 설치(수상)",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "normalized_name": "특별인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0229-A",
+          "source_section_id": "6-6-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 특별인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '특별인부'는 건설 현장에서 일반적으로 사용되는 노동자 유형으로, 원본 데이터의 '공통부문 제6장 철근콘크리트공사 교량받침 설치(수상)' 작업에 필요한 인력으로 문맥상 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "보통인부",
+          "normalized_name": "보통인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0229-A",
+          "source_section_id": "6-6-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 보통인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '보통인부'는 건설 공사에서 기본적인 노동자 유형을 의미하며, 교량받침 설치 작업에 필요한 인력으로 문맥상 적합합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "크레인",
+          "normalized_name": "크레인",
+          "code": null,
+          "spec": null,
+          "unit": "대",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0229-A",
+          "source_section_id": "6-6-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 크레인 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '크레인'은 교량받침과 같은 중량물 설치 작업에 필수적인 장비로, 원본 작업 설명과 일치합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "크레인운전사",
+          "normalized_name": "크레인운전사",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0229-A",
+          "source_section_id": "6-6-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 크레인운전사 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '크레인운전사'는 크레인 장비를 조작하는 전문 인력으로, 장비 사용과 함께 필요하며 문맥상 타당합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.5,
+          "unit": "인",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.5 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 데이터가 표 형태로 파싱되며, '특별인부'의 수량 0.5와 규격 200mm가 교량받침 설치 작업의 세부 사양으로 추론 가능합니다. 이는 작업의 규모나 조건에 따른 배정으로 보입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.6,
+          "unit": "인",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "300mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.6 / spec 300mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '특별인부'에 대한 수량 0.6과 규격 300mm의 관계는 원본 표에서 파편화되었을 수 있으나, 작업의 다른 조건(예: 받침 크기)에 따른 변형으로 문맥상 합리적입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.7,
+          "unit": "인",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "400mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.7 / spec 400mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '특별인부'의 수량 0.7과 규격 400mm는 작업 규모 증가에 따른 인력 배정으로 추론되며, 원본 데이터의 구조에서 유추 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 1.2,
+          "unit": "인",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "300mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1.2 / spec 300mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '보통인부'의 수량 1.2와 규격 300mm 관계는 표의 셀 붕괴로 인해 텍스트가 분리되었을 수 있지만, 작업에 필요한 기본 인력 배정으로 문맥상 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 1.4,
+          "unit": "인",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "400mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 1.4 / spec 400mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '보통인부'의 수량 1.4와 규격 400mm는 더 큰 규모의 작업을 반영한 것으로, 원본 표의 문맥에서 자연스럽게 도출될 수 있습니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "크레인",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 0.5,
+          "unit": "대",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.5 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '크레인' 장비의 수량 0.5와 규격 200mm는 작업의 특정 조건에 필요한 장비 사용량으로, 원본 데이터의 표 구조에서 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "크레인",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 0.6,
+          "unit": "대",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "300mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.6 / spec 300mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '크레인'의 수량 0.6과 규격 300mm 관계는 작업 변형에 따른 장비 배정으로, 파편화된 텍스트에서 문맥적으로 유효합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "크레인",
+          "target_type": "Equipment",
+          "type": "REQUIRES_EQUIPMENT",
+          "quantity": 0.7,
+          "unit": "대",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "400mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.7 / spec 400mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '크레인'의 수량 0.7과 규격 400mm는 증가된 작업 부하에 맞는 장비 할당으로, 원본 표의 맥락에서 합리적입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "크레인운전사",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.5,
+          "unit": "인",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "200mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.5 / spec 200mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '크레인운전사'의 수량 0.5와 규격 200mm는 장비 사용에 필요한 운전 인력 배정으로, 표의 헤더나 구조에서 추론될 수 있습니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "크레인운전사",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.6,
+          "unit": "인",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "300mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.6 / spec 300mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '크레인운전사'의 수량 0.6과 규격 300mm 관계는 작업 조건 변화에 따른 인력 조정으로, 원본 데이터의 문맥 내에서 타당합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "교량받침 설치(수상)",
+          "source_type": "WorkType",
+          "target": "크레인운전사",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.7,
+          "unit": "인",
+          "per_unit": "일당",
+          "properties": {
+            "source_spec": "400mm"
+          },
+          "source_chunk_id": "C-0229-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.7 / spec 400mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '크레인운전사'의 수량 0.7과 규격 400mm는 더 큰 규모의 장비 운영을 지원하는 인력 배정으로, 표 파싱 오류에도 불구하고 문맥적으로 유효합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "교량받침 설치(수상) 일당 기준으로 규격별(200mm, 300mm, 400mm) 인력 및 장비 투입량 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0301-D",
+      "section_id": "8-3-10",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[90]해상장비",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "펌프 준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "12.50",
+          "unit": "kW",
+          "quantity": 1194.0,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0301-D",
+          "source_section_id": "8-3-10",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프 준설선 / 12.50"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '규 격_형식' 열에 '12.50' 값이 존재하며, 표 제목 '공통부문 제8장 건설기계 [90]해상장비'와 표 데이터의 문맥상 '펌프 준설선'이 해당 규격의 장비로 추론 가능합니다. 텍스트 파편화로 인한 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프 준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "16.00",
+          "unit": "kW",
+          "quantity": 1343.0,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0301-D",
+          "source_section_id": "8-3-10",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프 준설선 / 16.00"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '규 격_형식' 열에 '16.00' 값이 존재하며, 표 제목 '공통부문 제8장 건설기계 [90]해상장비'와 표 데이터의 문맥상 '펌프 준설선'이 해당 규격의 장비로 추론 가능합니다. 텍스트 파편화로 인한 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Equipment",
+          "name": "펌프 준설선",
+          "normalized_name": "펌프준설선",
+          "code": null,
+          "spec": "25.00",
+          "unit": "kW",
+          "quantity": 1491.0,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0301-D",
+          "source_section_id": "8-3-10",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 펌프 준설선 / 25.00"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '규 격_형식' 열에 '25.00' 값이 존재하며, 표 제목 '공통부문 제8장 건설기계 [90]해상장비'와 표 데이터의 문맥상 '펌프 준설선'이 해당 규격의 장비로 추론 가능합니다. 텍스트 파편화로 인한 매칭 실패를 보정합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "해상장비 섹션에서 펌프 준설선 규격별(12.50, 16.00, 25.00 kW) 성능 데이터와 버킷 규격 주석 추출",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0303-B",
+      "section_id": "8-4-1",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[00]토공기계",
+      "entities": [
+        {
+          "type": "Equipment",
+          "name": "트렌처",
+          "normalized_name": "트렌처",
+          "code": null,
+          "spec": "3.55톤",
+          "unit": null,
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0303-B",
+          "source_section_id": "8-4-1",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 트렌처 / 3.55톤"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표의 '트 랜 처'는 파싱 시 공백으로 인해 '트렌처'로 정규화된 것으로 보이며, 규격 '3.55톤'은 표의 해당 행에서 직접 확인됩니다. 이는 표의 구조와 문맥상 정당한 추론입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "토공기계 15종 규격별 장비, 연료, 잡재료, 조종원 투입 기준",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0304-A",
+      "section_id": "8-4-2",
+      "department": "공통부문",
+      "chapter": "제8장 건설기계",
+      "title": "[10]다짐기계",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "운전사",
+          "normalized_name": "운전사",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0304-A",
+          "source_section_id": "8-4-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 운전사 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 구조에서 '운전사'는 건설기계 운전 관련 직무로 문맥상 타당한 엔티티입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "normalized_name": "특별인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0304-A",
+          "source_section_id": "8-4-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 특별인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 구조에서 '특별인부'는 특수 기능을 가진 인부로 문맥상 타당한 엔티티입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "보통인부",
+          "normalized_name": "보통인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0304-A",
+          "source_section_id": "8-4-2",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 보통인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 구조에서 '보통인부'는 일반 인부로 문맥상 타당한 엔티티입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [
+        {
+          "source": "다짐기계",
+          "source_type": "WorkType",
+          "target": "운전사",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.25,
+          "unit": "인",
+          "per_unit": "1대당",
+          "properties": {
+            "source_spec": "10t"
+          },
+          "source_chunk_id": "C-0304-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.25 / spec 10t"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 다짐기계(10t)에 운전사 0.25명 배정은 표의 수량 배분 구조에서 추론 가능한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "다짐기계",
+          "source_type": "WorkType",
+          "target": "운전사",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.25,
+          "unit": "인",
+          "per_unit": "1대당",
+          "properties": {
+            "source_spec": "15t"
+          },
+          "source_chunk_id": "C-0304-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.25 / spec 15t"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 다짐기계(15t)에 운전사 0.25명 배정은 표의 수량 배분 구조에서 추론 가능한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "다짐기계",
+          "source_type": "WorkType",
+          "target": "운전사",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.25,
+          "unit": "인",
+          "per_unit": "1대당",
+          "properties": {
+            "source_spec": "20t"
+          },
+          "source_chunk_id": "C-0304-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.25 / spec 20t"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 다짐기계(20t)에 운전사 0.25명 배정은 표의 수량 배분 구조에서 추론 가능한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "다짐기계",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.25,
+          "unit": "인",
+          "per_unit": "1대당",
+          "properties": {
+            "source_spec": "10t"
+          },
+          "source_chunk_id": "C-0304-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.25 / spec 10t"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 다짐기계(10t)에 특별인부 0.25명 배정은 표의 수량 배분 구조에서 추론 가능한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "다짐기계",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.25,
+          "unit": "인",
+          "per_unit": "1대당",
+          "properties": {
+            "source_spec": "15t"
+          },
+          "source_chunk_id": "C-0304-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.25 / spec 15t"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 다짐기계(15t)에 특별인부 0.25명 배정은 표의 수량 배분 구조에서 추론 가능한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "다짐기계",
+          "source_type": "WorkType",
+          "target": "특별인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.25,
+          "unit": "인",
+          "per_unit": "1대당",
+          "properties": {
+            "source_spec": "20t"
+          },
+          "source_chunk_id": "C-0304-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.25 / spec 20t"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 다짐기계(20t)에 특별인부 0.25명 배정은 표의 수량 배분 구조에서 추론 가능한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "다짐기계",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.5,
+          "unit": "인",
+          "per_unit": "1대당",
+          "properties": {
+            "source_spec": "10t"
+          },
+          "source_chunk_id": "C-0304-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.5 / spec 10t"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 다짐기계(10t)에 보통인부 0.5명 배정은 표의 수량 배분 구조에서 추론 가능한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "다짐기계",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.5,
+          "unit": "인",
+          "per_unit": "1대당",
+          "properties": {
+            "source_spec": "15t"
+          },
+          "source_chunk_id": "C-0304-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.5 / spec 15t"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 다짐기계(15t)에 보통인부 0.5명 배정은 표의 수량 배분 구조에서 추론 가능한 관계입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "source": "다짐기계",
+          "source_type": "WorkType",
+          "target": "보통인부",
+          "target_type": "Labor",
+          "type": "REQUIRES_LABOR",
+          "quantity": 0.5,
+          "unit": "인",
+          "per_unit": "1대당",
+          "properties": {
+            "source_spec": "20t"
+          },
+          "source_chunk_id": "C-0304-A",
+          "dlq_reason": [
+            "Relationship mismatch: qty 0.5 / spec 20t"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 다짐기계(20t)에 보통인부 0.5명 배정은 표의 수량 배분 구조에서 추론 가능한 관계입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "summary": "다짐기계(10t, 15t, 20t) 1대당 인력투입 기준 — 전체 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0047-A",
+      "section_id": "2-2-3",
+      "department": "공통부문",
+      "chapter": "제2장 가설공사",
+      "title": "가설시설물",
+      "entities": [
+        {
+          "type": "Material",
+          "name": "외부 PANEL (창문)",
+          "normalized_name": "외부PANEL(창문)",
+          "code": null,
+          "spec": "1,200×2,400mm",
+          "unit": "매",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0047-A",
+          "source_section_id": "2-2-3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 외부 PANEL (창문) / 1,200×2,400mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-2-2-3-02에서 '구 분' 열에 '\" ( 창 문 )'이 있으며, 이는 이전 행 '외 부 P A N E L ( 벽 )'의 규격 '1,200×2,400mm'을 공유하는 것으로 표 구조상 명확합니다. 따라서 '외부 PANEL (창문)'과 규격 '1,200×2,400mm'은 원본 정보에 기반한 정당한 추론입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "외부 PANEL (철재문)",
+          "normalized_name": "외부PANEL(철재문)",
+          "code": null,
+          "spec": "1,200×2,400mm",
+          "unit": "매",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0047-A",
+          "source_section_id": "2-2-3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 외부 PANEL (철재문) / 1,200×2,400mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-2-2-3-02에서 '구 분' 열에 '\" ( 철 재 문 )'이 있으며, 이는 이전 행 '외 부 P A N E L ( 벽 )'의 규격 '1,200×2,400mm'을 공유하는 것으로 표 구조상 명확합니다. 따라서 '외부 PANEL (철재문)'과 규격 '1,200×2,400mm'은 원본 정보에 기반한 정당한 추론입니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Material",
+          "name": "내부 PANEL (목재문)",
+          "normalized_name": "내부PANEL(목재문)",
+          "code": null,
+          "spec": "1,200×2,400mm",
+          "unit": "매",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.9,
+          "source_chunk_id": "C-0047-A",
+          "source_section_id": "2-2-3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 내부 PANEL (목재문) / 1,200×2,400mm"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative). 원본 표 T-2-2-3-02에서 '구 분' 열에 '\" ( 목 재 문 )'이 있으며, 이는 이전 행 '내 부 P A N E L ( 벽 )'의 규격 '1,200×2,400mm'을 공유하는 것으로 표 구조상 명확합니다. 따라서 '내부 PANEL (목재문)'과 규격 '1,200×2,400mm'은 원본 정보에 기반한 정당한 추론입니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "가설시설물(철제조립식)의 바닥면적㎡당 자재 사용량 기준 — 사무소/창고 규격별 전개",
+      "confidence": 0.9,
+      "source_method": "llm",
+      "warnings": []
+    },
+    {
+      "chunk_id": "C-0893",
+      "section_id": "9-3#3",
+      "department": "기계설비부문",
+      "chapter": "제9장 기타공사",
+      "title": "슬리브",
+      "entities": [
+        {
+          "type": "Labor",
+          "name": "배관공",
+          "normalized_name": "배관공",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0893",
+          "source_section_id": "9-3#3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 배관공 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): 원본 표 구조에서 '배관공'은 기계설비부문 슬리브 공사와 관련된 일반적인 직무명으로, 표 파싱 시 텍스트 파편화 없이도 문맥상 타당하게 추론 가능합니다.",
+          "quarantine_confidence": 0.0
+        },
+        {
+          "type": "Labor",
+          "name": "특별인부",
+          "normalized_name": "특별인부",
+          "code": null,
+          "spec": null,
+          "unit": "인",
+          "quantity": null,
+          "properties": {},
+          "confidence": 0.95,
+          "source_chunk_id": "C-0893",
+          "source_section_id": "9-3#3",
+          "source_method": "llm",
+          "dlq_reason": [
+            "Entity mismatch: 특별인부 / None"
+          ],
+          "quarantine_reason": "문맥적 추론 (False-Negative): '특별인부'는 건설 현장에서 특수 작업을 수행하는 인력 유형으로, 슬리브 설치와 같은 기계설비 공사와 연관되어 문맥적으로 타당합니다.",
+          "quarantine_confidence": 0.0
+        }
+      ],
+      "relationships": [],
+      "summary": "슬리브 공종 100m당 규격별(63mm, 75mm, 200mm) 인력투입 기준 — 전체 전개",
+      "confidence": 0.95,
+      "source_method": "llm",
+      "warnings": []
+    }
+  ]
+}

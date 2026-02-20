@@ -55,6 +55,8 @@ REPORT_JSON = PHASE2_OUTPUT / "extraction_report.json"
 REPORT_TXT = PHASE2_OUTPUT / "quality_report_step25.txt"
 
 
+from config import EXTRACTION_THRESHOLDS
+
 # ═══════════════════════════════════════════════════════════════
 #  데이터 모델 (python-pro: dataclass + 타입 힌팅)
 # ═══════════════════════════════════════════════════════════════
@@ -280,7 +282,7 @@ class ExtractionValidator:
     #  E4: 고아 노드 비율
     # ─────────────────────────────────────────────────────────
     def check_E4(self) -> CheckResult:
-        """관계에 참여하지 않는 엔티티 비율 ≤ 30%"""
+        """관계에 참여하지 않는 엔티티 비율 점검"""
         ref_ids: set[str] = set()
         for r in self.all_rels:
             ref_ids.add(r.get("source_entity_id", ""))
@@ -289,7 +291,7 @@ class ExtractionValidator:
 
         orphans = [e for e in self.ents if e["entity_id"] not in ref_ids]
         orphan_rate = len(orphans) / len(self.ents) if self.ents else 0
-        threshold = 0.30
+        threshold = EXTRACTION_THRESHOLDS.get("orphan_node_max", 0.15)
         orphan_by_type = Counter(e["type"] for e in orphans)
 
         return CheckResult(
@@ -449,20 +451,21 @@ class ExtractionValidator:
 
         total_rate = len(hallucinated) / len(samples) if samples else 0
 
-        # 분류: LLM 추론(source_method=llm) vs 테이블 추출
-        # Why: LLM은 테이블의 분류 코드에서 장비/자재명을 추론하는데,
-        #      이것은 원본 텍스트에 해당 단어가 없어도 정당한 추출임.
-        #      진짜 할루시네이션은 원본과 아무 관련 없는 정보 생성.
-        llm_inferred = sum(1 for h in hallucinated if h["source_method"] == "llm")
-        truly_suspicious = len(hallucinated) - llm_inferred
+        # LLM 추론 제외 일괄 면제하지 않음 (Gap 4 해법)
+        # 이제 특수 토큰 매칭으로 잡아내므로 llm_inferred를 별도로 완전히 면제치 않음.
+        # 기존엔 LLM 추론을 다 빼버려서 맹점이 있었음. 
+        # 단, 모니터링 상 구분을 위해 집계만 유지하고, truly_suspicious는 전체 미매칭에서 반영.
+        # 지금은 향상된 tokenize 로직을 step5에서는 직접 사용치 않고 기존 6단계를 유지하되
+        # 임계값과 면제 규칙만 수정함 (완전한 정합성용 P1.5 스크립트 분리).
+        
+        # P1.5가 수량/규격을 본다면, step5는 여전히 "장비/자재명 출현"을 봄.
+        # llm_inferred는 "문자열엔 없고 모델이 추론한 코드 연관명"이므로
+        # step5 단에서는 이들도 최소한의 의심군에 포함시킴.
+        llm_inferred_count = sum(1 for h in hallucinated if h["source_method"] == "llm")
+        truly_suspicious = len(hallucinated) # 모두 의심군 편입
         suspicious_rate = truly_suspicious / len(samples) if samples else 0
 
-        # 기준: 진짜 의심 비율 ≤ 20%
-        # Why: 분석 결과 미매칭의 대부분은 LLM이 테이블 코드/구조에서
-        #      추론한 장비/자재명. 원본에 해당 단어가 없을 뿐 정당한 추출.
-        #      LLM 추론은 PASS/FAIL 판정에서 제외하고,
-        #      진짜 의심(source_method != llm)만 기준으로 판정.
-        suspicious_threshold = 0.20
+        suspicious_threshold = EXTRACTION_THRESHOLDS.get("hallucination_max", 0.10)
 
         return CheckResult(
             name="E6",
@@ -474,7 +477,7 @@ class ExtractionValidator:
                 "total_samples": len(samples),
                 "not_matched": len(hallucinated),
                 "total_mismatch_rate": round(total_rate * 100, 1),
-                "llm_inferred": llm_inferred,
+                "llm_inferred_in_mismatch": llm_inferred_count,
                 "truly_suspicious": truly_suspicious,
                 "suspicious_rate": round(suspicious_rate * 100, 1),
                 "excluded_synthetic_notes": synthetic_notes,
@@ -482,14 +485,13 @@ class ExtractionValidator:
                 "samples": hallucinated[:10],
                 "note": (
                     "Section/합성NoteID 제외. 6단계 매칭. "
-                    "LLM 추론(테이블 코드→장비명)은 정당한 추출로 판정 제외. "
-                    f"LLM추론 {llm_inferred}건 제외, 의심 {truly_suspicious}건만 판정 대상."
+                    "통합된 기준에 따라 LLM 추론 여부와 무관하게 전수 의심 판정. "
+                    f"총 {truly_suspicious}건 전면 판정 대상."
                 ),
             },
             message=(
                 f"미매칭 {len(hallucinated)}/{len(samples)} = {total_rate*100:.1f}% "
-                f"(LLM추론 {llm_inferred} 제외 → "
-                f"의심 {truly_suspicious}/{len(samples)} = {suspicious_rate*100:.1f}%) "
+                f"(LLM추론포함 의심: {truly_suspicious}/{len(samples)} = {suspicious_rate*100:.1f}%) "
                 f"(기준: 의심 ≤{suspicious_threshold*100:.0f}%)"
             ),
         )
