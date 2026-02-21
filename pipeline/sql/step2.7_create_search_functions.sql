@@ -19,7 +19,8 @@ CREATE OR REPLACE FUNCTION search_entities_by_embedding(
         name TEXT,
         type TEXT,
         properties JSONB,
-        similarity FLOAT
+        similarity FLOAT,
+        source_section TEXT
     ) AS $$
 DECLARE parsed_vector vector(768);
 BEGIN -- 입력 검증: NULL 또는 빈 문자열
@@ -39,7 +40,8 @@ SELECT ge.id,
     ge.name,
     ge.type,
     ge.properties,
-    (1 - (ge.embedding <=> parsed_vector))::FLOAT AS similarity
+    (1 - (ge.embedding <=> parsed_vector))::FLOAT AS similarity,
+    ge.source_section
 FROM graph_entities ge
 WHERE ge.embedding IS NOT NULL
     AND 1 - (ge.embedding <=> parsed_vector) > match_threshold
@@ -68,18 +70,7 @@ SELECT 'outbound'::TEXT AS direction,
     r.properties
 FROM graph_relationships r
     JOIN graph_entities e ON e.id = r.target_id
-WHERE r.source_id = p_entity_id
-UNION ALL
--- inbound: 연결된 주체 → 이 엔티티
-SELECT 'inbound'::TEXT AS direction,
-    r.relation,
-    e.id AS related_id,
-    e.name AS related_name,
-    e.type AS related_type,
-    r.properties
-FROM graph_relationships r
-    JOIN graph_entities e ON e.id = r.source_id
-WHERE r.target_id = p_entity_id;
+WHERE r.source_id = p_entity_id;
 $$ LANGUAGE sql STABLE;
 -- ───────────────────────────────────────────────────────────────────
 -- 함수 3: get_entity_hierarchy (Codex F6: 전역 관계 탐색)

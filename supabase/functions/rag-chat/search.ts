@@ -248,22 +248,7 @@ export async function chunkTextFallbackSearch(
     return [];
 }
 
-// ─── WorkType 중복 제거 ───
-// Why: 같은 표에서 V형/U형 등 소제목이 분리 추출되어
-//      "인 력(인)" vs "인력(인)" 같은 미세 차이로 중복 엔티티 존재.
-//      검색 결과에서 normalized_name 기준으로 가장 유사도 높은 것만 유지.
-export function deduplicateResults<T extends { name: string; similarity?: number }>(results: T[]): T[] {
-    const seen = new Map<string, T>();
-    for (const r of results) {
-        const normKey = r.name.replace(/\s+/g, '').toLowerCase();
-        const existing = seen.get(normKey);
-        if (!existing || (r.similarity ?? 0) > (existing.similarity ?? 0)) {
-            seen.set(normKey, r);
-        }
-    }
-    return Array.from(seen.values());
-}
-
+// ─── WorkType 중복 제거 (클린 DB로 인해 삭제됨 됨) ───
 // C-1. 벡터 검색 + 키워드 폴백
 export async function searchEntities(embedding: number[], question: string): Promise<EntityResult[]> {
     const { data, error } = await supabase.rpc("search_entities_by_embedding", {
@@ -304,25 +289,7 @@ export async function searchEntities(embedding: number[], question: string): Pro
         }
     }
 
-    // (Codex F4) search_entities_by_embedding은 source_section 미반환
-    // → graph_entities에서 id로 직접 조회하여 source_section 획득
-    if (entities.length > 0) {
-        const ids = entities.map((e) => e.id);
-        const { data: fullEntities } = await supabase
-            .from("graph_entities")
-            .select("id, source_section")
-            .in("id", ids);
-
-        if (fullEntities) {
-            const sectionMap = new Map(
-                (fullEntities as any[]).map((e: any) => [e.id, e.source_section])
-            );
-            entities.forEach((e) => {
-                e.source_section = sectionMap.get(e.id) || undefined;
-            });
-        }
-    }
-
+    // (Codex F4) 이제 search_entities_by_embedding 에서 source_section을 직접 반환하므로 추가 쿼리가 필요하지 않습니다.
     return entities;
 }
 
@@ -506,14 +473,14 @@ export async function targetSearch(
         if (chunkResults.length > 0) {
             console.log(`[targetSearch] 4단계 chunk text: ${chunkResults.length}건 → 벡터 결과와 병합`);
             const chunkIds = new Set(chunkResults.map(e => e.id));
-            return deduplicateResults([
+            return [
                 ...chunkResults,
                 ...vectorResults.filter(e => !chunkIds.has(e.id)),
-            ]);
+            ];
         }
     }
 
-    return deduplicateResults(vectorResults);
+    return vectorResults;
 }
 
 // ─── 검색어 정제 유틸리티 ───

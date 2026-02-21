@@ -30,9 +30,8 @@ export const SYSTEM_PROMPT = `당신은 건설 공사 품셈(標準品셈) 전�
 [답변 규칙]
 1. **표번호 필수 표기**: 답변 시 해당 품셈의 표번호(예: [표 13-5-1])를 반드시 표기합니다. 표번호는 컨텍스트의 "표번호" 필드에서 가져옵니다.
 2. **출처 명시**: 답변에 사용한 품셈 항목의 출처(부문 > 장 > 절 > 표번호)를 반드시 표기합니다.
-3. **원본 매트릭스 형태 테이블**: 품셈 데이터를 표로 출력할 때는 원본 품셈 서적의 매트릭스(행렬) 형태를 유지합니다:
-   - 같은 공종의 여러 규격은 하나의 테이블에 통합합니다 (규격별 분리 금지)
-   - 단위는 반드시 데이터의 unit_basis 값을 그대로 사용합니다 (개소당, m당, ton당 등). 임의 변경 금지.
+3. **통일된 표 형식**: 품셈 데이터를 표로 출력할 때는 컨텍스트에 제공된 4열 구조(\`| 직종 | 수량 | 단위 | 기준 |\`)를 일관되게 유지합니다.
+   - 단위는 반드시 데이터에 표기된 값을 그대로 사용합니다. 임의 변경 금지.
    - 단위가 없으면 표기하지 않습니다.
 4. **수량 정확성**: 인력, 장비, 자재의 수량과 단위를 정확하게 표기합니다.
    예: "보통인부 0.122인", "콘크리트공 0.045인"
@@ -48,30 +47,16 @@ export const SYSTEM_PROMPT = `당신은 건설 공사 품셈(標準品셈) 전�
 
 [출력 포맷 예시]
 
-예시 1: 특정 구경의 여러 SCH를 하나의 테이블로 출력 (원본 매트릭스 형태)
-
 📋 **[표 13-2-3] 강관용접 — 전기아크용접** (개소당)
 📍 출처: 기계설비부문 > 제13장 플랜트설비공사 > 강관용접
 
-**구경 200mm**
-| SCH | 직종 | 수량(인) |
-| ---: | --- | ---: |
-| 20 | 용접공 | 0.287 |
-| 30 | 용접공 | 0.287 |
-| 40 | 플랜트용접공 | 0.287 |
-| 60 | 플랜트용접공 | 0.325 |
-| 80 | 플랜트용접공 | 0.362 |
-
-예시 2: 여러 구경을 가로 매트릭스로 출력
-
-📋 **[표 8-3-1] 잡철물 제작 및 설치** (ton당)
-📍 출처: 건축부문 > 제8장 > 기타공사
-
-| 구분 | 단위 | 제품설치(일반) | 제품설치(경량) | 규격철물(일반) | 규격철물(경량) |
-| --- | --- | ---: | ---: | ---: | ---: |
-| 철공 | 인 | 2.85 | 3.71 | 7.05 | 9.17 |
-| 용접공 | 인 | 1.04 | 1.35 | 2.57 | 3.34 |
-| 특별인부 | 인 | 0.78 | 1.01 | 1.92 | 2.50 |
+| 직종 | 수량 | 단위 | 기준 |
+| --- | ---: | --- | --- |
+| 용접공 | 0.287 | 인 | 200, SCH 20 |
+| 용접공 | 0.287 | 인 | 200, SCH 30 |
+| 플랜트용접공 | 0.287 | 인 | 200, SCH 40 |
+| 플랜트용접공 | 0.325 | 인 | 200, SCH 60 |
+| 플랜트용접공 | 0.362 | 인 | 200, SCH 80 |
 
 ※ 단위(개소당/m당/ton당 등)는 데이터에 포함된 값을 그대로 사용하세요.
 
@@ -79,8 +64,7 @@ export const SYSTEM_PROMPT = `당신은 건설 공사 품셈(標準品셈) 전�
 - 컨텍스트에 없는 수치나 기준을 임의로 생성하지 않습니다.
 - "일반적으로", "보통", "대략" 등 모호한 표현 대신 정확한 수치를 사용합니다.
 - 건설 관련이 아닌 질문에는 "건설 품셈 관련 질문에만 답변할 수 있습니다"라고 응답합니다.
-- 규격별로 소형 테이블을 분리하지 않습니다. 같은 공종은 하나의 매트릭스 테이블로 통합합니다.
-- 단위를 임의로 바꾸지 않습니다. 데이터의 unit_basis를 그대로 씁니다.`;
+- 단위를 임의로 바꾸지 않습니다. 주어지는 데이터를 그대로 씁니다.`;
 
 // Why: 임베딩은 DB 벡터 호환성 때문에 Gemini 유지 (13,387개 엔티티 재임베딩 불가)
 //       답변 생성만 DeepSeek v3.2로 전환
@@ -96,19 +80,19 @@ export async function generateAnswer(
 
     if (options?.intent === "cost_calculate") {
         systemContent += `\n\n[특별 지침: 노무비 산출]
-사용자가 노무비/인건비 계산을 요청했습니다.
+사용자가 노무비 / 인건비 계산을 요청했습니다.
 1. 품셈 인력 데이터(직종, 수량, 단위)를 기반으로 노무비를 산출하세요.
 2. 수량이 ${options.quantity || '미지정'}${options.quantity ? ` (${options.quantity})` : ''}으로 주어졌습니다.
-3. 노무비 산출 형식 (반드시 이 테이블 형태로):
-   | 직종 | 투입인원(인/개소) | 수량 | 총 투입(M/D) | 노임단가(원/일) | 소계(원) |
-4. 컨텍스트에 [2026년 노임단가] 섹선이 있으면 해당 단가를 사용하세요.
+3. 노무비 산출 형식(반드시 이 테이블 형태로):
+   | 직종 | 투입인원(인 / 개소) | 수량 | 총 투입(M / D) | 노임단가(원 / 일) | 소계(원) |
+    4. 컨텍스트에[2026년 노임단가] 섹선이 있으면 해당 단가를 사용하세요.
 5. 합계 행을 추가하고, 총 노무비를 굵은 글씨로 표기하세요.
 6. 수량이 미지정이면 "1개소당" 기준으로 산출하세요.`;
     }
 
     if (options?.intent === "report_request") {
         systemContent += `\n\n[특별 지침: 산출서 형태 출력]
-사용자가 산출서/내역서를 요청했습니다.
+사용자가 산출서 / 내역서를 요청했습니다.
 1. 정형화된 산출 내역서 형태로 출력하세요.
 2. 포함 항목: 품셈 출처(표번호, 절), 규격, 인력 투입 테이블, 노무비 산출 테이블, 합계
 3. 수량이 ${options.quantity || '미지정'}으로 주어졌습니다.
@@ -119,7 +103,7 @@ export async function generateAnswer(
     if (options?.quantity && options.intent !== "cost_calculate" && options.intent !== "report_request") {
         systemContent += `\n\n[수량 정보]
 사용자가 수량 ${options.quantity}을 지정했습니다.
-품셈 인력/장비 수량에 이 값을 곱하여 총 투입량을 계산해 주세요.`;
+품셈 인력 / 장비 수량에 이 값을 곱하여 총 투입량을 계산해 주세요.`;
     }
 
     // ─── DeepSeek 우선 시도 ───
@@ -133,7 +117,7 @@ export async function generateAnswer(
                 })),
                 {
                     role: "user" as const,
-                    content: `[질문]\n${question}\n\n[참고 데이터]\n${context}`,
+                    content: `[질문]\n${question} \n\n[참고 데이터]\n${context} `,
                 },
             ];
 
@@ -141,7 +125,7 @@ export async function generateAnswer(
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${DEEPSEEK_API_KEY}`,
+                    "Authorization": `Bearer ${DEEPSEEK_API_KEY} `,
                 },
                 body: JSON.stringify({
                     model: "deepseek-chat",
@@ -176,11 +160,11 @@ export async function generateAnswer(
         })),
         {
             role: "user",
-            parts: [{ text: `[질문]\n${question}\n\n[참고 데이터]\n${context}` }],
+            parts: [{ text: `[질문]\n${question} \n\n[참고 데이터]\n${context} ` }],
         },
     ];
 
-    const response = await fetch(`${GEMINI_LLM_URL}?key=${GEMINI_API_KEY}`, {
+    const response = await fetch(`${GEMINI_LLM_URL}?key = ${GEMINI_API_KEY} `, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -191,7 +175,7 @@ export async function generateAnswer(
     });
 
     if (!response.ok) {
-        throw new Error(`LLM API failed: ${response.status}`);
+        throw new Error(`LLM API failed: ${response.status} `);
     }
 
     const data = await response.json();

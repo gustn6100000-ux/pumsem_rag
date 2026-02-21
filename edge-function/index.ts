@@ -115,93 +115,37 @@ function buildContext(
             grouped.get(key)!.push(r);
         });
 
-        // ─── 투입 인력: 자세×직종 매트릭스 또는 규격별 그룹화 ───
+        // ─── 투입 인력 ───
         const labor = grouped.get("REQUIRES_LABOR") || [];
         if (labor.length > 0) {
-            const hasWorkType = labor.some(l => (l.properties as any)?.work_type_name);
-            // 매트릭스 가능 여부: related_name에 '_' 포함 시 (예: "하향_용접공")
-            const hasMatrix = labor.some(l => l.related_name.includes('_'));
+            parts.push(`**[표 ${sectionId}] 투입 인력**\n`);
+            parts.push("| 직종 | 수량 | 단위 | 기준 |");
+            parts.push("| --- | ---: | --- | --- |");
+            labor.forEach((l) => {
+                const props = (l.properties || {}) as any;
+                let specFallback = "-";
+                if (l.related_name.includes('_')) specFallback = l.related_name.split('_')[0]; // 매트릭스 자세 fallback
+                const spec = props.source_spec || props.spec || props.per_unit || props.work_type_name || specFallback;
+                const itemName = l.related_name.includes('_') ? l.related_name.split('_')[1] : l.related_name;
 
-            if (hasMatrix && !hasWorkType) {
-                // ─── 매트릭스 출력: 자세×직종 가로 테이블 ───
-                // Why: "하향_용접공" → 자세="하향", 직종="용접공" 분리 → 가독성 개선
-                const positionMap = new Map<string, Map<string, string>>();
-                const allJobs = new Set<string>();
-                labor.forEach((l) => {
-                    const [position, job] = l.related_name.includes('_')
-                        ? l.related_name.split('_', 2)
-                        : [l.related_name, '수량'];
-                    const props = (l.properties || {}) as any;
-                    allJobs.add(job);
-                    if (!positionMap.has(position)) positionMap.set(position, new Map());
-                    positionMap.get(position)!.set(job, String(props.quantity ?? "-"));
-                });
-                const jobList = [...allJobs];
-                const unit = (labor[0]?.properties as any)?.unit || "인";
-
-                parts.push(`**[표 ${sectionId}] 투입 인력**\n`);
-                parts.push("| 자세 | " + jobList.map(j => `${j}(${unit})`).join(" | ") + " |");
-                parts.push("| --- | " + jobList.map(() => "---:").join(" | ") + " |");
-                for (const [position, jobs] of positionMap) {
-                    parts.push("| " + position + " | " + jobList.map(j => jobs.get(j) ?? "-").join(" | ") + " |");
-                }
-                parts.push("");
-            } else if (hasWorkType) {
-                // 규격(work_type_name)별로 그룹화 → 원본 품셈 테이블 형태
-                const byWorkType = new Map<string, RelatedResource[]>();
-                labor.forEach((l) => {
-                    const wt = (l.properties as any)?.work_type_name || "기타";
-                    if (!byWorkType.has(wt)) byWorkType.set(wt, []);
-                    byWorkType.get(wt)!.push(l);
-                });
-
-                parts.push(`**[표 ${sectionId}] 투입 인력**\n`);
-                // 규격(work_type_name)을 숫자 기준 정렬: 15→20→90→100→125→200
-                const sortedWorkTypes = [...byWorkType.entries()].sort(([a], [b]) => {
-                    const numA = parseInt((a.match(/\d+/) || ['0'])[0], 10);
-                    const numB = parseInt((b.match(/\d+/) || ['0'])[0], 10);
-                    if (numA !== numB) return numA - numB;
-                    // 같은 숫자면 두 번째 숫자(SCH 등) 기준
-                    const numA2 = parseInt((a.match(/\d+.*?(\d+)/)?.[1] || '0'), 10);
-                    const numB2 = parseInt((b.match(/\d+.*?(\d+)/)?.[1] || '0'), 10);
-                    return numA2 - numB2;
-                });
-                for (const [workName, laborItems] of sortedWorkTypes) {
-                    parts.push(`**${workName}**`);
-                    parts.push("| 직종 | 수량 | 단위 |");
-                    parts.push("| --- | ---: | --- |");
-                    laborItems.forEach((l) => {
-                        const props = (l.properties || {}) as any;
-                        parts.push(
-                            `| ${l.related_name} | ${props.quantity ?? "-"} | ${props.unit ?? "인"} |`
-                        );
-                    });
-                    parts.push("");
-                }
-            } else {
-                parts.push(`**[표 ${sectionId}] 투입 인력**\n`);
-                parts.push("| 직종 | 수량 | 단위 |");
-                parts.push("| --- | ---: | --- |");
-                labor.forEach((l) => {
-                    const props = (l.properties || {}) as any;
-                    parts.push(
-                        `| ${l.related_name} | ${props.quantity ?? "-"} | ${props.unit ?? "인"} |`
-                    );
-                });
-                parts.push("");
-            }
+                parts.push(
+                    `| ${itemName} | ${props.quantity ?? "-"} | ${props.unit ?? "인"} | ${spec} |`
+                );
+            });
+            parts.push("");
         }
 
         // 투입 장비
         const equipment = grouped.get("REQUIRES_EQUIPMENT") || [];
         if (equipment.length > 0) {
             parts.push(`**[표 ${sectionId}] 투입 장비**\n`);
-            parts.push("| 장비명 | 수량 | 단위 |");
-            parts.push("| --- | ---: | --- |");
+            parts.push("| 장비명 | 수량 | 단위 | 기준 |");
+            parts.push("| --- | ---: | --- | --- |");
             equipment.forEach((eq) => {
                 const props = (eq.properties || {}) as any;
+                const spec = props.source_spec || props.spec || props.per_unit || props.work_type_name || "-";
                 parts.push(
-                    `| ${eq.related_name} | ${props.quantity ?? "-"} | ${props.unit ?? "-"} |`
+                    `| ${eq.related_name} | ${props.quantity ?? "-"} | ${props.unit ?? "-"} | ${spec} |`
                 );
             });
             parts.push("");
@@ -211,12 +155,13 @@ function buildContext(
         const material = grouped.get("USES_MATERIAL") || [];
         if (material.length > 0) {
             parts.push(`**[표 ${sectionId}] 사용 자재**\n`);
-            parts.push("| 자재명 | 수량 | 단위 |");
-            parts.push("| --- | ---: | --- |");
+            parts.push("| 자재명 | 수량 | 단위 | 기준 |");
+            parts.push("| --- | ---: | --- | --- |");
             material.forEach((m) => {
                 const props = (m.properties || {}) as any;
+                const spec = props.source_spec || props.spec || props.per_unit || props.work_type_name || "-";
                 parts.push(
-                    `| ${m.related_name} | ${props.quantity ?? "-"} | ${props.unit ?? "-"} |`
+                    `| ${m.related_name} | ${props.quantity ?? "-"} | ${props.unit ?? "-"} | ${spec} |`
                 );
             });
             parts.push("");

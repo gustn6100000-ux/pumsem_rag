@@ -207,8 +207,7 @@ async function resolveBySectionId(
         }
     }
 
-    // 이름 정규화 기준 중복 제거
-    workTypes = deduplicateWorkTypes(workTypes);
+    // 이름 정규화 기준 중복 제거 (클린 DB로 인해 삭제됨)
 
     // WT 0건: Note 수 조회하여 level 판정
     if (workTypes.length === 0 && childSections.length === 0) {
@@ -809,23 +808,6 @@ function buildSubSectionMap(workTypes: any[]): Map<string, any[]> {
     return subMap;
 }
 
-// 이름 정규화 기준 중복 제거
-function deduplicateWorkTypes(workTypes: any[]): any[] {
-    if (workTypes.length === 0) return workTypes;
-    const uniqueWTs = new Map<string, any>();
-    for (const wt of workTypes) {
-        const normKey = wt.name.replace(/\s+/g, '').toLowerCase();
-        if (!uniqueWTs.has(normKey)) {
-            uniqueWTs.set(normKey, wt);
-        }
-    }
-    const before = workTypes.length;
-    const result = Array.from(uniqueWTs.values());
-    if (before !== result.length) {
-        console.log(`[resolveSection] dedup ${before} → ${result.length}개`);
-    }
-    return result;
-}
 
 // ─── Selector Panel 관련 함수 (clarify.ts에서 이동) ───
 
