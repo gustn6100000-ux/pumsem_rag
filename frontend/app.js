@@ -5,8 +5,8 @@
 
 // ━━━ 설정 ━━━
 const CONFIG = {
-    // EDGE_FUNCTION_URL: 'https://bfomacoarwtqzjfxszdr.supabase.co/functions/v1/rag-chat',
-    EDGE_FUNCTION_URL: 'http://127.0.0.1:8888',  // 로컬 DeepSeek RAG 서버
+    EDGE_FUNCTION_URL: 'https://bfomacoarwtqzjfxszdr.supabase.co/functions/v1/rag-chat',
+    // EDGE_FUNCTION_URL: 'http://127.0.0.1:8888',  // 로컬 DeepSeek RAG 서버
     API_KEY: '', // RAG_API_KEY가 설정된 경우 여기에 입력
     MAX_HISTORY: 5,
     MAX_QUESTION_LENGTH: 500,
