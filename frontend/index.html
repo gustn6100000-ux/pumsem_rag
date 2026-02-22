@@ -1233,9 +1233,16 @@
             html += '<div class="selector-items">';
             selector.items.forEach((item, idx) => {
                 const specsAttr = escapeHtml(JSON.stringify(item.specs));
+
+                // 라벨 축약: specs의 값들을 조합하여 짧은 라벨 생성 (없으면 원본)
+                const specValues = Object.values(item.specs || {});
+                const displayLabel = specValues.length > 0
+                    ? specValues.join(', ')
+                    : item.label;
+
                 html += `<label class="selector-item" data-specs='${specsAttr}' data-entity-id="${escapeHtml(item.entity_id || '')}" data-option-type="${escapeHtml(item.option_type || 'worktype')}" data-query="${escapeHtml(item.query)}">`;
                 html += `<input type="checkbox" value="${idx}" onchange="updateSelectorCount(this.closest('.selector-panel'))">`;
-                html += `<span class="item-label">${escapeHtml(item.label)}</span>`;
+                html += `<span class="item-label">${escapeHtml(displayLabel)}</span>`;
                 html += `</label>`;
             });
             html += '</div>';
