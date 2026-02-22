@@ -241,7 +241,8 @@
         .message {
             display: flex;
             gap: 12px;
-            max-width: 960px;
+            max-width: 1200px;
+            /* Increased from 960px to use more screen width */
             width: 100%;
             margin: 0 auto;
             animation: msgIn 0.35s ease-out;
@@ -285,6 +286,8 @@
 
         .msg-body {
             max-width: calc(100% - 44px);
+            width: 100%;
+            /* Ensures msg-body can expand */
         }
 
         .msg-bubble {
@@ -293,12 +296,17 @@
             font-size: 14px;
             line-height: 1.7;
             word-break: break-word;
+            width: 100%;
+            /* Ensures bubble can expand */
+            overflow-x: auto;
+            /* Allow scrolling within the bubble if needed */
         }
 
         .message.user .msg-bubble {
             background: var(--bg-user-msg);
             color: #fff;
             border-bottom-right-radius: 4px;
+            width: auto;
         }
 
         .message.assistant .msg-bubble {
@@ -346,6 +354,11 @@
             border-collapse: collapse;
             margin: 10px 0;
             font-size: 13px;
+            display: block;
+            /* Allows horizontal scrolling */
+            overflow-x: auto;
+            white-space: nowrap;
+            /* Prevents text from wrapping */
         }
 
         .msg-bubble th,
@@ -353,6 +366,7 @@
             border: 1px solid var(--border-color);
             padding: 6px 10px;
             text-align: left;
+            /* Or center if preferred */
         }
 
         .msg-bubble th {
