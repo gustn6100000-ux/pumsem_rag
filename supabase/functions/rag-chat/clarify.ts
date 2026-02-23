@@ -51,11 +51,17 @@ export function classifyComplexity(question: string, analysis: IntentAnalysis): 
     if (conditionKeywords.some(kw => question.includes(kw))) score += 1;
 
     // 4. 물리량/단위 다중 포함 (+1점)
-    const unitMatches = question.match(/\d+(mm|t|ton|m|㎡|㎥|개소|본|T|kg)/gi);
+    const unitMatches = question.match(/\d+(mm|t|ton|톤|m|㎡|㎥|개소|본|T|kg|cm)/gi);
     if (unitMatches && unitMatches.length >= 2) score += 1;
+
+    // 4.5. '+' 연산자로 명시적 다중 공종 요청 (+1점)
+    if (question.includes('+')) score += 1;
 
     // 5. 연산/복합 명시 키워드 (+2점)
     if (/합산|포함해서|전체|총액|계산해/i.test(question)) score += 2;
+
+    // 5.5. '산출/산정' + 복수 공종 조합 시 (+1pt) — 단독 사용 시 과분류 방지
+    if (/산출|산정/.test(question) && workMatchCount >= 2) score += 1;
 
     const isComplex = score >= 4 ? "complex" : "simple";
     console.log(`[classifyComplexity] Score: ${score} -> ${isComplex} (User query: "${question}")`);
