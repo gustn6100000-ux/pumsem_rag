@@ -39,6 +39,7 @@ import {
     extractSpec,
     graphClarify,
     normalizeSpec,
+    classifyComplexity,
 } from "./clarify.ts";
 import { generateAnswer, generateReasoningGuide } from "./llm.ts";
 import {
@@ -1050,6 +1051,7 @@ async function handleChat(
 
     // ═══ Route 3: 의도 분석 (DeepSeek v3.2) ═══
     const analysis = await analyzeIntent(question, history, sessionContext);
+    analysis.complexity = classifyComplexity(question, analysis);
     analysis.spec = normalizeSpec(analysis.spec);
 
     // ─── 인사/도움말 ───
