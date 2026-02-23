@@ -40,13 +40,45 @@ import {
     graphClarify,
     normalizeSpec,
 } from "./clarify.ts";
-import { generateAnswer } from "./llm.ts";
+import { generateAnswer, generateReasoningGuide } from "./llm.ts";
 import {
     makeAnswerResponse,
     makeClarifyResponse,
 } from "./context.ts";
+import { buildSelectorPanel } from "./resolve.ts";
 
 // ━━━ [D] 컨텍스트 조합 ━━━
+
+// ─── 플랫 테이블 렌더링 (Phase 4 리팩토링) ───
+// Why: 교차표(Matrix) 대신 플랫 4열 테이블로 출력하여 토큰을 절약하고 환각을 방지
+function renderFlatTable(
+    items: RelatedResource[],
+    sectionId: string,
+    categoryLabel: string,  // "투입 인력" | "투입 장비" | "사용 자재"
+    nameLabel: string,      // "직종" | "장비명" | "자재명"
+): string {
+    if (items.length === 0) return "";
+
+    const lines: string[] = [];
+    lines.push(`**[표 ${sectionId}] ${categoryLabel}**\n`);
+    lines.push(`| ${nameLabel} | 수량 | 단위 | 규격 |`);
+    lines.push("| --- | ---: | --- | --- |");
+
+    items.forEach((item) => {
+        const props = (item.properties || {}) as any;
+        let specFallback = "-";
+        if (item.related_name.includes('_')) specFallback = item.related_name.split('_')[0];
+        const spec = props.source_spec || props.spec || props.per_unit || props.work_type_name || specFallback;
+        const itemName = item.related_name.includes('_') ? item.related_name.split('_')[1] : item.related_name;
+        const quantity = String(props.quantity ?? "-");
+        const unit = String(props.unit ?? (nameLabel === "직종" ? "인" : "-"));
+
+        lines.push(`| ${itemName} | ${quantity} | ${unit} | ${spec} |`);
+    });
+
+    lines.push("");
+    return lines.join("\n");
+}
 
 // ─── tables JSON → Markdown 테이블 변환 ───
 // Why: graph_chunks.tables는 JSON이므로 LLM이 이해하려면 Markdown 변환 필요
@@ -115,56 +147,22 @@ function buildContext(
             grouped.get(key)!.push(r);
         });
 
-        // ─── 투입 인력 ───
+        // ─── 투입 인력 (플랫 렌더링) ───
         const labor = grouped.get("REQUIRES_LABOR") || [];
         if (labor.length > 0) {
-            parts.push(`**[표 ${sectionId}] 투입 인력**\n`);
-            parts.push("| 직종 | 수량 | 단위 | 기준 |");
-            parts.push("| --- | ---: | --- | --- |");
-            labor.forEach((l) => {
-                const props = (l.properties || {}) as any;
-                let specFallback = "-";
-                if (l.related_name.includes('_')) specFallback = l.related_name.split('_')[0]; // 매트릭스 자세 fallback
-                const spec = props.source_spec || props.spec || props.per_unit || props.work_type_name || specFallback;
-                const itemName = l.related_name.includes('_') ? l.related_name.split('_')[1] : l.related_name;
-
-                parts.push(
-                    `| ${itemName} | ${props.quantity ?? "-"} | ${props.unit ?? "인"} | ${spec} |`
-                );
-            });
-            parts.push("");
+            parts.push(renderFlatTable(labor, sectionId, "투입 인력", "직종"));
         }
 
-        // 투입 장비
+        // ─── 투입 장비 (플랫 렌더링) ───
         const equipment = grouped.get("REQUIRES_EQUIPMENT") || [];
         if (equipment.length > 0) {
-            parts.push(`**[표 ${sectionId}] 투입 장비**\n`);
-            parts.push("| 장비명 | 수량 | 단위 | 기준 |");
-            parts.push("| --- | ---: | --- | --- |");
-            equipment.forEach((eq) => {
-                const props = (eq.properties || {}) as any;
-                const spec = props.source_spec || props.spec || props.per_unit || props.work_type_name || "-";
-                parts.push(
-                    `| ${eq.related_name} | ${props.quantity ?? "-"} | ${props.unit ?? "-"} | ${spec} |`
-                );
-            });
-            parts.push("");
+            parts.push(renderFlatTable(equipment, sectionId, "투입 장비", "장비명"));
         }
 
-        // 사용 자재
+        // ─── 사용 자재 (플랫 렌더링) ───
         const material = grouped.get("USES_MATERIAL") || [];
         if (material.length > 0) {
-            parts.push(`**[표 ${sectionId}] 사용 자재**\n`);
-            parts.push("| 자재명 | 수량 | 단위 | 기준 |");
-            parts.push("| --- | ---: | --- | --- |");
-            material.forEach((m) => {
-                const props = (m.properties || {}) as any;
-                const spec = props.source_spec || props.spec || props.per_unit || props.work_type_name || "-";
-                parts.push(
-                    `| ${m.related_name} | ${props.quantity ?? "-"} | ${props.unit ?? "-"} | ${spec} |`
-                );
-            });
-            parts.push("");
+            parts.push(renderFlatTable(material, sectionId, "사용 자재", "자재명"));
         }
 
         // 주의사항 — Note 엔티티의 원문 우선 표시
@@ -723,6 +721,265 @@ async function searchPipeline(
 
 // ━━━ [H] 메인 핸들러 (라우터) ━━━
 
+// ─── 특수 테이블 전용 감지기 및 파이프라인 (Phase 1.5) ───
+interface ComplexTableQuery {
+    section_code: string;       // '13-1-1'
+    material?: string;          // '배관용 탄소강관'
+    spec_mm?: number;           // 200
+    pipe_location?: string;     // '옥내' | '옥외'
+    joint_type?: string;        // '용접식' | '나사식'
+    quantity_value?: number;    // 10 (m)
+}
+
+const COMPLEX_TABLE_TRIGGERS: Record<string, {
+    section_code: string;
+    materials: string[];
+}> = {
+    "플랜트 배관": {
+        section_code: "13-1-1",
+        materials: ["탄소강관", "합금강", "스텐레스", "스테인리스", "알루미늄",
+            "동관", "황동", "KSD3507", "A335", "Type304", "Monel", "백관", "흑관"]
+    },
+    "밸브 등 설치": {
+        section_code: "13-3-1",
+        materials: ["밸브", "플랜지"]
+    }
+};
+
+function detectComplexTable(question: string): ComplexTableQuery | null {
+    for (const [trigger, config] of Object.entries(COMPLEX_TABLE_TRIGGERS)) {
+        const triggerWords = trigger.split(" ");
+        const allTriggerMatch = triggerWords.every(w => question.includes(w));
+        if (!allTriggerMatch) continue;
+
+        const matchedMaterial = config.materials.find(m => question.includes(m));
+
+        const specMatch = question.match(/(\d{2,4})\s*(mm|A|a|㎜)/);
+        const spec_mm = specMatch ? parseInt(specMatch[1]) : undefined;
+
+        const pipe_location = question.includes("옥외") ? "옥외" : (question.includes("옥내") ? "옥내" : undefined);
+        const joint_type = question.includes("나사") ? "나사식" : (question.includes("용접") ? "용접식" : undefined);
+
+        const qtyMatch = question.match(/(\d+(?:\.\d+)?)\s*(m|미터|M|ton|톤)\b/);
+        const quantity_value = qtyMatch ? parseFloat(qtyMatch[1]) : undefined;
+
+        return {
+            section_code: config.section_code,
+            material: matchedMaterial,
+            spec_mm,
+            pipe_location,
+            joint_type,
+            quantity_value,
+        };
+    }
+    return null;
+}
+
+function findBestCostMatch(
+    jobName: string,
+    costMap: Map<string, number>
+): { name: string; cost: number } | null {
+    if (costMap.has(jobName)) return { name: jobName, cost: costMap.get(jobName)! };
+    const normalized = jobName.replace(/\s+/g, '');
+    for (const [key, cost] of costMap) {
+        if (key.replace(/\s+/g, '') === normalized) return { name: key, cost };
+    }
+    let bestMatch: { name: string; cost: number } | null = null;
+    for (const [key, cost] of costMap) {
+        const keyNorm = key.replace(/\s+/g, '');
+        if (keyNorm.includes(normalized) || normalized.includes(keyNorm)) {
+            if (!bestMatch || key.length < bestMatch.name.length) {
+                bestMatch = { name: key, cost };
+            }
+        }
+    }
+    return bestMatch;
+}
+
+async function complexTablePipeline(
+    query: ComplexTableQuery,
+    question: string,
+    history: ChatMessage[],
+    startTime: number
+): Promise<ChatResponse> {
+    console.log(`[complexTablePipeline] section=${query.section_code}, ` +
+        `material=${query.material}, spec=${query.spec_mm}, ` +
+        `location=${query.pipe_location}, joint=${query.joint_type}`);
+
+    let dbQuery = supabase
+        .from("complex_table_specs")
+        .select("*")
+        .eq("section_code", query.section_code);
+
+    if (query.material) dbQuery = dbQuery.ilike("material", `%${query.material}%`);
+    if (query.pipe_location) dbQuery = dbQuery.eq("pipe_location", query.pipe_location);
+    if (query.joint_type) dbQuery = dbQuery.eq("joint_type", query.joint_type);
+
+    const { data: specs, error } = await dbQuery;
+
+    let filteredSpecs: any[] = specs || [];
+    if (query.spec_mm) {
+        filteredSpecs = filteredSpecs.filter((s: any) => s.spec_mm === query.spec_mm);
+    }
+
+    if (query.material && filteredSpecs.length > 0) {
+        const uniqueMaterials = [...new Set(filteredSpecs.map(s => s.material))];
+        let bestMaterial = uniqueMaterials[0];
+        for (const mat of uniqueMaterials) {
+            const matPrefix = mat.split('(')[0];
+            if (question.replace(/\s+/g, '').includes(matPrefix.replace(/\s+/g, ''))) {
+                bestMaterial = mat;
+                break;
+            }
+        }
+        filteredSpecs = filteredSpecs.filter((s: any) => s.material === bestMaterial);
+    }
+
+    if (filteredSpecs.length === 0) {
+        console.warn("[complexTablePipeline] 전용 DB에 데이터 없음 → 일반 search 폴백/안내");
+        // Fallback to normal semantic search if missing
+        const analysis = await analyzeIntent(question, history);
+        return searchPipeline(analysis, question, history, startTime);
+    }
+
+    // Step 1.5: 다중 조합(재질, 배관장소, 접합방식)일 경우 사용자에게 Clarification 요청
+    const uniqueCombos = [...new Set(filteredSpecs.map(s => `${s.material}||${s.pipe_location}||${s.joint_type}`))];
+    if (uniqueCombos.length > 1) {
+        const options: ClarifyOption[] = uniqueCombos.slice(0, 15).map(combo => {
+            const [mat, loc, jnt] = combo.split('||');
+            return {
+                label: `${mat} (${loc} ${jnt})`, // 간결하게 표시
+                query: `플랜트 배관 설치 ${mat} ${loc} ${jnt}`,
+                option_type: 'section',
+                section_id: query.section_code
+            };
+        });
+
+        // forceSelector=true 로 체크박스 UI 강제 활성화
+        const selector = buildSelectorPanel(options, `[${query.section_code}] 배관 설치`, true);
+
+        return makeClarifyResponse(
+            `"${question}"에 해당하는 품셈 기준이 여러 개 발견되었습니다. 단일 기준을 선택해 주세요.`,
+            startTime,
+            {
+                options,
+                reason: "재질, 배관구분, 접합방식이 명확하지 않아 선택이 필요합니다.",
+                original_query: question,
+                ...(selector ? { selector } : {})
+            }
+        );
+    }
+
+    // 단일 조합 확정
+    const exactMat = filteredSpecs[0].material;
+    const exactLoc = filteredSpecs[0].pipe_location;
+    const exactJnt = filteredSpecs[0].joint_type;
+
+    // Step 2: 2026 노임단가 사전연산
+    const jobNames = [...new Set(filteredSpecs.map((s: any) => s.job_name as string))];
+    const laborCosts = await fetchLaborCosts(jobNames);
+    const costMap = new Map(laborCosts.map(lc => [lc.job_name, lc.cost_2026]));
+
+    const quantityMultiplier = query.quantity_value || 1;
+    const quantityUnit = filteredSpecs[0]?.quantity_unit || "인/100m";
+    const unitLabel = quantityUnit === "인/100m" ? "100m" : quantityUnit.replace("인/", "");
+
+    let context = `## 📋 [${query.section_code}] ${filteredSpecs[0]?.section_name}\n\n`;
+    context += `**재질**: ${exactMat} | **배관구분**: ${exactLoc} | **접합방식**: ${exactJnt}\n\n`;
+
+    const uniqueSpecs = [...new Set(filteredSpecs.map((s: any) => s.spec_mm))].sort((a, b) => a - b);
+    const hasMultipleSpecs = uniqueSpecs.length > 1;
+
+    context += `## [2026년 노임단가 기반 산출 결과 (백엔드 계산 완료)]\n\n`;
+
+    let totalCost = 0;
+    if (hasMultipleSpecs) {
+        // [매트릭스 렌더링]: 구경(mm)이 컬럼이 되는 테이블
+        const specHeaders = uniqueSpecs.map(s => `${s}mm`).join(" | ");
+        const specSep = uniqueSpecs.map(() => "---:").join(" | ");
+
+        context += `| 직종 | 노임단가(원/일) | ${specHeaders} |\n`;
+        context += `|---|---:|${specSep}|\n`;
+
+        for (const job of jobNames) {
+            const matched = findBestCostMatch(job, costMap);
+            const unitCost = matched?.cost ?? 0;
+
+            const rowValues = uniqueSpecs.map(spec => {
+                const item = filteredSpecs.find((s: any) => s.job_name === job && s.spec_mm === spec);
+                return item ? item.quantity : "-";
+            });
+
+            context += `| ${job} | ${unitCost.toLocaleString()} | ` + rowValues.join(" | ") + ` |\n`;
+        }
+
+        if (quantityMultiplier !== 1) {
+            context += `\n> 💡 **참고**: 수량(${quantityMultiplier}${unitLabel.replace("100m", "m")})을 전체 노임비로 계산하시려면, 특정 구경(mm) 하나를 이어서 다시 질문해 주세요.\n`;
+        }
+    } else {
+        // [플랫 테이블 렌더링]: 단일 구경의 세부 조건과 합산된 노무비 (기존 로직)
+        const specInfo = filteredSpecs[0];
+        context += `**구경**: ${specInfo.spec_mm}mm | **외경**: ${specInfo.outer_dia_mm}mm | **두께**: ${specInfo.thickness_mm}mm | **단위중량**: ${specInfo.unit_weight}kg/m\n\n`;
+
+        context += `| 직종 | 품(${unitLabel}당) | 노임단가(원/일) | `;
+        if (quantityMultiplier > 1) {
+            const displayUnit = unitLabel === "100m" ? "m" : unitLabel;
+            context += `${quantityMultiplier}${displayUnit} 환산 금액(원) | `;
+        }
+        context += `비고 |\n|---|---:|---:|`;
+        if (quantityMultiplier > 1) context += `---:|`;
+        context += `---|\n`;
+
+        for (const spec of filteredSpecs) {
+            const matched = findBestCostMatch(spec.job_name, costMap);
+            const unitCost = matched?.cost ?? 0;
+            const qtyPer100m = parseFloat(spec.quantity);
+
+            const actualQty = quantityUnit === "인/100m"
+                ? qtyPer100m * (quantityMultiplier / 100)
+                : qtyPer100m * quantityMultiplier;
+            const amount = Math.round(actualQty * unitCost);
+            totalCost += amount;
+
+            context += `| ${spec.job_name} | ${spec.quantity} | ${unitCost.toLocaleString()} | `;
+            if (quantityMultiplier > 1) {
+                context += `${amount.toLocaleString()} | `;
+            }
+            context += `${query.section_code} |\n`;
+        }
+
+        if (quantityMultiplier > 1) {
+            const toolCost = Math.round(totalCost * 0.03);
+            context += `| 공구손료 (3%) | - | - | ${toolCost.toLocaleString()} | 인력품의 3% |\n`;
+            totalCost += toolCost;
+            context += `| **합계** | | | **${totalCost.toLocaleString()}** | |\n`;
+        }
+    }
+
+    context += `\n> ⚠️ 위 금액은 **전용 정형화 DB에서 정확히 조회**되어 백엔드에서 계산한 확정값입니다.\n`;
+    context += `> LLM은 이 숫자를 절대 수정하지 말고 그대로 출력하세요.\n`;
+
+    // Step 3: LLM 포장
+    const llmResult = await generateAnswer(question, context, history, {
+        intent: "cost_calculate",
+        quantity: query.quantity_value,
+    });
+
+    const sources: SourceInfo[] = [{
+        entity_name: `${filteredSpecs[0]?.section_name} (${filteredSpecs[0]?.material})`,
+        entity_type: "ComplexTable" as any,
+        source_section: query.section_code,
+        section_label: `${filteredSpecs[0]?.section_name}`,
+        similarity: 1.0
+    }];
+
+    return makeAnswerResponse(llmResult.answer, startTime, {
+        sources,
+        embeddingTokens: 0,
+        llmResult,
+    });
+}
+
 async function handleChat(
     question: string,
     history: ChatMessage[],
@@ -732,6 +989,13 @@ async function handleChat(
     answerOptions?: AnswerOptions
 ): Promise<ChatResponse> {
     const startTime = Date.now();
+
+    // ═══ Route 0.5: 특수 복합 테이블 전용 라우터 (Phase 1.5) ═══
+    const complexTableMatch = detectComplexTable(question);
+    if (complexTableMatch) {
+        console.log(`[handleChat] 🎯 Route 0.5: 특수 테이블 감지 → ${complexTableMatch.section_code}`);
+        return complexTablePipeline(complexTableMatch, question, history, startTime);
+    }
 
     // ═══ Route 1: entity_id 직접 조회 (칩 선택 시) ═══
     if (entityId) {
@@ -878,6 +1142,24 @@ async function handleChat(
             original_query: question,
             selector: clarifyResult.selector,
         });
+    }
+
+    // ═══ Route 3.5: 복합 질의 듀얼 모델 라우팅 (Phase 2) ═══
+    if (analysis.complexity === "complex" && (analysis.intent === "search" || analysis.intent === "complex_estimate")) {
+        console.log(`[handleChat] 🎯 Route 3.5 (Complex) triggered. Calling Reasoner...`);
+        const guide = await generateReasoningGuide(question, history);
+        if (guide && guide.search_tasks && guide.search_tasks.length > 0) {
+            console.log(`[handleChat] Reasoner Guide:`, JSON.stringify(guide));
+
+            // 멀티 태스크 마스터플랜을 컨텍스트에 추가 주입하여 LLM 답변 시 참고하게 함 (현재는 fall-through 하여 searchPipeline으로 진입)
+            const masterPlanContext = `\n\n[AI 분해 마스터플랜]\n분석된 검색 대상: ${guide.search_tasks.map(t => `"${t}"`).join(', ')}\n필요 계산: ${guide.calculations.join(', ')}\n추가 조정: ${guide.adjustments.join(', ')}\n`;
+
+            analysis.ambiguity_reason = (analysis.ambiguity_reason || "") + masterPlanContext;
+
+            // 키워드도 확장하여 첫 targetSearch의 회수율 높임 (임시 조치)
+            const addedKeywords = guide.search_tasks.flatMap(t => t.split(/\s+/)).filter(w => w.length >= 2);
+            analysis.keywords = [...new Set([...analysis.keywords, ...addedKeywords])];
+        }
     }
 
     // ═══ Route 4: search → searchPipeline ═══

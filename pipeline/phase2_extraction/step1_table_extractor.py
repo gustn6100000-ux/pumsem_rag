@@ -494,10 +494,15 @@ def _extract_d2_compound(
         if not pipe_str or pipe_str in ('합계', '계', '소계', '구경 mm', '구경mm'):
             continue
 
-        # 숫자면 mm 값, 문자면 그대로
+        # 숫자면 mm 값, 문자면 그대로 (φ/ø 및 소수점 처리)
+        pipe_clean = re.sub(r'^[φΦø∅ɸ]\s*', '', pipe_str)
         try:
-            pipe_num = int(float(pipe_str))
-            pipe_label = f'φ{pipe_num}'
+            # Avoid omitting floating points, but remove .0
+            pipe_num = float(pipe_clean)
+            if pipe_num.is_integer():
+                pipe_label = f'φ{int(pipe_num)}'
+            else:
+                pipe_label = f'φ{pipe_num}'
         except (ValueError, TypeError):
             pipe_label = normalize_entity_name(pipe_str)
 

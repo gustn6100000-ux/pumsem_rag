@@ -682,7 +682,11 @@ export function presentClarify(
 
         // WorkType의 source_section 중 Section에 없는 것들도 option으로 추가
         const wtBySrc = new Map<string, any>();
+        const skipRegex = /(비례비|비계|지보공|동바리|철거|운반|폐기물|할증|기타|부대비용|소운반)/;
+
         for (const wt of workTypes) {
+            if (wt.type === 'WorkType' && skipRegex.test(wt.name)) continue;
+
             if (wt.source_section && !sectionSrcSet.has(wt.source_section) && !wtBySrc.has(wt.source_section)) {
                 wtBySrc.set(wt.source_section, wt);
             }
@@ -737,10 +741,19 @@ export function presentClarify(
             }
         } else {
             // 개별 WorkType 옵션
+            const skipRegex = /(비례비|비계|지보공|동바리|철거|운반|폐기물|할증|기타|부대비용|소운반)/;
+
             for (const wt of workTypes) {
+                // 부대비용/공통 단가 항목 필터링 (사용자 선택 옵션에서 제외)
+                if (wt.type === 'WorkType' && skipRegex.test(wt.name)) continue;
                 if (options.find(o => o.entity_id === wt.id)) continue;
+
+                const label = (level === 'worktype_many' || !sections.length) ? makeLabel(wt) : wt.name;
+                // UI 중복 라벨 방지
+                if (options.find(o => o.label === label)) continue;
+
                 options.push({
-                    label: (level === 'worktype_many' || !sections.length) ? makeLabel(wt) : wt.name,
+                    label,
                     query: `${wt.name} 품셈`,
                     entity_id: wt.id,
                     source_section: wt.source_section,
@@ -887,11 +900,12 @@ function extractFilterAxes(items: SelectorItem[]): FilterAxis[] {
     return axes;
 }
 
-function buildSelectorPanel(
+export function buildSelectorPanel(
     options: ClarifyOption[],
-    workName: string
+    workName: string,
+    forceSelector: boolean = false
 ): SelectorPanel | undefined {
-    if (options.length <= 6) return undefined;
+    if (!forceSelector && options.length <= 6) return undefined;
 
     const selectorItems: SelectorItem[] = options
         .filter(o => (o.option_type === 'worktype' || o.option_type === 'section') && (o.entity_id || o.section_id))
@@ -904,7 +918,7 @@ function buildSelectorPanel(
             specs: parseWorkTypeName(o.label),
         }));
 
-    if (selectorItems.length < 6) return undefined;
+    if (!forceSelector && selectorItems.length < 6) return undefined;
 
     selectorItems.sort((a, b) => {
         const numA = parseInt((a.label.match(/\d+/) || ['0'])[0], 10);

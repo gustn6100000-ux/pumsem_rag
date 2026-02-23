@@ -165,8 +165,9 @@ function showLoading() {
     const contentDiv = document.createElement('div');
     contentDiv.className = 'message-content';
     contentDiv.innerHTML = `
-    <div class="typing-indicator">
-      <span></span><span></span><span></span>
+    <div class="typing-indicator" id="loadingText" style="display:flex; align-items:center; gap:8px;">
+      <span class="loading-label" style="font-size: 14px; color: #64748b;">관련 품셈 데이터를 검색 중입니다...</span>
+      <div style="display:flex; gap:4px;"><span></span><span></span><span></span></div>
     </div>
   `;
 
@@ -174,11 +175,21 @@ function showLoading() {
     div.appendChild(contentDiv);
     chatMessages.appendChild(div);
     chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Phase 2 Thinking UI: 검색 지연 시 (4초 후) DeepSeek Reasoner 가동 중임을 알림
+    window.loadingTimeout = setTimeout(() => {
+        const textEl = document.querySelector('#loadingText .loading-label');
+        if (textEl) {
+            textEl.innerHTML = "💡 <b>DeepSeek Reasoner</b>가 복합 공종을 심층 분석 중입니다...";
+            textEl.style.color = "#8b5cf6"; // 보라색으로 강조
+        }
+    }, 4000);
 }
 
 function hideLoading() {
     const el = document.getElementById('loadingMessage');
     if (el) el.remove();
+    if (window.loadingTimeout) clearTimeout(window.loadingTimeout);
 }
 
 // ━━━ 에러 표시 ━━━

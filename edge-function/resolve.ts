@@ -812,14 +812,38 @@ function buildSubSectionMap(workTypes: any[]): Map<string, any[]> {
 // ─── Selector Panel 관련 함수 (clarify.ts에서 이동) ───
 
 function parseWorkTypeName(name: string): Record<string, string> {
+    // 1. 강관 (옥외 용접식) 형식을 식별 (ComplexTablePipeline 용)
+    const mComplex = name.match(/^([^()]+)\s*\(([^)\s]+)\s+([^)\s]+)\)$/);
+    if (mComplex) {
+        return {
+            '재질': mComplex[1].trim(),
+            '배관장소': mComplex[2].trim(),
+            '접합방식': mComplex[3].trim()
+        };
+    }
+
+    // 2. (XX, SCH YY) 형식 식별
     const m = name.match(/\((\d+),\s*SCH\s*([\d~]+)\)$/);
     if (m) return { diameter: m[1], sch: m[2] };
+
+    // 3. (A, B) 형식
     const m2 = name.match(/\(([^,]+),\s*(.+)\)$/);
     if (m2) return { spec1: m2[1].trim(), spec2: m2[2].trim() };
+
+    // 4. (A) 단일 형식
     const m3 = name.match(/\(([^)]+)\)$/);
-    if (m3) return { spec1: m3[1].trim() };
+    if (m3) {
+        const val = m3[1].trim();
+        // Ignore section IDs like 1-2-4 or 1-2
+        if (!/^(\d+-)+\d+(#\d+)?$/.test(val)) {
+            return { spec1: val };
+        }
+    }
+
+    // 5. 언더스코어(_) 로 구분된 서브타입
     const parts = name.split('_');
     if (parts.length >= 2) return { subtype: parts.slice(1).join('_') };
+
     return {};
 }
 
@@ -887,11 +911,12 @@ function extractFilterAxes(items: SelectorItem[]): FilterAxis[] {
     return axes;
 }
 
-function buildSelectorPanel(
+export function buildSelectorPanel(
     options: ClarifyOption[],
-    workName: string
+    workName: string,
+    forceSelector: boolean = false
 ): SelectorPanel | undefined {
-    if (options.length <= 6) return undefined;
+    if (!forceSelector && options.length <= 6) return undefined;
 
     const selectorItems: SelectorItem[] = options
         .filter(o => (o.option_type === 'worktype' || o.option_type === 'section') && (o.entity_id || o.section_id))
@@ -904,7 +929,38 @@ function buildSelectorPanel(
             specs: parseWorkTypeName(o.label),
         }));
 
-    if (selectorItems.length < 6) return undefined;
+    if (!forceSelector && selectorItems.length < 6) return undefined;
+
+    // ─── 유효한 Base Name(공통 공종명) 추출 ───
+    const counts = new Map<string, number>();
+    let maxBaseName = workName;
+    let maxCount = 0;
+
+    for (const item of selectorItems) {
+        // "플랜트 배관 설치(동, SCH 80)" -> "플랜트 배관 설치" 추출
+        let rawName = item.label;
+        // 접두어 "[기계부문 > ...]" 제거
+        if (rawName.includes('] ')) {
+            rawName = rawName.substring(rawName.indexOf('] ') + 2).trim();
+        }
+        // 괄호 규격 부분 이전 텍스트 추출
+        const match = rawName.match(/^([^()]+)\s*\(/);
+        const baseName = match ? match[1].trim() : rawName;
+
+        const c = (counts.get(baseName) || 0) + 1;
+        counts.set(baseName, c);
+        if (c > maxCount) {
+            maxCount = c;
+            maxBaseName = baseName;
+        }
+    }
+
+    // 그룹핑 타당성 검사: 검색 결과가 완전히 제각각인 하위 항목들이 섞여 있다면 (예: 포괄적 키워드 검색)
+    // 공통 규격으로 묶는 Selector Panel을 띄우는 것이 부적절하므로 일반 칩스(options)로 폴백합니다.
+    if (!forceSelector && maxCount < 4 && maxCount < selectorItems.length * 0.4) {
+        console.log(`[buildSelectorPanel] 공통 BaseName 부족(${maxCount}/${selectorItems.length}). Selector Panel 취소.`);
+        return undefined;
+    }
 
     selectorItems.sort((a, b) => {
         const numA = parseInt((a.label.match(/\d+/) || ['0'])[0], 10);
@@ -915,8 +971,11 @@ function buildSelectorPanel(
 
     const filters = extractFilterAxes(selectorItems);
 
+    // 필터 축이 하나도 추출되지 않았다면 일반 칩스(options)로 폴백
+    if (!forceSelector && filters.length === 0) return undefined;
+
     return {
-        title: `${workName} — 규격 선택`,
+        title: `${maxBaseName} — 규격 선택`,
         filters,
         items: selectorItems,
         original_query: workName,

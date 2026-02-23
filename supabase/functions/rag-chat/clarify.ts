@@ -30,6 +30,39 @@ export function extractSpec(question: string): string | null {
     return null;
 }
 
+// ─── Phase 2: 질문 복잡도 분류 (듀얼 모델 라우팅용) ───
+export function classifyComplexity(question: string, analysis: IntentAnalysis): "simple" | "complex" {
+    let score = 0;
+
+    // 1. 질문 길이 (1점: 30자 이상, 2점: 60자 이상)
+    if (question.length >= 60) score += 2;
+    else if (question.length >= 30) score += 1;
+
+    // 2. 복수 공종 키워드 (+2점)
+    const workKeywords = ["해체", "철거", "타설", "용접", "설치", "제작", "보온", "배관", "미장", "조적"];
+    let workMatchCount = 0;
+    for (const kw of workKeywords) {
+        if (question.includes(kw)) workMatchCount++;
+    }
+    if (workMatchCount >= 2) score += 2;
+
+    // 3. 조건 키워드 (+1점)
+    const conditionKeywords = ["고소작업", "고소", "할증", "야간", "지하", "공간"];
+    if (conditionKeywords.some(kw => question.includes(kw))) score += 1;
+
+    // 4. 물리량/단위 다중 포함 (+1점)
+    const unitMatches = question.match(/\d+(mm|t|ton|m|㎡|㎥|개소|본|T|kg)/gi);
+    if (unitMatches && unitMatches.length >= 2) score += 1;
+
+    // 5. 연산/복합 명시 키워드 (+2점)
+    if (/합산|포함해서|전체|총액|계산해/i.test(question)) score += 2;
+
+    const isComplex = score >= 4 ? "complex" : "simple";
+    console.log(`[classifyComplexity] Score: ${score} -> ${isComplex} (User query: "${question}")`);
+
+    return isComplex;
+}
+
 // ─── E-1. DeepSeek v3.2 기반 의도 분석 ───
 // Why: 규칙 기반 의도 분류의 한계(영문 약어, 동의어, 맥락 이해 불가)를
 //      LLM 구조화 출력으로 해결. 비용 ~₩1/호출로 무시 가능.
