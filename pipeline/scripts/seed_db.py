@@ -4,7 +4,11 @@ import os
 import sys
 
 from dotenv import load_dotenv
-load_dotenv('g:/My Drive/Antigravity/pipeline/.env')
+
+# 스크립트 위치 기준으로 상위 폴더(pipeline)의 .env 로드
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PIPELINE_DIR = os.path.dirname(SCRIPT_DIR)
+load_dotenv(os.path.join(PIPELINE_DIR, '.env'))
 
 url = os.getenv("SUPABASE_URL")
 key = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
@@ -13,7 +17,10 @@ if not url or not key:
     print("Missing SUPABASE credentials in .env")
     sys.exit(1)
 
-files_to_seed = ['g:/My Drive/Antigravity/pipeline/scripts/records_13_1_1.json', 'g:/My Drive/Antigravity/pipeline/scripts/records_13_3_1.json']
+files_to_seed = [
+    os.path.join(SCRIPT_DIR, 'records_13_1_1.json'),
+    os.path.join(SCRIPT_DIR, 'records_13_3_1.json')
+]
 for file_path in files_to_seed:
     print(f"Loading {file_path}...")
     with open(file_path, 'r', encoding='utf-8') as f:

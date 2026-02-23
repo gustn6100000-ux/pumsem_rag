@@ -11,7 +11,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -26,7 +26,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.033,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -41,7 +41,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -56,7 +56,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.033,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -71,7 +71,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.093,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -86,7 +86,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.046,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -101,7 +101,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.093,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -116,7 +116,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.046,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -131,7 +131,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -146,7 +146,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.05,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -161,7 +161,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -176,7 +176,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.033,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -191,7 +191,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -206,7 +206,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.033,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -221,7 +221,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -236,7 +236,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.05,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -251,7 +251,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -266,7 +266,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.055,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -281,7 +281,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -296,7 +296,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.07,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -311,7 +311,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.086,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -326,7 +326,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.043,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -341,7 +341,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.086,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -356,7 +356,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.043,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -371,7 +371,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -386,7 +386,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.07,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -401,7 +401,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -416,7 +416,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.075,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -431,7 +431,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.17,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -446,7 +446,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.085,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -461,7 +461,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.093,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -476,7 +476,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.046,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -491,7 +491,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -506,7 +506,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -521,7 +521,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.16,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -536,7 +536,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.08,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -551,7 +551,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.17,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -566,7 +566,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.085,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -581,7 +581,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.21,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -596,7 +596,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.105,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -611,7 +611,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.133,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -626,7 +626,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -641,7 +641,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.16,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -656,7 +656,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.08,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -671,7 +671,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.187,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -686,7 +686,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.093,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -701,7 +701,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.23,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -716,7 +716,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -731,7 +731,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -746,7 +746,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -761,7 +761,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.166,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -776,7 +776,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.083,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -791,7 +791,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.19,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -806,7 +806,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.095,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -821,7 +821,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.233,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -836,7 +836,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.116,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -851,7 +851,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.27,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -866,7 +866,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -881,7 +881,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.29,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -896,7 +896,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -911,7 +911,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.187,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -926,7 +926,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.093,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -941,7 +941,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.21,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -956,7 +956,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.105,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -971,7 +971,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.26,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -986,7 +986,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1001,7 +1001,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.29,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1016,7 +1016,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1031,7 +1031,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.31,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1046,7 +1046,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1061,7 +1061,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1076,7 +1076,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1091,7 +1091,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.25,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1106,7 +1106,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.125,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1121,7 +1121,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.3,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1136,7 +1136,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1151,7 +1151,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.34,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1166,7 +1166,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.17,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1181,7 +1181,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.37,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1196,7 +1196,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.18,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1211,7 +1211,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.107,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1226,7 +1226,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.053,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1241,7 +1241,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.107,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1256,7 +1256,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.053,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1271,7 +1271,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.133,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1286,7 +1286,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1301,7 +1301,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.134,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1316,7 +1316,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.067,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1331,7 +1331,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1346,7 +1346,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1361,7 +1361,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.133,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1376,7 +1376,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1391,7 +1391,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.133,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1406,7 +1406,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1421,7 +1421,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.166,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1436,7 +1436,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.083,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1451,7 +1451,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.18,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1466,7 +1466,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.09,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1481,7 +1481,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.206,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1496,7 +1496,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.103,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1511,7 +1511,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.153,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1526,7 +1526,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.076,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1541,7 +1541,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.154,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1556,7 +1556,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.077,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1571,7 +1571,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.206,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1586,7 +1586,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.103,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1601,7 +1601,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1616,7 +1616,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1631,7 +1631,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1646,7 +1646,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1661,7 +1661,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.186,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1676,7 +1676,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.093,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1691,7 +1691,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1706,7 +1706,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1721,7 +1721,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.253,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1736,7 +1736,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.126,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1751,7 +1751,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.266,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1766,7 +1766,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.133,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1781,7 +1781,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.3,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1796,7 +1796,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1811,7 +1811,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1826,7 +1826,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1841,7 +1841,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.266,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1856,7 +1856,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.133,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1871,7 +1871,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.293,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1886,7 +1886,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.146,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1901,7 +1901,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.333,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1916,7 +1916,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.166,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1931,7 +1931,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.346,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1946,7 +1946,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.173,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1961,7 +1961,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.3,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1976,7 +1976,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -1991,7 +1991,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.326,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2006,7 +2006,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.163,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2021,7 +2021,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.366,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2036,7 +2036,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.183,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2051,7 +2051,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.4,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2066,7 +2066,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2081,7 +2081,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.42,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2096,7 +2096,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.21,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2111,7 +2111,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.36,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2126,7 +2126,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.18,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2141,7 +2141,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.38,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2156,7 +2156,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.19,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2171,7 +2171,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.434,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2186,7 +2186,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.217,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2201,7 +2201,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.466,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2216,7 +2216,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.233,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2231,7 +2231,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.48,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2246,7 +2246,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2261,7 +2261,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.406,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2276,7 +2276,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.203,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2291,7 +2291,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.406,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2306,7 +2306,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.203,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2321,7 +2321,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.486,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2336,7 +2336,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.243,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2351,7 +2351,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.526,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2366,7 +2366,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.263,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2381,7 +2381,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.55,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2396,7 +2396,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.27,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2411,7 +2411,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2426,7 +2426,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.05,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2441,7 +2441,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.133,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2456,7 +2456,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.067,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2471,7 +2471,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.18,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2486,7 +2486,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.09,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2501,7 +2501,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.198,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2516,7 +2516,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.097,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2531,7 +2531,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2546,7 +2546,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2561,7 +2561,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.133,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2576,7 +2576,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2591,7 +2591,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.167,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2606,7 +2606,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.084,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2621,7 +2621,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.207,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2636,7 +2636,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.104,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2651,7 +2651,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2666,7 +2666,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2681,7 +2681,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.287,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2696,7 +2696,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.144,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2711,7 +2711,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.166,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2726,7 +2726,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.083,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2741,7 +2741,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2756,7 +2756,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2771,7 +2771,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.254,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2786,7 +2786,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.127,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2801,7 +2801,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.267,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2816,7 +2816,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.134,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2831,7 +2831,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.327,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2846,7 +2846,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.164,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2861,7 +2861,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2876,7 +2876,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2891,7 +2891,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2906,7 +2906,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2921,7 +2921,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.3,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2936,7 +2936,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2951,7 +2951,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.32,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2966,7 +2966,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.16,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2981,7 +2981,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.38,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -2996,7 +2996,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.19,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3011,7 +3011,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3026,7 +3026,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3041,7 +3041,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.287,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3056,7 +3056,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.144,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3071,7 +3071,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.347,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3086,7 +3086,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.174,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3101,7 +3101,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.36,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3116,7 +3116,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.18,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3131,7 +3131,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.433,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3146,7 +3146,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.217,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3161,7 +3161,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.286,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3176,7 +3176,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.143,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3191,7 +3191,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.334,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3206,7 +3206,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.167,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3221,7 +3221,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.394,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3236,7 +3236,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.197,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3251,7 +3251,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.407,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3266,7 +3266,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.204,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3281,7 +3281,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.487,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3296,7 +3296,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.244,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3311,7 +3311,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.313,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3326,7 +3326,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.156,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3341,7 +3341,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.367,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3356,7 +3356,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.184,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3371,7 +3371,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.427,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3386,7 +3386,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.214,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3401,7 +3401,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.447,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3416,7 +3416,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.224,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3431,7 +3431,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.56,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3446,7 +3446,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.28,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3461,7 +3461,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.407,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3476,7 +3476,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.203,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3491,7 +3491,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.486,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3506,7 +3506,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.243,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3521,7 +3521,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.574,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3536,7 +3536,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.287,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3551,7 +3551,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.606,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3566,7 +3566,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.303,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3581,7 +3581,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.746,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3596,7 +3596,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.373,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3611,7 +3611,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.52,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3626,7 +3626,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.26,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3641,7 +3641,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.606,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3656,7 +3656,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.303,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3671,7 +3671,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.694,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3686,7 +3686,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.347,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3701,7 +3701,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.735,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3716,7 +3716,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.368,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3731,7 +3731,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.954,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3746,7 +3746,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.477,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3761,7 +3761,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.646,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3776,7 +3776,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.323,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3791,7 +3791,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.746,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3806,7 +3806,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.373,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3821,7 +3821,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.867,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3836,7 +3836,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.434,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3851,7 +3851,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.92,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3866,7 +3866,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.46,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3881,7 +3881,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 1.19,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3896,7 +3896,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.6,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3911,7 +3911,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.746,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3926,7 +3926,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.373,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3941,7 +3941,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.86,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3956,7 +3956,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.43,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3971,7 +3971,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 1.01,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -3986,7 +3986,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.506,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4001,7 +4001,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4016,7 +4016,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.53,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4031,7 +4031,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 1.42,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4046,7 +4046,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.71,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4061,7 +4061,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.86,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4076,7 +4076,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.43,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4091,7 +4091,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.0,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4106,7 +4106,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.5,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4121,7 +4121,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 1.16,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4136,7 +4136,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.58,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4151,7 +4151,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.23,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4166,7 +4166,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.62,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4181,7 +4181,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 1.68,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4196,7 +4196,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.84,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4211,7 +4211,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.96,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4226,7 +4226,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.48,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4241,7 +4241,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4256,7 +4256,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.57,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4271,7 +4271,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 1.35,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4286,7 +4286,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.63,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4301,7 +4301,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.43,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4316,7 +4316,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.72,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4331,7 +4331,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 1.95,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4346,7 +4346,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.98,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4361,7 +4361,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4376,7 +4376,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.55,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4391,7 +4391,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.28,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4406,7 +4406,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.64,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4421,7 +4421,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 1.55,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4436,7 +4436,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.78,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4451,7 +4451,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.63,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4466,7 +4466,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.82,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4481,7 +4481,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 2.26,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4496,7 +4496,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 1.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4511,7 +4511,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.26,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4526,7 +4526,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.63,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4541,7 +4541,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.48,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4556,7 +4556,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.74,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4571,7 +4571,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 1.76,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4586,7 +4586,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.88,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4601,7 +4601,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.81,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4616,7 +4616,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.91,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4631,7 +4631,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 2.66,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4646,7 +4646,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 1.33,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4661,7 +4661,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4676,7 +4676,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.03,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4691,7 +4691,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4706,7 +4706,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.03,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4721,7 +4721,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.073,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4736,7 +4736,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.036,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4751,7 +4751,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.087,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4766,7 +4766,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.043,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4781,7 +4781,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4796,7 +4796,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.05,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4811,7 +4811,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4826,7 +4826,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.033,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4841,7 +4841,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4856,7 +4856,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.033,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4871,7 +4871,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.086,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4886,7 +4886,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.043,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4901,7 +4901,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4916,7 +4916,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.05,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4931,7 +4931,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4946,7 +4946,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4961,7 +4961,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4976,7 +4976,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.033,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -4991,7 +4991,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5006,7 +5006,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.033,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5021,7 +5021,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.086,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5036,7 +5036,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.043,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5051,7 +5051,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5066,7 +5066,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.05,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5081,7 +5081,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5096,7 +5096,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5111,7 +5111,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.087,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5126,7 +5126,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.043,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5141,7 +5141,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.087,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5156,7 +5156,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.043,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5171,7 +5171,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5186,7 +5186,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.055,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5201,7 +5201,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5216,7 +5216,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5231,7 +5231,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5246,7 +5246,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.07,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5261,7 +5261,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5276,7 +5276,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.05,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5291,7 +5291,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5306,7 +5306,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5321,7 +5321,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5336,7 +5336,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5351,7 +5351,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5366,7 +5366,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.07,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5381,7 +5381,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.17,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5396,7 +5396,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.08,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5411,7 +5411,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5426,7 +5426,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5441,7 +5441,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5456,7 +5456,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.07,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5471,7 +5471,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5486,7 +5486,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.07,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5501,7 +5501,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.17,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5516,7 +5516,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.08,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5531,7 +5531,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5546,7 +5546,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5561,7 +5561,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.17,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5576,7 +5576,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.08,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5591,7 +5591,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5606,7 +5606,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5621,7 +5621,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5636,7 +5636,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5651,7 +5651,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.25,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5666,7 +5666,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5681,7 +5681,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.31,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5696,7 +5696,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5711,7 +5711,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.23,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5726,7 +5726,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5741,7 +5741,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.25,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5756,7 +5756,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5771,7 +5771,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.27,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5786,7 +5786,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5801,7 +5801,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.31,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5816,7 +5816,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5831,7 +5831,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.39,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5846,7 +5846,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.19,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5861,7 +5861,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.29,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5876,7 +5876,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5891,7 +5891,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.32,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5906,7 +5906,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.16,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5921,7 +5921,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.34,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5936,7 +5936,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.17,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5951,7 +5951,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.37,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5966,7 +5966,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.19,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5981,7 +5981,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.49,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -5996,7 +5996,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6011,7 +6011,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.32,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6026,7 +6026,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.16,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6041,7 +6041,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.36,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6056,7 +6056,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.18,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6071,7 +6071,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.39,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6086,7 +6086,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.19,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6101,7 +6101,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.44,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6116,7 +6116,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6131,7 +6131,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.54,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6146,7 +6146,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.27,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6161,7 +6161,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.37,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6176,7 +6176,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.18,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6191,7 +6191,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.41,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6206,7 +6206,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6221,7 +6221,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.43,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6236,7 +6236,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.21,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6251,7 +6251,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.5,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6266,7 +6266,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.25,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6281,7 +6281,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.62,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6296,7 +6296,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.31,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6311,7 +6311,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.4,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6326,7 +6326,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6341,7 +6341,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.45,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6356,7 +6356,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6371,7 +6371,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.49,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6386,7 +6386,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6401,7 +6401,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.56,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6416,7 +6416,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.28,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6431,7 +6431,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.69,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6446,7 +6446,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.34,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6461,7 +6461,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.46,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6476,7 +6476,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.23,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6491,7 +6491,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.52,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6506,7 +6506,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.26,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6521,7 +6521,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.55,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6536,7 +6536,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.27,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6551,7 +6551,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.63,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6566,7 +6566,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.31,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6581,7 +6581,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.77,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6596,7 +6596,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.38,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6611,7 +6611,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.55,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6626,7 +6626,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.27,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6641,7 +6641,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.52,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6656,7 +6656,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.31,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6671,7 +6671,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.66,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6686,7 +6686,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.33,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6701,7 +6701,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.76,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6716,7 +6716,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.38,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6731,7 +6731,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.93,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6746,7 +6746,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.46,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6761,7 +6761,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.066,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6776,7 +6776,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.033,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6791,7 +6791,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.087,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6806,7 +6806,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.044,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6821,7 +6821,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6836,7 +6836,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6851,7 +6851,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6866,7 +6866,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6881,7 +6881,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.133,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6896,7 +6896,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.067,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6911,7 +6911,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.087,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6926,7 +6926,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.043,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6941,7 +6941,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6956,7 +6956,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.05,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6971,7 +6971,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -6986,7 +6986,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7001,7 +7001,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7016,7 +7016,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7031,7 +7031,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.153,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7046,7 +7046,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.077,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7061,7 +7061,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.087,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7076,7 +7076,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.043,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7091,7 +7091,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.107,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7106,7 +7106,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.054,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7121,7 +7121,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7136,7 +7136,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7151,7 +7151,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7166,7 +7166,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7181,7 +7181,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.153,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7196,7 +7196,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.077,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7211,7 +7211,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.107,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7226,7 +7226,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.053,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7241,7 +7241,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7256,7 +7256,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.06,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7271,7 +7271,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.153,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7286,7 +7286,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.077,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7301,7 +7301,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.156,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7316,7 +7316,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.078,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7331,7 +7331,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7346,7 +7346,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7361,7 +7361,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.126,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7376,7 +7376,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.063,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7391,7 +7391,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7406,7 +7406,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.07,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7421,7 +7421,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.193,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7436,7 +7436,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.097,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7451,7 +7451,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.183,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7466,7 +7466,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.092,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7481,7 +7481,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.254,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7496,7 +7496,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.127,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7511,7 +7511,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.153,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7526,7 +7526,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.076,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7541,7 +7541,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.173,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7556,7 +7556,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.087,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7571,7 +7571,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7586,7 +7586,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7601,7 +7601,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.24,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7616,7 +7616,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.12,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7631,7 +7631,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.3,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7646,7 +7646,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7661,7 +7661,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.186,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7676,7 +7676,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.093,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7691,7 +7691,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7706,7 +7706,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7721,7 +7721,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.274,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7736,7 +7736,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.137,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7751,7 +7751,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.274,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7766,7 +7766,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.137,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7781,7 +7781,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.342,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7796,7 +7796,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.171,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7811,7 +7811,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7826,7 +7826,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.1,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7841,7 +7841,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7856,7 +7856,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.11,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7871,7 +7871,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.293,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7886,7 +7886,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.147,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7901,7 +7901,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.32,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7916,7 +7916,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.16,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7931,7 +7931,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.4,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7946,7 +7946,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7961,7 +7961,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.253,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7976,7 +7976,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.127,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -7991,7 +7991,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.273,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8006,7 +8006,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.137,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8021,7 +8021,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.373,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8036,7 +8036,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.187,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8051,7 +8051,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.4,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8066,7 +8066,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.2,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8081,7 +8081,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.506,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8096,7 +8096,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.253,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8111,7 +8111,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.3,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8126,7 +8126,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8141,7 +8141,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.326,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8156,7 +8156,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.163,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8171,7 +8171,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.433,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8186,7 +8186,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.217,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8201,7 +8201,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.483,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8216,7 +8216,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.287,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8231,7 +8231,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.6,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8246,7 +8246,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.3,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8261,7 +8261,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.426,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8276,7 +8276,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.213,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8291,7 +8291,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.453,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8306,7 +8306,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.237,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8321,7 +8321,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.607,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8336,7 +8336,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.304,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8351,7 +8351,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.666,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8366,7 +8366,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.333,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8381,7 +8381,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.66,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8396,7 +8396,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.33,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8411,7 +8411,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.526,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8426,7 +8426,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.263,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8441,7 +8441,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.566,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8456,7 +8456,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.283,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8471,7 +8471,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.754,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8486,7 +8486,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.377,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8501,7 +8501,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 0.926,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8516,7 +8516,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.463,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8531,7 +8531,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 0.96,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8546,7 +8546,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.48,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8561,7 +8561,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.64,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8576,7 +8576,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.32,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8591,7 +8591,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.694,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8606,7 +8606,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.347,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8621,7 +8621,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 0.92,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8636,7 +8636,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.46,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8651,7 +8651,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8666,7 +8666,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.57,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8681,7 +8681,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 1.27,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8696,7 +8696,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.64,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8711,7 +8711,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.754,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8726,7 +8726,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.377,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8741,7 +8741,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.834,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8756,7 +8756,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.417,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8771,7 +8771,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 1.09,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8786,7 +8786,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.55,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8801,7 +8801,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.35,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8816,7 +8816,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.67,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8831,7 +8831,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 1.47,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8846,7 +8846,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.74,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8861,7 +8861,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.874,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8876,7 +8876,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.437,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8891,7 +8891,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 0.94,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8906,7 +8906,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.47,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8921,7 +8921,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 1.25,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8936,7 +8936,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.63,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8951,7 +8951,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.53,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8966,7 +8966,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.77,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8981,7 +8981,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 1.67,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -8996,7 +8996,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.84,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9011,7 +9011,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.02,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9026,7 +9026,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.51,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9041,7 +9041,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.13,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9056,7 +9056,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.57,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9071,7 +9071,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 1.46,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9086,7 +9086,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.73,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9101,7 +9101,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.69,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9116,7 +9116,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.85,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9131,7 +9131,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 1.97,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9146,7 +9146,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 0.98,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9161,7 +9161,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.22,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9176,7 +9176,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.61,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9191,7 +9191,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.33,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9206,7 +9206,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.67,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9221,7 +9221,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 1.75,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9236,7 +9236,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 0.83,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9251,7 +9251,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 1.97,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9266,7 +9266,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 0.98,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9281,7 +9281,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 2.29,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9296,7 +9296,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 1.15,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9311,7 +9311,7 @@
     "joint_type": "10.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.53,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9326,7 +9326,7 @@
     "joint_type": "10.5K",
     "job_name": "특별인부",
     "quantity": 0.77,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9341,7 +9341,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "플랜트배관공",
     "quantity": 1.67,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9356,7 +9356,7 @@
     "joint_type": "21.0~27.5K",
     "job_name": "특별인부",
     "quantity": 0.84,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9371,7 +9371,7 @@
     "joint_type": "42~62K",
     "job_name": "플랜트배관공",
     "quantity": 2.14,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9386,7 +9386,7 @@
     "joint_type": "42~62K",
     "job_name": "특별인부",
     "quantity": 1.07,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9401,7 +9401,7 @@
     "joint_type": "105K",
     "job_name": "플랜트배관공",
     "quantity": 2.6,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9416,7 +9416,7 @@
     "joint_type": "105K",
     "job_name": "특별인부",
     "quantity": 1.3,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9431,7 +9431,7 @@
     "joint_type": "176K",
     "job_name": "플랜트배관공",
     "quantity": 2.9,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   },
   {
@@ -9446,7 +9446,7 @@
     "joint_type": "176K",
     "job_name": "특별인부",
     "quantity": 1.45,
-    "quantity_unit": "개소",
+    "quantity_unit": "인/개소",
     "source_page": 790
   }
 ]

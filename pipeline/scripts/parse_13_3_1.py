@@ -44,7 +44,7 @@ def parse_valve_tables(filepath: str):
                 'joint_type': pressure,     # Repurpose joint_type for Pressure Rating
                 'job_name': job,
                 'quantity': round(qty, 3),
-                'quantity_unit': '개소',    # Amount per unit
+                'quantity_unit': '인/개소',    # Amount per unit
                 'source_page': 790          # Approximate page within 13 chapter
             })
 
