@@ -48,6 +48,11 @@ export interface SearchInfo {
     ilwi_matched: number;
     chunks_retrieved: number;
     latency_ms: number;
+    telemetry?: {
+        embedding_ms: number;
+        rpc_ms: number;
+        llm_ms: number;
+    };
     token_usage?: TokenUsage;
 }
 

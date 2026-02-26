@@ -132,7 +132,7 @@ export async function keywordFallbackSearch(question: string, specNumbers: strin
         .from("graph_entities")
         .select("id, name, type, properties, source_section")
         .in("type", ["WorkType", "Standard"])
-        .or(`name.ilike.${pattern},properties->>"korean_alias".ilike.${pattern}`)
+        .or(orClauses.join(","))
         .limit(3);
 
     if (error || !data) {

@@ -667,10 +667,10 @@ export function presentClarify(
         const sectionSrcSet = new Set(sections.map(s => s.source_section).filter(Boolean));
         const options: ClarifyOption[] = sections.slice(0, 10).map(s => {
             const meta = chunkMeta.get(s.source_section);
-            const secTag = s.source_section ? ` (${displayCode(s.source_section)})` : "";
+            const secTag = s.source_section ? `[${displayCode(s.source_section)}] ` : "";
             const label = meta
-                ? `${meta.department} > ${meta.chapter} > ${meta.title}${secTag}`
-                : `[${displayCode(s.source_section)}] ${s.name}`;
+                ? `${secTag}${meta.department} > ${meta.chapter} > ${meta.title}`
+                : `${secTag}${s.name}`;
             return {
                 label,
                 query: `${s.name} 품셈`,
@@ -693,10 +693,10 @@ export function presentClarify(
         }
         for (const [srcSec, wt] of wtBySrc) {
             const meta = chunkMeta.get(srcSec);
-            const secTag = ` (${displayCode(srcSec)})`;
+            const secTag = `[${displayCode(srcSec)}] `;
             const label = meta
-                ? `${meta.department} > ${meta.chapter} > ${meta.title}${secTag}`
-                : `[${displayCode(srcSec)}] ${wt.name}`;
+                ? `${secTag}${meta.department} > ${meta.chapter} > ${meta.title}`
+                : `${secTag}${wt.name}`;
             options.push({
                 label,
                 query: `${meta?.title || wt.name} 품셈`,
