@@ -741,7 +741,11 @@ const COMPLEX_TABLE_TRIGGERS: Record<string, {
         materials: ["탄소강관", "합금강", "스텐레스", "스테인리스", "알루미늄",
             "동관", "황동", "KSD3507", "A335", "Type304", "Monel", "백관", "흑관"]
     },
-    "밸브 등 설치": {
+    "밸브 설치": {
+        section_code: "13-3-1",
+        materials: ["밸브", "플랜지"]
+    },
+    "플랜지 설치": {
         section_code: "13-3-1",
         materials: ["밸브", "플랜지"]
     }
