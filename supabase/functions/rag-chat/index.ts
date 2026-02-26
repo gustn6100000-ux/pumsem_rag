@@ -39,9 +39,8 @@ import {
     extractSpec,
     graphClarify,
     normalizeSpec,
-    classifyComplexity,
 } from "./clarify.ts";
-import { generateAnswer, generateReasoningGuide } from "./llm.ts";
+import { generateAnswer } from "./llm.ts";
 import {
     makeAnswerResponse,
     makeClarifyResponse,
@@ -50,9 +49,11 @@ import { buildSelectorPanel } from "./resolve.ts";
 
 // ━━━ [D] 컨텍스트 조합 ━━━
 
-// ─── 플랫 테이블 렌더링 (Phase 4 리팩토링) ───
-// Why: 교차표(Matrix) 대신 플랫 4열 테이블로 출력하여 토큰을 절약하고 환각을 방지
-function renderFlatTable(
+// ─── 매트릭스(교차표) 렌더링 ───
+// Why: 동일 직종이 여러 기준(SCH, 규격, 작업조건 등)에 걸쳐 반복될 때
+//      플랫 4열 테이블 대신 행=직종, 열=기준의 교차표로 출력하면
+//      실무자가 한눈에 조건 간 수치를 비교할 수 있다.
+function renderMatrixTable(
     items: RelatedResource[],
     sectionId: string,
     categoryLabel: string,  // "투입 인력" | "투입 장비" | "사용 자재"
@@ -60,23 +61,71 @@ function renderFlatTable(
 ): string {
     if (items.length === 0) return "";
 
-    const lines: string[] = [];
-    lines.push(`**[표 ${sectionId}] ${categoryLabel}**\n`);
-    lines.push(`| ${nameLabel} | 수량 | 단위 | 규격 |`);
-    lines.push("| --- | ---: | --- | --- |");
-
-    items.forEach((item) => {
+    // 1) 각 항목에서 이름과 기준(spec) 추출
+    type Row = { name: string; spec: string; quantity: string; unit: string };
+    const rows: Row[] = items.map((item) => {
         const props = (item.properties || {}) as any;
         let specFallback = "-";
         if (item.related_name.includes('_')) specFallback = item.related_name.split('_')[0];
         const spec = props.source_spec || props.spec || props.per_unit || props.work_type_name || specFallback;
         const itemName = item.related_name.includes('_') ? item.related_name.split('_')[1] : item.related_name;
-        const quantity = String(props.quantity ?? "-");
-        const unit = String(props.unit ?? (nameLabel === "직종" ? "인" : "-"));
-
-        lines.push(`| ${itemName} | ${quantity} | ${unit} | ${spec} |`);
+        return {
+            name: itemName,
+            spec: String(spec || "-"),
+            quantity: String(props.quantity ?? "-"),
+            unit: String(props.unit ?? (nameLabel === "직종" ? "인" : "-")),
+        };
     });
 
+    // 2) 고유 기준(spec) 모으기 — 등장 순서 유지
+    const specSet = new Set<string>();
+    rows.forEach(r => specSet.add(r.spec));
+    const specs = Array.from(specSet);
+
+    // 3) 기준이 1개 이하면 심플(플랫) 테이블로 폴백
+    if (specs.length <= 1) {
+        const lines: string[] = [];
+        lines.push(`**[표 ${sectionId}] ${categoryLabel}**\n`);
+        lines.push(`| ${nameLabel} | 수량 | 단위 | 기준 |`);
+        lines.push("| --- | ---: | --- | --- |");
+        rows.forEach(r => {
+            lines.push(`| ${r.name} | ${r.quantity} | ${r.unit} | ${r.spec} |`);
+        });
+        lines.push("");
+        return lines.join("\n");
+    }
+
+    // 4) 고유 이름(직종) 모으기 — 등장 순서 유지
+    const nameSet = new Set<string>();
+    rows.forEach(r => nameSet.add(r.name));
+    const names = Array.from(nameSet);
+
+    // 5) (이름, 기준) → 수량 매핑
+    const matrix = new Map<string, string>();
+    rows.forEach(r => {
+        matrix.set(`${r.name}||${r.spec}`, r.quantity);
+    });
+
+    // 6) 단위 정보 (첫 번째 항목에서)
+    const unitInfo = rows[0]?.unit || "";
+
+    // 7) 마크다운 테이블 생성
+    const lines: string[] = [];
+    lines.push(`**[표 ${sectionId}] ${categoryLabel}** (단위: ${unitInfo})\n`);
+
+    // 헤더행
+    const header = `| ${nameLabel} | ` + specs.join(" | ") + " |";
+    const sep = "| --- | " + specs.map(() => "---:").join(" | ") + " |";
+    lines.push(header);
+    lines.push(sep);
+
+    // 데이터행
+    names.forEach(name => {
+        const cells = specs.map(spec => {
+            return matrix.get(`${name}||${spec}`) ?? "—";
+        });
+        lines.push(`| ${name} | ` + cells.join(" | ") + " |");
+    });
     lines.push("");
     return lines.join("\n");
 }
@@ -148,22 +197,22 @@ function buildContext(
             grouped.get(key)!.push(r);
         });
 
-        // ─── 투입 인력 (플랫 렌더링) ───
+        // ─── 투입 인력 (매트릭스 렌더링) ───
         const labor = grouped.get("REQUIRES_LABOR") || [];
         if (labor.length > 0) {
-            parts.push(renderFlatTable(labor, sectionId, "투입 인력", "직종"));
+            parts.push(renderMatrixTable(labor, sectionId, "투입 인력", "직종"));
         }
 
-        // ─── 투입 장비 (플랫 렌더링) ───
+        // 투입 장비 (매트릭스 렌더링)
         const equipment = grouped.get("REQUIRES_EQUIPMENT") || [];
         if (equipment.length > 0) {
-            parts.push(renderFlatTable(equipment, sectionId, "투입 장비", "장비명"));
+            parts.push(renderMatrixTable(equipment, sectionId, "투입 장비", "장비명"));
         }
 
-        // ─── 사용 자재 (플랫 렌더링) ───
+        // 사용 자재 (매트릭스 렌더링)
         const material = grouped.get("USES_MATERIAL") || [];
         if (material.length > 0) {
-            parts.push(renderFlatTable(material, sectionId, "사용 자재", "자재명"));
+            parts.push(renderMatrixTable(material, sectionId, "사용 자재", "자재명"));
         }
 
         // 주의사항 — Note 엔티티의 원문 우선 표시
@@ -740,10 +789,6 @@ const COMPLEX_TABLE_TRIGGERS: Record<string, {
         section_code: "13-1-1",
         materials: ["탄소강관", "합금강", "스텐레스", "스테인리스", "알루미늄",
             "동관", "황동", "KSD3507", "A335", "Type304", "Monel", "백관", "흑관"]
-    },
-    "밸브 등 설치": {
-        section_code: "13-3-1",
-        materials: ["밸브", "플랜지"]
     }
 };
 
@@ -1051,10 +1096,17 @@ async function handleChat(
 
     // ═══ Route 3: 의도 분석 (DeepSeek v3.2) ═══
     const analysis = await analyzeIntent(question, history, sessionContext);
-    analysis.complexity = classifyComplexity(question, analysis);
     analysis.spec = normalizeSpec(analysis.spec);
 
     // ─── 인사/도움말 ───
+    // Fix A: LLM이 공종 쿼리를 greeting으로 오분류한 경우 clarify_needed로 강제 교정
+    if (analysis.intent === "greeting") {
+        const workTerms = ["설치", "용접", "배관", "시공", "제작", "타설", "철거", "해체", "보온", "도장", "미장", "조적", "플랜지", "강관", "덕트", "콘크리트", "거푸집", "철근", "굴착", "성토", "절토", "포장"];
+        if (workTerms.some((t) => question.includes(t))) {
+            analysis.intent = "clarify_needed";
+            console.log(`[Fix A] greeting → clarify_needed (question="${question}")`);
+        }
+    }
     if (analysis.intent === "greeting") {
         return makeAnswerResponse(
             "안녕하세요! 건설 공사 표준품셈 AI 어시스턴트입니다. 🏗️\n\n" +
@@ -1144,24 +1196,6 @@ async function handleChat(
             original_query: question,
             selector: clarifyResult.selector,
         });
-    }
-
-    // ═══ Route 3.5: 복합 질의 듀얼 모델 라우팅 (Phase 2) ═══
-    if (analysis.complexity === "complex" && (analysis.intent === "search" || analysis.intent === "complex_estimate")) {
-        console.log(`[handleChat] 🎯 Route 3.5 (Complex) triggered. Calling Reasoner...`);
-        const guide = await generateReasoningGuide(question, history);
-        if (guide && guide.search_tasks && guide.search_tasks.length > 0) {
-            console.log(`[handleChat] Reasoner Guide:`, JSON.stringify(guide));
-
-            // 멀티 태스크 마스터플랜을 컨텍스트에 추가 주입하여 LLM 답변 시 참고하게 함 (현재는 fall-through 하여 searchPipeline으로 진입)
-            const masterPlanContext = `\n\n[AI 분해 마스터플랜]\n분석된 검색 대상: ${guide.search_tasks.map(t => `"${t}"`).join(', ')}\n필요 계산: ${guide.calculations.join(', ')}\n추가 조정: ${guide.adjustments.join(', ')}\n`;
-
-            analysis.ambiguity_reason = (analysis.ambiguity_reason || "") + masterPlanContext;
-
-            // 키워드도 확장하여 첫 targetSearch의 회수율 높임 (임시 조치)
-            const addedKeywords = guide.search_tasks.flatMap(t => t.split(/\s+/)).filter(w => w.length >= 2);
-            analysis.keywords = [...new Set([...analysis.keywords, ...addedKeywords])];
-        }
     }
 
     // ═══ Route 4: search → searchPipeline ═══
