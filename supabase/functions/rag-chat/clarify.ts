@@ -58,7 +58,7 @@ export function classifyComplexity(question: string, analysis: IntentAnalysis): 
     if (question.includes('+')) score += 1;
 
     // 5. 연산/복합 명시 키워드 (+2점)
-    if (/합산|포함해서|전체|총액|계산해/i.test(question)) score += 2;
+    if (/합산|포함해서|전체|총액|계산해|산출/i.test(question)) score += 2;
 
     // 5.5. '산출/산정' + 복수 공종 조합 시 (+1pt) — 단독 사용 시 과분류 방지
     if (/산출|산정/.test(question) && workMatchCount >= 2) score += 1;
@@ -75,10 +75,10 @@ export function classifyComplexity(question: string, analysis: IntentAnalysis): 
 const INTENT_SYSTEM_PROMPT = `당신은 건설 공사 품셈 검색 시스템의 의도 분석기입니다.
 사용자의 질문을 분석하여 반드시 다음 JSON만 반환하십시오.
 
-## ⚠️ 중요: intent는 반드시 아래 5개 중 하나만 사용
+## ⚠️ 중요: intent는 반드시 아래 9개 중 하나만 사용
 
 {
-  "intent": "search" | "clarify_needed" | "followup" | "greeting" | "quantity_input",
+  "intent": "search" | "clarify_needed" | "followup" | "greeting" | "quantity_input" | "cost_calculate" | "modify_request" | "report_request" | "complex_estimate",
   "work_name": "공종명 한글 (예: 강관용접, 잡철물, TIG용접) 또는 null",
   "spec": "규격 (예: 200 SCH 40, D110, 2톤) 또는 null",
   "keywords": ["검색용", "키워드"],
@@ -109,6 +109,18 @@ const INTENT_SYSTEM_PROMPT = `당신은 건설 공사 품셈 검색 시스템의
 
 ### quantity_input (수량 계산)
 - 이전에 품셈이 이미 검색된 상태에서 수량만 입력. 예: "10개소", "50m 계산해줘"
+
+### cost_calculate (단가/비용 계산)
+- 단가, 일위대가, 비용 계산을 명시적으로 요청. 예: "단가가 얼마야?", "직접노무비 계산해봐"
+
+### modify_request (조건/수정 요청)
+- 기존 검색 결과에서 규격이나 조건을 변경. 예: "야간 할증 20% 적용해줘", "파이프를 100mm로 바꿔서"
+
+### report_request (보고서 생성)
+- 검색/계산된 결과를 도표나 보고서 형태로 요약/출력 요청. 예: "내역서 형태로 정리해줘", "표로 보여줘"
+
+### complex_estimate (복합 내역 산출)
+- 둘 이상의 공종이나 복잡한 계산이 얽힌 종합 내역 산출 요청. 예: "13-1-1 30톤이랑 다른 공종 합산해서 견적 뽑아줘"
 
 ## 키워드 추출 규칙
 - 영문 약어 → 한글 변환: "tig" → ["TIG", "TIG용접"]
@@ -289,7 +301,7 @@ export async function analyzeIntent(
         const parsed = JSON.parse(content) as IntentAnalysis;
 
         // 안전성 보장: intent가 유효하지 않으면 폴백
-        const validIntents = ["search", "clarify_needed", "followup", "greeting", "quantity_input", "cost_calculate", "modify_request", "report_request"];
+        const validIntents = ["search", "clarify_needed", "followup", "greeting", "quantity_input", "cost_calculate", "modify_request", "report_request", "complex_estimate"];
         if (!validIntents.includes(parsed.intent)) {
             parsed.intent = parsed.ambiguity_reason ? "clarify_needed" : "search";
         }
