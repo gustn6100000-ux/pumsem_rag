@@ -313,7 +313,6 @@ async function answerPipeline(
         specFilter?: string;      // 두께/규격 필터
         answerOptions?: AnswerOptions;
         analysis?: IntentAnalysis;
-        telemetry?: { embedding_ms?: number; rpc_ms?: number };
     }
 ): Promise<ChatResponse> {
     const embeddingTokens = Math.ceil(question.length / 2);
@@ -375,12 +374,10 @@ async function answerPipeline(
     }
 
     // [5] LLM 답변 생성
-    const tLlmStart = Date.now();
     const llmResult = await generateAnswer(question, context, history, {
         intent: effectiveIntent,
         quantity: opts?.answerOptions?.quantity || opts?.analysis?.quantity || undefined,
     });
-    const llm_ms = Date.now() - tLlmStart;
 
     // [6] 응답 조립
     const sourcesWithSection: SourceInfo[] = targetEntities.map(e => {
@@ -402,11 +399,6 @@ async function answerPipeline(
         entities: targetEntities, relations: relationsAll,
         ilwi: ilwiResults, chunks,
         embeddingTokens, llmResult,
-        telemetry: {
-            embedding_ms: opts?.telemetry?.embedding_ms || 0,
-            rpc_ms: opts?.telemetry?.rpc_ms || 0,
-            llm_ms,
-        }
     });
 }
 
@@ -605,9 +597,7 @@ async function fullViewPipeline(
         buildContext(wtEntities, relationsAll, [], [chunk as ChunkResult]),
     ].join("\n");
 
-    const tLlmStart = Date.now();
     const llmResult = await generateAnswer(question, context, history);
-    const llm_ms = Date.now() - tLlmStart;
 
     return makeAnswerResponse(llmResult.answer, startTime, {
         sources: [{
@@ -620,7 +610,6 @@ async function fullViewPipeline(
         entities: wtEntities, relations: relationsAll,
         chunks: [chunk as any],
         embeddingTokens, llmResult,
-        telemetry: { embedding_ms: 0, rpc_ms: Date.now() - startTime - llm_ms, llm_ms },
     });
 }
 
@@ -636,9 +625,7 @@ async function searchPipeline(
     const embeddingTokens = Math.ceil(question.length / 2);
 
     // [1] 질문 임베딩
-    const tEmbedStart = Date.now();
     const embedding = await generateEmbedding(question);
-    const embedding_ms = Date.now() - tEmbedStart;
 
     // [1-1] 💡 [Track B-1 최적화] 동의어 재료 즉시 추출 (targetSearch 대기 불필요)
     // Why: domainExp는 analysis(LLM 분석 결과)에서만 산출. targetSearch 결과 의존 없음.
@@ -654,7 +641,6 @@ async function searchPipeline(
         : null;
 
     // [1-2] 💡 메인 검색 + 동의어 서브 검색을 Promise.all로 병렬 출발
-    const tRpcStart = Date.now();
     const [entities, synWTsResponse] = await Promise.all([
         targetSearch(analysis, embedding, question),
         synOrClauses
@@ -666,7 +652,6 @@ async function searchPipeline(
                 .limit(50)
             : Promise.resolve({ data: [] as any[], error: null }),
     ]);
-    const rpc_ms = Date.now() - tRpcStart;
     const synonymWorkTypes = synWTsResponse.data || [];
     if (synonymWorkTypes.length > 0) {
         console.log(`[searchPipeline] 도메인 동의어 WorkType: ${synonymWorkTypes.length}건 (${domainExp.join(",")})`);
@@ -768,22 +753,19 @@ async function searchPipeline(
 
     // [3] 검색 결과 없음
     if (entities.length === 0) {
-        const tLlmStart = Date.now();
         const llmResult = await generateAnswer(
             question,
             "제공된 품셈 데이터베이스에서 관련 정보를 찾지 못했습니다.",
             history
         );
-        const llm_ms = Date.now() - tLlmStart;
         return makeAnswerResponse(llmResult.answer, startTime, {
             embeddingTokens, llmResult,
-            telemetry: { embedding_ms, rpc_ms, llm_ms },
         });
     }
 
     // [4] WorkType 매칭 → answerPipeline
     return answerPipeline(entities, question, history, startTime, {
-        answerOptions, analysis, telemetry: { embedding_ms, rpc_ms }
+        answerOptions, analysis,
     });
 }
 
@@ -807,14 +789,6 @@ const COMPLEX_TABLE_TRIGGERS: Record<string, {
         section_code: "13-1-1",
         materials: ["탄소강관", "합금강", "스텐레스", "스테인리스", "알루미늄",
             "동관", "황동", "KSD3507", "A335", "Type304", "Monel", "백관", "흑관"]
-    },
-    "밸브 설치": {
-        section_code: "13-3-1",
-        materials: ["밸브", "플랜지"]
-    },
-    "플랜지 설치": {
-        section_code: "13-3-1",
-        materials: ["밸브", "플랜지"]
     }
 };
 
@@ -1032,12 +1006,10 @@ async function complexTablePipeline(
     context += `> LLM은 이 숫자를 절대 수정하지 말고 그대로 출력하세요.\n`;
 
     // Step 3: LLM 포장
-    const tLlmStart = Date.now();
     const llmResult = await generateAnswer(question, context, history, {
         intent: "cost_calculate",
         quantity: query.quantity_value,
     });
-    const llm_ms = Date.now() - tLlmStart;
 
     const sources: SourceInfo[] = [{
         entity_name: `${filteredSpecs[0]?.section_name} (${filteredSpecs[0]?.material})`,
@@ -1051,7 +1023,6 @@ async function complexTablePipeline(
         sources,
         embeddingTokens: 0,
         llmResult,
-        telemetry: { embedding_ms: 0, rpc_ms: Date.now() - startTime - llm_ms, llm_ms },
     });
 }
 
