@@ -417,8 +417,11 @@ async function fullViewPipeline(
     const subMatch = decodedSectionId.match(/^(.+?):sub=(.+)$/);
     const baseSectionId = subMatch ? subMatch[1] : decodedSectionId;
     const subKeyword = subMatch ? subMatch[2].replace(/^\d+\.\s*/, '') : null;
+    // 💡 [Phase 5] sub_section 원본값 보존 ("3. 전기아크용접(H형)" 등)
+    // Why: DB의 properties.sub_section 값과 정확히 매칭하기 위해 번호 포함 원본 필요
+    const fullSubSection = subMatch ? subMatch[2] : null;
 
-    console.log(`[fullViewPipeline] base=${baseSectionId}, sub=${subKeyword || 'none'} 전체 원문 조회`);
+    console.log(`[fullViewPipeline] base=${baseSectionId}, sub=${subKeyword || 'none'}, fullSub=${fullSubSection || 'none'} 전체 원문 조회`);
 
     // [1] 전체 chunk 로딩
     const { data: chunkData } = await supabase
@@ -470,24 +473,49 @@ async function fullViewPipeline(
     let relationsAll: any[][] = [];
 
     // 3-1: 직접 매칭
+    // 💡 [Phase 5] limit 20→200: 13-2-4(강판 전기아크용접) 등 130개+ WT 섹션 커버
     const { data: sectionWTData } = await supabase
         .from("graph_entities")
         .select("id, name, type, properties, source_section")
         .eq("type", "WorkType")
         .eq("source_section", baseSectionId)
-        .limit(20);
+        .limit(200);
 
-    const sectionWTs = (sectionWTData || []) as any[];
+    let sectionWTs = (sectionWTData || []) as any[];
     console.log(`[fullViewPipeline] WorkType ${sectionWTs.length}건 (baseSectionId=${baseSectionId})`);
 
+    // 💡 [Phase 5 핵심] sub_section 필터링
+    // Why: 사용자가 "3. 전기아크용접(H형)"을 선택했을 때,
+    //      H형 WorkType만 남겨야 H형의 인력/장비/자재 데이터만 컨텍스트에 포함됨.
+    if (fullSubSection && sectionWTs.length > 0) {
+        const beforeCount = sectionWTs.length;
+        let subFiltered = sectionWTs.filter((wt: any) =>
+            wt.properties?.sub_section === fullSubSection
+        );
+        if (subFiltered.length === 0 && subKeyword) {
+            subFiltered = sectionWTs.filter((wt: any) =>
+                (wt.properties?.sub_section || '').includes(subKeyword)
+            );
+        }
+        if (subFiltered.length > 0) {
+            sectionWTs = subFiltered;
+            console.log(`[fullViewPipeline] sub_section="${fullSubSection}" 필터: ${beforeCount}건 → ${sectionWTs.length}건`);
+        } else {
+            console.warn(`[fullViewPipeline] sub_section="${fullSubSection}" 매칭 0건 → 전체 유지`);
+        }
+    }
+
     if (sectionWTs.length > 0) {
-        wtEntities = sectionWTs.map(wt => ({
+        wtEntities = sectionWTs.map((wt: any) => ({
             id: wt.id, name: wt.name, type: wt.type,
             properties: wt.properties || {},
             source_section: wt.source_section,
             similarity: 1.0,
         }));
-        const rp = wtEntities.map(e => expandGraph(e.id, e.type));
+        // 💡 [Phase 5 수정] expandGraph에 skipSectionExpansion=false 전달
+        // Why: true 시 expandSectionWorkTypes 건너뜀 → REQUIRES_LABOR 관계 0건
+        //      sub_section 필터는 이미 wtEntities 레벨에서 적용됨
+        const rp = wtEntities.map(e => expandGraph(e.id, e.type, false));
         relationsAll = await Promise.all(rp);
     } else {
         // 3-2: cross-reference (동일 title의 다른 section)
@@ -588,11 +616,10 @@ async function fullViewPipeline(
     }
 
     // [4] 원문 + 그래프 관계 컨텍스트 → LLM → 응답
-    // 💡 [Phase 5 핵심 패치] sub_section 선택 시 raw chunk.text 제외
-    // Why: chunk.text는 14개 전체 청크(V+U+H+X 등)의 원문을 병합한 것이므로
+    // 💡 [Phase 5] sub_section 선택 시 raw chunk.text 제외
+    // Why: chunk.text는 14개 전체 청크의 원문을 병합한 것이므로
     //      H형 선택 시에도 V형/U형 표가 지배적 → LLM이 H형 데이터를 무시함.
-    //      sub_section 모드에서는 그래프 관계(buildContext)만으로 정확한 데이터 제공.
-    const contextParts = [
+    const contextParts: string[] = [
         `## 품셈 원문: ${chunk.title}`,
         `**출처**: ${chunk.department} > ${chunk.chapter} > ${chunk.title}`,
         `**표번호**: ${chunk.section_id}`,
