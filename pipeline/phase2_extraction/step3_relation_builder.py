@@ -35,16 +35,20 @@ MERGED_FILE = PHASE2_OUTPUT / "merged_entities.json"
 # ═══════════════════════════════════════════════════════════════
 
 def _entity_key(ent: dict) -> str:
-    """엔티티 동일성 판별 키. type + normalized_name (+ spec) 기반."""
+    """엔티티 동일성 판별 키. type + normalized_name (+ spec) (+ sub_section) 기반."""
     norm = ent.get("normalized_name", ent["name"].replace(" ", ""))
     spec = ent.get("spec", "")
+    sub = ent.get("sub_section", "") or ""
 
     # Why: PE관처럼 name이 동일하고 spec(관경)만 다른 엔티티의 과잉 병합 방지
-    if ent["type"] in ("WorkType", "Equipment", "Material") and spec:
-        safe_spec = str(spec).replace(" ", "").lower()
-        return f"{ent['type']}::{norm.lower()}::{safe_spec}"
+    #       + sub_section이 다른 동일 이름 엔티티(V형 vs U형)의 잘못된 병합 방지
+    parts = [ent['type'], norm.lower()]
+    if ent['type'] in ("WorkType", "Equipment", "Material") and spec:
+        parts.append(str(spec).replace(" ", "").lower())
+    if sub:
+        parts.append(sub.replace(" ", "").lower())
 
-    return f"{ent['type']}::{norm.lower()}"
+    return "::".join(parts)
 
 
 def _rel_key(rel: dict) -> str:
@@ -69,6 +73,32 @@ def _rel_key(rel: dict) -> str:
         parts.append(per_unit)
 
     return "::".join(parts)
+
+
+def _smart_inherit_sub_section(ent: dict, existing_map: dict[str, dict]) -> None:
+    """테이블 엔티티에 sub_section이 없을 때, 같은 name+spec의 LLM 엔티티로부터 상속.
+
+    Why: Step 2.1(테이블 규칙)은 sub_section을 추출하지 못하지만,
+         Step 2.2(LLM)가 같은 name+spec 조합에서 sub_section을 찾았다면
+         중복 생성 대신 속성을 물려받아 데이터 일관성 보장.
+    """
+    if ent.get("sub_section"):
+        return  # 이미 있으면 스킵
+
+    norm = ent.get("normalized_name", ent["name"].replace(" ", "")).lower()
+    spec = str(ent.get("spec", "") or "").replace(" ", "").lower()
+    etype = ent["type"]
+
+    # existing_map의 키를 순회하며 name+spec 부분 일치 검색
+    for key, existing in existing_map.items():
+        e_norm = existing.get("normalized_name", existing["name"].replace(" ", "")).lower()
+        e_spec = str(existing.get("spec", "") or "").replace(" ", "").lower()
+        e_sub = existing.get("sub_section", "")
+
+        if existing["type"] == etype and e_norm == norm and e_spec == spec and e_sub:
+            ent["sub_section"] = e_sub
+            ent["sub_section_no"] = existing.get("sub_section_no", "")
+            return
 
 
 def merge_chunk_extractions(table_ext: dict | None, llm_ext: dict | None) -> dict:
@@ -117,7 +147,11 @@ def merge_chunk_extractions(table_ext: dict | None, llm_ext: dict | None) -> dic
             existing["source_method"] = "merged"
         else:
             # 테이블에만 존재 → 추가
+            # Smart Merge: 테이블 엔티티에 sub_section이 없을 때,
+            # 같은 name+spec의 LLM 엔티티가 있다면 sub_section을 상속
             tent_copy = {**tent, "source_method": "table_rule"}
+            if not tent_copy.get("sub_section"):
+                _smart_inherit_sub_section(tent_copy, merged_ent_map)
             merged_entities.append(tent_copy)
             merged_ent_map[key] = tent_copy
 
@@ -624,6 +658,16 @@ def run_step3():
     print(f"  관계 유형별:")
     for t, c in rel_type_counts.most_common():
         print(f"    {t}: {c:,}")
+
+    # ── Quality Gate: sub_section 채움률 검증 ──
+    # Why: 파이프라인이 sub_section 누락 데이터를 DB에 적재하는 것을 사전 감지
+    worktypes = [e for ext in merged_exts for e in ext.get("entities", []) if e["type"] == "WorkType"]
+    filled = sum(1 for w in worktypes if w.get("sub_section"))
+    fill_rate = filled / len(worktypes) * 100 if worktypes else 0
+    print(f"\n  ⚠️ Quality Gate: sub_section 채움률 {fill_rate:.1f}% ({filled}/{len(worktypes)} WorkTypes)")
+    if fill_rate < 30:
+        print(f"  ⚠️ 경고: sub_section 채움률이 30% 미만입니다. 프롬프트 또는 파서를 점검하세요.")
+
     print(f"  {'='*60}")
 
     return result

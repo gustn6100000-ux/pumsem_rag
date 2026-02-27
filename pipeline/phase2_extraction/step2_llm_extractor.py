@@ -69,6 +69,8 @@ class LLMEntity(BaseModel):
     spec: Optional[str] = Field(None, description="규격/사양 (예: 0.6m³, D13, 25-24-15)")
     unit: Optional[str] = Field(None, description="단위 (예: 인, m³, 대, ton)")
     quantity: Optional[float] = Field(None, description="수량 (숫자만)")
+    # Why: 파이프라인 sub_section 계약 — LLM이 소제목 분류를 직접 출력하도록
+    sub_section: Optional[str] = Field(None, description="소제목 분류 (예: 1. 전기아크용접(V형))")
 
 
 class LLMRelationship(BaseModel):
@@ -133,12 +135,15 @@ SYSTEM_PROMPT = """당신은 건설 표준품셈 문서에서 엔티티(개체)�
 8. 각 관계의 `properties.source_spec`에 해당 수량의 **정확한 규격 문자열**을 반드시 기록하십시오.
 9. 매트릭스 표가 감지되면 `matrix_analysis_scratchpad`에 "[규격 수] × [직종 수] = [총 관계 수]"
    형태로 사고 과정을 기록한 뒤 전개를 시작하십시오.
+10. 🚨 **[소제목 분류 규칙]** 표 위에 `⚠️ 이 표는 '...' 분류에 속합니다` 지시가 있으면,
+    해당 분류를 WorkType 엔티티의 `sub_section` 필드에 **반드시** 기록하십시오.
+    예: `"sub_section": "1. 전기아크용접(V형)"`
 
 ## 출력 JSON 스키마 (반드시 이 형식으로 출력)
 ```json
 {
   "matrix_analysis_scratchpad": "다중 규격 표가 있으면 사고 과정을 여기에 기록",
-  "entities": [{"type": "WorkType|Labor|Equipment|Material|Note|Standard", "name": "문자열", "spec": "문자열 or null", "unit": "문자열 or null", "quantity": 숫자 or null}],
+  "entities": [{"type": "WorkType|Labor|Equipment|Material|Note|Standard", "name": "문자열", "spec": "문자열 or null", "unit": "문자열 or null", "quantity": 숫자 or null, "sub_section": "소제목 분류 or null"}],
   "relationships": [{
     "source": "출발엔티티명",
     "target": "도착엔티티명",
@@ -209,6 +214,52 @@ FEW_SHOT_EXAMPLE = """
 """
 
 
+def _extract_sub_headings(text: str, tables: list[dict]) -> dict[str, str]:
+    """table_id → 소제목 텍스트 매핑을 생성한다.
+
+    전략:
+    1. table_id에서 소제목 번호를 파싱 (T-13-2-4-01-1 → 01)
+    2. chunk.text에서 "N. 전기아크용접(X형)" 패턴을 정규식으로 추출
+    3. 번호가 매치되면 실제 소제목 텍스트를 반환
+    4. 못 찾으면 table_id 번호 기반 폴백 ("소제목 #01")
+
+    Why: LLM이 숫자('01')가 아닌 실제 텍스트('1. 전기아크용접(V형)')를 인지해야
+         WorkType.sub_section에 정확한 분류를 태깅할 수 있음
+    """
+    if not tables:
+        return {}
+
+    # text에서 소제목 패턴 추출: "1. 전기아크용접(V형)", "2. 전기아크용접(U형)" 등
+    # 패턴: 줄 시작 or 공백 뒤에 "숫자. 한글+" (괄호 포함 가능)
+    sub_pattern = re.compile(r'(\d+)\.\s*([^\n]+?)(?:\n|$)')
+    found_headings: dict[str, str] = {}  # "01" → "1. 전기아크용접(V형)"
+
+    for m in sub_pattern.finditer(text):
+        num = m.group(1)  # "1", "2", ...
+        full_text = f"{num}. {m.group(2).strip()}"
+        # 소제목 번호를 2자리로 패딩 (01, 02, ...)
+        padded = num.zfill(2)
+        found_headings[padded] = full_text
+
+    # table_id → 소제목 텍스트 매핑
+    result: dict[str, str] = {}
+    for table in tables:
+        tid = table.get("table_id", "")
+        if not tid:
+            continue
+        # T-13-2-4-01-1 → "01"
+        sub_match = re.search(r'-(\d{2})-\d+$', tid)
+        if sub_match:
+            sub_no = sub_match.group(1)
+            if sub_no in found_headings:
+                result[tid] = found_headings[sub_no]
+            else:
+                # 폴백: 소제목 번호만 제공
+                result[tid] = f"소제목 #{sub_no}"
+
+    return result
+
+
 def build_user_prompt(chunk: dict, all_chunks: list[dict] = []) -> str:
     """청크 데이터 → LLM 입력 프롬프트 생성"""
     parts = []
@@ -244,6 +295,22 @@ def build_user_prompt(chunk: dict, all_chunks: list[dict] = []) -> str:
 
     # 테이블 데이터 → Markdown 형식으로 변환
     tables = chunk.get("tables", [])
+    # Why: 청크 text에서 소제목 패턴("1. 전기아크용접(V형)" 등)을 사전 추출하여
+    #       table_id 기반으로 각 표에 정확한 소제목 컨텍스트를 주입
+    # 빈 텍스트 청크인 경우: 형제 청크의 text에서 소제목을 탐색 (형제에 소제목 원문이 있음)
+    heading_text = text
+    if not heading_text and all_chunks:
+        chunk_id = chunk.get("chunk_id", "")
+        base_match = re.match(r"(C-\d+)", chunk_id)
+        if base_match:
+            base_id = base_match.group(1)
+            for sib in all_chunks:
+                sib_text = sib.get("text", "").strip()
+                if sib.get("chunk_id", "").startswith(base_id) and sib_text:
+                    heading_text = sib_text
+                    break
+    _sub_headings = _extract_sub_headings(heading_text, tables)
+
     for i, table in enumerate(tables):
         headers = table.get("headers", [])
         rows = table.get("rows", [])
@@ -251,6 +318,12 @@ def build_user_prompt(chunk: dict, all_chunks: list[dict] = []) -> str:
             continue
 
         parts.append(f"\n## 테이블 {i+1} (유형: {table.get('type', 'unknown')})")
+
+        # 소제목 컨텍스트 주입 (table_id 기반)
+        table_id = table.get('table_id', '')
+        heading = _sub_headings.get(table_id, '')
+        if heading:
+            parts.append(f"⚠️ 이 표는 '{heading}' 분류에 속합니다. WorkType 엔티티의 sub_section에 이 분류를 반드시 기록하세요.")
 
         # Markdown 테이블 생성
         parts.append("| " + " | ".join(headers) + " |")
@@ -343,6 +416,8 @@ async def extract_single_chunk(
                         spec=le.spec,
                         unit=le.unit,
                         quantity=le.quantity,
+                        # Why: LLM이 추출한 sub_section을 Entity 스키마로 전파
+                        sub_section=le.sub_section if hasattr(le, 'sub_section') else None,
                         source_chunk_id=chunk_id,
                         source_section_id=section_id,
                         source_method="llm",

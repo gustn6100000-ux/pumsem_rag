@@ -45,6 +45,10 @@ class Entity(BaseModel):
     unit: Optional[str] = Field(None, description="단위 (예: 인, m³, 대)")
     quantity: Optional[float] = Field(None, description="수량")
     properties: dict = Field(default_factory=dict, description="추가 속성")
+    # Why: sub_section을 명시적 필드로 승격하여 properties dict의 키 분화 위험 방지
+    #       프론트엔드 트리 필터링(재질→접합→관경)의 검색 단위(Facet)로 활용
+    sub_section: Optional[str] = Field(None, description="소제목 분류 (예: 1. 전기아크용접(V형))")
+    sub_section_no: Optional[str] = Field(None, description="소제목 번호 (예: 01)")
     confidence: float = Field(default=1.0, ge=0, le=1, description="추출 신뢰도")
     # 출처 추적
     source_chunk_id: str = Field(default="", description="추출 원본 청크 ID")
