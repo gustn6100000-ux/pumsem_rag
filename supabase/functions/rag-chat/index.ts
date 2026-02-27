@@ -588,14 +588,27 @@ async function fullViewPipeline(
     }
 
     // [4] 원문 + 그래프 관계 컨텍스트 → LLM → 응답
-    const context = [
+    // 💡 [Phase 5 핵심 패치] sub_section 선택 시 raw chunk.text 제외
+    // Why: chunk.text는 14개 전체 청크(V+U+H+X 등)의 원문을 병합한 것이므로
+    //      H형 선택 시에도 V형/U형 표가 지배적 → LLM이 H형 데이터를 무시함.
+    //      sub_section 모드에서는 그래프 관계(buildContext)만으로 정확한 데이터 제공.
+    const contextParts = [
         `## 품셈 원문: ${chunk.title}`,
         `**출처**: ${chunk.department} > ${chunk.chapter} > ${chunk.title}`,
         `**표번호**: ${chunk.section_id}`,
-        `\n${chunk.text}`,
-        `\n---\n`,
-        buildContext(wtEntities, relationsAll, [], [chunk as ChunkResult]),
-    ].join("\n");
+    ];
+    if (fullSubSection) {
+        // sub_section 모드: 선택된 분류명 명시 + 그래프 데이터만 사용
+        contextParts.push(`**선택된 분류**: ${fullSubSection}`);
+        contextParts.push(`\n> 아래는 "${fullSubSection}"에 해당하는 품셈 데이터입니다.\n`);
+        console.log(`[fullViewPipeline] sub_section 모드: raw chunk.text 제외 (${chunk.text.length}자), 그래프 ${wtEntities.length}건 사용`);
+    } else {
+        // 전체 보기: 원문 포함
+        contextParts.push(`\n${chunk.text}`);
+    }
+    contextParts.push(`\n---\n`);
+    contextParts.push(buildContext(wtEntities, relationsAll, [], [chunk as ChunkResult]));
+    const context = contextParts.join("\n");
 
     const llmResult = await generateAnswer(question, context, history);
 
