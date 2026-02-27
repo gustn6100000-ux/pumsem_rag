@@ -41,7 +41,6 @@ export function makeAnswerResponse(
         chunks?: ChunkResult[];
         embeddingTokens?: number;
         llmResult?: LLMResult;
-        telemetry?: { embedding_ms: number; rpc_ms: number; llm_ms: number; };
     }
 ): ChatResponse {
     const searchInfo: SearchInfo = {
@@ -52,7 +51,6 @@ export function makeAnswerResponse(
         ilwi_matched: opts?.ilwi?.length || 0,
         chunks_retrieved: opts?.chunks?.length || 0,
         latency_ms: Date.now() - startTime,
-        ...(opts?.telemetry && { telemetry: opts.telemetry }),
     };
 
     // token_usage는 llmResult가 있을 때만 포함

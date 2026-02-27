@@ -634,7 +634,16 @@ async function fullViewPipeline(
         contextParts.push(`\n${chunk.text}`);
     }
     contextParts.push(`\n---\n`);
-    contextParts.push(buildContext(wtEntities, relationsAll, [], [chunk as ChunkResult]));
+    // 💡 [Phase 5 잘림 수정] sub_section 모드에서 buildContext에 specFilter 전달
+    // Why: specFilter 없으면 buildContext가 chunk.text(14개 전체 청크 병합)를 "원문 참고"로
+    //      다시 추가 → contextParts의 외부 포함분과 이중 주입 → LLM 토큰 초과 → 잘림
+    if (fullSubSection) {
+        // sub_section 모드: chunk 전달 안 함 + specFilter로 원문 출처만 표시
+        contextParts.push(buildContext(wtEntities, relationsAll, [], [], fullSubSection));
+    } else {
+        // 전체 보기: 기존대로 chunk 포함
+        contextParts.push(buildContext(wtEntities, relationsAll, [], [chunk as ChunkResult]));
+    }
     const context = contextParts.join("\n");
 
     const llmResult = await generateAnswer(question, context, history);

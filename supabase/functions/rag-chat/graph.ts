@@ -17,7 +17,7 @@ export async function expandGraph(
 ): Promise<RelatedResource[]> {
     // 1-hop 관계 조회
     const { data: relations, error: relErr } = await supabase.rpc(
-        "get_related_resources_v2",
+        "get_related_resources",
         { p_entity_id: entityId }
     );
 
@@ -51,7 +51,7 @@ export async function expandGraph(
         // 각 WorkType의 관계를 병렬 조회
         const workRelPromises = (workTypes as any[]).map(async (wt: any) => {
             const { data: wtRels } = await supabase.rpc(
-                "get_related_resources_v2",
+                "get_related_resources",
                 { p_entity_id: wt.id }
             );
             return { workType: wt, relations: (wtRels || []) as RelatedResource[] };

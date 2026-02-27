@@ -48,11 +48,6 @@ export interface SearchInfo {
     ilwi_matched: number;
     chunks_retrieved: number;
     latency_ms: number;
-    telemetry?: {
-        embedding_ms: number;
-        rpc_ms: number;
-        llm_ms: number;
-    };
     token_usage?: TokenUsage;
 }
 
@@ -107,14 +102,13 @@ export interface ChatResponse {
 
 // 의도 분석 결과
 export interface IntentAnalysis {
-    intent: "search" | "clarify_needed" | "followup" | "greeting" | "quantity_input" | "cost_calculate" | "modify_request" | "report_request" | "complex_estimate";
+    intent: "search" | "clarify_needed" | "followup" | "greeting" | "quantity_input" | "cost_calculate" | "modify_request" | "report_request";
     work_name: string | null;
     spec: string | null;
     keywords: string[];
     ambiguity_reason: string | null;
     modify_type?: "quantity" | "work_change" | "exclude_labor" | null;  // modify_request 세부 유형
     quantity?: number | null;  // quantity_input/modify_request 시 수량 값
-    complexity?: "simple" | "complex"; // 쿼리 복잡도 (라우팅 용)
 }
 
 // 검색 결과 엔티티
