@@ -744,9 +744,9 @@ async function searchPipeline(
     }
 
     // [2] Section만 매칭 → clarify 분기
-    const sectionOnly = entities.length > 0 && entities.every(e => e.type === "Section");
+    const sectionOnly = entities.length > 0 && entities.every((e: EntityResult) => e.type === "Section");
     if (sectionOnly) {
-        const sectionSourceIds = [...new Set(entities.map(e => e.source_section).filter(Boolean))] as string[];
+        const sectionSourceIds = [...new Set(entities.map((e: EntityResult) => e.source_section).filter(Boolean))] as string[];
 
         // 💡 [고아 섹션 필터] chunk가 있는 섹션만 남기기
         let validSectionIds = sectionSourceIds;
@@ -763,7 +763,7 @@ async function searchPipeline(
         }
 
         // Section source_section + 동의어 WorkType source_section 병합
-        const synSectionIds = [...new Set(synonymWorkTypes.map(w => w.source_section).filter(Boolean))] as string[];
+        const synSectionIds = [...new Set(synonymWorkTypes.map((w: any) => w.source_section).filter(Boolean))] as string[];
         const allSectionIds = [...new Set([...validSectionIds, ...synSectionIds])];
 
         // 💡 [고아 섹션 + sectionOnly 폴백] 유효 섹션이 0건이면 WorkType 기반 재검색
@@ -810,7 +810,7 @@ async function searchPipeline(
             }
 
             // Section 엔티티 기반 옵션
-            const options: ClarifyOption[] = entities.slice(0, 10).map(s => {
+            const options: ClarifyOption[] = entities.slice(0, 10).map((s: EntityResult) => {
                 const meta = metaMap.get(s.source_section || "");
                 const label = meta
                     ? `${meta.department} > ${meta.chapter} > ${meta.title}`
