@@ -448,7 +448,7 @@ export async function targetSearch(
     // 3단계: 벡터 검색 (타입 필터 적용 — Note/Equipment 제외)
     const { data, error } = await supabase.rpc("search_entities_typed", {
         query_embedding_text: JSON.stringify(embedding),
-        match_count: 5,
+        match_count: 10,  // 💡 고아 섹션 필터 후에도 충분한 결과 확보
         match_threshold: 0.4,
         type_filter: ["Section", "WorkType"],
     });
@@ -459,7 +459,36 @@ export async function targetSearch(
     }
 
     console.log(`[targetSearch] 3단계 벡터 검색: ${(data || []).length}건`);
-    const vectorResults = (data || []) as EntityResult[];
+    let vectorResults = (data || []) as EntityResult[];
+
+    // 💡 [고아 섹션 감점] Section 타입이면서 chunk가 없는 엔티티의 유사도 감산
+    // Why: "콘크리트 타설" 검색 시 3-3(chunk 0건)이 6-1-1(실데이터)보다 높은 유사도로
+    //      나올 수 있어, chunk 존재 여부로 검증하여 고아 섹션을 후순위로 밀어냄
+    if (vectorResults.some(e => e.type === "Section")) {
+        const sectionSrcIds = [...new Set(
+            vectorResults.filter(e => e.type === "Section")
+                .map(e => e.source_section).filter(Boolean)
+        )] as string[];
+        if (sectionSrcIds.length > 0) {
+            const { data: chunkCheck } = await supabase
+                .from("graph_chunks")
+                .select("section_id")
+                .in("section_id", sectionSrcIds);
+            const hasChunkSet = new Set((chunkCheck || []).map((c: any) => c.section_id));
+
+            vectorResults = vectorResults.map(e => {
+                if (e.type === "Section" && e.source_section && !hasChunkSet.has(e.source_section)) {
+                    console.log(`[targetSearch] 고아 섹션 감점: ${e.name} (${e.source_section})`);
+                    return { ...e, similarity: (e.similarity || 0) - 0.3 };
+                }
+                return e;
+            });
+            // 유사도 재정렬
+            vectorResults.sort((a, b) => (b.similarity || 0) - (a.similarity || 0));
+        }
+    }
+    // 상위 5건으로 제한
+    vectorResults = vectorResults.slice(0, 5);
 
     // 4단계: chunk text fallback (Layer 4)
     // Why: 벡터 결과가 Section만이거나 WorkType 유사도가 낮을 때,

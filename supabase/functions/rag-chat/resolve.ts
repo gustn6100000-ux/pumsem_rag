@@ -427,6 +427,8 @@ async function resolveBySearch(
     }
 
     // ─── 관련성 점수 산출 ───
+    // Why: 고아 섹션(chunk 없음, WorkType 없음)이 상위에 노출되면
+    //      사용자가 선택해도 "원문 없음"이 나오므로, 대폭 감점(-100)하여 후순위로 밀어냄
     const scoredResults = uniqueResults.map(r => {
         let score = 0;
         const name = r.name || "";
@@ -438,6 +440,12 @@ async function resolveBySearch(
             if (nameLC.includes(kw.toLowerCase())) score += 10;
         }
         if (r.type === "Section") score -= 5;
+
+        // 💡 [고아 섹션 감점] chunkMeta에 없는 Section = chunk 없음 → 대폭 감점
+        if (r.type === "Section" && r.source_section && !chunkMeta.has(r.source_section)) {
+            score -= 100;
+            console.log(`[resolveSection] 고아 섹션 감점: ${r.name} (${r.source_section})`);
+        }
 
         return { ...r, _score: score };
     });
@@ -496,14 +504,18 @@ async function resolveBySearch(
     }
 
     // 복수 섹션 판정 (💡 [Track B-1] WorkType의 source_section도 고려)
+    // 💡 [고아 섹션 필터] chunkMeta에 없는(=chunk가 0건) 섹션 ID를 제외
     const sectionOnlyIds = [...new Set(matchedSections.map(s => s.source_section).filter(Boolean))];
     const workTypeOnlyIds = [...new Set(matchedWorkTypes.map(w => w.source_section).filter(Boolean))];
-    const allUniqueSectionIds = [...new Set([...sectionOnlyIds, ...workTypeOnlyIds])];
+    const allUniqueSectionIds = [...new Set([...sectionOnlyIds, ...workTypeOnlyIds])]
+        .filter(sid => chunkMeta.has(sid));  // 고아 섹션 제거
     if (allUniqueSectionIds.length > 1) {
+        // 실데이터가 있는 섹션의 Section/WorkType만 전달
+        const validSectionSet = new Set(allUniqueSectionIds);
         return {
             level: 'multi_section',
-            sections: matchedSections,
-            workTypes: matchedWorkTypes,
+            sections: matchedSections.filter(s => validSectionSet.has(s.source_section)),
+            workTypes: matchedWorkTypes.filter(w => validSectionSet.has(w.source_section)),
             chunkMeta,
             chunkTextResults,
             sectionSourceSections,
@@ -665,7 +677,9 @@ export function presentClarify(
     if (level === 'multi_section') {
         // 💡 [Track B-1] Section 엔티티 + WorkType의 source_section 병합
         const sectionSrcSet = new Set(sections.map(s => s.source_section).filter(Boolean));
-        const options: ClarifyOption[] = sections.slice(0, 10).map(s => {
+        // 💡 [고아 섹션 필터] chunkMeta에 없는 Section은 옵션에서 제외
+        const validSections = sections.filter(s => s.source_section && chunkMeta.has(s.source_section));
+        const options: ClarifyOption[] = validSections.slice(0, 10).map(s => {
             const meta = chunkMeta.get(s.source_section);
             const secTag = s.source_section ? ` (${displayCode(s.source_section)})` : "";
             const label = meta
@@ -688,6 +702,8 @@ export function presentClarify(
             }
         }
         for (const [srcSec, wt] of wtBySrc) {
+            // 💡 [고아 섹션 필터] chunkMeta에 없는 WorkType 소스 섹션도 제외
+            if (!chunkMeta.has(srcSec)) continue;
             const meta = chunkMeta.get(srcSec);
             const secTag = ` (${displayCode(srcSec)})`;
             const label = meta
@@ -702,7 +718,8 @@ export function presentClarify(
             });
         }
 
-        const allUniqueIds = [...new Set([...sections.map(s => s.source_section), ...workTypes.map(w => w.source_section)].filter(Boolean))];
+        const allUniqueIds = [...new Set([...sections.map(s => s.source_section), ...workTypes.map(w => w.source_section)].filter(Boolean))]
+            .filter(sid => chunkMeta.has(sid));  // 고아 섹션 제외
         const selector = buildSelectorPanel(options, searchTerms[0]);
         return {
             message: `"${searchTerms.join(" ")}" 관련 품셈이 **${allUniqueIds.length}개 분야**에 있습니다.\n어떤 분야의 품셈을 찾으시나요?`,

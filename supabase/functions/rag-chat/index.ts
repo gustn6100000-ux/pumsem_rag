@@ -461,7 +461,44 @@ async function fullViewPipeline(
     }
 
     if (!chunk) {
-        console.warn(`[fullViewPipeline] section_id=${baseSectionId} 원문 없음 → 안내`);
+        // 💡 [고아 섹션 폴백] chunk가 없으면, 동일 키워드로 WorkType 직접 검색하여 재라우팅
+        console.warn(`[fullViewPipeline] section_id=${baseSectionId} 원문 없음 → WorkType 키워드 검색 시도`);
+
+        // baseSectionId에 매칭된 Section 엔티티의 이름으로 WorkType 재검색
+        const { data: sectionEntity } = await supabase
+            .from("graph_entities")
+            .select("name")
+            .eq("type", "Section")
+            .eq("source_section", baseSectionId)
+            .limit(1);
+
+        const sectionName = (sectionEntity as any[])?.[0]?.name || question;
+        // 핵심 키워드만 추출 (한글 2글자 이상)
+        const kwTokens = (sectionName.match(/[가-힣]{2,}/g) || []).filter(
+            (w: string) => !["품셈", "전체", "관련", "기타", "공통"].includes(w)
+        );
+
+        if (kwTokens.length > 0) {
+            const kwOrClauses = kwTokens.map((t: string) => `name.ilike.%${t}%`).join(",");
+            const { data: fallbackWTs } = await supabase
+                .from("graph_entities")
+                .select("id, name, type, properties, source_section")
+                .eq("type", "WorkType")
+                .or(kwOrClauses)
+                .limit(20);
+
+            if (fallbackWTs && fallbackWTs.length > 0) {
+                console.log(`[fullViewPipeline] WorkType 키워드 폴백: ${fallbackWTs.length}건 → answerPipeline 전환`);
+                const fallbackEntities = (fallbackWTs as any[]).map((wt: any) => ({
+                    id: wt.id, name: wt.name, type: wt.type,
+                    properties: wt.properties || {},
+                    source_section: wt.source_section,
+                    similarity: 0.90,
+                }));
+                return answerPipeline(fallbackEntities, question, history, startTime);
+            }
+        }
+
         return makeAnswerResponse(
             `해당 절(${baseSectionId})의 원문 데이터를 찾을 수 없습니다.\n다른 작업을 선택하거나, 다시 검색해 주세요.`,
             startTime
@@ -711,9 +748,53 @@ async function searchPipeline(
     if (sectionOnly) {
         const sectionSourceIds = [...new Set(entities.map(e => e.source_section).filter(Boolean))] as string[];
 
+        // 💡 [고아 섹션 필터] chunk가 있는 섹션만 남기기
+        let validSectionIds = sectionSourceIds;
+        if (sectionSourceIds.length > 0) {
+            const { data: chunkCheck } = await supabase
+                .from("graph_chunks")
+                .select("section_id")
+                .in("section_id", sectionSourceIds);
+            const hasChunkSet = new Set((chunkCheck || []).map((c: any) => c.section_id));
+            validSectionIds = sectionSourceIds.filter(sid => hasChunkSet.has(sid));
+            if (validSectionIds.length < sectionSourceIds.length) {
+                console.log(`[searchPipeline] 고아 섹션 필터: ${sectionSourceIds.length}개 → ${validSectionIds.length}개`);
+            }
+        }
+
         // Section source_section + 동의어 WorkType source_section 병합
         const synSectionIds = [...new Set(synonymWorkTypes.map(w => w.source_section).filter(Boolean))] as string[];
-        const allSectionIds = [...new Set([...sectionSourceIds, ...synSectionIds])];
+        const allSectionIds = [...new Set([...validSectionIds, ...synSectionIds])];
+
+        // 💡 [고아 섹션 + sectionOnly 폴백] 유효 섹션이 0건이면 WorkType 기반 재검색
+        if (validSectionIds.length === 0 && synSectionIds.length === 0) {
+            console.log(`[searchPipeline] 유효 섹션 0건 → WorkType answerPipeline 폴백 시도`);
+            // 원본 질문 키워드로 WorkType 직접 검색
+            const kwTokens = (question.match(/[가-힣]{2,}/g) || []).filter(
+                (w: string) => !["품셈", "인력", "장비", "자재", "관련", "알려줘"].includes(w)
+            );
+            if (kwTokens.length > 0) {
+                const kwOrClauses = kwTokens.map(t => `name.ilike.%${t}%`).join(",");
+                const { data: fallbackWTs } = await supabase
+                    .from("graph_entities")
+                    .select("id, name, type, properties, source_section")
+                    .eq("type", "WorkType")
+                    .or(kwOrClauses)
+                    .limit(20);
+                if (fallbackWTs && fallbackWTs.length > 0) {
+                    console.log(`[searchPipeline] WorkType 폴백: ${fallbackWTs.length}건 → answerPipeline`);
+                    const fallbackEntities = (fallbackWTs as any[]).map(wt => ({
+                        id: wt.id, name: wt.name, type: wt.type,
+                        properties: wt.properties || {},
+                        source_section: wt.source_section,
+                        similarity: 0.90,
+                    }));
+                    return answerPipeline(fallbackEntities, question, history, startTime, {
+                        answerOptions, analysis,
+                    });
+                }
+            }
+        }
 
         if (allSectionIds.length > 1) {
             // 복수 분야: 섹션 선택 칩 직접 생성
