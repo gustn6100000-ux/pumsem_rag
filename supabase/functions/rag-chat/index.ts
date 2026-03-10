@@ -708,15 +708,49 @@ async function fullViewPipeline(
         // 폴백: 모두 제외되면 전체 사용
         if (targetChunks.length === 0) targetChunks = allChunks.filter(c => targetChunkIds.includes(c.id));
 
-        let hasChunkTables = false;
+        // ─── 동일 헤더 표 자동 병합 ───
+        // Why: 5개 chunk × 17컬럼 표를 개별 전달하면 LLM이 토큰 과부하로 압축/요약.
+        //      동일 헤더 구조의 표를 사전 병합하여 1개 통합표로 전달.
+        const mergedTablesMap = new Map<string, { headers: string[], rows: any[] }>();
+        const unmergeable: any[] = [];
+        const textParts: string[] = [];
+
         for (const tc of targetChunks) {
             if (tc.tables && Array.isArray(tc.tables) && tc.tables.length > 0) {
-                contextParts.push(tablesToMarkdown(tc.tables));
-                hasChunkTables = true;
+                for (const tbl of tc.tables) {
+                    if (tbl.headers && tbl.rows) {
+                        const headerKey = JSON.stringify(tbl.headers);
+                        if (mergedTablesMap.has(headerKey)) {
+                            // 동일 헤더 → 행만 추가
+                            mergedTablesMap.get(headerKey)!.rows.push(...tbl.rows);
+                        } else {
+                            mergedTablesMap.set(headerKey, {
+                                headers: tbl.headers,
+                                rows: [...tbl.rows]
+                            });
+                        }
+                    } else {
+                        unmergeable.push(tbl);
+                    }
+                }
             }
             if (tc.text && tc.text.length > 0) {
-                contextParts.push(`\n${tc.text}\n`);
+                textParts.push(tc.text);
             }
+        }
+
+        let hasChunkTables = mergedTablesMap.size > 0 || unmergeable.length > 0;
+        // 병합된 표를 마크다운으로 변환
+        for (const [, merged] of mergedTablesMap) {
+            contextParts.push(tablesToMarkdown([merged]));
+        }
+        if (unmergeable.length > 0) {
+            contextParts.push(tablesToMarkdown(unmergeable));
+        }
+        // text는 중복 제거 후 추가
+        const uniqueTexts = [...new Set(textParts.filter(t => t.trim().length > 0))];
+        for (const txt of uniqueTexts) {
+            contextParts.push(`\n${txt}\n`);
         }
 
         if (hasChunkTables) {
