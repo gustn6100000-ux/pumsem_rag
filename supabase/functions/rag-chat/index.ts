@@ -672,14 +672,22 @@ async function fullViewPipeline(
         contextParts.push(`**선택된 분류**: ${fullSubSection}`);
         contextParts.push(`\n> 아래는 "${fullSubSection}"에 해당하는 품셈 데이터입니다.\n`);
 
-        // sub_section 키워드와 매칭되는 chunk의 원본 tables 직접 포함
-        const subChunks = allChunks.filter(c => {
-            const txt = c.text || '';
-            const tblStr = c.tables ? JSON.stringify(c.tables) : '';
-            return txt.includes(subKeyword!) || tblStr.includes(subKeyword!);
-        });
-        // 폴백: 필터 결과 없으면 전체 chunk 사용
-        const targetChunks = subChunks.length > 0 ? subChunks : allChunks;
+        // ─── WT의 source_chunk_ids로 정확한 chunk 직접 매칭 ───
+        // Why: chunk text/tables에 "Fillet" 같은 sub_section 키워드가 포함되지 않아
+        //      키워드 필터가 실패함. WT 엔티티의 properties.source_chunk_ids가 정확한 chunk를 가리킴.
+        const wtChunkIds = new Set<string>();
+        for (const wt of sectionWTs) {
+            const ids = wt.properties?.source_chunk_ids;
+            if (Array.isArray(ids)) {
+                ids.forEach((cid: string) => wtChunkIds.add(cid));
+            }
+        }
+
+        // C-0956-A(총괄 chunk, 보통 text만 있음) 제외하고 표 데이터 chunk만 사용
+        const targetChunkIds = [...wtChunkIds].filter(cid => cid !== allChunks[0]?.id || wtChunkIds.size === 1);
+        const targetChunks = targetChunkIds.length > 0
+            ? allChunks.filter(c => targetChunkIds.includes(c.id))
+            : allChunks; // 폴백
 
         let hasChunkTables = false;
         for (const tc of targetChunks) {
@@ -693,7 +701,7 @@ async function fullViewPipeline(
         }
 
         if (hasChunkTables) {
-            console.log(`[fullViewPipeline] sub_section 모드: chunk 원본 tables 직접 사용 (${targetChunks.length}건 chunk)`);
+            console.log(`[fullViewPipeline] sub_section 모드: WT chunk_ids=${[...wtChunkIds].join(',')} → ${targetChunks.length}건 chunk 원본 tables 사용`);
         }
 
         // 그래프 관계는 chunk tables가 없을 때만 사용 (폴백)
