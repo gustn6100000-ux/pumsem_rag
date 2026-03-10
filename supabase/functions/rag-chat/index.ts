@@ -664,22 +664,47 @@ async function fullViewPipeline(
         `**표번호**: ${chunk.section_id}`,
     ];
     if (fullSubSection) {
-        // sub_section 모드: 선택된 분류명 명시 + 그래프 데이터만 사용
+        // sub_section 모드: 선택된 분류명 명시 + chunk 원본 tables 직접 사용
+        // Why: 그래프 관계(17개 WT × 개별 관계)를 renderMatrixTable로 렌더링하면
+        //      LLM이 17개 작은 표를 합산/혼동하여 잘못된 수치 출력 → 0.122 동일값 문제
+        //      chunk 원본 tables JSON에는 두께×자세 교차표가 정확히 저장되어 있으므로
+        //      이를 직접 Markdown으로 변환하여 LLM에 전달하면 정확한 답변 가능
         contextParts.push(`**선택된 분류**: ${fullSubSection}`);
         contextParts.push(`\n> 아래는 "${fullSubSection}"에 해당하는 품셈 데이터입니다.\n`);
-        console.log(`[fullViewPipeline] sub_section 모드: raw chunk.text 제외 (${chunk.text.length}자), 그래프 ${wtEntities.length}건 사용`);
+
+        // sub_section 키워드와 매칭되는 chunk의 원본 tables 직접 포함
+        const subChunks = allChunks.filter(c => {
+            const txt = c.text || '';
+            const tblStr = c.tables ? JSON.stringify(c.tables) : '';
+            return txt.includes(subKeyword!) || tblStr.includes(subKeyword!);
+        });
+        // 폴백: 필터 결과 없으면 전체 chunk 사용
+        const targetChunks = subChunks.length > 0 ? subChunks : allChunks;
+
+        let hasChunkTables = false;
+        for (const tc of targetChunks) {
+            if (tc.tables && Array.isArray(tc.tables) && tc.tables.length > 0) {
+                contextParts.push(tablesToMarkdown(tc.tables));
+                hasChunkTables = true;
+            }
+            if (tc.text && tc.text.length > 0) {
+                contextParts.push(`\n${tc.text}\n`);
+            }
+        }
+
+        if (hasChunkTables) {
+            console.log(`[fullViewPipeline] sub_section 모드: chunk 원본 tables 직접 사용 (${targetChunks.length}건 chunk)`);
+        }
+
+        // 그래프 관계는 chunk tables가 없을 때만 사용 (폴백)
+        if (!hasChunkTables) {
+            console.log(`[fullViewPipeline] sub_section 모드: chunk tables 없음 → 그래프 관계 폴백`);
+            contextParts.push(buildContext(wtEntities, relationsAll, [], [], fullSubSection));
+        }
     } else {
         // 전체 보기: 원문 포함
         contextParts.push(`\n${chunk.text}`);
-    }
-    contextParts.push(`\n---\n`);
-    // 💡 [Phase 5 잘림 수정] sub_section 모드에서 buildContext에 specFilter 전달
-    // Why: specFilter 없으면 buildContext가 chunk.text(14개 전체 청크 병합)를 "원문 참고"로
-    //      다시 추가 → contextParts의 외부 포함분과 이중 주입 → LLM 토큰 초과 → 잘림
-    if (fullSubSection) {
-        // sub_section 모드: chunk 전달 안 함 + specFilter로 원문 출처만 표시
-        contextParts.push(buildContext(wtEntities, relationsAll, [], [], fullSubSection));
-    } else {
+        contextParts.push(`\n---\n`);
         // 전체 보기: 기존대로 chunk 포함
         contextParts.push(buildContext(wtEntities, relationsAll, [], [chunk as ChunkResult]));
     }
