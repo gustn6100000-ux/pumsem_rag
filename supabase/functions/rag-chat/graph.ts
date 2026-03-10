@@ -231,7 +231,8 @@ export async function searchIlwi(
 // Why: 강판 전기아크용접(두께=4) 선택 시 전 범위(3~50) 데이터가 context에 범람하는 문제 방지
 export async function retrieveChunks(
     entities: EntityResult[],
-    specFilter?: string   // 예: "4" (두께=4mm만 필터링)
+    specFilter?: string,   // 예: "4" (두께=4mm만 필터링)
+    questionEmbedding?: number[]  // 질문 임베딩 (정밀 chunk 선택용)
 ): Promise<ChunkResult[]> {
     // entity.source_section → graph_chunks.section_id 매칭 (Codex F3)
     const sectionIds = entities
@@ -243,51 +244,68 @@ export async function retrieveChunks(
     // 중복 제거
     const uniqueSectionIds = [...new Set(sectionIds)];
 
-    const { data, error } = await supabase
-        .from("graph_chunks")
-        .select("id, section_id, title, department, chapter, section, text, tables")
-        .in("section_id", uniqueSectionIds)
-        .limit(15); // 강관용접 등 11개 chunk 커버
+    let rawChunks: any[];
 
-    if (error) {
-        console.error("retrieveChunks error:", error.message);
-        return [];
+    // ─── 정밀 모드: 질문 embedding으로 가장 관련 높은 chunk만 선택 ───
+    // Why: section 전체 병합 시 V형/Fillet 등 하위 표가 뒤섞여 LLM 혼동
+    //      embedding 유사도로 질문에 맞는 chunk만 골라서 전달하면 정확도 향상
+    if (questionEmbedding && questionEmbedding.length > 0) {
+        const vectorStr = `[${questionEmbedding.join(",")}]`;
+        // section당 top-2 chunk 선택 (복합 section 커버 + 혼동 방지 균형)
+        const matchCount = Math.min(uniqueSectionIds.length * 2, 10);
+
+        const { data, error } = await supabase.rpc("search_chunks_by_section", {
+            query_embedding: vectorStr,
+            section_ids: uniqueSectionIds,
+            match_count: matchCount,
+        });
+
+        if (error) {
+            console.error("[retrieveChunks] RPC 실패, 폴백:", error.message);
+            // 폴백: 기존 section_id IN 방식
+            const { data: fallback } = await supabase
+                .from("graph_chunks")
+                .select("id, section_id, title, department, chapter, section, text, tables")
+                .in("section_id", uniqueSectionIds)
+                .limit(15);
+            rawChunks = (fallback || []) as any[];
+        } else {
+            rawChunks = (data || []) as any[];
+            console.log(`[retrieveChunks] 정밀 모드: ${uniqueSectionIds.length}개 section → ${rawChunks.length}개 chunk 선택`);
+            if (rawChunks.length > 0) {
+                console.log(`  top chunk: "${rawChunks[0].id}" (유사도: ${rawChunks[0].similarity?.toFixed(3)})`);
+            }
+        }
+    } else {
+        // ─── 기존 모드: section_id 기반 전체 로드 ───
+        const { data, error } = await supabase
+            .from("graph_chunks")
+            .select("id, section_id, title, department, chapter, section, text, tables")
+            .in("section_id", uniqueSectionIds)
+            .limit(15);
+
+        if (error) {
+            console.error("retrieveChunks error:", error.message);
+            return [];
+        }
+        rawChunks = (data || []) as any[];
     }
 
-    const rawChunks = (data || []) as any[];
-
-    // section_id별 그룹화 → 동일 섹션의 여러 chunk를 하나로 병합
-    // Why: 강관용접(13-2-3) 등은 11개 chunk에 tables 분산 → 하나로 합쳐야 LLM이 전체 표 확인 가능
-    const sectionMap = new Map<string, any>();
-    for (const chunk of rawChunks) {
-        const sid = chunk.section_id;
-        if (!sectionMap.has(sid)) {
-            sectionMap.set(sid, { ...chunk, _allTables: [] });
-        }
-        const merged = sectionMap.get(sid)!;
-        // tables 수집
-        if (chunk.tables && Array.isArray(chunk.tables)) {
-            merged._allTables.push(...chunk.tables);
-        }
-        // text 병합 (빈 text 제외)
-        if (chunk.text && chunk.text.length > 0 && chunk.id !== merged.id) {
-            merged.text = (merged.text || "") + "\n" + chunk.text;
-        }
-    }
-
-    // tables → Markdown 변환 후 text에 추가
-    return Array.from(sectionMap.values()).map((chunk) => {
+    // ─── chunk별 tables → Markdown 변환 (병합하지 않고 개별 처리) ───
+    // Why: 정밀 모드에서는 선택된 chunk만 있으므로 병합 불필요
+    //      각 chunk의 tables를 독립적으로 Markdown 변환하여 혼동 방지
+    return rawChunks.map((chunk) => {
         let fullText = chunk.text || "";
-        if (chunk._allTables && chunk._allTables.length > 0) {
-            const tablesMarkdown = chunk._allTables.map((t: any) => {
+        const tables = chunk.tables;
+        if (tables && Array.isArray(tables) && tables.length > 0) {
+            const tablesMarkdown = tables.map((t: any) => {
                 if (!t.rows || t.rows.length === 0) return "";
                 const headers: string[] = t.headers || Object.keys(t.rows[0]);
                 let rows = t.rows;
 
                 // specFilter 적용: 첫 번째 header(spec 기준 컬럼)의 값으로 행 필터링
-                // Why: "두께=4" 선택 시 두께=4 행만 남기고 나머지(3,5,6...) 제거
                 if (specFilter && headers.length > 0) {
-                    const specKey = headers[0]; // 예: "구분 자세 및 직종 두께(mm)"
+                    const specKey = headers[0];
                     const filtered = rows.filter((r: any) => {
                         const val = String(r[specKey] ?? "");
                         return val === specFilter;
@@ -296,7 +314,6 @@ export async function retrieveChunks(
                         rows = filtered;
                         console.log(`[retrieveChunks] specFilter="${specFilter}": ${t.rows.length}행 → ${rows.length}행`);
                     }
-                    // 필터 결과가 0건이면 원본 유지 (fallback)
                 }
 
                 const headerRow = "| " + headers.join(" | ") + " |";
@@ -308,10 +325,9 @@ export async function retrieveChunks(
             }).filter(Boolean).join("\n\n");
             fullText += "\n" + tablesMarkdown;
         }
-        delete chunk._allTables;
         return {
             ...chunk,
-            text: fullText.substring(0, 6000), // 확장: 2000→6000 (다수 표 포함)
+            text: fullText.substring(0, 6000),
         } as ChunkResult;
     });
 }

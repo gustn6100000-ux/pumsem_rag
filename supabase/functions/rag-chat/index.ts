@@ -313,6 +313,7 @@ async function answerPipeline(
         specFilter?: string;      // 두께/규격 필터
         answerOptions?: AnswerOptions;
         analysis?: IntentAnalysis;
+        questionEmbedding?: number[];  // 정밀 chunk 선택용
     }
 ): Promise<ChatResponse> {
     const embeddingTokens = Math.ceil(question.length / 2);
@@ -347,8 +348,9 @@ async function answerPipeline(
         }
     }
 
-    // [3] 원문 청크 보강
-    const chunks = await retrieveChunks(targetEntities, specFilter);
+    // [3] 원문 청크 보강 — 정밀 chunk 선택 모드
+    // Why: questionEmbedding이 있으면 section 내 유사도 top chunk만 선택하여 LLM 혼동 방지
+    const chunks = await retrieveChunks(targetEntities, specFilter, opts?.questionEmbedding);
     if (specFilter) console.log(`[answerPipeline] specFilter="${specFilter}" 적용`);
 
     // [4] 컨텍스트 조합
@@ -893,9 +895,9 @@ async function searchPipeline(
         });
     }
 
-    // [4] WorkType 매칭 → answerPipeline
+    // [4] WorkType 매칭 → answerPipeline (embedding 전달로 정밀 chunk 선택)
     return answerPipeline(entities, question, history, startTime, {
-        answerOptions, analysis,
+        answerOptions, analysis, questionEmbedding: embedding,
     });
 }
 
