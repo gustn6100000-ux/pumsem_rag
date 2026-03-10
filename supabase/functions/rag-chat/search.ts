@@ -128,12 +128,13 @@ export async function keywordFallbackSearch(question: string, specNumbers: strin
     for (const alias of abbrExpansions) {
         orClauses.push(`name.ilike.%${alias}%`);
     }
+    // Fix #8: orClauses를 실제 쿼리에 적용 (약칭 확장이 검색에 반영되도록)
     const { data, error } = await supabase
         .from("graph_entities")
         .select("id, name, type, properties, source_section")
         .in("type", ["WorkType", "Standard"])
-        .or(`name.ilike.${pattern},properties->>"korean_alias".ilike.${pattern}`)
-        .limit(3);
+        .or(orClauses.join(","))
+        .limit(5);
 
     if (error || !data) {
         console.error("keywordFallbackSearch error:", error?.message);

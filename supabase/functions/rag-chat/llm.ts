@@ -118,7 +118,8 @@ export async function generateAnswer(
                 })),
                 {
                     role: "user" as const,
-                    content: `[질문]\n${question} \n\n[참고 데이터]\n${context} `,
+                    content: `[질문]\n${question}\n\n[참고 데이터]\n${context}`,
+
                 },
             ];
 
@@ -126,7 +127,7 @@ export async function generateAnswer(
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${DEEPSEEK_API_KEY} `,
+                    "Authorization": `Bearer ${DEEPSEEK_API_KEY}`,
                 },
                 body: JSON.stringify({
                     model: "deepseek-chat",
@@ -161,11 +162,11 @@ export async function generateAnswer(
         })),
         {
             role: "user",
-            parts: [{ text: `[질문]\n${question} \n\n[참고 데이터]\n${context} ` }],
+            parts: [{ text: `[질문]\n${question}\n\n[참고 데이터]\n${context}` }],
         },
     ];
 
-    const response = await fetch(`${GEMINI_LLM_URL}?key = ${GEMINI_API_KEY} `, {
+    const response = await fetch(`${GEMINI_LLM_URL}?key=${GEMINI_API_KEY}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -176,7 +177,7 @@ export async function generateAnswer(
     });
 
     if (!response.ok) {
-        throw new Error(`LLM API failed: ${response.status} `);
+        throw new Error(`LLM API failed: ${response.status}`);
     }
 
     const data = await response.json();

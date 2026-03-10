@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>품셈 RAG 챗봇 — 알고리즘 상세 가이드</title>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0e1a;--surface:#111827;--surface2:#1a2236;--border:#2a3450;--accent:#818cf8;--accent2:#6366f1;--accent-glow:rgba(129,140,248,.15);--green:#34d399;--yellow:#fbbf24;--red:#f87171;--orange:#fb923c;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;--radius:12px}
+body{font-family:'Noto Sans KR','Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#0f172a 100%);padding:80px 0 60px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(99,102,241,.08),transparent 50%),radial-gradient(circle at 70% 50%,rgba(52,211,153,.06),transparent 50%);animation:pulse 8s ease-in-out infinite alternate}
+@keyframes pulse{0%{transform:scale(1)}100%{transform:scale(1.05)}}
+.hero h1{font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#818cf8,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;position:relative}
+.hero p{color:var(--text2);font-size:1.1rem;position:relative}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 0}
+.nav-inner{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav a{padding:6px 16px;border-radius:20px;font-size:.82rem;font-weight:500;color:var(--text2);text-decoration:none;white-space:nowrap;border:1px solid transparent;transition:all .2s}
+.nav a:hover,.nav a.active{color:var(--accent);border-color:var(--accent);background:var(--accent-glow)}
+section{padding:60px 0}
+h2{font-size:1.8rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+h2 .num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;font-size:.9rem;font-weight:700}
+h3{font-size:1.2rem;font-weight:600;color:var(--accent);margin:28px 0 12px;padding-left:16px;border-left:3px solid var(--accent)}
+.subtitle{color:var(--text2);margin-bottom:32px;font-size:.95rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin:20px 0;transition:border-color .2s}
+.card:hover{border-color:var(--accent)}
+.card-title{font-weight:600;font-size:1.05rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+th{background:var(--surface2);color:var(--accent);font-weight:600;text-align:left;padding:10px 14px;border-bottom:2px solid var(--border)}
+td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text2)}
+tr:hover td{background:rgba(129,140,248,.04)}
+code{font-family:'JetBrains Mono',monospace;background:var(--surface2);padding:2px 7px;border-radius:5px;font-size:.83rem;color:var(--green)}
+pre{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;overflow-x:auto;margin:16px 0;font-size:.82rem;line-height:1.6}
+pre code{background:none;padding:0}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.badge-green{background:rgba(52,211,153,.15);color:var(--green)}
+.badge-yellow{background:rgba(251,191,36,.15);color:var(--yellow)}
+.badge-red{background:rgba(248,113,113,.15);color:var(--red)}
+.badge-blue{background:rgba(129,140,248,.15);color:var(--accent)}
+.badge-orange{background:rgba(251,146,60,.15);color:var(--orange)}
+.mermaid{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin:20px 0;text-align:center}
+.alert{border-radius:var(--radius);padding:16px 20px;margin:16px 0;font-size:.9rem;border-left:4px solid}
+.alert-info{background:rgba(129,140,248,.08);border-color:var(--accent);color:var(--text2)}
+.alert-warn{background:rgba(251,191,36,.08);border-color:var(--yellow);color:var(--text2)}
+.alert-new{background:rgba(52,211,153,.08);border-color:var(--green);color:var(--text2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:768px){.grid2{grid-template-columns:1fr}.hero h1{font-size:2rem}}
+.cascade{display:flex;gap:0;margin:24px 0;flex-wrap:wrap}
+.cascade-step{flex:1;min-width:200px;padding:16px;background:var(--surface);border:1px solid var(--border);position:relative}
+.cascade-step:first-child{border-radius:var(--radius) 0 0 var(--radius)}
+.cascade-step:last-child{border-radius:0 var(--radius) var(--radius) 0}
+.cascade-step::after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--accent);font-size:1.2rem;z-index:1}
+.cascade-step:last-child::after{display:none}
+.cascade-step .step-num{font-size:.7rem;font-weight:700;color:var(--accent);margin-bottom:4px}
+.cascade-step .step-title{font-weight:600;font-size:.9rem;margin-bottom:4px}
+.cascade-step .step-desc{font-size:.78rem;color:var(--text3)}
+.file-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:20px 0}
+.file-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;transition:all .2s}
+.file-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.file-card .fname{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:.9rem;color:var(--green);margin-bottom:6px}
+.file-card .fdesc{font-size:.8rem;color:var(--text3)}
+.toc{columns:2;gap:24px;margin:20px 0}
+.toc a{display:block;padding:6px 0;color:var(--text2);text-decoration:none;font-size:.9rem;border-bottom:1px solid rgba(42,52,80,.5);transition:color .2s}
+.toc a:hover{color:var(--accent)}
+footer{text-align:center;padding:40px 0;color:var(--text3);font-size:.8rem;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="container">
+    <h1>품셈 RAG 챗봇 알고리즘 가이드</h1>
+    <p>건설 공사 표준품셈 검색 어시스턴트 — Edge Function 아키텍처 상세 분석</p>
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="nav"><div class="container"><div class="nav-inner">
+  <a href="#overview">개요</a>
+  <a href="#step1">1. 질문 수신</a>
+  <a href="#step2">2. 의도 분석</a>
+  <a href="#step3">3. 검색</a>
+  <a href="#step4">4. 명확화</a>
+  <a href="#step5">5. 답변 생성</a>
+  <a href="#step6">6. 전체 보기</a>
+  <a href="#db">DB 구조</a>
+  <a href="#files">파일 구조</a>
+  <a href="#patch">신규 패치</a>
+</div></div></div>
+
+<div class="container">
+
+<!-- ═══ 개요 ═══ -->
+<section id="overview">
+  <h2><span class="num">⚡</span> 전체 흐름 개요</h2>
+  <p class="subtitle">사용자 질문부터 최종 답변까지의 전체 파이프라인</p>
+
+  <div class="mermaid">
+flowchart TD
+    A["👤 사용자 질문"] --> B{"handleChat<br/>라우터"}
+    B -->|"entityId"| C["answerPipeline"]
+    B -->|"sectionId + 전체"| D["fullViewPipeline"]
+    B -->|"sectionId + 하위선택"| E["graphClarify"]
+    B -->|"복잡테이블 감지"| F["complexTablePipeline"]
+    B -->|"그 외"| G["의도분석<br/>DeepSeek"]
+    G -->|"search / cost"| H["searchPipeline"]
+    G -->|"greeting"| I["인사 응답"]
+    H --> J["Gemini 임베딩"]
+    J --> K["targetSearch<br/>4단계 캐스케이드"]
+    K --> L{"결과 평가"}
+    L -->|"WorkType"| C
+    L -->|"Section만"| M["graphClarify<br/>옵션 제시"]
+    L -->|"없음"| N["못 찾음"]
+    C --> O["그래프 확장"]
+    O --> P["컨텍스트 조합"]
+    P --> Q["LLM 답변<br/>DeepSeek"]
+    Q --> R["📊 최종 응답"]
+    style A fill:#4f46e5,color:#fff
+    style R fill:#059669,color:#fff
+  </div>
+
+  <div class="alert alert-info">
+    💡 <strong>대부분의 첫 질문</strong>은 Route 3(의도 분석) → Route 4(searchPipeline)으로 진행됩니다.<br/>
+    <strong>칩 클릭</strong>(옵션 선택)은 Route 1(answerPipeline) 또는 Route 2(fullViewPipeline)로 진행됩니다.
+  </div>
+</section>
+
+<!-- ═══ 1단계 ═══ -->
+<section id="step1">
+  <h2><span class="num">1</span> 질문 수신 — handleChat 라우터</h2>
+  <p class="subtitle">index.ts의 handleChat이 5개 라우트 중 하나로 분기합니다</p>
+
+  <table>
+    <thead><tr><th>라우트</th><th>조건</th><th>동작</th><th>예시</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge badge-orange">Route 0.5</span></td><td>복잡 테이블 감지</td><td>complexTablePipeline</td><td>"플랜트 배관 설치 13-1-1"</td></tr>
+      <tr><td><span class="badge badge-green">Route 1</span></td><td>entityId 있음</td><td>answerPipeline 직행</td><td>칩 클릭 (W-1282)</td></tr>
+      <tr><td><span class="badge badge-blue">Route 2</span></td><td>sectionId 있음</td><td>fullViewPipeline / graphClarify</td><td>"6-1-1 전체 보기"</td></tr>
+      <tr><td><span class="badge badge-yellow">Route 3</span></td><td>의도 분석 필요</td><td>DeepSeek 의도 분류</td><td>"콘크리트 타설 인력" (첫 질문)</td></tr>
+      <tr><td><span class="badge badge-red">Route 4</span></td><td>intent=search</td><td>searchPipeline</td><td>검색 의도 확인 후</td></tr>
+    </tbody>
+  </table>
+
+  <div class="mermaid">
+flowchart LR
+    Q["사용자 질문"] --> R0{"복잡 테이블?"}
+    R0 -->|"Yes"| CT["Route 0.5"]
+    R0 -->|"No"| R1{"entityId?"}
+    R1 -->|"Yes"| AP["Route 1"]
+    R1 -->|"No"| R2{"sectionId?"}
+    R2 -->|"Yes"| FV["Route 2"]
+    R2 -->|"No"| R3["Route 3: 의도 분석"]
+    R3 --> R4["Route 4: searchPipeline"]
+  </div>
+</section>
+
+<!-- ═══ 2단계 ═══ -->
+<section id="step2">
+  <h2><span class="num">2</span> 의도 분석 — analyzeIntent</h2>
+  <p class="subtitle">DeepSeek v3.2 LLM이 사용자 질문에서 구조화된 정보를 추출합니다</p>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title">📥 입력</div>
+      <pre><code>"콘크리트 타설 인력"</code></pre>
+    </div>
+    <div class="card">
+      <div class="card-title">📤 출력 (JSON)</div>
+      <pre><code>{
+  "intent": "search",
+  "work_name": "콘크리트 타설",
+  "keywords": ["콘크리트", "타설", "인력"],
+  "spec": null,
+  "quantity": null
+}</code></pre>
+    </div>
+  </div>
+
+  <h3>의도(intent) 분류</h3>
+  <table>
+    <thead><tr><th>intent</th><th>설명</th><th>다음 액션</th></tr></thead>
+    <tbody>
+      <tr><td><code>search</code></td><td>품셈 검색</td><td>searchPipeline</td></tr>
+      <tr><td><code>cost_calculate</code></td><td>비용 산정 요청</td><td>searchPipeline + 일위대가/노임단가</td></tr>
+      <tr><td><code>report_request</code></td><td>보고서 형식 요청</td><td>searchPipeline + 노임단가</td></tr>
+      <tr><td><code>greeting</code></td><td>인사</td><td>즉시 인사 응답</td></tr>
+      <tr><td><code>follow_up</code></td><td>후속 질문</td><td>이전 컨텍스트 활용</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ 3단계 ═══ -->
+<section id="step3">
+  <h2><span class="num">3</span> 검색 — searchPipeline → targetSearch</h2>
+  <p class="subtitle">임베딩 생성 → 4단계 캐스케이드 검색 → 결과 분기</p>
+
+  <h3>3-1. 임베딩 생성</h3>
+  <div class="card">
+    <p>질문 텍스트를 <strong>Gemini text-embedding-004</strong> 모델로 <strong>768차원 벡터</strong>로 변환합니다.</p>
+    <pre><code>"콘크리트 타설 인력" → [0.023, -0.156, 0.089, ..., 0.042]  // 768차원</code></pre>
+  </div>
+
+  <h3>3-2. targetSearch — 4단계 캐스케이드 검색</h3>
+  <p>정확도가 높은 순서대로 시도하며, <strong>결과가 나오면 즉시 반환</strong>합니다:</p>
+
+  <div class="cascade">
+    <div class="cascade-step" style="border-left:3px solid var(--green)">
+      <div class="step-num">1단계</div>
+      <div class="step-title">ILIKE 정확 매칭</div>
+      <div class="step-desc">work_name + spec 조합으로<br/><code>%콘크리트 타설%</code></div>
+    </div>
+    <div class="cascade-step" style="border-left:3px solid var(--yellow)">
+      <div class="step-num">2단계</div>
+      <div class="step-title">키워드 ILIKE</div>
+      <div class="step-desc">키워드별 + 도메인 동의어<br/><code>%콘크리트%</code> OR <code>%레미콘%</code></div>
+    </div>
+    <div class="cascade-step" style="border-left:3px solid var(--accent)">
+      <div class="step-num">3단계</div>
+      <div class="step-title">벡터 검색</div>
+      <div class="step-desc">pgvector 코사인 유사도<br/>threshold ≥ 0.4</div>
+    </div>
+    <div class="cascade-step" style="border-left:3px solid var(--orange)">
+      <div class="step-num">4단계</div>
+      <div class="step-title">chunk 본문 검색</div>
+      <div class="step-desc">graph_chunks.text ILIKE<br/>본문 텍스트 직접 검색</div>
+    </div>
+  </div>
+
+  <div class="alert alert-new">
+    🆕 <strong>고아 섹션 감점 (신규 패치)</strong>: 3단계 벡터 검색에서 <code>chunk가 0건인 Section</code>의 유사도를 <strong>-0.3 감산</strong>하여 후순위로 밀어냅니다. 이것이 "3-3 현장 타설 콘크리트 라이닝" 같은 빈 섹션 문제를 해결합니다.
+  </div>
+
+  <h3>3-3. 도메인 동의어 확장</h3>
+  <div class="card">
+    <div class="card-title">🔄 동의어 매핑 예시</div>
+    <table>
+      <thead><tr><th>입력 키워드</th><th>확장 결과</th></tr></thead>
+      <tbody>
+        <tr><td><code>PE관</code></td><td>바트융착, 소켓융착, 새들융착, 폴리에틸렌, HDPE</td></tr>
+        <tr><td><code>콘크리트</code></td><td>타설, 거푸집, 양생, 레미콘</td></tr>
+        <tr><td><code>용접</code></td><td>TIG, MIG, MAG, CO2, 아크용접</td></tr>
+        <tr><td><code>배관</code></td><td>강관, PVC, PE, 주철관, HDPE</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>3-4. 검색 결과 분기</h3>
+  <div class="mermaid">
+flowchart TD
+    R["검색 결과"] --> Q{"결과 타입?"}
+    Q -->|"WorkType 포함"| A["answerPipeline<br/>→ 즉시 답변"]
+    Q -->|"Section만"| B{"유효 섹션 수?"}
+    B -->|"복수"| C["선택 칩 제시<br/>어떤 분야?"]
+    B -->|"단일"| D["graphClarify<br/>하위 작업 제시"]
+    B -->|"유효 0건"| E["WorkType 키워드<br/>재검색 폴백"]
+    style E fill:#059669,color:#fff
+  </div>
+</section>
+
+<!-- ═══ 4단계 ═══ -->
+<section id="step4">
+  <h2><span class="num">4</span> 명확화 — graphClarify / resolveSection</h2>
+  <p class="subtitle">검색 결과가 여러 섹션에 걸쳐 있으면 사용자에게 선택 옵션을 제시합니다</p>
+
+  <h3>resolveSection — 4가지 탐색 전략</h3>
+  <table>
+    <thead><tr><th>전략</th><th>방식</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge badge-green">전략 1</span></td><td>Section ILIKE</td><td>Section 이름으로 ILIKE 검색</td></tr>
+      <tr><td><span class="badge badge-blue">전략 2</span></td><td>WorkType ILIKE</td><td>WorkType 이름으로 직접 검색</td></tr>
+      <tr><td><span class="badge badge-yellow">전략 3</span></td><td>키워드 독립</td><td>키워드별 독립 검색 후 병합</td></tr>
+      <tr><td><span class="badge badge-orange">전략 4</span></td><td>chunk 텍스트</td><td>원문 본문에서 키워드 검색</td></tr>
+    </tbody>
+  </table>
+
+  <h3>계층 레벨 판정</h3>
+  <table>
+    <thead><tr><th>레벨</th><th>조건</th><th>UI 동작</th></tr></thead>
+    <tbody>
+      <tr><td><code>multi_section</code></td><td>2개+ 섹션</td><td>🏗️ 섹션 선택 칩 (분야 선택)</td></tr>
+      <tr><td><code>sub_section</code></td><td>1섹션, 2개+ 분류</td><td>📁 분류 선택 칩 (V형/H형 등)</td></tr>
+      <tr><td><code>worktype_many</code></td><td>1섹션, 4개+ 작업</td><td>📋 작업 선택 목록</td></tr>
+      <tr><td><code>worktype_few</code></td><td>1~3개 작업</td><td>💡 칩 + 자동 답변</td></tr>
+      <tr><td><code>empty</code></td><td>작업 없음</td><td>📄 "전체 내용 보기" 제시</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert alert-new">
+    🆕 <strong>고아 섹션 필터 (신규 패치)</strong>: 계층 판정 시 <code>chunkMeta에 없는 Section</code>(= chunk 0건) 엔티티의 관련성 점수를 <strong>-100점 감점</strong>하고, clarify 옵션에서 빈 섹션을 제외합니다.
+  </div>
+
+  <h3>presentClarify — UI 변환 예시</h3>
+  <div class="card">
+    <pre><code>레벨: multi_section, 12개 분야
+
+→ UI 출력:
+  "콘크리트 타설 인력" 관련 품셈이 12개 분야에 있습니다.
+  어떤 분야의 품셈을 찾으시나요?
+
+  🏗️ 공통부문 > 제6장 철근콘크리트공사 > 레디믹스트콘크리트 타설 (6-1-1)
+  🏗️ 공통부문 > 제6장 철근콘크리트공사 > 콘크리트 펌프차 타설 (6-1-4)
+  🏗️ 건축부문 > 제5장 수장공사 > 단열재 콘크리트타설 부착
+  ...</code></pre>
+  </div>
+</section>
+
+<!-- ═══ 5단계 ═══ -->
+<section id="step5">
+  <h2><span class="num">5</span> 답변 생성 — answerPipeline</h2>
+  <p class="subtitle">WorkType이 확정되면 그래프 확장 → 컨텍스트 → LLM으로 답변을 생성합니다</p>
+
+  <div class="mermaid">
+flowchart LR
+    E["선택된 엔티티"] --> G["expandGraph"]
+    G --> I["REQUIRES_LABOR<br/>인력"]
+    G --> J["REQUIRES_EQUIPMENT<br/>장비"]
+    G --> K["USES_MATERIAL<br/>자재"]
+    G --> L["HAS_NOTE<br/>주의사항"]
+    I & J & K & L --> C["buildContext"]
+    C --> LLM["DeepSeek LLM"]
+    LLM --> R["📊 최종 응답"]
+  </div>
+
+  <h3>5-1. 그래프 확장 (expandGraph)</h3>
+  <div class="card">
+    <div class="card-title">🌐 지식 그래프 탐색 예시</div>
+    <pre><code>WorkType: "레디믹스트콘크리트 타설" (W-1282)
+├── REQUIRES_LABOR → 콘크리트공 (인, 수량: 0.15~0.85)
+├── REQUIRES_LABOR → 보통인부 (인, 수량: 0.46~1.36)
+├── REQUIRES_EQUIPMENT → 굴착기 0.6~0.8m³ (대, 수량: 1)
+├── USES_MATERIAL → 레디믹스트 콘크리트
+└── HAS_NOTE → "소량 산재 시 50%까지 감"</code></pre>
+  </div>
+
+  <h3>5-2. 컨텍스트 조합 (buildContext)</h3>
+  <div class="card">
+    <p>수집된 데이터를 LLM이 이해할 수 있는 <strong>마크다운 형식</strong>으로 변환합니다.</p>
+    <p>교차표 형식으로 동일 직종의 조건별 수치를 비교 가능하게 렌더링합니다.</p>
+    <pre><code>## 품셈 검색 결과
+### 1. [표 6-1-1] 레디믹스트콘크리트 타설
+**출처**: 공통부문 > 제6장 철근콘크리트공사
+
+**[표 6-1-1] 투입 인력** (단위: 인)
+| 직종       | 무근구조물 | 철근구조물 | 소형구조물 |
+|-----------|--------:|--------:|--------:|
+| 콘크리트공  |    0.15 |    0.17 |    0.24 |
+| 보통인부    |    0.46 |    0.68 |    0.94 |</code></pre>
+  </div>
+
+  <h3>5-3. LLM 답변 생성 (generateAnswer)</h3>
+  <div class="card">
+    <p>컨텍스트를 <strong>DeepSeek v3.2</strong>에 전달하여 자연어 답변을 생성합니다.</p>
+    <p>비용 산정 시에는 <code>labor_costs</code> 테이블에서 <strong>2026년 노임단가</strong>를 주입합니다.</p>
+  </div>
+</section>
+
+<!-- ═══ 6단계 ═══ -->
+<section id="step6">
+  <h2><span class="num">6</span> 전체 내용 보기 — fullViewPipeline</h2>
+  <p class="subtitle">사용자가 "전체 내용 보기"를 클릭하면 해당 섹션의 원문 + 그래프 데이터를 결합합니다</p>
+
+  <div class="mermaid">
+flowchart TD
+    S["section_id 수신"] --> C["graph_chunks 로딩"]
+    C --> SUB{"sub_section?"}
+    SUB -->|"Yes"| F["해당 분류만 필터"]
+    SUB -->|"No"| M["전체 chunk 병합"]
+    F --> WT["WorkType 4단계 폴백 탐색"]
+    M --> WT
+    WT --> EX["expandGraph"]
+    EX --> CTX["원문 + 그래프 = 컨텍스트"]
+    CTX --> LLM["DeepSeek 답변"]
+  </div>
+
+  <h3>WorkType 4단계 폴백 탐색</h3>
+  <table>
+    <thead><tr><th>단계</th><th>방식</th><th>설명</th></tr></thead>
+    <tbody>
+      <tr><td>3-1</td><td>직접 매칭</td><td>동일 section_id의 WorkType 검색</td></tr>
+      <tr><td>3-2</td><td>cross-reference</td><td>동일 title의 다른 section에서 검색</td></tr>
+      <tr><td>3-3</td><td>하위 절</td><td>하위 section (prefix 매칭)에서 검색</td></tr>
+      <tr><td>3-4</td><td>Section 자체</td><td>Section 엔티티 expandGraph (최후 수단)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert alert-new">
+    🆕 <strong>고아 섹션 폴백 (신규 패치)</strong>: chunk가 없는 섹션에 진입하면, Section 이름의 키워드로 WorkType을 직접 ILIKE 재검색하여 <code>answerPipeline</code>으로 전환합니다.
+  </div>
+</section>
+
+<!-- ═══ DB 구조 ═══ -->
+<section id="db">
+  <h2><span class="num">💾</span> DB 구조</h2>
+  <p class="subtitle">Supabase PostgreSQL + pgvector 기반 지식 그래프</p>
+
+  <div class="mermaid">
+erDiagram
+    graph_entities {
+        string id PK "W-1282 등"
+        string name "레디믹스트콘크리트 타설"
+        string type "WorkType Section Note"
+        string source_section "6-1-1"
+        jsonb properties "sub_section spec 등"
+        vector embedding "768차원"
+    }
+    graph_relationships {
+        string source_id FK
+        string target_id FK
+        string relation "REQUIRES_LABOR 등"
+        jsonb properties "quantity unit 등"
+    }
+    graph_chunks {
+        string section_id PK "6-1-1"
+        string title "레디믹스트콘크리트 타설"
+        string department "공통부문"
+        text text "원문 텍스트"
+        jsonb tables "표 데이터 JSON"
+    }
+    graph_entities ||--o{ graph_relationships : "source"
+    graph_entities ||--o{ graph_relationships : "target"
+    graph_entities }o--|| graph_chunks : "source_section"
+  </div>
+
+  <table>
+    <thead><tr><th>테이블</th><th>건수</th><th>역할</th></tr></thead>
+    <tbody>
+      <tr><td><code>graph_entities</code></td><td>16,302</td><td>엔티티 (WorkType, Section, Note, Equipment, Material)</td></tr>
+      <tr><td><code>graph_relationships</code></td><td>30,055</td><td>관계 (인력, 장비, 자재, 주의사항)</td></tr>
+      <tr><td><code>graph_chunks</code></td><td>2,105</td><td>원문 텍스트 + 표 데이터</td></tr>
+      <tr><td><code>labor_costs</code></td><td>118</td><td>2026년 노임단가</td></tr>
+      <tr><td><code>ilwi_items</code></td><td>6,992</td><td>일위대가 비용 (노무비/재료비/경비)</td></tr>
+      <tr><td><code>complex_table_specs</code></td><td>2,000</td><td>복잡 테이블 스펙 (배관 설치 등)</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ 파일 구조 ═══ -->
+<section id="files">
+  <h2><span class="num">📁</span> 파일별 역할</h2>
+  <p class="subtitle">Edge Function (rag-chat) 10개 모듈의 책임 분리</p>
+
+  <div class="file-grid">
+    <div class="file-card"><div class="fname">index.ts</div><div class="fdesc"><strong>라우터 + 파이프라인</strong><br/>handleChat, answerPipeline, fullViewPipeline, searchPipeline, complexTablePipeline</div></div>
+    <div class="file-card"><div class="fname">search.ts</div><div class="fdesc"><strong>검색 엔진</strong><br/>targetSearch 4단계 캐스케이드, 도메인 동의어, 약칭 확장, chunk 텍스트 폴백</div></div>
+    <div class="file-card"><div class="fname">resolve.ts</div><div class="fdesc"><strong>계층 판정 + 명확화</strong><br/>resolveSection, presentClarify, buildSelectorPanel</div></div>
+    <div class="file-card"><div class="fname">clarify.ts</div><div class="fdesc"><strong>의도 분석</strong><br/>analyzeIntent, graphClarify, detectCostIntent, extractSpec</div></div>
+    <div class="file-card"><div class="fname">graph.ts</div><div class="fdesc"><strong>그래프 확장</strong><br/>expandGraph, searchIlwi, retrieveChunks, fetchLaborCosts</div></div>
+    <div class="file-card"><div class="fname">context.ts</div><div class="fdesc"><strong>응답 포맷팅</strong><br/>makeAnswerResponse, makeClarifyResponse</div></div>
+    <div class="file-card"><div class="fname">llm.ts</div><div class="fdesc"><strong>LLM 호출</strong><br/>generateAnswer, 시스템 프롬프트 관리</div></div>
+    <div class="file-card"><div class="fname">embedding.ts</div><div class="fdesc"><strong>임베딩 생성</strong><br/>Gemini text-embedding-004 호출</div></div>
+    <div class="file-card"><div class="fname">config.ts</div><div class="fdesc"><strong>설정</strong><br/>Supabase 클라이언트, CORS, Rate Limit</div></div>
+    <div class="file-card"><div class="fname">types.ts</div><div class="fdesc"><strong>타입 정의</strong><br/>EntityResult, ChatResponse, ClarifyOption 등</div></div>
+  </div>
+</section>
+
+<!-- ═══ 신규 패치 ═══ -->
+<section id="patch">
+  <h2><span class="num">🆕</span> 신규 패치 — 고아 섹션 필터링</h2>
+  <p class="subtitle">2026-03-09 적용 | 229개 빈 섹션으로 인한 라우팅 오류 해결</p>
+
+  <h3>문제</h3>
+  <div class="card">
+    <p>DB에 <strong>229개 "고아 섹션"</strong> 존재 — Section 엔티티만 있고 실제 chunk/WorkType이 없는 항목.</p>
+    <p>예: "3-3 현장 타설 콘크리트 라이닝" → chunk 0건, WorkType 0건</p>
+    <p>"콘크리트 타설 인력" 검색 시 이 고아 섹션이 상위에 노출 → 선택 시 "원문 없음" 오류.</p>
+  </div>
+
+  <h3>수정 내역 (3개 파일, 6개 변경점)</h3>
+  <table>
+    <thead><tr><th>파일</th><th>변경</th><th>효과</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>resolve.ts</code></td>
+        <td>관련성 점수에 -100점 감점<br/>multi_section/clarify 옵션에서 빈 섹션 필터링</td>
+        <td>검색 결과에서 빈 섹션 후순위</td>
+      </tr>
+      <tr>
+        <td><code>search.ts</code></td>
+        <td>벡터 검색 결과에서 chunk 없는 Section 유사도 -0.3 감산<br/>match_count 5→10</td>
+        <td>WorkType 우선 노출</td>
+      </tr>
+      <tr>
+        <td><code>index.ts</code></td>
+        <td>fullViewPipeline 빈 결과 시 WorkType 키워드 재검색<br/>searchPipeline sectionOnly 시 빈 섹션 필터 + 폴백</td>
+        <td>빈 결과 대신 실데이터 라우팅</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+</div>
+
+<footer>
+  <div class="container">
+    품셈 RAG 챗봇 알고리즘 가이드 — Edge Function v147 | 2026-03-10
+  </div>
+</footer>
+
+<script>mermaid.initialize({theme:'dark',themeVariables:{primaryColor:'#4f46e5',primaryTextColor:'#e2e8f0',primaryBorderColor:'#6366f1',lineColor:'#64748b',secondaryColor:'#1e1b4b',tertiaryColor:'#111827'}});</script>
+</body>
+</html>

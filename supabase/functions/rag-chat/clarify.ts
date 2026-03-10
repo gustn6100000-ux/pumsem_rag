@@ -227,8 +227,8 @@ export async function analyzeIntent(
                 model: "deepseek-chat",
                 messages: [
                     { role: "system", content: systemContent },
-                    // 최근 3턴만 전달 (토큰 절약)
-                    ...history.slice(-3).map(h => ({
+                    // Fix #11: generateAnswer와 동일하게 최근 5턴 전달 (맥락 일관성)
+                    ...history.slice(-5).map(h => ({
                         role: h.role === "user" ? "user" as const : "assistant" as const,
                         content: h.content,
                     })),
