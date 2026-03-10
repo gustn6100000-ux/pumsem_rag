@@ -192,14 +192,19 @@ NameMap = dict[tuple[str, str], str]  # (type, old_name) → new_name
 
 
 def make_entity_key(ent: dict) -> EntityKey:
-    """v1.2 키: type별 다른 그룹핑 전략."""
+    """v1.3 키: type별 다른 그룹핑 전략. sub_section 포함."""
     etype = ent["type"]
     norm = ent.get("normalized_name", ent["name"].replace(" ", "")).lower()
     spec = normalize_spec(ent.get("spec"))
+    sub = (ent.get("sub_section") or "").replace(" ", "").lower()
 
     if etype in ("WorkType", "Equipment", "Material"):
-        # Codex #2: spec 포함으로 과잉 병합 방지
-        return (etype, norm, spec.lower())
+        # Why: sub_section이 다른 동일 name+spec 엔티티(V형 vs U형)의
+        #      과잉 병합을 방지. step3의 _entity_key와 동일 전략.
+        parts = [etype, norm, spec.lower()]
+        if sub:
+            parts.append(sub)
+        return tuple(parts)
     elif etype == "Note":
         sid = ent.get("source_section_id", "unknown")
         return (etype, norm, sid)
@@ -221,8 +226,12 @@ def pick_representative(group: list[dict]) -> dict:
     rep = {**group[0]}
 
     # 모든 source_chunk_ids 수집
+    # Why: sub_section 있는 엔티티만의 chunk 수집하여 cross-type 참조 방지
     all_chunks = set()
+    has_sub = any(e.get("sub_section") for e in group)
     for e in group:
+        if has_sub and not e.get("sub_section"):
+            continue  # sub_section 없는 (잘못된 상속) 엔티티의 chunk 제외
         cid = e.get("source_chunk_id")
         if cid:
             all_chunks.add(cid)

@@ -76,11 +76,12 @@ def _rel_key(rel: dict) -> str:
 
 
 def _smart_inherit_sub_section(ent: dict, existing_map: dict[str, dict]) -> None:
-    """테이블 엔티티에 sub_section이 없을 때, 같은 name+spec의 LLM 엔티티로부터 상속.
+    """테이블 엔티티에 sub_section이 없을 때, 같은 chunk의 LLM 엔티티로부터 상속.
 
     Why: Step 2.1(테이블 규칙)은 sub_section을 추출하지 못하지만,
-         Step 2.2(LLM)가 같은 name+spec 조합에서 sub_section을 찾았다면
+         Step 2.2(LLM)가 같은 chunk에서 sub_section을 찾았다면
          중복 생성 대신 속성을 물려받아 데이터 일관성 보장.
+         같은 chunk 제약을 두어 다른 유형(V형↔U형)의 교차 오염 방지.
     """
     if ent.get("sub_section"):
         return  # 이미 있으면 스킵
@@ -88,17 +89,33 @@ def _smart_inherit_sub_section(ent: dict, existing_map: dict[str, dict]) -> None
     norm = ent.get("normalized_name", ent["name"].replace(" ", "")).lower()
     spec = str(ent.get("spec", "") or "").replace(" ", "").lower()
     etype = ent["type"]
+    ent_chunk = ent.get("source_chunk_id", "")
 
-    # existing_map의 키를 순회하며 name+spec 부분 일치 검색
+    # 1차: 같은 chunk에서 name+spec 일치 검색 (안전)
     for key, existing in existing_map.items():
         e_norm = existing.get("normalized_name", existing["name"].replace(" ", "")).lower()
         e_spec = str(existing.get("spec", "") or "").replace(" ", "").lower()
         e_sub = existing.get("sub_section", "")
+        e_chunk = existing.get("source_chunk_id", "")
 
-        if existing["type"] == etype and e_norm == norm and e_spec == spec and e_sub:
+        # Why: chunk가 다르면 다른 유형의 sub_section을 잘못 상속할 수 있음
+        if (existing["type"] == etype and e_norm == norm and e_spec == spec
+                and e_sub and e_chunk == ent_chunk):
             ent["sub_section"] = e_sub
             ent["sub_section_no"] = existing.get("sub_section_no", "")
             return
+
+    # 2차: chunk 무관하게 검색 (fallback — chunk간 병합 시에만)
+    if not ent_chunk:
+        for key, existing in existing_map.items():
+            e_norm = existing.get("normalized_name", existing["name"].replace(" ", "")).lower()
+            e_spec = str(existing.get("spec", "") or "").replace(" ", "").lower()
+            e_sub = existing.get("sub_section", "")
+
+            if existing["type"] == etype and e_norm == norm and e_spec == spec and e_sub:
+                ent["sub_section"] = e_sub
+                ent["sub_section_no"] = existing.get("sub_section_no", "")
+                return
 
 
 def merge_chunk_extractions(table_ext: dict | None, llm_ext: dict | None) -> dict:
