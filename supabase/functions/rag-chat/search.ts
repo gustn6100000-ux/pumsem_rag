@@ -37,6 +37,22 @@ const DOMAIN_SYNONYM_MAP: Record<string, string[]> = {
     "콘크리트": ["타설", "거푸집", "양생", "레미콘", "무근콘크리트", "철근콘크리트", "펌프카"],
     "포장": ["아스팔트", "콘크리트포장", "다짐", "표층", "기층", "보조기층", "아스콘", "택코트", "프라임코트"],
     "굴착": ["터파기", "되메우기", "토공", "잔토처리", "발파", "브레이카", "백호", "크롤러드릴", "굴삭기"],
+    // 4. 건축 마감 (Phase C 추가)
+    "보온": ["보온재", "단열", "단열재", "보온통", "이중보온관"],
+    "미장": ["몰탈", "모르타르", "좌바르기", "미장바르기"],
+    "조적": ["벽돌", "블록쌓기", "시멘트벽돌", "점토벽돌"],
+    "비계": ["강관비계", "시스템비계", "쌍줄비계", "외줄비계", "틀비계"],
+    // 5. 토목 기초 (Phase C 추가)
+    "가시설": ["흙막이", "토류벽", "엄지말뚝", "띠장", "버팀보", "흙막이판"],
+    "그라우팅": ["주입", "시멘트밀크", "약액주입", "충전", "그라우트"],
+    "앵커": ["지반앵커", "록볼트", "그라운드앵커", "인장재"],
+    "항타": ["파일", "말뚝", "기성말뚝", "현장타설말뚝", "PHC파일"],
+    "준설": ["그래브준설", "펌프준설", "커터준설", "흡입준설"],
+    // 6. 창호/유리/금속 (Phase C 추가)
+    "창호": ["알루미늄창호", "PVC창호", "강화유리", "복층유리"],
+    "유리": ["판유리", "강화유리", "복층유리", "접합유리"],
+    "수장": ["천장", "반자", "걸레받이", "몰딩"],
+    "난간": ["핸드레일", "가드레일", "안전난간"],
 };
 
 // ─── 질문에서 약칭 감지 → 확장 패턴 목록 반환 ───
@@ -132,6 +148,7 @@ export async function keywordFallbackSearch(question: string, specNumbers: strin
     const { data, error } = await supabase
         .from("graph_entities")
         .select("id, name, type, properties, source_section")
+        .eq("is_active", true)
         .in("type", ["WorkType", "Standard"])
         .or(orClauses.join(","))
         .limit(5);
@@ -317,6 +334,7 @@ export async function targetSearch(
         const { data } = await supabase
             .from("graph_entities")
             .select("id, name, type, properties, source_section")
+            .eq("is_active", true)
             .in("type", ["WorkType", "Section"])
             .or(`name.ilike.${pattern},properties->>"korean_alias".ilike.${pattern}`)
             .limit(5);
@@ -341,6 +359,7 @@ export async function targetSearch(
         const { data: fallback } = await supabase
             .from("graph_entities")
             .select("id, name, type, properties, source_section")
+            .eq("is_active", true)
             .in("type", ["WorkType", "Section"])
             .or(fallbackOrClauses)
             .limit(20);
@@ -357,6 +376,7 @@ export async function targetSearch(
             const { data: abbrData } = await supabase
                 .from("graph_entities")
                 .select("id, name, type, properties, source_section")
+                .eq("is_active", true)
                 .in("type", ["WorkType", "Section", "Standard"])
                 .or(abbrOrClauses)
                 .limit(5);
@@ -403,6 +423,7 @@ export async function targetSearch(
         const { data } = await supabase
             .from("graph_entities")
             .select("id, name, type, properties, source_section")
+            .eq("is_active", true)
             .in("type", ["WorkType", "Section"])
             .or(orClauses)
             .limit(50);
@@ -435,6 +456,7 @@ export async function targetSearch(
             const { data: wnData } = await supabase
                 .from("graph_entities")
                 .select("id, name, type, properties, source_section")
+                .eq("is_active", true)
                 .in("type", ["WorkType", "Section"])
                 .or(`name.ilike.${wnPattern},properties->>"korean_alias".ilike.${wnPattern}`)
                 .limit(20);
