@@ -426,11 +426,13 @@ async function fullViewPipeline(
     console.log(`[fullViewPipeline] base=${baseSectionId}, sub=${subKeyword || 'none'}, fullSub=${fullSubSection || 'none'} 전체 원문 조회`);
 
     // [1] 전체 chunk 로딩
+    // 💡 [핵심 패치] V, U, H, X형 청크들은 "13-2-4#U" 처럼 분리된 section_id를 가질 수 있음
+    // baseSectionId와 정확히 일치하거나, '#'으로 시작하는 하위 섹션 ID를 모두 로딩
     const { data: chunkData } = await supabase
         .from("graph_chunks")
         .select("id, section_id, title, department, chapter, section, text, tables")
-        .eq("section_id", baseSectionId)
-        .limit(20);
+        .or(`section_id.eq.${baseSectionId},section_id.ilike.${baseSectionId}#%`)
+        .limit(40);
 
     let allChunks = (chunkData || []) as any[];
 
