@@ -434,8 +434,10 @@ async function fullViewPipeline(
 
     let allChunks = (chunkData || []) as any[];
 
-    // [1-1] sub_section 필터
-    if (subKeyword && allChunks.length > 1) {
+    // [1-1] sub_section 필터 (sub_section 모드에서는 WT source_chunk_ids로 필터하므로 건너뜀)
+    // Why: C-0956-B~F처럼 text가 빈 chunk는 키워드 필터에서 탈락하여 데이터 누락.
+    //       WT source_chunk_ids 기반 필터(675행)가 더 정확하므로 fullSubSection 모드에서는 skip.
+    if (subKeyword && !fullSubSection && allChunks.length > 1) {
         const filtered = allChunks.filter(c =>
             (c.text && c.text.includes(subKeyword)) ||
             (c.tables && JSON.stringify(c.tables).includes(subKeyword))
