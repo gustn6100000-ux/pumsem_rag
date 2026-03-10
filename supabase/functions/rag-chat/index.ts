@@ -683,11 +683,30 @@ async function fullViewPipeline(
             }
         }
 
-        // C-0956-A(총괄 chunk, 보통 text만 있음) 제외하고 표 데이터 chunk만 사용
-        const targetChunkIds = [...wtChunkIds].filter(cid => cid !== allChunks[0]?.id || wtChunkIds.size === 1);
-        const targetChunks = targetChunkIds.length > 0
-            ? allChunks.filter(c => targetChunkIds.includes(c.id))
-            : allChunks; // 폴백
+        // 총괄/설명 chunk 제외: text에 다른 용접 유형명(V형, U형, H형 등)이 포함된 chunk는
+        // sub_section과 무관한 데이터이므로 제외. 이 chunk의 tables는 V형 등의 표를 담고 있음.
+        // Why: W-0525(Fillet 총괄)의 chunk_ids에 C-0956-A(V형 설명 chunk)가 포함되어
+        //      V형 3~6mm 데이터가 Fillet 컨텍스트에 혼입되는 문제 방지
+        const otherTypePatterns = ['V형', 'U형', 'H형', 'X형', 'K형', 'J형'];
+        const isDescriptionChunk = (c: any): boolean => {
+            const txt = c.text || '';
+            // text가 있고 다른 용접 유형을 언급하는 설명 chunk인지 확인
+            if (txt.length > 50 && otherTypePatterns.some(p => txt.includes(p))) {
+                // subKeyword와 동일 유형이 아닐 때만 제외
+                if (subKeyword && !otherTypePatterns.every(p => !subKeyword.includes(p) || !txt.includes(p))) {
+                    return false; // subKeyword 자체가 해당 유형이면 제외하지 않음
+                }
+                return true;
+            }
+            return false;
+        };
+
+        const targetChunkIds = [...wtChunkIds];
+        let targetChunks = targetChunkIds.length > 0
+            ? allChunks.filter(c => targetChunkIds.includes(c.id) && !isDescriptionChunk(c))
+            : allChunks;
+        // 폴백: 모두 제외되면 전체 사용
+        if (targetChunks.length === 0) targetChunks = allChunks.filter(c => targetChunkIds.includes(c.id));
 
         let hasChunkTables = false;
         for (const tc of targetChunks) {
