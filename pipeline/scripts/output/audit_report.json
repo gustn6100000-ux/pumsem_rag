@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-03-10T11:45:13.667999",
+  "generated_at": "2026-03-11T16:42:51.510312",
   "summary": {
-    "total_sections": 1153,
-    "pass": 163,
-    "info": 37,
-    "warn": 67,
-    "fail": 199,
-    "db_only": 687,
-    "cross_type_count": 1,
+    "total_sections": 1159,
+    "pass": 292,
+    "info": 34,
+    "warn": 53,
+    "fail": 87,
+    "db_only": 693,
+    "cross_type_count": 0,
     "total_md_rows": 14096,
-    "total_db_rows": 14029,
-    "overall_coverage_pct": 99.5
+    "total_db_rows": 20368,
+    "overall_coverage_pct": 144.5
   },
   "sections": [
     {
@@ -203,22 +203,22 @@
     {
       "section_id": "1-1-3",
       "title": "기본용접공수",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 10,
       "md_rows": 30,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
+      "db_tables": 7,
+      "db_rows": 27,
+      "coverage_pct": 90.0,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 30행 vs DB 0행 (coverage 0.0%)"
+          "type": "ROW_MINOR_DIFF",
+          "severity": "INFO",
+          "detail": "원본 30행 vs DB 27행 (coverage 90.0%)"
         },
         {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 10개 테이블이 있지만 DB에 0개"
+          "type": "TABLE_COUNT_DIFF",
+          "severity": "WARNING",
+          "detail": "원본 10개 vs DB 7개 테이블"
         }
       ]
     },
@@ -346,22 +346,22 @@
     {
       "section_id": "1-2-1",
       "title": "인력식 소규모장비 포설",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 13,
       "md_rows": 44,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
+      "db_tables": 6,
+      "db_rows": 35,
+      "coverage_pct": 79.5,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 44행 vs DB 0행 (coverage 0.0%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 44행 vs DB 35행 (coverage 79.5%)"
         },
         {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 13개 테이블이 있지만 DB에 0개"
+          "type": "TABLE_COUNT_DIFF",
+          "severity": "WARNING",
+          "detail": "원본 13개 vs DB 6개 테이블"
         }
       ]
     },
@@ -401,17 +401,17 @@
     {
       "section_id": "1-2-10",
       "title": "제초",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 8,
       "md_rows": 13,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
+      "db_tables": 6,
+      "db_rows": 13,
+      "coverage_pct": 100.0,
       "issues": [
         {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 8개 테이블/13행이 DB에 없음"
+          "type": "TABLE_COUNT_DIFF",
+          "severity": "WARNING",
+          "detail": "원본 8개 vs DB 6개 테이블"
         }
       ]
     },
@@ -429,24 +429,13 @@
     {
       "section_id": "1-2-12",
       "title": "예초",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 10,
       "md_rows": 19,
-      "db_tables": 4,
-      "db_rows": 8,
-      "coverage_pct": 42.1,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 19행 vs DB 8행 (coverage 42.1%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 10개 vs DB 4개 테이블"
-        }
-      ]
+      "db_tables": 9,
+      "db_rows": 22,
+      "coverage_pct": 115.8,
+      "issues": []
     },
     {
       "section_id": "1-2-13",
@@ -473,19 +462,13 @@
     {
       "section_id": "1-2-15",
       "title": "잔디시비",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 12,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 5개 테이블/12행이 DB에 없음"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 12,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-2-16",
@@ -523,41 +506,24 @@
     {
       "section_id": "1-2-19",
       "title": "은행나무 과실채취",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 10,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 5개 테이블/10행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 10,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-2-2",
       "title": "단위표준",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 15,
       "md_rows": 98,
-      "db_tables": 4,
-      "db_rows": 58,
-      "coverage_pct": 59.2,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 98행 vs DB 58행 (coverage 59.2%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 15개 vs DB 4개 테이블"
-        }
-      ]
+      "db_tables": 17,
+      "db_rows": 138,
+      "coverage_pct": 140.8,
+      "issues": []
     },
     {
       "section_id": "1-2-2#2",
@@ -711,22 +677,22 @@
     {
       "section_id": "1-2-5",
       "title": "인력",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 6,
       "md_rows": 24,
-      "db_tables": 1,
-      "db_rows": 5,
-      "coverage_pct": 20.8,
+      "db_tables": 4,
+      "db_rows": 16,
+      "coverage_pct": 66.7,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 24행 vs DB 5행 (coverage 20.8%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 24행 vs DB 16행 (coverage 66.7%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
+          "detail": "원본 6개 vs DB 4개 테이블"
         }
       ]
     },
@@ -755,22 +721,17 @@
     {
       "section_id": "1-2-6",
       "title": "공구 및 경장비",
-      "status": "FAIL",
+      "status": "INFO",
       "md_tables": 5,
       "md_rows": 14,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 21.4,
+      "db_tables": 4,
+      "db_rows": 12,
+      "coverage_pct": 85.7,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 14행 vs DB 3행 (coverage 21.4%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 5개 vs DB 1개 테이블"
+          "type": "ROW_MINOR_DIFF",
+          "severity": "INFO",
+          "detail": "원본 14행 vs DB 12행 (coverage 85.7%)"
         }
       ]
     },
@@ -788,24 +749,13 @@
     {
       "section_id": "1-2-7",
       "title": "운반",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 12,
       "md_rows": 53,
-      "db_tables": 7,
-      "db_rows": 39,
-      "coverage_pct": 73.6,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 53행 vs DB 39행 (coverage 73.6%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 12개 vs DB 7개 테이블"
-        }
-      ]
+      "db_tables": 17,
+      "db_rows": 81,
+      "coverage_pct": 152.8,
+      "issues": []
     },
     {
       "section_id": "1-2-7#2",
@@ -857,9 +807,9 @@
       "status": "PASS",
       "md_tables": 6,
       "md_rows": 34,
-      "db_tables": 6,
-      "db_rows": 37,
-      "coverage_pct": 108.8,
+      "db_tables": 12,
+      "db_rows": 71,
+      "coverage_pct": 208.8,
       "issues": []
     },
     {
@@ -920,24 +870,13 @@
     {
       "section_id": "1-3-1",
       "title": "재료의 할증",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 27,
       "md_rows": 202,
-      "db_tables": 24,
-      "db_rows": 162,
-      "coverage_pct": 80.2,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 202행 vs DB 162행 (coverage 80.2%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 27개 vs DB 24개 테이블"
-        }
-      ]
+      "db_tables": 50,
+      "db_rows": 352,
+      "coverage_pct": 174.3,
+      "issues": []
     },
     {
       "section_id": "1-3-1#2",
@@ -1096,36 +1035,24 @@
     {
       "section_id": "1-3-5",
       "title": "주름관 접합 및 배관",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 15,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/15행이 DB에 없음"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 15,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-3-6",
       "title": "콘크리트 단면복구",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 8,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 5개 테이블/8행이 DB에 없음"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 8,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-3-7",
@@ -1141,19 +1068,13 @@
     {
       "section_id": "1-3-8",
       "title": "교량받침 교체",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 37,
-      "db_tables": 7,
-      "db_rows": 31,
-      "coverage_pct": 83.8,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 37행 vs DB 31행 (coverage 83.8%)"
-        }
-      ]
+      "db_tables": 9,
+      "db_rows": 62,
+      "coverage_pct": 167.6,
+      "issues": []
     },
     {
       "section_id": "1-3-9",
@@ -1162,8 +1083,8 @@
       "md_tables": 1,
       "md_rows": 24,
       "db_tables": 3,
-      "db_rows": 24,
-      "coverage_pct": 100.0,
+      "db_rows": 40,
+      "coverage_pct": 166.7,
       "issues": []
     },
     {
@@ -1205,8 +1126,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 0,
-      "db_rows": 0,
+      "db_tables": 2,
+      "db_rows": 28,
       "coverage_pct": null,
       "issues": []
     },
@@ -1268,24 +1189,13 @@
     {
       "section_id": "1-4-2",
       "title": "수밀밴드 접합 및 배관",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 16,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 16행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 2개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 16,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-4-2#2",
@@ -1312,24 +1222,13 @@
     {
       "section_id": "1-4-3",
       "title": "작업지연",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 30,
-      "db_tables": 4,
-      "db_rows": 20,
-      "coverage_pct": 66.7,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 30행 vs DB 20행 (coverage 66.7%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 8개 vs DB 4개 테이블"
-        }
-      ]
+      "db_tables": 9,
+      "db_rows": 40,
+      "coverage_pct": 133.3,
+      "issues": []
     },
     {
       "section_id": "1-4-3#2",
@@ -1356,19 +1255,13 @@
     {
       "section_id": "1-4-4",
       "title": "지세/지형",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 9,
       "md_rows": 44,
-      "db_tables": 9,
-      "db_rows": 39,
-      "coverage_pct": 88.6,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 44행 vs DB 39행 (coverage 88.6%)"
-        }
-      ]
+      "db_tables": 16,
+      "db_rows": 79,
+      "coverage_pct": 179.5,
+      "issues": []
     },
     {
       "section_id": "1-4-4#2",
@@ -1511,24 +1404,13 @@
     {
       "section_id": "1-5-2",
       "title": "고무링 캡조임 접합 및 배관(일반 PVC)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 22,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 22행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 2개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 22,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-5-2#2",
@@ -1732,24 +1614,13 @@
     {
       "section_id": "1-5-9",
       "title": "시공측량비",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 22,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 22행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 3개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 22,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-5-9#2",
@@ -1787,19 +1658,13 @@
     {
       "section_id": "1-6-1",
       "title": "폴리부틸렌(PB) 일반접합 및 배관",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 10,
-      "db_tables": 1,
-      "db_rows": 5,
-      "coverage_pct": 50.0,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 10행 vs DB 5행 (coverage 50.0%)"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 15,
+      "coverage_pct": 150.0,
+      "issues": []
     },
     {
       "section_id": "1-6-1#2",
@@ -1835,8 +1700,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 2,
+      "db_tables": 4,
+      "db_rows": 11,
       "coverage_pct": null,
       "issues": []
     },
@@ -1904,19 +1769,13 @@
     {
       "section_id": "1-6-7",
       "title": "포장줄눈 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 14,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/14행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 14,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-7",
@@ -1960,24 +1819,13 @@
     {
       "section_id": "1-7-4",
       "title": "투수아스팔트 표층 기계포설(소형장비)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 16,
-      "db_tables": 1,
-      "db_rows": 7,
-      "coverage_pct": 43.8,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 16행 vs DB 7행 (coverage 43.8%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 16,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-7-5",
@@ -2070,41 +1918,24 @@
     {
       "section_id": "1-8-15",
       "title": "L형측구 설치(포설식)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 11,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 6개 테이블/11행이 DB에 없음"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 11,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-8-2",
       "title": "도로 표지판 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 11,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 27.3,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 11행 vs DB 3행 (coverage 27.3%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 11,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-8-4",
@@ -2120,22 +1951,22 @@
     {
       "section_id": "1-8-5",
       "title": "시선유도표지 설치",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 8,
       "md_rows": 11,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 18.2,
+      "db_tables": 4,
+      "db_rows": 7,
+      "coverage_pct": 63.6,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 11행 vs DB 2행 (coverage 18.2%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 11행 vs DB 7행 (coverage 63.6%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 8개 vs DB 1개 테이블"
+          "detail": "원본 8개 vs DB 4개 테이블"
         }
       ]
     },
@@ -2175,24 +2006,13 @@
     {
       "section_id": "1-8-9",
       "title": "차선도색",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 15,
       "md_rows": 33,
-      "db_tables": 8,
-      "db_rows": 19,
-      "coverage_pct": 57.6,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 33행 vs DB 19행 (coverage 57.6%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 15개 vs DB 8개 테이블"
-        }
-      ]
+      "db_tables": 29,
+      "db_rows": 69,
+      "coverage_pct": 209.1,
+      "issues": []
     },
     {
       "section_id": "1-9",
@@ -2230,19 +2050,13 @@
     {
       "section_id": "1-9-3",
       "title": "낙석방지책 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 17,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/17행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 17,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "1-9-4",
@@ -2324,24 +2138,13 @@
     {
       "section_id": "10-1-3",
       "title": "알루미늄창호 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 11,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 18.2,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 11행 vs DB 2행 (coverage 18.2%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 13,
+      "coverage_pct": 118.2,
+      "issues": []
     },
     {
       "section_id": "10-1-4",
@@ -2368,24 +2171,13 @@
     {
       "section_id": "10-2-1",
       "title": "알람밸브 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 9,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 9행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 5개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 9,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "10-2-2",
@@ -2393,19 +2185,19 @@
       "status": "FAIL",
       "md_tables": 5,
       "md_rows": 13,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 15.4,
+      "db_tables": 2,
+      "db_rows": 4,
+      "coverage_pct": 30.8,
       "issues": [
         {
           "type": "ROW_MISSING",
           "severity": "CRITICAL",
-          "detail": "원본 13행 vs DB 2행 (coverage 15.4%)"
+          "detail": "원본 13행 vs DB 4행 (coverage 30.8%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 5개 vs DB 1개 테이블"
+          "detail": "원본 5개 vs DB 2개 테이블"
         }
       ]
     },
@@ -2415,8 +2207,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 4,
+      "db_tables": 6,
+      "db_rows": 17,
       "coverage_pct": null,
       "issues": []
     },
@@ -2484,24 +2276,13 @@
     {
       "section_id": "10-3-2",
       "title": "커튼월유리 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 9,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 22.2,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 9행 vs DB 2행 (coverage 22.2%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 11,
+      "coverage_pct": 122.2,
+      "issues": []
     },
     {
       "section_id": "10-3-2#2",
@@ -2570,8 +2351,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 2,
+      "db_tables": 5,
+      "db_rows": 10,
       "coverage_pct": null,
       "issues": []
     },
@@ -2617,22 +2398,17 @@
     {
       "section_id": "10-5-1",
       "title": "압력공기탱크설치",
-      "status": "FAIL",
+      "status": "INFO",
       "md_tables": 7,
       "md_rows": 13,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 7.7,
+      "db_tables": 6,
+      "db_rows": 11,
+      "coverage_pct": 84.6,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 13행 vs DB 1행 (coverage 7.7%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 7개 vs DB 1개 테이블"
+          "type": "ROW_MINOR_DIFF",
+          "severity": "INFO",
+          "detail": "원본 13행 vs DB 11행 (coverage 84.6%)"
         }
       ]
     },
@@ -2672,24 +2448,13 @@
     {
       "section_id": "10-7-2",
       "title": "스프링클러 전기설비설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 10,
-      "db_tables": 1,
-      "db_rows": 4,
-      "coverage_pct": 40.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 10행 vs DB 4행 (coverage 40.0%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 7개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 10,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "10-8",
@@ -2727,19 +2492,13 @@
     {
       "section_id": "10-9-1",
       "title": "완강기 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 5,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 3개 테이블/5행이 DB에 없음"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 5,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "11-1",
@@ -2808,8 +2567,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 2,
-      "db_rows": 16,
+      "db_tables": 8,
+      "db_rows": 50,
       "coverage_pct": null,
       "issues": []
     },
@@ -2860,24 +2619,13 @@
     {
       "section_id": "11-1-6",
       "title": "비닐 보양",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 11,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 9.1,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 11행 vs DB 1행 (coverage 9.1%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 7개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 11,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "11-2",
@@ -2904,22 +2652,17 @@
     {
       "section_id": "11-2-1",
       "title": "버트 융착식 접합 및 부설",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 4,
       "md_rows": 15,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
+      "db_tables": 3,
+      "db_rows": 11,
+      "coverage_pct": 73.3,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 15행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 4개 테이블이 있지만 DB에 0개"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 15행 vs DB 11행 (coverage 73.3%)"
         }
       ]
     },
@@ -2937,24 +2680,13 @@
     {
       "section_id": "11-2-10",
       "title": "걸레받이용 페인트칠",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 10,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 10행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 7개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 10,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "11-2-2",
@@ -3080,22 +2812,17 @@
     {
       "section_id": "11-3-1",
       "title": "분기공 설치",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 2,
       "md_rows": 27,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
+      "db_tables": 1,
+      "db_rows": 15,
+      "coverage_pct": 55.6,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 27행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 2개 테이블이 있지만 DB에 0개"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 27행 vs DB 15행 (coverage 55.6%)"
         }
       ]
     },
@@ -3168,24 +2895,13 @@
     {
       "section_id": "11-3-4",
       "title": "원격식 가스미터 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 14,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 14행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 6개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 14,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "12-1",
@@ -3212,19 +2928,13 @@
     {
       "section_id": "12-1-2",
       "title": "플랜트 계기 설치",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 64,
-      "db_tables": 3,
-      "db_rows": 48,
-      "coverage_pct": 75.0,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 64행 vs DB 48행 (coverage 75.0%)"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 103,
+      "coverage_pct": 160.9,
+      "issues": []
     },
     {
       "section_id": "12-2",
@@ -3251,19 +2961,13 @@
     {
       "section_id": "12-2-2",
       "title": "계량기 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 30,
-      "db_tables": 1,
-      "db_rows": 9,
-      "coverage_pct": 30.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 30행 vs DB 9행 (coverage 30.0%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 30,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "12-2-3",
@@ -3279,19 +2983,13 @@
     {
       "section_id": "12-2-4",
       "title": "Control Air 배관",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 16,
-      "db_tables": 1,
-      "db_rows": 7,
-      "coverage_pct": 43.8,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 16행 vs DB 7행 (coverage 43.8%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 16,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "12-2-5",
@@ -3318,19 +3016,13 @@
     {
       "section_id": "12-3-1",
       "title": "중앙처리장치(CPU) 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 25,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 12.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 25행 vs DB 3행 (coverage 12.0%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 25,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "12-3-3",
@@ -3360,9 +3052,9 @@
       "status": "PASS",
       "md_tables": 16,
       "md_rows": 220,
-      "db_tables": 20,
-      "db_rows": 252,
-      "coverage_pct": 114.5,
+      "db_tables": 35,
+      "db_rows": 456,
+      "coverage_pct": 207.3,
       "issues": []
     },
     {
@@ -3371,9 +3063,9 @@
       "status": "PASS",
       "md_tables": 5,
       "md_rows": 55,
-      "db_tables": 18,
-      "db_rows": 56,
-      "coverage_pct": 101.8,
+      "db_tables": 22,
+      "db_rows": 108,
+      "coverage_pct": 196.4,
       "issues": []
     },
     {
@@ -3382,9 +3074,9 @@
       "status": "PASS",
       "md_tables": 2,
       "md_rows": 16,
-      "db_tables": 6,
-      "db_rows": 16,
-      "coverage_pct": 100.0,
+      "db_tables": 7,
+      "db_rows": 29,
+      "coverage_pct": 181.2,
       "issues": []
     },
     {
@@ -3393,9 +3085,9 @@
       "status": "PASS",
       "md_tables": 2,
       "md_rows": 23,
-      "db_tables": 6,
-      "db_rows": 23,
-      "coverage_pct": 100.0,
+      "db_tables": 7,
+      "db_rows": 43,
+      "coverage_pct": 187.0,
       "issues": []
     },
     {
@@ -3404,9 +3096,9 @@
       "status": "PASS",
       "md_tables": 5,
       "md_rows": 62,
-      "db_tables": 20,
-      "db_rows": 62,
-      "coverage_pct": 100.0,
+      "db_tables": 24,
+      "db_rows": 120,
+      "coverage_pct": 193.5,
       "issues": []
     },
     {
@@ -3423,19 +3115,13 @@
     {
       "section_id": "13-1-7",
       "title": "장거리 배관",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 21,
-      "db_tables": 1,
-      "db_rows": 13,
-      "coverage_pct": 61.9,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 21행 vs DB 13행 (coverage 61.9%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 21,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-1-8",
@@ -3443,9 +3129,9 @@
       "status": "PASS",
       "md_tables": 5,
       "md_rows": 59,
-      "db_tables": 9,
-      "db_rows": 60,
-      "coverage_pct": 101.7,
+      "db_tables": 12,
+      "db_rows": 106,
+      "coverage_pct": 179.7,
       "issues": []
     },
     {
@@ -3528,19 +3214,13 @@
     {
       "section_id": "13-11-2",
       "title": "Cooling Tower 설치",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 21,
-      "db_tables": 2,
-      "db_rows": 14,
-      "coverage_pct": 66.7,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 21행 vs DB 14행 (coverage 66.7%)"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 21,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-11-3",
@@ -3628,19 +3308,85 @@
     {
       "section_id": "13-2-4",
       "title": "강판 전기아크용접",
-      "status": "WARN",
+      "status": "FAIL",
       "md_tables": 5,
       "md_rows": 53,
-      "db_tables": 18,
-      "db_rows": 66,
-      "coverage_pct": 124.5,
+      "db_tables": 0,
+      "db_rows": 0,
+      "coverage_pct": 0.0,
       "issues": [
         {
-          "type": "CROSS_TYPE",
-          "severity": "WARNING",
-          "detail": "chunk C-0956-D에 다른 헤더 유형 혼재: {'한면양면', 'V형_하횡입'}"
+          "type": "SECTION_MISSING",
+          "severity": "CRITICAL",
+          "detail": "원본 5개 테이블/53행이 DB에 없음"
         }
       ]
+    },
+    {
+      "section_id": "13-2-4#Fillet",
+      "title": "강판 전기아크용접",
+      "status": "DB_ONLY",
+      "md_tables": 0,
+      "md_rows": 0,
+      "db_tables": 3,
+      "db_rows": 21,
+      "coverage_pct": null,
+      "issues": []
+    },
+    {
+      "section_id": "13-2-4#Gouging",
+      "title": "강판 전기아크용접",
+      "status": "DB_ONLY",
+      "md_tables": 0,
+      "md_rows": 0,
+      "db_tables": 1,
+      "db_rows": 6,
+      "coverage_pct": null,
+      "issues": []
+    },
+    {
+      "section_id": "13-2-4#H",
+      "title": "강판 전기아크용접",
+      "status": "DB_ONLY",
+      "md_tables": 0,
+      "md_rows": 0,
+      "db_tables": 4,
+      "db_rows": 23,
+      "coverage_pct": null,
+      "issues": []
+    },
+    {
+      "section_id": "13-2-4#U",
+      "title": "강판 전기아크용접",
+      "status": "DB_ONLY",
+      "md_tables": 0,
+      "md_rows": 0,
+      "db_tables": 2,
+      "db_rows": 17,
+      "coverage_pct": null,
+      "issues": []
+    },
+    {
+      "section_id": "13-2-4#V",
+      "title": "강판 전기아크용접",
+      "status": "DB_ONLY",
+      "md_tables": 0,
+      "md_rows": 0,
+      "db_tables": 5,
+      "db_rows": 27,
+      "coverage_pct": null,
+      "issues": []
+    },
+    {
+      "section_id": "13-2-4#X",
+      "title": "강판 전기아크용접",
+      "status": "DB_ONLY",
+      "md_tables": 0,
+      "md_rows": 0,
+      "db_tables": 3,
+      "db_rows": 17,
+      "coverage_pct": null,
+      "issues": []
     },
     {
       "section_id": "13-2-5",
@@ -3670,9 +3416,9 @@
       "status": "PASS",
       "md_tables": 5,
       "md_rows": 90,
-      "db_tables": 21,
-      "db_rows": 92,
-      "coverage_pct": 102.2,
+      "db_tables": 25,
+      "db_rows": 177,
+      "coverage_pct": 196.7,
       "issues": []
     },
     {
@@ -3722,19 +3468,13 @@
     {
       "section_id": "13-4-1",
       "title": "보통 철골재",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 17,
-      "db_tables": 2,
-      "db_rows": 11,
-      "coverage_pct": 64.7,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 17행 vs DB 11행 (coverage 64.7%)"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 22,
+      "coverage_pct": 129.4,
+      "issues": []
     },
     {
       "section_id": "13-4-2",
@@ -3783,19 +3523,13 @@
     {
       "section_id": "13-4-7",
       "title": "탱크청소",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 15,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 3개 테이블/15행이 DB에 없음"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 15,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-5",
@@ -3858,9 +3592,9 @@
       "status": "PASS",
       "md_tables": 4,
       "md_rows": 28,
-      "db_tables": 4,
-      "db_rows": 28,
-      "coverage_pct": 100.0,
+      "db_tables": 7,
+      "db_rows": 50,
+      "coverage_pct": 178.6,
       "issues": []
     },
     {
@@ -3877,19 +3611,13 @@
     {
       "section_id": "13-5-2",
       "title": "보일러 드럼 설치",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 63,
-      "db_tables": 10,
-      "db_rows": 50,
-      "coverage_pct": 79.4,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 63행 vs DB 50행 (coverage 79.4%)"
-        }
-      ]
+      "db_tables": 16,
+      "db_rows": 105,
+      "coverage_pct": 166.7,
+      "issues": []
     },
     {
       "section_id": "13-5-3",
@@ -3916,19 +3644,13 @@
     {
       "section_id": "13-5-5",
       "title": "공기예열기(Preheater) 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 26,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/26행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 26,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-5-6",
@@ -4101,9 +3823,9 @@
       "status": "PASS",
       "md_tables": 7,
       "md_rows": 94,
-      "db_tables": 7,
-      "db_rows": 94,
-      "coverage_pct": 100.0,
+      "db_tables": 11,
+      "db_rows": 128,
+      "coverage_pct": 136.2,
       "issues": []
     },
     {
@@ -4186,19 +3908,13 @@
     {
       "section_id": "13-7-1",
       "title": "고로본체 및 부속기기 설치",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 14,
-      "db_tables": 1,
-      "db_rows": 8,
-      "coverage_pct": 57.1,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 14행 vs DB 8행 (coverage 57.1%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 14,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-7-10",
@@ -4214,19 +3930,13 @@
     {
       "section_id": "13-7-11",
       "title": "내화물(제철축로) 쌓기",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 23,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 2개 테이블/23행이 DB에 없음"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 23,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-7-12",
@@ -4234,8 +3944,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 2,
+      "db_tables": 3,
+      "db_rows": 16,
       "coverage_pct": null,
       "issues": []
     },
@@ -4253,24 +3963,13 @@
     {
       "section_id": "13-7-14",
       "title": "혼선로 및 전로 본체 조립 설치",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 18,
-      "db_tables": 2,
-      "db_rows": 13,
-      "coverage_pct": 72.2,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 18행 vs DB 13행 (coverage 72.2%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 5개 vs DB 2개 테이블"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 18,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-7-16",
@@ -4336,19 +4035,13 @@
     {
       "section_id": "13-7-20",
       "title": "Roller Table 조립설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 17,
-      "db_tables": 1,
-      "db_rows": 8,
-      "coverage_pct": 47.1,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 17행 vs DB 8행 (coverage 47.1%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 17,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-7-21",
@@ -4375,22 +4068,17 @@
     {
       "section_id": "13-7-3",
       "title": "노체 4본주 및 DECK 설치",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 3,
       "md_rows": 18,
-      "db_tables": 1,
-      "db_rows": 8,
-      "coverage_pct": 44.4,
+      "db_tables": 2,
+      "db_rows": 9,
+      "coverage_pct": 50.0,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 18행 vs DB 8행 (coverage 44.4%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
+          "type": "ROW_PARTIAL",
           "severity": "WARNING",
-          "detail": "원본 3개 vs DB 1개 테이블"
+          "detail": "원본 18행 vs DB 9행 (coverage 50.0%)"
         }
       ]
     },
@@ -4408,19 +4096,13 @@
     {
       "section_id": "13-7-5",
       "title": "열풍로 DECK 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 17,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 3개 테이블/17행이 DB에 없음"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 17,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-7-6",
@@ -4436,19 +4118,13 @@
     {
       "section_id": "13-7-7",
       "title": "Edge Mill 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 17,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 3개 테이블/17행이 DB에 없음"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 17,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-7-8",
@@ -4464,19 +4140,13 @@
     {
       "section_id": "13-7-9",
       "title": "Ventri Scrubber 본체 및 부속설비 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 17,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 3개 테이블/17행이 DB에 없음"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 17,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-8",
@@ -4501,9 +4171,9 @@
       "status": "PASS",
       "md_tables": 3,
       "md_rows": 41,
-      "db_tables": 4,
-      "db_rows": 43,
-      "coverage_pct": 104.9,
+      "db_tables": 7,
+      "db_rows": 60,
+      "coverage_pct": 146.3,
       "issues": []
     },
     {
@@ -4512,9 +4182,9 @@
       "status": "PASS",
       "md_tables": 1,
       "md_rows": 29,
-      "db_tables": 2,
-      "db_rows": 29,
-      "coverage_pct": 100.0,
+      "db_tables": 5,
+      "db_rows": 46,
+      "coverage_pct": 158.6,
       "issues": []
     },
     {
@@ -4531,19 +4201,13 @@
     {
       "section_id": "13-8-4",
       "title": "반건식 반응탑 설치",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 21,
-      "db_tables": 1,
-      "db_rows": 14,
-      "coverage_pct": 66.7,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 21행 vs DB 14행 (coverage 66.7%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 21,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "13-8-5",
@@ -4606,19 +4270,14 @@
       "status": "WARN",
       "md_tables": 5,
       "md_rows": 10,
-      "db_tables": 2,
-      "db_rows": 7,
-      "coverage_pct": 70.0,
+      "db_tables": 3,
+      "db_rows": 10,
+      "coverage_pct": 100.0,
       "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 10행 vs DB 7행 (coverage 70.0%)"
-        },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 5개 vs DB 2개 테이블"
+          "detail": "원본 5개 vs DB 3개 테이블"
         }
       ]
     },
@@ -4636,22 +4295,22 @@
     {
       "section_id": "13-9-4",
       "title": "오수처리시설 설치",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 6,
       "md_rows": 11,
-      "db_tables": 3,
-      "db_rows": 5,
-      "coverage_pct": 45.5,
+      "db_tables": 4,
+      "db_rows": 7,
+      "coverage_pct": 63.6,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 11행 vs DB 5행 (coverage 45.5%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 11행 vs DB 7행 (coverage 63.6%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 6개 vs DB 3개 테이블"
+          "detail": "원본 6개 vs DB 4개 테이블"
         }
       ]
     },
@@ -4818,19 +4477,13 @@
     {
       "section_id": "2-1-15",
       "title": "차선도색",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 9,
       "md_rows": 28,
-      "db_tables": 8,
-      "db_rows": 24,
-      "coverage_pct": 85.7,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 28행 vs DB 24행 (coverage 85.7%)"
-        }
-      ]
+      "db_tables": 15,
+      "db_rows": 49,
+      "coverage_pct": 175.0,
+      "issues": []
     },
     {
       "section_id": "2-1-16",
@@ -4857,24 +4510,13 @@
     {
       "section_id": "2-1-18",
       "title": "표면평탄작업",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 9,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 33.3,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 9행 vs DB 3행 (coverage 33.3%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 3개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 12,
+      "coverage_pct": 133.3,
+      "issues": []
     },
     {
       "section_id": "2-1-19",
@@ -4956,19 +4598,13 @@
     {
       "section_id": "2-1-20",
       "title": "재래난간 철거공",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 15,
-      "db_tables": 1,
-      "db_rows": 8,
-      "coverage_pct": 53.3,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 15행 vs DB 8행 (coverage 53.3%)"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 23,
+      "coverage_pct": 153.3,
+      "issues": []
     },
     {
       "section_id": "2-1-21",
@@ -4984,19 +4620,13 @@
     {
       "section_id": "2-1-22",
       "title": "교통 안전표지판 교체",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 10,
-      "db_tables": 3,
-      "db_rows": 7,
-      "coverage_pct": 70.0,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 10행 vs DB 7행 (coverage 70.0%)"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 10,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-1-23",
@@ -5023,24 +4653,13 @@
     {
       "section_id": "2-1-26",
       "title": "시선유도표지 철거",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 14,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 14행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 6개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 14,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-1-27",
@@ -5056,41 +4675,24 @@
     {
       "section_id": "2-1-28",
       "title": "보도용 블록 장비사용 철거",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 12,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 5개 테이블/12행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 12,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-1-3",
       "title": "아치쌓기",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 27,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 7.4,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 27행 vs DB 2행 (coverage 7.4%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 5개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 29,
+      "coverage_pct": 107.4,
+      "issues": []
     },
     {
       "section_id": "2-1-3#3",
@@ -5168,24 +4770,13 @@
     {
       "section_id": "2-1-34",
       "title": "가드레일 철거",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 12,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 12행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 3개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 29,
+      "coverage_pct": 241.7,
+      "issues": []
     },
     {
       "section_id": "2-1-4",
@@ -5262,19 +4853,13 @@
     {
       "section_id": "2-1-6",
       "title": "아스팔트 절삭 및 덧씌우기",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 22,
-      "db_tables": 1,
-      "db_rows": 5,
-      "coverage_pct": 22.7,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 22행 vs DB 5행 (coverage 22.7%)"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 27,
+      "coverage_pct": 122.7,
+      "issues": []
     },
     {
       "section_id": "2-1-6#2",
@@ -5301,19 +4886,13 @@
     {
       "section_id": "2-1-8",
       "title": "소파보수(표층)",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 10,
       "md_rows": 26,
-      "db_tables": 9,
-      "db_rows": 17,
-      "coverage_pct": 65.4,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 26행 vs DB 17행 (coverage 65.4%)"
-        }
-      ]
+      "db_tables": 13,
+      "db_rows": 37,
+      "coverage_pct": 142.3,
+      "issues": []
     },
     {
       "section_id": "2-1-9",
@@ -5351,19 +4930,13 @@
     {
       "section_id": "2-10-2",
       "title": "방진망 설치 및 해체",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 13,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 8개 테이블/13행이 DB에 없음"
-        }
-      ]
+      "db_tables": 8,
+      "db_rows": 13,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-10-3",
@@ -5423,24 +4996,13 @@
     {
       "section_id": "2-11-2",
       "title": "건축물 현장정리",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 12,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 8.3,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 12행 vs DB 1행 (coverage 8.3%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 13,
+      "coverage_pct": 108.3,
+      "issues": []
     },
     {
       "section_id": "2-11-3",
@@ -5478,19 +5040,13 @@
     {
       "section_id": "2-11-6",
       "title": "자동세륜기 설치 및 해체",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 7,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 7개 테이블/7행이 DB에 없음"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 7,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-11-7",
@@ -5517,22 +5073,22 @@
     {
       "section_id": "2-11-9",
       "title": "지능형 출입관리 설치 및 해체",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 4,
       "md_rows": 8,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 37.5,
+      "db_tables": 2,
+      "db_rows": 5,
+      "coverage_pct": 62.5,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 8행 vs DB 3행 (coverage 37.5%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 8행 vs DB 5행 (coverage 62.5%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
+          "detail": "원본 4개 vs DB 2개 테이블"
         }
       ]
     },
@@ -5572,19 +5128,13 @@
     {
       "section_id": "2-12-3",
       "title": "축중계 설치 및 해체",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 10,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 6개 테이블/10행이 DB에 없음"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 10,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-12-4",
@@ -5592,9 +5142,9 @@
       "status": "PASS",
       "md_tables": 6,
       "md_rows": 35,
-      "db_tables": 6,
-      "db_rows": 35,
-      "coverage_pct": 100.0,
+      "db_tables": 11,
+      "db_rows": 62,
+      "coverage_pct": 177.1,
       "issues": []
     },
     {
@@ -5716,19 +5266,13 @@
     {
       "section_id": "2-2-11",
       "title": "도상자갈철거(기계)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 18,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/18행이 DB에 없음"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 18,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-2-12",
@@ -5772,19 +5316,13 @@
     {
       "section_id": "2-2-15",
       "title": "목침목 탄성체결장치 철거",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 11,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/11행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 11,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-2-2",
@@ -5869,8 +5407,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 4,
+      "db_tables": 9,
+      "db_rows": 54,
       "coverage_pct": null,
       "issues": []
     },
@@ -5960,22 +5498,22 @@
     {
       "section_id": "2-2-6",
       "title": "제연댐퍼 설치",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 11,
       "md_rows": 37,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 2.7,
+      "db_tables": 8,
+      "db_rows": 28,
+      "coverage_pct": 75.7,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 37행 vs DB 1행 (coverage 2.7%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 37행 vs DB 28행 (coverage 75.7%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 11개 vs DB 1개 테이블"
+          "detail": "원본 11개 vs DB 8개 테이블"
         }
       ]
     },
@@ -6004,22 +5542,22 @@
     {
       "section_id": "2-2-7",
       "title": "규준틀",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 6,
       "md_rows": 16,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 6.2,
+      "db_tables": 4,
+      "db_rows": 15,
+      "coverage_pct": 93.8,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 16행 vs DB 1행 (coverage 6.2%)"
+          "type": "ROW_MINOR_DIFF",
+          "severity": "INFO",
+          "detail": "원본 16행 vs DB 15행 (coverage 93.8%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
+          "detail": "원본 6개 vs DB 4개 테이블"
         }
       ]
     },
@@ -6037,19 +5575,13 @@
     {
       "section_id": "2-2-8",
       "title": "분기기교환(인력)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 17,
-      "db_tables": 1,
-      "db_rows": 8,
-      "coverage_pct": 47.1,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 17행 vs DB 8행 (coverage 47.1%)"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 25,
+      "coverage_pct": 147.1,
+      "issues": []
     },
     {
       "section_id": "2-2-9",
@@ -6109,22 +5641,22 @@
     {
       "section_id": "2-3-1",
       "title": "식생매트 설치",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 7,
       "md_rows": 23,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 13.0,
+      "db_tables": 5,
+      "db_rows": 15,
+      "coverage_pct": 65.2,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 23행 vs DB 3행 (coverage 13.0%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 23행 vs DB 15행 (coverage 65.2%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 7개 vs DB 1개 테이블"
+          "detail": "원본 7개 vs DB 5개 테이블"
         }
       ]
     },
@@ -6280,24 +5812,13 @@
     {
       "section_id": "2-4-10",
       "title": "빗물받이 준설(흡입식)",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 13,
-      "db_tables": 4,
-      "db_rows": 7,
-      "coverage_pct": 53.8,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 13행 vs DB 7행 (coverage 53.8%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 8개 vs DB 4개 테이블"
-        }
-      ]
+      "db_tables": 8,
+      "db_rows": 13,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-4-11",
@@ -6313,19 +5834,13 @@
     {
       "section_id": "2-4-12",
       "title": "주철관 철거",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 11,
-      "db_tables": 1,
-      "db_rows": 7,
-      "coverage_pct": 63.6,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 11행 vs DB 7행 (coverage 63.6%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 11,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-4-13",
@@ -6341,24 +5856,13 @@
     {
       "section_id": "2-4-2",
       "title": "하수관 세정",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 13,
-      "db_tables": 1,
-      "db_rows": 4,
-      "coverage_pct": 30.8,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 13행 vs DB 4행 (coverage 30.8%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 17,
+      "coverage_pct": 130.8,
+      "issues": []
     },
     {
       "section_id": "2-4-3",
@@ -6391,24 +5895,13 @@
     {
       "section_id": "2-4-4",
       "title": "세로형 가설방음판 설치 및 해체",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 8,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 25.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 8행 vs DB 2행 (coverage 25.0%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 3개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 10,
+      "coverage_pct": 125.0,
+      "issues": []
     },
     {
       "section_id": "2-4-4#2",
@@ -6479,24 +5972,13 @@
     {
       "section_id": "2-4-8",
       "title": "하수도 수로암거 준설(흡입식)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 14,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 14행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 6개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 14,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-4-9",
@@ -6534,22 +6016,17 @@
     {
       "section_id": "2-5-2",
       "title": "도로용 목재 수평규준틀 설치 및 철거",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 4,
       "md_rows": 8,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 25.0,
+      "db_tables": 3,
+      "db_rows": 6,
+      "coverage_pct": 75.0,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 8행 vs DB 2행 (coverage 25.0%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
+          "type": "ROW_PARTIAL",
           "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
+          "detail": "원본 8행 vs DB 6행 (coverage 75.0%)"
         }
       ]
     },
@@ -6567,19 +6044,13 @@
     {
       "section_id": "2-5-4",
       "title": "평･귀규준틀 설치 및 철거",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 5,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 60.0,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 5행 vs DB 3행 (coverage 60.0%)"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 8,
+      "coverage_pct": 160.0,
+      "issues": []
     },
     {
       "section_id": "2-6",
@@ -6617,19 +6088,13 @@
     {
       "section_id": "2-6-5",
       "title": "잭서포트 설치 및 해체",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 9,
       "md_rows": 16,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 9개 테이블/16행이 DB에 없음"
-        }
-      ]
+      "db_tables": 9,
+      "db_rows": 16,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-7",
@@ -6711,22 +6176,22 @@
     {
       "section_id": "2-7-6",
       "title": "타워형 가설 계단 설치 및 해체",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 5,
       "md_rows": 17,
-      "db_tables": 2,
-      "db_rows": 4,
-      "coverage_pct": 23.5,
+      "db_tables": 3,
+      "db_rows": 13,
+      "coverage_pct": 76.5,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 17행 vs DB 4행 (coverage 23.5%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 17행 vs DB 13행 (coverage 76.5%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 5개 vs DB 2개 테이블"
+          "detail": "원본 5개 vs DB 3개 테이블"
         }
       ]
     },
@@ -6755,17 +6220,17 @@
     {
       "section_id": "2-8-11",
       "title": "계단난간대 설치 및 해체",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 10,
       "md_rows": 13,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
+      "db_tables": 8,
+      "db_rows": 13,
+      "coverage_pct": 100.0,
       "issues": [
         {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 10개 테이블/13행이 DB에 없음"
+          "type": "TABLE_COUNT_DIFF",
+          "severity": "WARNING",
+          "detail": "원본 10개 vs DB 8개 테이블"
         }
       ]
     },
@@ -6783,22 +6248,17 @@
     {
       "section_id": "2-8-14",
       "title": "엘리베이터 추락방호망 설치 및 해체",
-      "status": "FAIL",
+      "status": "INFO",
       "md_tables": 7,
       "md_rows": 9,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 11.1,
+      "db_tables": 6,
+      "db_rows": 8,
+      "coverage_pct": 88.9,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 9행 vs DB 1행 (coverage 11.1%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 7개 vs DB 1개 테이블"
+          "type": "ROW_MINOR_DIFF",
+          "severity": "INFO",
+          "detail": "원본 9행 vs DB 8행 (coverage 88.9%)"
         }
       ]
     },
@@ -6871,19 +6331,13 @@
     {
       "section_id": "2-8-4",
       "title": "교량 방호선반 설치 및 해체",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 13,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/13행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 13,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-8-5",
@@ -6910,19 +6364,13 @@
     {
       "section_id": "2-8-7",
       "title": "비계주위 보호망 설치 및 해체",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 13,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 6개 테이블/13행이 DB에 없음"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 13,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-8-8",
@@ -6952,41 +6400,41 @@
       "status": "FAIL",
       "md_tables": 5,
       "md_rows": 7,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 14.3,
+      "db_tables": 2,
+      "db_rows": 2,
+      "coverage_pct": 28.6,
       "issues": [
         {
           "type": "ROW_MISSING",
           "severity": "CRITICAL",
-          "detail": "원본 7행 vs DB 1행 (coverage 14.3%)"
+          "detail": "원본 7행 vs DB 2행 (coverage 28.6%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 5개 vs DB 1개 테이블"
+          "detail": "원본 5개 vs DB 2개 테이블"
         }
       ]
     },
     {
       "section_id": "2-9-10",
       "title": "점멸등 설치 및 해체",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 7,
       "md_rows": 11,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 9.1,
+      "db_tables": 5,
+      "db_rows": 8,
+      "coverage_pct": 72.7,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 11행 vs DB 1행 (coverage 9.1%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 11행 vs DB 8행 (coverage 72.7%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 7개 vs DB 1개 테이블"
+          "detail": "원본 7개 vs DB 5개 테이블"
         }
       ]
     },
@@ -6996,8 +6444,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 1,
+      "db_tables": 2,
+      "db_rows": 2,
       "coverage_pct": null,
       "issues": []
     },
@@ -7048,24 +6496,13 @@
     {
       "section_id": "2-9-5",
       "title": "PE가설방호벽 설치 및 해체",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 9,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 22.2,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 9행 vs DB 2행 (coverage 22.2%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 9,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "2-9-6",
@@ -7285,19 +6722,13 @@
     {
       "section_id": "3-1-4",
       "title": "철골재 철거(기계)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 12,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 5개 테이블/12행이 DB에 없음"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 12,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "3-1-5",
@@ -7335,19 +6766,13 @@
     {
       "section_id": "3-11-1",
       "title": "머신 가이던스(MG) 굴착기",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 14,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/14행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 14,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "3-11-2",
@@ -7374,22 +6799,17 @@
     {
       "section_id": "3-11-4",
       "title": "머신 컨트롤(MC) 불도우저",
-      "status": "FAIL",
+      "status": "INFO",
       "md_tables": 5,
       "md_rows": 13,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 7.7,
+      "db_tables": 4,
+      "db_rows": 12,
+      "coverage_pct": 92.3,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 13행 vs DB 1행 (coverage 7.7%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 5개 vs DB 1개 테이블"
+          "type": "ROW_MINOR_DIFF",
+          "severity": "INFO",
+          "detail": "원본 13행 vs DB 12행 (coverage 92.3%)"
         }
       ]
     },
@@ -7487,8 +6907,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 2,
-      "db_rows": 10,
+      "db_tables": 12,
+      "db_rows": 69,
       "coverage_pct": null,
       "issues": []
     },
@@ -7506,24 +6926,13 @@
     {
       "section_id": "3-2-11",
       "title": "기존방수층 제거 및 바탕처리",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 12,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 16.7,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 12행 vs DB 2행 (coverage 16.7%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 12,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "3-2-12",
@@ -7715,24 +7124,13 @@
     {
       "section_id": "3-2-5",
       "title": "터널굴착 1발파당 작업인원",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 15,
-      "db_tables": 2,
-      "db_rows": 6,
-      "coverage_pct": 40.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 15행 vs DB 6행 (coverage 40.0%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 5개 vs DB 2개 테이블"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 21,
+      "coverage_pct": 140.0,
+      "issues": []
     },
     {
       "section_id": "3-2-5#2",
@@ -7748,22 +7146,22 @@
     {
       "section_id": "3-2-7",
       "title": "도배 해체",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 4,
       "md_rows": 6,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 33.3,
+      "db_tables": 2,
+      "db_rows": 3,
+      "coverage_pct": 50.0,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 6행 vs DB 2행 (coverage 33.3%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 6행 vs DB 3행 (coverage 50.0%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
+          "detail": "원본 4개 vs DB 2개 테이블"
         }
       ]
     },
@@ -7839,8 +7237,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 6,
+      "db_tables": 7,
+      "db_rows": 29,
       "coverage_pct": null,
       "issues": []
     },
@@ -8048,8 +7446,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 2,
+      "db_tables": 12,
+      "db_rows": 33,
       "coverage_pct": null,
       "issues": []
     },
@@ -8191,8 +7589,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 0,
-      "db_rows": 0,
+      "db_tables": 5,
+      "db_rows": 10,
       "coverage_pct": null,
       "issues": []
     },
@@ -8309,24 +7707,13 @@
     {
       "section_id": "3-7-1",
       "title": "프리캐스트 콘크리트 블록설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 10,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 10행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 5개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 10,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "3-7-2",
@@ -8353,24 +7740,13 @@
     {
       "section_id": "3-7-4",
       "title": "절토사면 녹화",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 12,
       "md_rows": 42,
-      "db_tables": 5,
-      "db_rows": 23,
-      "coverage_pct": 54.8,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 42행 vs DB 23행 (coverage 54.8%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 12개 vs DB 5개 테이블"
-        }
-      ]
+      "db_tables": 17,
+      "db_rows": 51,
+      "coverage_pct": 121.4,
+      "issues": []
     },
     {
       "section_id": "3-7-5",
@@ -8397,22 +7773,22 @@
     {
       "section_id": "3-8-1",
       "title": "패널 설치",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 4,
       "md_rows": 14,
-      "db_tables": 1,
-      "db_rows": 5,
-      "coverage_pct": 35.7,
+      "db_tables": 2,
+      "db_rows": 7,
+      "coverage_pct": 50.0,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 14행 vs DB 5행 (coverage 35.7%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 14행 vs DB 7행 (coverage 50.0%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
+          "detail": "원본 4개 vs DB 2개 테이블"
         }
       ]
     },
@@ -8430,24 +7806,13 @@
     {
       "section_id": "3-8-4",
       "title": "뒤채움 및 다짐",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 14,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 14행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 6개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 14,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "3-9",
@@ -8621,8 +7986,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 6,
+      "db_tables": 3,
+      "db_rows": 24,
       "coverage_pct": null,
       "issues": []
     },
@@ -8632,8 +7997,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 3,
+      "db_tables": 4,
+      "db_rows": 37,
       "coverage_pct": null,
       "issues": []
     },
@@ -8715,8 +8080,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 2,
-      "db_rows": 14,
+      "db_tables": 11,
+      "db_rows": 45,
       "coverage_pct": null,
       "issues": []
     },
@@ -8767,24 +8132,13 @@
     {
       "section_id": "4-1-7",
       "title": "일반기계설비 철거 및 이설",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 17,
-      "db_tables": 1,
-      "db_rows": 8,
-      "coverage_pct": 47.1,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 17행 vs DB 8행 (coverage 47.1%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 25,
+      "coverage_pct": 147.1,
+      "issues": []
     },
     {
       "section_id": "4-2",
@@ -8891,8 +8245,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 2,
-      "db_rows": 16,
+      "db_tables": 6,
+      "db_rows": 65,
       "coverage_pct": null,
       "issues": []
     },
@@ -9032,24 +8386,13 @@
     {
       "section_id": "4-2-5",
       "title": "레인지후드 설치",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 9,
-      "db_tables": 5,
-      "db_rows": 7,
-      "coverage_pct": 77.8,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 9행 vs DB 7행 (coverage 77.8%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 7개 vs DB 5개 테이블"
-        }
-      ]
+      "db_tables": 10,
+      "db_rows": 14,
+      "coverage_pct": 155.6,
+      "issues": []
     },
     {
       "section_id": "4-3#4",
@@ -9090,8 +8433,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 0,
-      "db_rows": 0,
+      "db_tables": 6,
+      "db_rows": 31,
       "coverage_pct": null,
       "issues": []
     },
@@ -9164,24 +8507,13 @@
     {
       "section_id": "4-3-3",
       "title": "굴취(근원직경)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 41,
-      "db_tables": 1,
-      "db_rows": 10,
-      "coverage_pct": 24.4,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 41행 vs DB 10행 (coverage 24.4%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 48,
+      "coverage_pct": 117.1,
+      "issues": []
     },
     {
       "section_id": "4-3-3#2",
@@ -9219,19 +8551,13 @@
     {
       "section_id": "4-3-4",
       "title": "목재데크 설치",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 8,
-      "db_tables": 1,
-      "db_rows": 4,
-      "coverage_pct": 50.0,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 8행 vs DB 4행 (coverage 50.0%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 10,
+      "coverage_pct": 125.0,
+      "issues": []
     },
     {
       "section_id": "4-3-4#2",
@@ -9247,19 +8573,13 @@
     {
       "section_id": "4-3-5",
       "title": "식재(흉고직경)",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 18,
-      "db_tables": 1,
-      "db_rows": 9,
-      "coverage_pct": 50.0,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 18행 vs DB 9행 (coverage 50.0%)"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 27,
+      "coverage_pct": 150.0,
+      "issues": []
     },
     {
       "section_id": "4-4",
@@ -9333,8 +8653,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 0,
-      "db_rows": 0,
+      "db_tables": 3,
+      "db_rows": 13,
       "coverage_pct": null,
       "issues": []
     },
@@ -9430,24 +8750,13 @@
     {
       "section_id": "4-5-3",
       "title": "장대레일 설정",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 13,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 23.1,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 13행 vs DB 3행 (coverage 23.1%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 16,
+      "coverage_pct": 123.1,
+      "issues": []
     },
     {
       "section_id": "4-6",
@@ -9496,24 +8805,13 @@
     {
       "section_id": "4-6-4",
       "title": "침목천공",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 11,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 11행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 6개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 11,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "4-6-5",
@@ -9540,19 +8838,13 @@
     {
       "section_id": "4-6-9",
       "title": "교량침목고정장치 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 15,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 8개 테이블/15행이 DB에 없음"
-        }
-      ]
+      "db_tables": 8,
+      "db_rows": 15,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "5-1",
@@ -9714,8 +9006,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 3,
-      "db_rows": 12,
+      "db_tables": 20,
+      "db_rows": 60,
       "coverage_pct": null,
       "issues": []
     },
@@ -9755,24 +9047,13 @@
     {
       "section_id": "5-1-5",
       "title": "어스앵커 공법",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 9,
       "md_rows": 32,
-      "db_tables": 6,
-      "db_rows": 20,
-      "coverage_pct": 62.5,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 32행 vs DB 20행 (coverage 62.5%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 9개 vs DB 6개 테이블"
-        }
-      ]
+      "db_tables": 9,
+      "db_rows": 31,
+      "coverage_pct": 96.9,
+      "issues": []
     },
     {
       "section_id": "5-1-6",
@@ -9857,8 +9138,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 3,
+      "db_tables": 9,
+      "db_rows": 38,
       "coverage_pct": null,
       "issues": []
     },
@@ -9876,24 +9157,13 @@
     {
       "section_id": "5-2-2",
       "title": "고압분사 주입공법",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 18,
       "md_rows": 40,
-      "db_tables": 8,
-      "db_rows": 26,
-      "coverage_pct": 65.0,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 40행 vs DB 26행 (coverage 65.0%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 18개 vs DB 8개 테이블"
-        }
-      ]
+      "db_tables": 21,
+      "db_rows": 61,
+      "coverage_pct": 152.5,
+      "issues": []
     },
     {
       "section_id": "5-2-2#2",
@@ -10088,8 +9358,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 10,
+      "db_tables": 22,
+      "db_rows": 81,
       "coverage_pct": null,
       "issues": []
     },
@@ -10151,24 +9421,13 @@
     {
       "section_id": "5-3-5",
       "title": "현장타설말뚝",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 35,
       "md_rows": 94,
-      "db_tables": 19,
-      "db_rows": 56,
-      "coverage_pct": 59.6,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 94행 vs DB 56행 (coverage 59.6%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 35개 vs DB 19개 테이블"
-        }
-      ]
+      "db_tables": 44,
+      "db_rows": 127,
+      "coverage_pct": 135.1,
+      "issues": []
     },
     {
       "section_id": "5-3-6",
@@ -10184,17 +9443,22 @@
     {
       "section_id": "5-3-7",
       "title": "도배바름",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 13,
       "md_rows": 34,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
+      "db_tables": 5,
+      "db_rows": 17,
+      "coverage_pct": 50.0,
       "issues": [
         {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 13개 테이블/34행이 DB에 없음"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 34행 vs DB 17행 (coverage 50.0%)"
+        },
+        {
+          "type": "TABLE_COUNT_DIFF",
+          "severity": "WARNING",
+          "detail": "원본 13개 vs DB 5개 테이블"
         }
       ]
     },
@@ -10251,17 +9515,22 @@
     {
       "section_id": "5-4-2",
       "title": "단열재 접착제 붙이기",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 14,
       "md_rows": 32,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
+      "db_tables": 6,
+      "db_rows": 16,
+      "coverage_pct": 50.0,
       "issues": [
         {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 14개 테이블/32행이 DB에 없음"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 32행 vs DB 16행 (coverage 50.0%)"
+        },
+        {
+          "type": "TABLE_COUNT_DIFF",
+          "severity": "WARNING",
+          "detail": "원본 14개 vs DB 6개 테이블"
         }
       ]
     },
@@ -10323,17 +9592,22 @@
     {
       "section_id": "5-4-7",
       "title": "단열재 슬래브위 깔기",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 10,
       "md_rows": 28,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
+      "db_tables": 5,
+      "db_rows": 14,
+      "coverage_pct": 50.0,
       "issues": [
         {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 10개 테이블/28행이 DB에 없음"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 28행 vs DB 14행 (coverage 50.0%)"
+        },
+        {
+          "type": "TABLE_COUNT_DIFF",
+          "severity": "WARNING",
+          "detail": "원본 10개 vs DB 5개 테이블"
         }
       ]
     },
@@ -10343,9 +9617,9 @@
       "status": "PASS",
       "md_tables": 18,
       "md_rows": 37,
-      "db_tables": 18,
-      "db_rows": 40,
-      "coverage_pct": 108.1,
+      "db_tables": 20,
+      "db_rows": 52,
+      "coverage_pct": 140.5,
       "issues": []
     },
     {
@@ -10459,32 +9733,21 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 2,
-      "db_rows": 4,
+      "db_tables": 5,
+      "db_rows": 17,
       "coverage_pct": null,
       "issues": []
     },
     {
       "section_id": "6-1-3",
       "title": "방수층보호재 붙임",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 9,
-      "db_tables": 3,
-      "db_rows": 7,
-      "coverage_pct": 77.8,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 9행 vs DB 7행 (coverage 77.8%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 7개 vs DB 3개 테이블"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 13,
+      "coverage_pct": 144.4,
+      "issues": []
     },
     {
       "section_id": "6-1-4",
@@ -10514,8 +9777,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 2,
+      "db_tables": 10,
+      "db_rows": 22,
       "coverage_pct": null,
       "issues": []
     },
@@ -10533,22 +9796,22 @@
     {
       "section_id": "6-1-7",
       "title": "콘크리트 현장양생공시체 제작",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 5,
       "md_rows": 12,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 16.7,
+      "db_tables": 3,
+      "db_rows": 8,
+      "coverage_pct": 66.7,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 12행 vs DB 2행 (coverage 16.7%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 12행 vs DB 8행 (coverage 66.7%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 5개 vs DB 1개 테이블"
+          "detail": "원본 5개 vs DB 3개 테이블"
         }
       ]
     },
@@ -10641,8 +9904,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 5,
+      "db_tables": 4,
+      "db_rows": 14,
       "coverage_pct": null,
       "issues": []
     },
@@ -10652,8 +9915,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 2,
-      "db_rows": 3,
+      "db_tables": 8,
+      "db_rows": 32,
       "coverage_pct": null,
       "issues": []
     },
@@ -10715,19 +9978,13 @@
     {
       "section_id": "6-2-4",
       "title": "공장가공",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 12,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/12행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 12,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "6-2-5",
@@ -10873,8 +10130,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 2,
-      "db_rows": 19,
+      "db_tables": 14,
+      "db_rows": 58,
       "coverage_pct": null,
       "issues": []
     },
@@ -10903,19 +10160,13 @@
     {
       "section_id": "6-3-5",
       "title": "합성수지(P",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 15,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 5개 테이블/15행이 DB에 없음"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 15,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "6-3-6",
@@ -10942,24 +10193,13 @@
     {
       "section_id": "6-3-8",
       "title": "갱폼 설치 및 해체",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 10,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 10행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 3개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 10,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "6-3-9",
@@ -11017,9 +10257,9 @@
       "status": "PASS",
       "md_tables": 8,
       "md_rows": 26,
-      "db_tables": 8,
-      "db_rows": 30,
-      "coverage_pct": 115.4,
+      "db_tables": 15,
+      "db_rows": 56,
+      "coverage_pct": 215.4,
       "issues": []
     },
     {
@@ -11047,24 +10287,13 @@
     {
       "section_id": "6-4-2",
       "title": "PSC BOX 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 10,
       "md_rows": 37,
-      "db_tables": 6,
-      "db_rows": 17,
-      "coverage_pct": 45.9,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 37행 vs DB 17행 (coverage 45.9%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 10개 vs DB 6개 테이블"
-        }
-      ]
+      "db_tables": 14,
+      "db_rows": 54,
+      "coverage_pct": 145.9,
+      "issues": []
     },
     {
       "section_id": "6-4-2#3",
@@ -11080,24 +10309,13 @@
     {
       "section_id": "6-4-3",
       "title": "방수모르타르 바름",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 5,
       "md_rows": 11,
-      "db_tables": 1,
-      "db_rows": 1,
-      "coverage_pct": 9.1,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 11행 vs DB 1행 (coverage 9.1%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 5개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 12,
+      "coverage_pct": 109.1,
+      "issues": []
     },
     {
       "section_id": "6-4-4",
@@ -11163,24 +10381,13 @@
     {
       "section_id": "6-5-2",
       "title": "액상형 흡수방지방수 도포",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 9,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 33.3,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 9행 vs DB 3행 (coverage 33.3%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 12,
+      "coverage_pct": 133.3,
+      "issues": []
     },
     {
       "section_id": "6-5-3",
@@ -11229,19 +10436,13 @@
     {
       "section_id": "6-5-5",
       "title": "분기관 천공 및 접합",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 23,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/23행이 DB에 없음"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 23,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "6-6",
@@ -11326,9 +10527,9 @@
       "status": "PASS",
       "md_tables": 1,
       "md_rows": 30,
-      "db_tables": 3,
-      "db_rows": 30,
-      "coverage_pct": 100.0,
+      "db_tables": 4,
+      "db_rows": 60,
+      "coverage_pct": 200.0,
       "issues": []
     },
     {
@@ -11356,24 +10557,13 @@
     {
       "section_id": "6-6-3",
       "title": "절단",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 29,
-      "db_tables": 1,
-      "db_rows": 6,
-      "coverage_pct": 20.7,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 29행 vs DB 6행 (coverage 20.7%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 30,
+      "coverage_pct": 103.4,
+      "issues": []
     },
     {
       "section_id": "6-6-3#2",
@@ -11422,19 +10612,13 @@
     {
       "section_id": "6-6-5",
       "title": "교량점검시설 점검통로 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 12,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/12행이 DB에 없음"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 12,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "6-6-6",
@@ -11450,19 +10634,13 @@
     {
       "section_id": "6-6-7",
       "title": "프리캐스트 콘크리트 패널 설치",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 14,
-      "db_tables": 1,
-      "db_rows": 10,
-      "coverage_pct": 71.4,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 14행 vs DB 10행 (coverage 71.4%)"
-        }
-      ]
+      "db_tables": 3,
+      "db_rows": 24,
+      "coverage_pct": 171.4,
+      "issues": []
     },
     {
       "section_id": "6-6-8",
@@ -11509,8 +10687,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 10,
+      "db_tables": 8,
+      "db_rows": 42,
       "coverage_pct": null,
       "issues": []
     },
@@ -11682,19 +10860,13 @@
     {
       "section_id": "6-7-9",
       "title": "모듈러 건축 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 12,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 4개 테이블/12행이 DB에 없음"
-        }
-      ]
+      "db_tables": 4,
+      "db_rows": 12,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "6-8",
@@ -11925,24 +11097,13 @@
     {
       "section_id": "7-1-3",
       "title": "준설선 선단 조합",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 34,
-      "db_tables": 3,
-      "db_rows": 20,
-      "coverage_pct": 58.8,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 34행 vs DB 20행 (coverage 58.8%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 8개 vs DB 3개 테이블"
-        }
-      ]
+      "db_tables": 10,
+      "db_rows": 52,
+      "coverage_pct": 152.9,
+      "issues": []
     },
     {
       "section_id": "7-1-3#3",
@@ -12022,8 +11183,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 6,
-      "db_rows": 9,
+      "db_tables": 9,
+      "db_rows": 13,
       "coverage_pct": null,
       "issues": []
     },
@@ -12085,22 +11246,22 @@
     {
       "section_id": "7-2-1",
       "title": "메붙임",
-      "status": "FAIL",
+      "status": "WARN",
       "md_tables": 21,
       "md_rows": 43,
-      "db_tables": 1,
-      "db_rows": 3,
-      "coverage_pct": 7.0,
+      "db_tables": 15,
+      "db_rows": 31,
+      "coverage_pct": 72.1,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 43행 vs DB 3행 (coverage 7.0%)"
+          "type": "ROW_PARTIAL",
+          "severity": "WARNING",
+          "detail": "원본 43행 vs DB 31행 (coverage 72.1%)"
         },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 21개 vs DB 1개 테이블"
+          "detail": "원본 21개 vs DB 15개 테이블"
         }
       ]
     },
@@ -12234,24 +11395,13 @@
     {
       "section_id": "7-2-5",
       "title": "수중고르기",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 16,
       "md_rows": 34,
-      "db_tables": 3,
-      "db_rows": 6,
-      "coverage_pct": 17.6,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 34행 vs DB 6행 (coverage 17.6%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 16개 vs DB 3개 테이블"
-        }
-      ]
+      "db_tables": 17,
+      "db_rows": 39,
+      "coverage_pct": 114.7,
+      "issues": []
     },
     {
       "section_id": "7-2-5#2",
@@ -12259,8 +11409,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 2,
+      "db_tables": 7,
+      "db_rows": 15,
       "coverage_pct": null,
       "issues": []
     },
@@ -12386,32 +11536,21 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 1,
-      "db_rows": 2,
+      "db_tables": 5,
+      "db_rows": 14,
       "coverage_pct": null,
       "issues": []
     },
     {
       "section_id": "7-3-4",
       "title": "소파블록 거치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 19,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 10.5,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 19행 vs DB 2행 (coverage 10.5%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 7개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 19,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "7-3-4#2",
@@ -12458,8 +11597,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 2,
-      "db_rows": 16,
+      "db_tables": 10,
+      "db_rows": 46,
       "coverage_pct": null,
       "issues": []
     },
@@ -12488,19 +11627,13 @@
     {
       "section_id": "7-4-3",
       "title": "강재트러스 지지공법",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 29,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 6개 테이블/29행이 DB에 없음"
-        }
-      ]
+      "db_tables": 5,
+      "db_rows": 29,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "7-4-5",
@@ -12527,24 +11660,13 @@
     {
       "section_id": "7-4-7",
       "title": "매립설계수량",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 1,
       "md_rows": 3,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 3행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 1개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 1,
+      "db_rows": 3,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "8-1",
@@ -12626,24 +11748,13 @@
     {
       "section_id": "8-1-2",
       "title": "공사규모별 표준건설기계",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 6,
       "md_rows": 34,
-      "db_tables": 1,
-      "db_rows": 2,
-      "coverage_pct": 5.9,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 34행 vs DB 2행 (coverage 5.9%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 6개 vs DB 1개 테이블"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 35,
+      "coverage_pct": 102.9,
+      "issues": []
     },
     {
       "section_id": "8-1-2#4",
@@ -12703,24 +11814,13 @@
     {
       "section_id": "8-1-4",
       "title": "인서트(Insert) 설치",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 10,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 10행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 8개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 10,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "8-1-5",
@@ -12890,24 +11990,13 @@
     {
       "section_id": "8-2-11",
       "title": "스테이빌라이저(노상안정기)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 1,
       "md_rows": 5,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 5행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 1개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 1,
+      "db_rows": 5,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "8-2-12",
@@ -12984,24 +12073,13 @@
     {
       "section_id": "8-2-18",
       "title": "콘크리트 배치플랜트(강제 혼합식)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 1,
       "md_rows": 2,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 2행 vs DB 0행 (coverage 0.0%)"
-        },
-        {
-          "type": "TABLE_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본에 1개 테이블이 있지만 DB에 0개"
-        }
-      ]
+      "db_tables": 1,
+      "db_rows": 2,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "8-2-19",
@@ -13092,9 +12170,9 @@
       "status": "PASS",
       "md_tables": 11,
       "md_rows": 54,
-      "db_tables": 11,
-      "db_rows": 59,
-      "coverage_pct": 109.3,
+      "db_tables": 21,
+      "db_rows": 113,
+      "coverage_pct": 209.3,
       "issues": []
     },
     {
@@ -13111,19 +12189,13 @@
     {
       "section_id": "8-2-24",
       "title": "진동파일 해머",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 21,
       "md_rows": 52,
-      "db_tables": 22,
-      "db_rows": 49,
-      "coverage_pct": 94.2,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 52행 vs DB 49행 (coverage 94.2%)"
-        }
-      ]
+      "db_tables": 41,
+      "db_rows": 100,
+      "coverage_pct": 192.3,
+      "issues": []
     },
     {
       "section_id": "8-2-25",
@@ -13181,9 +12253,9 @@
       "status": "PASS",
       "md_tables": 15,
       "md_rows": 82,
-      "db_tables": 15,
-      "db_rows": 92,
-      "coverage_pct": 112.2,
+      "db_tables": 29,
+      "db_rows": 165,
+      "coverage_pct": 201.2,
       "issues": []
     },
     {
@@ -13247,9 +12319,9 @@
       "status": "PASS",
       "md_tables": 15,
       "md_rows": 69,
-      "db_tables": 15,
-      "db_rows": 78,
-      "coverage_pct": 113.0,
+      "db_tables": 29,
+      "db_rows": 144,
+      "coverage_pct": 208.7,
       "issues": []
     },
     {
@@ -13409,22 +12481,17 @@
     {
       "section_id": "8-2-7",
       "title": "모터 그레이더",
-      "status": "FAIL",
+      "status": "INFO",
       "md_tables": 4,
       "md_rows": 19,
-      "db_tables": 1,
-      "db_rows": 7,
-      "coverage_pct": 36.8,
+      "db_tables": 3,
+      "db_rows": 18,
+      "coverage_pct": 94.7,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 19행 vs DB 7행 (coverage 36.8%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 4개 vs DB 1개 테이블"
+          "type": "ROW_MINOR_DIFF",
+          "severity": "INFO",
+          "detail": "원본 19행 vs DB 18행 (coverage 94.7%)"
         }
       ]
     },
@@ -13533,32 +12600,21 @@
       "status": "PASS",
       "md_tables": 9,
       "md_rows": 81,
-      "db_tables": 15,
-      "db_rows": 81,
-      "coverage_pct": 100.0,
+      "db_tables": 43,
+      "db_rows": 235,
+      "coverage_pct": 290.1,
       "issues": []
     },
     {
       "section_id": "8-3-2",
       "title": "[10]다짐기계",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 14,
       "md_rows": 57,
-      "db_tables": 8,
-      "db_rows": 36,
-      "coverage_pct": 63.2,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 57행 vs DB 36행 (coverage 63.2%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 14개 vs DB 8개 테이블"
-        }
-      ]
+      "db_tables": 16,
+      "db_rows": 62,
+      "coverage_pct": 108.8,
+      "issues": []
     },
     {
       "section_id": "8-3-2#2",
@@ -13588,9 +12644,9 @@
       "status": "PASS",
       "md_tables": 18,
       "md_rows": 68,
-      "db_tables": 21,
-      "db_rows": 79,
-      "coverage_pct": 116.2,
+      "db_tables": 36,
+      "db_rows": 139,
+      "coverage_pct": 204.4,
       "issues": []
     },
     {
@@ -13629,24 +12685,13 @@
     {
       "section_id": "8-3-5",
       "title": "[40]콘크리트기계",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 15,
       "md_rows": 45,
-      "db_tables": 11,
-      "db_rows": 34,
-      "coverage_pct": 75.6,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 45행 vs DB 34행 (coverage 75.6%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 15개 vs DB 11개 테이블"
-        }
-      ]
+      "db_tables": 26,
+      "db_rows": 79,
+      "coverage_pct": 175.6,
+      "issues": []
     },
     {
       "section_id": "8-3-5#2",
@@ -13665,9 +12710,9 @@
       "status": "PASS",
       "md_tables": 30,
       "md_rows": 110,
-      "db_tables": 32,
-      "db_rows": 114,
-      "coverage_pct": 103.6,
+      "db_tables": 60,
+      "db_rows": 216,
+      "coverage_pct": 196.4,
       "issues": []
     },
     {
@@ -13687,9 +12732,9 @@
       "status": "PASS",
       "md_tables": 22,
       "md_rows": 67,
-      "db_tables": 22,
-      "db_rows": 77,
-      "coverage_pct": 114.9,
+      "db_tables": 42,
+      "db_rows": 140,
+      "coverage_pct": 209.0,
       "issues": []
     },
     {
@@ -13849,19 +12894,13 @@
     {
       "section_id": "8-4-3",
       "title": "[20]운반 및 하역기계",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 3,
       "md_rows": 69,
-      "db_tables": 5,
-      "db_rows": 65,
-      "coverage_pct": 94.2,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 69행 vs DB 65행 (coverage 94.2%)"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 117,
+      "coverage_pct": 169.6,
+      "issues": []
     },
     {
       "section_id": "8-4-3#2",
@@ -14040,9 +13079,9 @@
       "status": "PASS",
       "md_tables": 2,
       "md_rows": 76,
-      "db_tables": 3,
-      "db_rows": 76,
-      "coverage_pct": 100.0,
+      "db_tables": 4,
+      "db_rows": 115,
+      "coverage_pct": 151.3,
       "issues": []
     },
     {
@@ -14070,17 +13109,17 @@
     {
       "section_id": "8-5-9",
       "title": "[80]스마트 건설장비",
-      "status": "FAIL",
+      "status": "INFO",
       "md_tables": 2,
       "md_rows": 75,
-      "db_tables": 2,
-      "db_rows": 29,
-      "coverage_pct": 38.7,
+      "db_tables": 3,
+      "db_rows": 65,
+      "coverage_pct": 86.7,
       "issues": [
         {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 75행 vs DB 29행 (coverage 38.7%)"
+          "type": "ROW_MINOR_DIFF",
+          "severity": "INFO",
+          "detail": "원본 75행 vs DB 65행 (coverage 86.7%)"
         }
       ]
     },
@@ -14109,19 +13148,13 @@
     {
       "section_id": "8-6-2",
       "title": "건타입 오일버너",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 2,
       "md_rows": 8,
-      "db_tables": 1,
-      "db_rows": 4,
-      "coverage_pct": 50.0,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 8행 vs DB 4행 (coverage 50.0%)"
-        }
-      ]
+      "db_tables": 2,
+      "db_rows": 8,
+      "coverage_pct": 100.0,
+      "issues": []
     },
     {
       "section_id": "9-1",
@@ -14192,24 +13225,13 @@
     {
       "section_id": "9-1-2",
       "title": "1급 기준점 측량",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 10,
       "md_rows": 42,
-      "db_tables": 4,
-      "db_rows": 15,
-      "coverage_pct": 35.7,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 42행 vs DB 15행 (coverage 35.7%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 10개 vs DB 4개 테이블"
-        }
-      ]
+      "db_tables": 9,
+      "db_rows": 47,
+      "coverage_pct": 111.9,
+      "issues": []
     },
     {
       "section_id": "9-1-2#2",
@@ -14261,19 +13283,14 @@
       "status": "WARN",
       "md_tables": 10,
       "md_rows": 28,
-      "db_tables": 3,
-      "db_rows": 14,
-      "coverage_pct": 50.0,
+      "db_tables": 8,
+      "db_rows": 33,
+      "coverage_pct": 117.9,
       "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 28행 vs DB 14행 (coverage 50.0%)"
-        },
         {
           "type": "TABLE_COUNT_DIFF",
           "severity": "WARNING",
-          "detail": "원본 10개 vs DB 3개 테이블"
+          "detail": "원본 10개 vs DB 8개 테이블"
         }
       ]
     },
@@ -14424,19 +13441,13 @@
     {
       "section_id": "9-13-1",
       "title": "지적재조사측량",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 4,
       "md_rows": 42,
-      "db_tables": 8,
-      "db_rows": 36,
-      "coverage_pct": 85.7,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 42행 vs DB 36행 (coverage 85.7%)"
-        }
-      ]
+      "db_tables": 11,
+      "db_rows": 72,
+      "coverage_pct": 171.4,
+      "issues": []
     },
     {
       "section_id": "9-14",
@@ -14488,9 +13499,9 @@
       "status": "PASS",
       "md_tables": 16,
       "md_rows": 50,
-      "db_tables": 17,
-      "db_rows": 48,
-      "coverage_pct": 96.0,
+      "db_tables": 30,
+      "db_rows": 96,
+      "coverage_pct": 192.0,
       "issues": []
     },
     {
@@ -14510,9 +13521,9 @@
       "status": "PASS",
       "md_tables": 10,
       "md_rows": 40,
-      "db_tables": 10,
-      "db_rows": 38,
-      "coverage_pct": 95.0,
+      "db_tables": 20,
+      "db_rows": 78,
+      "coverage_pct": 195.0,
       "issues": []
     },
     {
@@ -14543,9 +13554,9 @@
       "status": "PASS",
       "md_tables": 15,
       "md_rows": 50,
-      "db_tables": 15,
-      "db_rows": 49,
-      "coverage_pct": 98.0,
+      "db_tables": 28,
+      "db_rows": 99,
+      "coverage_pct": 198.0,
       "issues": []
     },
     {
@@ -14584,19 +13595,13 @@
     {
       "section_id": "9-17-3",
       "title": "자동제도(파일제공)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 33,
-      "db_tables": 0,
-      "db_rows": 0,
-      "coverage_pct": 0.0,
-      "issues": [
-        {
-          "type": "SECTION_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 7개 테이블/33행이 DB에 없음"
-        }
-      ]
+      "db_tables": 6,
+      "db_rows": 32,
+      "coverage_pct": 97.0,
+      "issues": []
     },
     {
       "section_id": "9-17-4",
@@ -14648,9 +13653,9 @@
       "status": "PASS",
       "md_tables": 3,
       "md_rows": 42,
-      "db_tables": 6,
-      "db_rows": 40,
-      "coverage_pct": 95.2,
+      "db_tables": 8,
+      "db_rows": 75,
+      "coverage_pct": 178.6,
       "issues": []
     },
     {
@@ -14800,19 +13805,13 @@
     {
       "section_id": "9-3-1",
       "title": "지형현황",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 16,
       "md_rows": 67,
-      "db_tables": 16,
-      "db_rows": 53,
-      "coverage_pct": 79.1,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 67행 vs DB 53행 (coverage 79.1%)"
-        }
-      ]
+      "db_tables": 31,
+      "db_rows": 113,
+      "coverage_pct": 168.7,
+      "issues": []
     },
     {
       "section_id": "9-3-1#3",
@@ -14828,19 +13827,13 @@
     {
       "section_id": "9-3-2",
       "title": "하천측량",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 7,
       "md_rows": 49,
-      "db_tables": 7,
-      "db_rows": 35,
-      "coverage_pct": 71.4,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 49행 vs DB 35행 (coverage 71.4%)"
-        }
-      ]
+      "db_tables": 12,
+      "db_rows": 80,
+      "coverage_pct": 163.3,
+      "issues": []
     },
     {
       "section_id": "9-3-2#2",
@@ -14870,27 +13863,21 @@
       "status": "PASS",
       "md_tables": 8,
       "md_rows": 78,
-      "db_tables": 8,
-      "db_rows": 78,
-      "coverage_pct": 100.0,
+      "db_tables": 15,
+      "db_rows": 144,
+      "coverage_pct": 184.6,
       "issues": []
     },
     {
       "section_id": "9-3-4",
       "title": "구획정리 확정측량",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 18,
       "md_rows": 95,
-      "db_tables": 23,
-      "db_rows": 87,
-      "coverage_pct": 91.6,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 95행 vs DB 87행 (coverage 91.6%)"
-        }
-      ]
+      "db_tables": 39,
+      "db_rows": 180,
+      "coverage_pct": 189.5,
+      "issues": []
     },
     {
       "section_id": "9-3-5",
@@ -14928,24 +13915,13 @@
     {
       "section_id": "9-4-1",
       "title": "노선측량(철도, 도로 신설)",
-      "status": "FAIL",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 40,
-      "db_tables": 2,
-      "db_rows": 12,
-      "coverage_pct": 30.0,
-      "issues": [
-        {
-          "type": "ROW_MISSING",
-          "severity": "CRITICAL",
-          "detail": "원본 40행 vs DB 12행 (coverage 30.0%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 8개 vs DB 2개 테이블"
-        }
-      ]
+      "db_tables": 8,
+      "db_rows": 48,
+      "coverage_pct": 120.0,
+      "issues": []
     },
     {
       "section_id": "9-4-1#2",
@@ -15036,9 +14012,9 @@
       "status": "PASS",
       "md_tables": 18,
       "md_rows": 70,
-      "db_tables": 29,
-      "db_rows": 78,
-      "coverage_pct": 111.4,
+      "db_tables": 58,
+      "db_rows": 243,
+      "coverage_pct": 347.1,
       "issues": []
     },
     {
@@ -15069,8 +14045,8 @@
       "status": "DB_ONLY",
       "md_tables": 0,
       "md_rows": 0,
-      "db_tables": 0,
-      "db_rows": 0,
+      "db_tables": 6,
+      "db_rows": 22,
       "coverage_pct": null,
       "issues": []
     },
@@ -15091,27 +14067,21 @@
       "status": "PASS",
       "md_tables": 207,
       "md_rows": 439,
-      "db_tables": 219,
-      "db_rows": 441,
-      "coverage_pct": 100.5,
+      "db_tables": 406,
+      "db_rows": 876,
+      "coverage_pct": 199.5,
       "issues": []
     },
     {
       "section_id": "9-5-5",
       "title": "건물 및 지상물체 항공사진 ｢판독작업｣",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 12,
       "md_rows": 14,
-      "db_tables": 12,
-      "db_rows": 12,
-      "coverage_pct": 85.7,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 14행 vs DB 12행 (coverage 85.7%)"
-        }
-      ]
+      "db_tables": 18,
+      "db_rows": 21,
+      "coverage_pct": 150.0,
+      "issues": []
     },
     {
       "section_id": "9-5-6",
@@ -15119,9 +14089,9 @@
       "status": "PASS",
       "md_tables": 34,
       "md_rows": 45,
-      "db_tables": 34,
-      "db_rows": 45,
-      "coverage_pct": 100.0,
+      "db_tables": 64,
+      "db_rows": 89,
+      "coverage_pct": 197.8,
       "issues": []
     },
     {
@@ -15130,9 +14100,9 @@
       "status": "PASS",
       "md_tables": 10,
       "md_rows": 10,
-      "db_tables": 10,
-      "db_rows": 10,
-      "coverage_pct": 100.0,
+      "db_tables": 15,
+      "db_rows": 16,
+      "coverage_pct": 160.0,
       "issues": []
     },
     {
@@ -15149,24 +14119,13 @@
     {
       "section_id": "9-5-9",
       "title": "정밀도로지도 구축",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 44,
-      "db_tables": 6,
-      "db_rows": 26,
-      "coverage_pct": 59.1,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 44행 vs DB 26행 (coverage 59.1%)"
-        },
-        {
-          "type": "TABLE_COUNT_DIFF",
-          "severity": "WARNING",
-          "detail": "원본 8개 vs DB 6개 테이블"
-        }
-      ]
+      "db_tables": 7,
+      "db_rows": 53,
+      "coverage_pct": 120.5,
+      "issues": []
     },
     {
       "section_id": "9-6",
@@ -15185,9 +14144,9 @@
       "status": "PASS",
       "md_tables": 4,
       "md_rows": 40,
-      "db_tables": 8,
-      "db_rows": 40,
-      "coverage_pct": 100.0,
+      "db_tables": 11,
+      "db_rows": 73,
+      "coverage_pct": 182.5,
       "issues": []
     },
     {
@@ -15196,9 +14155,9 @@
       "status": "PASS",
       "md_tables": 11,
       "md_rows": 57,
-      "db_tables": 15,
-      "db_rows": 63,
-      "coverage_pct": 110.5,
+      "db_tables": 25,
+      "db_rows": 113,
+      "coverage_pct": 198.2,
       "issues": []
     },
     {
@@ -15226,36 +14185,24 @@
     {
       "section_id": "9-7-1",
       "title": "신규등록측량(도해)",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 15,
       "md_rows": 46,
-      "db_tables": 15,
-      "db_rows": 43,
-      "coverage_pct": 93.5,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 46행 vs DB 43행 (coverage 93.5%)"
-        }
-      ]
+      "db_tables": 29,
+      "db_rows": 85,
+      "coverage_pct": 184.8,
+      "issues": []
     },
     {
       "section_id": "9-7-2",
       "title": "신규등록측량(수치)",
-      "status": "WARN",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 37,
-      "db_tables": 8,
-      "db_rows": 29,
-      "coverage_pct": 78.4,
-      "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 37행 vs DB 29행 (coverage 78.4%)"
-        }
-      ]
+      "db_tables": 13,
+      "db_rows": 63,
+      "coverage_pct": 170.3,
+      "issues": []
     },
     {
       "section_id": "9-7-3",
@@ -15347,9 +14294,9 @@
       "status": "PASS",
       "md_tables": 14,
       "md_rows": 42,
-      "db_tables": 14,
-      "db_rows": 42,
-      "coverage_pct": 100.0,
+      "db_tables": 25,
+      "db_rows": 80,
+      "coverage_pct": 190.5,
       "issues": []
     },
     {

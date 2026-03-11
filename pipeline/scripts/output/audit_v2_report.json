@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-03-10T13:28:54.959739",
+  "generated_at": "2026-03-11T16:46:19.767204",
   "version": "v2",
   "summary": {
     "total_sections": 466,
-    "pass": 252,
-    "info": 173,
-    "warn": 20,
+    "pass": 261,
+    "info": 166,
+    "warn": 18,
     "fail": 21,
     "cross_type_count": 1,
     "total_md_rows": 14096,
-    "total_db_rows": 16721,
-    "overall_coverage_pct": 118.6
+    "total_db_rows": 18598,
+    "overall_coverage_pct": 131.9
   },
   "sections": [
     {
@@ -384,9 +384,9 @@
       "md_tables": 15,
       "md_rows": 98,
       "db_chunks": 10,
-      "db_tables": 31,
-      "db_rows": 164,
-      "coverage_pct": 167.3,
+      "db_tables": 32,
+      "db_rows": 182,
+      "coverage_pct": 185.7,
       "issues": [],
       "chunk_details": [
         {
@@ -417,8 +417,8 @@
           "chunk_id": "C-0008-A",
           "raw_section_id": "1-2-2",
           "title": "단위표준",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 18,
           "has_text": true
         },
         {
@@ -790,9 +790,9 @@
       "md_tables": 12,
       "md_rows": 53,
       "db_chunks": 6,
-      "db_tables": 23,
-      "db_rows": 75,
-      "coverage_pct": 141.5,
+      "db_tables": 25,
+      "db_rows": 97,
+      "coverage_pct": 183.0,
       "issues": [],
       "chunk_details": [
         {
@@ -804,27 +804,27 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-0013-B",
+          "raw_section_id": "1-2-7",
+          "title": "운반",
+          "table_count": 11,
+          "total_rows": 53,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0013-C",
           "raw_section_id": "1-2-7",
           "title": "운반",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 11,
           "has_text": false
         },
         {
           "chunk_id": "C-0013-D",
           "raw_section_id": "1-2-7",
           "title": "운반",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0013-B",
-          "raw_section_id": "1-2-7",
-          "title": "운반",
-          "table_count": 11,
-          "total_rows": 53,
+          "table_count": 1,
+          "total_rows": 11,
           "has_text": false
         },
         {
@@ -898,9 +898,9 @@
       "md_tables": 6,
       "md_rows": 34,
       "db_chunks": 7,
-      "db_tables": 8,
-      "db_rows": 45,
-      "coverage_pct": 132.4,
+      "db_tables": 12,
+      "db_rows": 71,
+      "coverage_pct": 208.8,
       "issues": [],
       "chunk_details": [
         {
@@ -912,28 +912,28 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0015-A-c",
-          "raw_section_id": "1-2-9",
-          "title": "소규모(작업물량 제한)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0015-B",
-          "raw_section_id": "1-2-9",
-          "title": "소규모(작업물량 제한)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0015-A-a",
           "raw_section_id": "1-2-9",
           "title": "소규모(작업물량 제한)",
           "table_count": 6,
           "total_rows": 34,
           "has_text": true
+        },
+        {
+          "chunk_id": "C-0015-A-c",
+          "raw_section_id": "1-2-9",
+          "title": "소규모(작업물량 제한)",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0015-B",
+          "raw_section_id": "1-2-9",
+          "title": "소규모(작업물량 제한)",
+          "table_count": 1,
+          "total_rows": 11,
+          "has_text": false
         },
         {
           "chunk_id": "C-0022-A-a",
@@ -955,8 +955,8 @@
           "chunk_id": "C-0022-B",
           "raw_section_id": "1-2-9",
           "title": "소규모(작업물량 제한)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 13,
           "has_text": false
         }
       ]
@@ -968,11 +968,19 @@
       "md_tables": 27,
       "md_rows": 202,
       "db_chunks": 11,
-      "db_tables": 42,
-      "db_rows": 259,
-      "coverage_pct": 128.2,
+      "db_tables": 57,
+      "db_rows": 385,
+      "coverage_pct": 190.6,
       "issues": [],
       "chunk_details": [
+        {
+          "chunk_id": "C-0024-C",
+          "raw_section_id": "1-3-1",
+          "title": "재료의 할증",
+          "table_count": 1,
+          "total_rows": 23,
+          "has_text": false
+        },
         {
           "chunk_id": "C-0017-D",
           "raw_section_id": "1-3-1",
@@ -985,56 +993,48 @@
           "chunk_id": "C-0017-A",
           "raw_section_id": "1-3-1",
           "title": "재료의 할증",
-          "table_count": 3,
-          "total_rows": 14,
+          "table_count": 7,
+          "total_rows": 27,
           "has_text": true
         },
         {
           "chunk_id": "C-0017-B",
           "raw_section_id": "1-3-1",
           "title": "재료의 할증",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 21,
           "has_text": false
         },
         {
           "chunk_id": "C-0017-C",
           "raw_section_id": "1-3-1",
           "title": "재료의 할증",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0024-A",
-          "raw_section_id": "1-3-1",
-          "title": "재료의 할증",
-          "table_count": 5,
-          "total_rows": 10,
-          "has_text": true
-        },
-        {
-          "chunk_id": "C-0024-B",
-          "raw_section_id": "1-3-1",
-          "title": "재료의 할증",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0024-C",
-          "raw_section_id": "1-3-1",
-          "title": "재료의 할증",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 23,
           "has_text": false
         },
         {
           "chunk_id": "C-0024-D",
           "raw_section_id": "1-3-1",
           "title": "재료의 할증",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 12,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0024-A",
+          "raw_section_id": "1-3-1",
+          "title": "재료의 할증",
+          "table_count": 9,
+          "total_rows": 23,
+          "has_text": true
+        },
+        {
+          "chunk_id": "C-0024-B",
+          "raw_section_id": "1-3-1",
+          "title": "재료의 할증",
+          "table_count": 2,
+          "total_rows": 21,
           "has_text": false
         },
         {
@@ -1245,14 +1245,14 @@
       "md_tables": 4,
       "md_rows": 37,
       "db_chunks": 6,
-      "db_tables": 4,
-      "db_rows": 38,
-      "coverage_pct": 102.7,
+      "db_tables": 9,
+      "db_rows": 62,
+      "coverage_pct": 167.6,
       "issues": [
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {6} (MD: [5, 6, 12], DB: [3, 5, 12])"
+          "detail": "원본에만 있는 컬럼 수: {6} (MD: [5, 6, 12], DB: [3, 5, 10, 12])"
         }
       ],
       "chunk_details": [
@@ -1265,43 +1265,43 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-1064-F",
+          "raw_section_id": "1-3-8",
+          "title": "교량받침 교체",
+          "table_count": 2,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-1064-B",
           "raw_section_id": "1-3-8",
           "title": "교량받침 교체",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-1064-C",
-          "raw_section_id": "1-3-8",
-          "title": "교량받침 교체",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-1064-D",
-          "raw_section_id": "1-3-8",
-          "title": "교량받침 교체",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 6,
           "has_text": false
         },
         {
           "chunk_id": "C-1064-E",
           "raw_section_id": "1-3-8",
           "title": "교량받침 교체",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 6,
           "has_text": false
         },
         {
-          "chunk_id": "C-1064-F",
+          "chunk_id": "C-1064-C",
           "raw_section_id": "1-3-8",
           "title": "교량받침 교체",
           "table_count": 1,
-          "total_rows": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-1064-D",
+          "raw_section_id": "1-3-8",
+          "title": "교량받침 교체",
+          "table_count": 1,
+          "total_rows": 6,
           "has_text": false
         }
       ]
@@ -1313,9 +1313,9 @@
       "md_tables": 1,
       "md_rows": 24,
       "db_chunks": 4,
-      "db_tables": 1,
-      "db_rows": 24,
-      "coverage_pct": 100.0,
+      "db_tables": 3,
+      "db_rows": 40,
+      "coverage_pct": 166.7,
       "issues": [],
       "chunk_details": [
         {
@@ -1330,16 +1330,16 @@
           "chunk_id": "C-1065-C",
           "raw_section_id": "1-3-9",
           "title": "교량신축이음 교체",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 8,
           "has_text": false
         },
         {
           "chunk_id": "C-1065-D",
           "raw_section_id": "1-3-9",
           "title": "교량신축이음 교체",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -1497,17 +1497,17 @@
       "md_tables": 8,
       "md_rows": 30,
       "db_chunks": 4,
-      "db_tables": 9,
-      "db_rows": 39,
-      "coverage_pct": 130.0,
+      "db_tables": 11,
+      "db_rows": 49,
+      "coverage_pct": 163.3,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0028",
           "raw_section_id": "1-4-3",
           "title": "작업지연",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 10,
           "has_text": true
         },
         {
@@ -1543,9 +1543,9 @@
       "md_tables": 9,
       "md_rows": 44,
       "db_chunks": 6,
-      "db_tables": 17,
-      "db_rows": 77,
-      "coverage_pct": 175.0,
+      "db_tables": 18,
+      "db_rows": 81,
+      "coverage_pct": 184.1,
       "issues": [],
       "chunk_details": [
         {
@@ -1576,8 +1576,8 @@
           "chunk_id": "C-0029-D",
           "raw_section_id": "1-4-4",
           "title": "지세/지형",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -2273,9 +2273,9 @@
       "md_tables": 15,
       "md_rows": 33,
       "db_chunks": 9,
-      "db_tables": 25,
-      "db_rows": 56,
-      "coverage_pct": 169.7,
+      "db_tables": 29,
+      "db_rows": 69,
+      "coverage_pct": 209.1,
       "issues": [],
       "chunk_details": [
         {
@@ -2287,14 +2287,6 @@
           "has_text": true
         },
         {
-          "chunk_id": "C-0365-B",
-          "raw_section_id": "1-8-9",
-          "title": "차선도색",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0365-A-b",
           "raw_section_id": "1-8-9",
           "title": "차선도색",
@@ -2303,11 +2295,27 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0365-B",
+          "raw_section_id": "1-8-9",
+          "title": "차선도색",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0365-A-g",
           "raw_section_id": "1-8-9",
           "title": "차선도색",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0365-A-c",
+          "raw_section_id": "1-8-9",
+          "title": "차선도색",
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -2327,19 +2335,11 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0365-A-c",
-          "raw_section_id": "1-8-9",
-          "title": "차선도색",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0365-A-d",
           "raw_section_id": "1-8-9",
           "title": "차선도색",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -3158,9 +3158,9 @@
       "md_tables": 16,
       "md_rows": 220,
       "db_chunks": 18,
-      "db_tables": 28,
-      "db_rows": 344,
-      "coverage_pct": 156.4,
+      "db_tables": 35,
+      "db_rows": 456,
+      "coverage_pct": 207.3,
       "issues": [],
       "chunk_details": [
         {
@@ -3175,32 +3175,32 @@
           "chunk_id": "C-0944-F",
           "raw_section_id": "13-1-1",
           "title": "플랜트 배관 설치",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0944-I",
-          "raw_section_id": "13-1-1",
-          "title": "플랜트 배관 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 16,
           "has_text": false
         },
         {
           "chunk_id": "C-0944-L",
           "raw_section_id": "13-1-1",
           "title": "플랜트 배관 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 17,
           "has_text": false
         },
         {
           "chunk_id": "C-0944-N",
           "raw_section_id": "13-1-1",
           "title": "플랜트 배관 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 24,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0944-I",
+          "raw_section_id": "13-1-1",
+          "title": "플랜트 배관 설치",
+          "table_count": 1,
+          "total_rows": 17,
           "has_text": false
         },
         {
@@ -3209,6 +3209,14 @@
           "title": "플랜트 배관 설치",
           "table_count": 1,
           "total_rows": 9,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0944-D",
+          "raw_section_id": "13-1-1",
+          "title": "플랜트 배관 설치",
+          "table_count": 2,
+          "total_rows": 13,
           "has_text": false
         },
         {
@@ -3228,19 +3236,19 @@
           "has_text": true
         },
         {
-          "chunk_id": "C-0944-D",
-          "raw_section_id": "13-1-1",
-          "title": "플랜트 배관 설치",
-          "table_count": 1,
-          "total_rows": 6,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0944-E",
           "raw_section_id": "13-1-1",
           "title": "플랜트 배관 설치",
           "table_count": 1,
           "total_rows": 19,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0944-H",
+          "raw_section_id": "13-1-1",
+          "title": "플랜트 배관 설치",
+          "table_count": 1,
+          "total_rows": 24,
           "has_text": false
         },
         {
@@ -3252,11 +3260,11 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0944-H",
+          "chunk_id": "C-0944-J",
           "raw_section_id": "13-1-1",
           "title": "플랜트 배관 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 16,
           "has_text": false
         },
         {
@@ -3265,14 +3273,6 @@
           "title": "플랜트 배관 설치",
           "table_count": 1,
           "total_rows": 17,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0944-J",
-          "raw_section_id": "13-1-1",
-          "title": "플랜트 배관 설치",
-          "table_count": 1,
-          "total_rows": 9,
           "has_text": false
         },
         {
@@ -3316,9 +3316,9 @@
       "md_tables": 5,
       "md_rows": 55,
       "db_chunks": 17,
-      "db_tables": 7,
-      "db_rows": 59,
-      "coverage_pct": 107.3,
+      "db_tables": 22,
+      "db_rows": 108,
+      "coverage_pct": 196.4,
       "issues": [],
       "chunk_details": [
         {
@@ -3333,120 +3333,120 @@
           "chunk_id": "C-0945-H",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-P",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-F",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-G",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-B",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-C",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-D",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-E",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-I",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0945-J",
-          "raw_section_id": "13-1-2",
-          "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0945-K",
-          "raw_section_id": "13-1-2",
-          "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0945-L",
-          "raw_section_id": "13-1-2",
-          "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0945-M",
-          "raw_section_id": "13-1-2",
-          "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-N",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0945-O",
           "raw_section_id": "13-1-2",
           "title": "관만곡(Pipe Bending) 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0945-J",
+          "raw_section_id": "13-1-2",
+          "title": "관만곡(Pipe Bending) 설치",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0945-K",
+          "raw_section_id": "13-1-2",
+          "title": "관만곡(Pipe Bending) 설치",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0945-L",
+          "raw_section_id": "13-1-2",
+          "title": "관만곡(Pipe Bending) 설치",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0945-M",
+          "raw_section_id": "13-1-2",
+          "title": "관만곡(Pipe Bending) 설치",
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -3466,9 +3466,9 @@
       "md_tables": 2,
       "md_rows": 16,
       "db_chunks": 6,
-      "db_tables": 4,
-      "db_rows": 20,
-      "coverage_pct": 125.0,
+      "db_tables": 7,
+      "db_rows": 29,
+      "coverage_pct": 181.2,
       "issues": [],
       "chunk_details": [
         {
@@ -3499,24 +3499,24 @@
           "chunk_id": "C-0946-B",
           "raw_section_id": "13-1-3",
           "title": "밸브 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0946-D",
           "raw_section_id": "13-1-3",
           "title": "밸브 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0946-E",
           "raw_section_id": "13-1-3",
           "title": "밸브 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         }
       ]
@@ -3528,9 +3528,9 @@
       "md_tables": 2,
       "md_rows": 23,
       "db_chunks": 6,
-      "db_tables": 3,
-      "db_rows": 31,
-      "coverage_pct": 134.8,
+      "db_tables": 7,
+      "db_rows": 43,
+      "coverage_pct": 187.0,
       "issues": [],
       "chunk_details": [
         {
@@ -3545,8 +3545,8 @@
           "chunk_id": "C-0947-E",
           "raw_section_id": "13-1-4",
           "title": "Fitting 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
@@ -3561,24 +3561,24 @@
           "chunk_id": "C-0947-B",
           "raw_section_id": "13-1-4",
           "title": "Fitting 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0947-C",
           "raw_section_id": "13-1-4",
           "title": "Fitting 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0947-D",
           "raw_section_id": "13-1-4",
           "title": "Fitting 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         }
       ]
@@ -3590,25 +3590,33 @@
       "md_tables": 5,
       "md_rows": 62,
       "db_chunks": 20,
-      "db_tables": 9,
-      "db_rows": 79,
-      "coverage_pct": 127.4,
+      "db_tables": 24,
+      "db_rows": 120,
+      "coverage_pct": 193.5,
       "issues": [],
       "chunk_details": [
-        {
-          "chunk_id": "C-0948-R",
-          "raw_section_id": "13-1-5",
-          "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
         {
           "chunk_id": "C-0948-Q",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
           "table_count": 5,
           "total_rows": 62,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0948-R",
+          "raw_section_id": "13-1-5",
+          "title": "Flange 취부",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0948-P",
+          "raw_section_id": "13-1-5",
+          "title": "Flange 취부",
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -3623,24 +3631,24 @@
           "chunk_id": "C-0948-E",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0948-F",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0948-G",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
@@ -3655,8 +3663,8 @@
           "chunk_id": "C-0948-D",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
@@ -3671,8 +3679,8 @@
           "chunk_id": "C-0948-C",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
@@ -3687,72 +3695,64 @@
           "chunk_id": "C-0948-A",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": true
         },
         {
           "chunk_id": "C-0948-B",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0948-P",
-          "raw_section_id": "13-1-5",
-          "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0948-K",
-          "raw_section_id": "13-1-5",
-          "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0948-L",
-          "raw_section_id": "13-1-5",
-          "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0948-M",
-          "raw_section_id": "13-1-5",
-          "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0948-N",
-          "raw_section_id": "13-1-5",
-          "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0948-O",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0948-K",
+          "raw_section_id": "13-1-5",
+          "title": "Flange 취부",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0948-L",
+          "raw_section_id": "13-1-5",
+          "title": "Flange 취부",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0948-M",
+          "raw_section_id": "13-1-5",
+          "title": "Flange 취부",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0948-N",
+          "raw_section_id": "13-1-5",
+          "title": "Flange 취부",
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0948-S",
           "raw_section_id": "13-1-5",
           "title": "Flange 취부",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         }
       ]
@@ -3786,9 +3786,9 @@
       "md_tables": 5,
       "md_rows": 59,
       "db_chunks": 8,
-      "db_tables": 11,
-      "db_rows": 93,
-      "coverage_pct": 157.6,
+      "db_tables": 12,
+      "db_rows": 106,
+      "coverage_pct": 179.7,
       "issues": [
         {
           "type": "COL_MISMATCH",
@@ -3806,20 +3806,20 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0951-A-b",
+          "raw_section_id": "13-1-8",
+          "title": "이중보온관 설치",
+          "table_count": 1,
+          "total_rows": 13,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0951-A-a",
           "raw_section_id": "13-1-8",
           "title": "이중보온관 설치",
           "table_count": 0,
           "total_rows": 0,
           "has_text": true
-        },
-        {
-          "chunk_id": "C-0951-A-b",
-          "raw_section_id": "13-1-8",
-          "title": "이중보온관 설치",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
         },
         {
           "chunk_id": "C-0951-C",
@@ -4161,9 +4161,9 @@
       "md_tables": 7,
       "md_rows": 96,
       "db_chunks": 11,
-      "db_tables": 10,
-      "db_rows": 92,
-      "coverage_pct": 95.8,
+      "db_tables": 12,
+      "db_rows": 104,
+      "coverage_pct": 108.3,
       "issues": [
         {
           "type": "COL_MISMATCH",
@@ -4176,8 +4176,8 @@
           "chunk_id": "C-0955-F",
           "raw_section_id": "13-2-3",
           "title": "강관용접",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 6,
           "has_text": false
         },
         {
@@ -4224,8 +4224,8 @@
           "chunk_id": "C-0955-G",
           "raw_section_id": "13-2-3",
           "title": "강관용접",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 6,
           "has_text": false
         },
         {
@@ -4269,157 +4269,157 @@
       "md_tables": 5,
       "md_rows": 53,
       "db_chunks": 17,
-      "db_tables": 16,
-      "db_rows": 123,
-      "coverage_pct": 232.1,
+      "db_tables": 23,
+      "db_rows": 164,
+      "coverage_pct": 309.4,
       "issues": [
         {
           "type": "CROSS_TYPE",
           "severity": "WARNING",
-          "detail": "chunk C-0956-O에 다른 헤더 유형 혼재: {'V형_하횡입', '한면양면'}"
+          "detail": "chunk C-0956-O에 다른 헤더 유형 혼재: {'한면양면', 'V형_하횡입'}"
         },
         {
           "type": "CROSS_TYPE",
           "severity": "WARNING",
-          "detail": "chunk C-0956-A에 다른 헤더 유형 혼재: {'V형_하횡입', '한면양면'}"
+          "detail": "chunk C-0956-D에 다른 헤더 유형 혼재: {'한면양면', 'V형_하횡입'}"
         }
       ],
       "chunk_details": [
         {
           "chunk_id": "C-0956-O",
-          "raw_section_id": "13-2-4",
+          "raw_section_id": "13-2-4#H",
           "title": "강판 전기아크용접",
-          "table_count": 5,
-          "total_rows": 53,
+          "table_count": 6,
+          "total_rows": 65,
           "has_text": true
         },
         {
-          "chunk_id": "C-0956-P",
-          "raw_section_id": "13-2-4",
+          "chunk_id": "C-0956-A",
+          "raw_section_id": "13-2-4#V",
           "title": "강판 전기아크용접",
           "table_count": 1,
-          "total_rows": 4,
-          "has_text": false
+          "total_rows": 13,
+          "has_text": true
         },
         {
           "chunk_id": "C-0956-Q",
-          "raw_section_id": "13-2-4",
+          "raw_section_id": "13-2-4#Gouging",
           "title": "강판 전기아크용접",
           "table_count": 1,
           "total_rows": 6,
           "has_text": true
         },
         {
-          "chunk_id": "C-0956-A",
-          "raw_section_id": "13-2-4",
+          "chunk_id": "C-0956-P",
+          "raw_section_id": "13-2-4#X",
           "title": "강판 전기아크용접",
-          "table_count": 5,
-          "total_rows": 53,
+          "table_count": 1,
+          "total_rows": 8,
+          "has_text": true
+        },
+        {
+          "chunk_id": "C-0956-K",
+          "raw_section_id": "13-2-4#X",
+          "title": "강판 전기아크용접",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": true
+        },
+        {
+          "chunk_id": "C-0956-M",
+          "raw_section_id": "13-2-4#Fillet",
+          "title": "강판 전기아크용접",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": true
+        },
+        {
+          "chunk_id": "C-0956-N",
+          "raw_section_id": "13-2-4#Fillet",
+          "title": "강판 전기아크용접",
+          "table_count": 1,
+          "total_rows": 15,
+          "has_text": true
+        },
+        {
+          "chunk_id": "C-0956-B",
+          "raw_section_id": "13-2-4#V",
+          "title": "강판 전기아크용접",
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": true
         },
         {
           "chunk_id": "C-0956-H",
-          "raw_section_id": "13-2-4",
-          "title": "강판 전기아크용접",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0956-F",
-          "raw_section_id": "13-2-4",
+          "raw_section_id": "13-2-4#X",
           "title": "강판 전기아크용접",
           "table_count": 1,
-          "total_rows": 2,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0956-B",
-          "raw_section_id": "13-2-4",
-          "title": "강판 전기아크용접",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
+          "total_rows": 5,
+          "has_text": true
         },
         {
           "chunk_id": "C-0956-C",
-          "raw_section_id": "13-2-4",
-          "title": "강판 전기아크용접",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0956-D",
-          "raw_section_id": "13-2-4",
+          "raw_section_id": "13-2-4#V",
           "title": "강판 전기아크용접",
           "table_count": 1,
-          "total_rows": 1,
-          "has_text": false
+          "total_rows": 4,
+          "has_text": true
+        },
+        {
+          "chunk_id": "C-0956-F",
+          "raw_section_id": "13-2-4#U",
+          "title": "강판 전기아크용접",
+          "table_count": 1,
+          "total_rows": 12,
+          "has_text": true
         },
         {
           "chunk_id": "C-0956-E",
-          "raw_section_id": "13-2-4",
+          "raw_section_id": "13-2-4#U",
           "title": "강판 전기아크용접",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0956-G",
-          "raw_section_id": "13-2-4",
+          "raw_section_id": "13-2-4#H",
           "title": "강판 전기아크용접",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
+          "table_count": 1,
+          "total_rows": 5,
+          "has_text": true
+        },
+        {
+          "chunk_id": "C-0956-D",
+          "raw_section_id": "13-2-4#V",
+          "title": "강판 전기아크용접",
+          "table_count": 2,
+          "total_rows": 6,
+          "has_text": true
         },
         {
           "chunk_id": "C-0956-I",
-          "raw_section_id": "13-2-4",
+          "raw_section_id": "13-2-4#H",
           "title": "강판 전기아크용접",
           "table_count": 1,
           "total_rows": 2,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0956-N",
-          "raw_section_id": "13-2-4",
-          "title": "강판 전기아크용접",
-          "table_count": 1,
-          "total_rows": 2,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0956-J",
-          "raw_section_id": "13-2-4",
-          "title": "강판 전기아크용접",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0956-K",
-          "raw_section_id": "13-2-4",
-          "title": "강판 전기아크용접",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
+          "has_text": true
         },
         {
           "chunk_id": "C-0956-L",
-          "raw_section_id": "13-2-4",
+          "raw_section_id": "13-2-4#Fillet",
           "title": "강판 전기아크용접",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": true
         },
         {
-          "chunk_id": "C-0956-M",
-          "raw_section_id": "13-2-4",
+          "chunk_id": "C-0956-J",
+          "raw_section_id": "13-2-4#H",
           "title": "강판 전기아크용접",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": true
         }
       ]
     },
@@ -4542,41 +4542,57 @@
       "md_tables": 5,
       "md_rows": 90,
       "db_chunks": 21,
-      "db_tables": 6,
-      "db_rows": 97,
-      "coverage_pct": 107.8,
+      "db_tables": 25,
+      "db_rows": 177,
+      "coverage_pct": 196.7,
       "issues": [],
       "chunk_details": [
-        {
-          "chunk_id": "C-0959-D",
-          "raw_section_id": "13-2-7",
-          "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0959-H",
-          "raw_section_id": "13-2-7",
-          "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0959-L",
-          "raw_section_id": "13-2-7",
-          "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
         {
           "chunk_id": "C-0959-A-b",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
           "table_count": 5,
           "total_rows": 90,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0959-D",
+          "raw_section_id": "13-2-7",
+          "title": "아세틸렌량의 환산",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0959-L",
+          "raw_section_id": "13-2-7",
+          "title": "아세틸렌량의 환산",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0959-G",
+          "raw_section_id": "13-2-7",
+          "title": "아세틸렌량의 환산",
+          "table_count": 1,
+          "total_rows": 5,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0959-H",
+          "raw_section_id": "13-2-7",
+          "title": "아세틸렌량의 환산",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0959-K",
+          "raw_section_id": "13-2-7",
+          "title": "아세틸렌량의 환산",
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -4591,128 +4607,112 @@
           "chunk_id": "C-0959-B",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-C",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-E",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-F",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0959-G",
-          "raw_section_id": "13-2-7",
-          "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-I",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-J",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0959-K",
-          "raw_section_id": "13-2-7",
-          "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-M",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-N",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-O",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0959-P",
-          "raw_section_id": "13-2-7",
-          "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0959-Q",
-          "raw_section_id": "13-2-7",
-          "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0959-R",
-          "raw_section_id": "13-2-7",
-          "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-S",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0959-P",
+          "raw_section_id": "13-2-7",
+          "title": "아세틸렌량의 환산",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0959-Q",
+          "raw_section_id": "13-2-7",
+          "title": "아세틸렌량의 환산",
+          "table_count": 1,
+          "total_rows": 5,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0959-R",
+          "raw_section_id": "13-2-7",
+          "title": "아세틸렌량의 환산",
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0959-T",
           "raw_section_id": "13-2-7",
           "title": "아세틸렌량의 환산",
-          "table_count": 1,
-          "total_rows": 7,
+          "table_count": 2,
+          "total_rows": 9,
           "has_text": false
         }
       ]
@@ -4796,14 +4796,14 @@
       "md_tables": 14,
       "md_rows": 77,
       "db_chunks": 9,
-      "db_tables": 8,
-      "db_rows": 62,
-      "coverage_pct": 80.5,
+      "db_tables": 10,
+      "db_rows": 64,
+      "coverage_pct": 83.1,
       "issues": [
         {
           "type": "ROW_MINOR_DIFF",
           "severity": "INFO",
-          "detail": "원본 77행 vs DB 62행 (coverage 80.5%)"
+          "detail": "원본 77행 vs DB 64행 (coverage 83.1%)"
         },
         {
           "type": "COL_MISMATCH",
@@ -4832,8 +4832,8 @@
           "chunk_id": "C-0964-A-d",
           "raw_section_id": "13-4-3",
           "title": "STORAGE TANK",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
@@ -4880,8 +4880,8 @@
           "chunk_id": "C-0964-A-c",
           "raw_section_id": "13-4-3",
           "title": "STORAGE TANK",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         }
       ]
@@ -5067,9 +5067,9 @@
       "md_tables": 4,
       "md_rows": 28,
       "db_chunks": 2,
-      "db_tables": 6,
-      "db_rows": 44,
-      "coverage_pct": 157.1,
+      "db_tables": 7,
+      "db_rows": 50,
+      "coverage_pct": 178.6,
       "issues": [],
       "chunk_details": [
         {
@@ -5084,8 +5084,8 @@
           "chunk_id": "C-0978-B",
           "raw_section_id": "13-5-13",
           "title": "Boiler Feed Pump 설치",
-          "table_count": 1,
-          "total_rows": 4,
+          "table_count": 2,
+          "total_rows": 10,
           "has_text": false
         }
       ]
@@ -5143,9 +5143,9 @@
       "md_tables": 7,
       "md_rows": 63,
       "db_chunks": 8,
-      "db_tables": 12,
-      "db_rows": 83,
-      "coverage_pct": 131.7,
+      "db_tables": 16,
+      "db_rows": 105,
+      "coverage_pct": 166.7,
       "issues": [],
       "chunk_details": [
         {
@@ -5157,20 +5157,20 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0968-A",
+          "raw_section_id": "13-5-2",
+          "title": "보일러 드럼 설치",
+          "table_count": 3,
+          "total_rows": 11,
+          "has_text": true
+        },
+        {
           "chunk_id": "C-0968-C",
           "raw_section_id": "13-5-2",
           "title": "보일러 드럼 설치",
           "table_count": 1,
           "total_rows": 6,
           "has_text": false
-        },
-        {
-          "chunk_id": "C-0968-A",
-          "raw_section_id": "13-5-2",
-          "title": "보일러 드럼 설치",
-          "table_count": 1,
-          "total_rows": 3,
-          "has_text": true
         },
         {
           "chunk_id": "C-0968-D",
@@ -5200,16 +5200,16 @@
           "chunk_id": "C-0968-F",
           "raw_section_id": "13-5-2",
           "title": "보일러 드럼 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0968-G",
           "raw_section_id": "13-5-2",
           "title": "보일러 드럼 설치",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         }
       ]
@@ -5769,17 +5769,17 @@
       "md_tables": 7,
       "md_rows": 94,
       "db_chunks": 3,
-      "db_tables": 10,
-      "db_rows": 110,
-      "coverage_pct": 117.0,
+      "db_tables": 11,
+      "db_rows": 128,
+      "coverage_pct": 136.2,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0983-A",
           "raw_section_id": "13-6-3",
           "title": "수문 제작",
-          "table_count": 2,
-          "total_rows": 11,
+          "table_count": 3,
+          "total_rows": 29,
           "has_text": true
         },
         {
@@ -6324,9 +6324,9 @@
       "md_tables": 1,
       "md_rows": 29,
       "db_chunks": 3,
-      "db_tables": 5,
-      "db_rows": 46,
-      "coverage_pct": 158.6,
+      "db_tables": 8,
+      "db_rows": 63,
+      "coverage_pct": 217.2,
       "issues": [],
       "chunk_details": [
         {
@@ -6338,19 +6338,19 @@
           "has_text": true
         },
         {
-          "chunk_id": "C-1017-B",
-          "raw_section_id": "13-8-2",
-          "title": "폐열보일러 설치",
-          "table_count": 1,
-          "total_rows": 20,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-1017-C",
           "raw_section_id": "13-8-2",
           "title": "폐열보일러 설치",
           "table_count": 1,
           "total_rows": 9,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-1017-B",
+          "raw_section_id": "13-8-2",
+          "title": "폐열보일러 설치",
+          "table_count": 4,
+          "total_rows": 37,
           "has_text": false
         }
       ]
@@ -6706,9 +6706,9 @@
       "md_tables": 9,
       "md_rows": 28,
       "db_chunks": 8,
-      "db_tables": 11,
-      "db_rows": 35,
-      "coverage_pct": 125.0,
+      "db_tables": 15,
+      "db_rows": 49,
+      "coverage_pct": 175.0,
       "issues": [],
       "chunk_details": [
         {
@@ -6728,6 +6728,14 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-1082-A-c",
+          "raw_section_id": "2-1-15",
+          "title": "차선도색",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-1082-B",
           "raw_section_id": "2-1-15",
           "title": "차선도색",
@@ -6736,27 +6744,19 @@
           "has_text": true
         },
         {
-          "chunk_id": "C-1082-A-c",
+          "chunk_id": "C-1082-A-e",
           "raw_section_id": "2-1-15",
           "title": "차선도색",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-1082-A-d",
           "raw_section_id": "2-1-15",
           "title": "차선도색",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-1082-A-e",
-          "raw_section_id": "2-1-15",
-          "title": "차선도색",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -6771,8 +6771,8 @@
           "chunk_id": "C-1082-D",
           "raw_section_id": "2-1-15",
           "title": "차선도색",
-          "table_count": 3,
-          "total_rows": 7,
+          "table_count": 4,
+          "total_rows": 10,
           "has_text": false
         }
       ]
@@ -7251,20 +7251,14 @@
     {
       "base_section_id": "2-1-8",
       "title": "소파보수(표층)",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 10,
       "md_rows": 26,
       "db_chunks": 2,
-      "db_tables": 9,
-      "db_rows": 31,
-      "coverage_pct": 119.2,
-      "issues": [
-        {
-          "type": "COL_MISMATCH",
-          "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {3} (MD: [3, 5, 8, 12], DB: [5, 6, 8, 9, 12])"
-        }
-      ],
+      "db_tables": 13,
+      "db_rows": 37,
+      "coverage_pct": 142.3,
+      "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-1075-B",
@@ -7278,8 +7272,8 @@
           "chunk_id": "C-1075-A",
           "raw_section_id": "2-1-8",
           "title": "소파보수(표층)",
-          "table_count": 2,
-          "total_rows": 8,
+          "table_count": 6,
+          "total_rows": 14,
           "has_text": true
         }
       ]
@@ -7481,17 +7475,17 @@
       "md_tables": 6,
       "md_rows": 35,
       "db_chunks": 3,
-      "db_tables": 10,
-      "db_rows": 54,
-      "coverage_pct": 154.3,
+      "db_tables": 11,
+      "db_rows": 62,
+      "coverage_pct": 177.1,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0117-C",
           "raw_section_id": "2-12-4",
           "title": "파이프 루프공",
-          "table_count": 1,
-          "total_rows": 5,
+          "table_count": 2,
+          "total_rows": 13,
           "has_text": false
         },
         {
@@ -7692,17 +7686,17 @@
       "md_tables": 11,
       "md_rows": 62,
       "db_chunks": 5,
-      "db_tables": 15,
-      "db_rows": 90,
-      "coverage_pct": 145.2,
+      "db_tables": 16,
+      "db_rows": 91,
+      "coverage_pct": 146.8,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0047-A",
           "raw_section_id": "2-2-3",
           "title": "가설시설물",
-          "table_count": 3,
-          "total_rows": 19,
+          "table_count": 4,
+          "total_rows": 20,
           "has_text": true
         },
         {
@@ -9273,9 +9267,9 @@
       "md_tables": 7,
       "md_rows": 29,
       "db_chunks": 3,
-      "db_tables": 9,
-      "db_rows": 33,
-      "coverage_pct": 113.8,
+      "db_tables": 13,
+      "db_rows": 43,
+      "coverage_pct": 148.3,
       "issues": [],
       "chunk_details": [
         {
@@ -9290,8 +9284,8 @@
           "chunk_id": "C-0125",
           "raw_section_id": "3-3-1",
           "title": "암발파(미진동굴착 TYPE-Ⅰ)",
-          "table_count": 1,
-          "total_rows": 2,
+          "table_count": 5,
+          "total_rows": 12,
           "has_text": true
         },
         {
@@ -9408,17 +9402,17 @@
       "md_tables": 13,
       "md_rows": 31,
       "db_chunks": 4,
-      "db_tables": 18,
-      "db_rows": 46,
-      "coverage_pct": 148.4,
+      "db_tables": 20,
+      "db_rows": 52,
+      "coverage_pct": 167.7,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0134",
           "raw_section_id": "3-4-1",
           "title": "흙쌓기",
-          "table_count": 1,
-          "total_rows": 1,
+          "table_count": 3,
+          "total_rows": 7,
           "has_text": true
         },
         {
@@ -10247,9 +10241,9 @@
       "md_tables": 7,
       "md_rows": 31,
       "db_chunks": 3,
-      "db_tables": 9,
-      "db_rows": 49,
-      "coverage_pct": 158.1,
+      "db_tables": 10,
+      "db_rows": 50,
+      "coverage_pct": 161.3,
       "issues": [],
       "chunk_details": [
         {
@@ -10264,8 +10258,8 @@
           "chunk_id": "C-0172",
           "raw_section_id": "4-3-1",
           "title": "뿌리돌림",
-          "table_count": 2,
-          "total_rows": 12,
+          "table_count": 3,
+          "total_rows": 13,
           "has_text": false
         },
         {
@@ -10706,9 +10700,9 @@
       "md_tables": 17,
       "md_rows": 48,
       "db_chunks": 6,
-      "db_tables": 23,
-      "db_rows": 80,
-      "coverage_pct": 166.7,
+      "db_tables": 24,
+      "db_rows": 83,
+      "coverage_pct": 172.9,
       "issues": [],
       "chunk_details": [
         {
@@ -10723,8 +10717,8 @@
           "chunk_id": "C-0186-A",
           "raw_section_id": "5-1-3",
           "title": "H-Beam 철거",
-          "table_count": 1,
-          "total_rows": 10,
+          "table_count": 2,
+          "total_rows": 13,
           "has_text": true
         },
         {
@@ -10856,9 +10850,9 @@
       "md_tables": 18,
       "md_rows": 40,
       "db_chunks": 8,
-      "db_tables": 21,
-      "db_rows": 60,
-      "coverage_pct": 150.0,
+      "db_tables": 23,
+      "db_rows": 65,
+      "coverage_pct": 162.5,
       "issues": [],
       "chunk_details": [
         {
@@ -10873,8 +10867,8 @@
           "chunk_id": "C-0192-B",
           "raw_section_id": "5-2-2",
           "title": "고압분사 주입공법",
-          "table_count": 3,
-          "total_rows": 5,
+          "table_count": 4,
+          "total_rows": 9,
           "has_text": false
         },
         {
@@ -10905,8 +10899,8 @@
           "chunk_id": "C-0192-A-e",
           "raw_section_id": "5-2-2",
           "title": "고압분사 주입공법",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
@@ -11132,9 +11126,9 @@
       "md_tables": 22,
       "md_rows": 71,
       "db_chunks": 6,
-      "db_tables": 35,
-      "db_rows": 116,
-      "coverage_pct": 163.4,
+      "db_tables": 37,
+      "db_rows": 121,
+      "coverage_pct": 170.4,
       "issues": [],
       "chunk_details": [
         {
@@ -11149,16 +11143,16 @@
           "chunk_id": "C-0197-A",
           "raw_section_id": "5-3-2",
           "title": "말뚝박기용 천공",
-          "table_count": 2,
-          "total_rows": 11,
+          "table_count": 3,
+          "total_rows": 15,
           "has_text": true
         },
         {
           "chunk_id": "C-0197-B",
           "raw_section_id": "5-3-2",
           "title": "말뚝박기용 천공",
-          "table_count": 1,
-          "total_rows": 7,
+          "table_count": 2,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -11250,20 +11244,14 @@
     {
       "base_section_id": "5-3-5",
       "title": "현장타설말뚝",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 35,
       "md_rows": 94,
       "db_chunks": 11,
-      "db_tables": 34,
-      "db_rows": 104,
-      "coverage_pct": 110.6,
-      "issues": [
-        {
-          "type": "COL_MISMATCH",
-          "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {2} (MD: [2, 3, 4, 6, 9, 10], DB: [3, 4, 5, 6, 8, 9, 10])"
-        }
-      ],
+      "db_tables": 44,
+      "db_rows": 127,
+      "coverage_pct": 135.1,
+      "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0200-A-a",
@@ -11285,8 +11273,8 @@
           "chunk_id": "C-0200-A-g",
           "raw_section_id": "5-3-5",
           "title": "현장타설말뚝",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
@@ -11306,6 +11294,14 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0200-A-b",
+          "raw_section_id": "5-3-5",
+          "title": "현장타설말뚝",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0200-A-c",
           "raw_section_id": "5-3-5",
           "title": "현장타설말뚝",
@@ -11314,43 +11310,35 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0200-A-b",
-          "raw_section_id": "5-3-5",
-          "title": "현장타설말뚝",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0200-A-d",
-          "raw_section_id": "5-3-5",
-          "title": "현장타설말뚝",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0200-A-e",
-          "raw_section_id": "5-3-5",
-          "title": "현장타설말뚝",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0200-A-f",
           "raw_section_id": "5-3-5",
           "title": "현장타설말뚝",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0200-C",
           "raw_section_id": "5-3-5",
           "title": "현장타설말뚝",
-          "table_count": 5,
-          "total_rows": 12,
+          "table_count": 10,
+          "total_rows": 19,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0200-A-d",
+          "raw_section_id": "5-3-5",
+          "title": "현장타설말뚝",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0200-A-e",
+          "raw_section_id": "5-3-5",
+          "title": "현장타설말뚝",
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         }
       ]
@@ -11524,20 +11512,14 @@
     {
       "base_section_id": "5-4-9",
       "title": "외벽단열공법",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 18,
       "md_rows": 37,
       "db_chunks": 2,
-      "db_tables": 13,
-      "db_rows": 35,
-      "coverage_pct": 94.6,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 37행 vs DB 35행 (coverage 94.6%)"
-        }
-      ],
+      "db_tables": 20,
+      "db_rows": 52,
+      "coverage_pct": 140.5,
+      "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0698",
@@ -11551,8 +11533,8 @@
           "chunk_id": "C-0683",
           "raw_section_id": "5-4-9",
           "title": "외벽단열공법",
-          "table_count": 2,
-          "total_rows": 3,
+          "table_count": 9,
+          "total_rows": 20,
           "has_text": true
         }
       ]
@@ -11666,9 +11648,9 @@
       "md_tables": 11,
       "md_rows": 22,
       "db_chunks": 2,
-      "db_tables": 12,
-      "db_rows": 26,
-      "coverage_pct": 118.2,
+      "db_tables": 18,
+      "db_rows": 37,
+      "coverage_pct": 168.2,
       "issues": [],
       "chunk_details": [
         {
@@ -11683,8 +11665,8 @@
           "chunk_id": "C-0205",
           "raw_section_id": "6-1-4",
           "title": "콘크리트 펌프차 타설",
-          "table_count": 2,
-          "total_rows": 4,
+          "table_count": 8,
+          "total_rows": 15,
           "has_text": true
         }
       ]
@@ -12014,9 +11996,9 @@
       "md_tables": 12,
       "md_rows": 39,
       "db_chunks": 4,
-      "db_tables": 15,
-      "db_rows": 60,
-      "coverage_pct": 153.8,
+      "db_tables": 18,
+      "db_rows": 68,
+      "coverage_pct": 174.4,
       "issues": [],
       "chunk_details": [
         {
@@ -12031,8 +12013,8 @@
           "chunk_id": "C-0214",
           "raw_section_id": "6-3-3",
           "title": "유로폼 설치 및 해체",
-          "table_count": 1,
-          "total_rows": 2,
+          "table_count": 4,
+          "total_rows": 10,
           "has_text": true
         },
         {
@@ -12160,9 +12142,9 @@
       "md_tables": 8,
       "md_rows": 26,
       "db_chunks": 10,
-      "db_tables": 14,
-      "db_rows": 46,
-      "coverage_pct": 176.9,
+      "db_tables": 18,
+      "db_rows": 64,
+      "coverage_pct": 246.2,
       "issues": [],
       "chunk_details": [
         {
@@ -12209,24 +12191,24 @@
           "chunk_id": "C-0222-A-b",
           "raw_section_id": "6-4-1",
           "title": "PSC빔 제작",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0222-A-g",
           "raw_section_id": "6-4-1",
           "title": "PSC빔 제작",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0222-B",
           "raw_section_id": "6-4-1",
           "title": "PSC빔 제작",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 9,
           "has_text": false
         },
         {
@@ -12495,11 +12477,19 @@
       "md_tables": 1,
       "md_rows": 30,
       "db_chunks": 6,
-      "db_tables": 4,
-      "db_rows": 52,
-      "coverage_pct": 173.3,
+      "db_tables": 6,
+      "db_rows": 78,
+      "coverage_pct": 260.0,
       "issues": [],
       "chunk_details": [
+        {
+          "chunk_id": "C-0229-B",
+          "raw_section_id": "6-6-2",
+          "title": "교량받침 설치(수상)",
+          "table_count": 1,
+          "total_rows": 13,
+          "has_text": false
+        },
         {
           "chunk_id": "C-0229-D",
           "raw_section_id": "6-6-2",
@@ -12509,19 +12499,11 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0229-B",
-          "raw_section_id": "6-6-2",
-          "title": "교량받침 설치(수상)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0229-C",
           "raw_section_id": "6-6-2",
           "title": "교량받침 설치(수상)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 13,
           "has_text": false
         },
         {
@@ -13902,15 +13884,10 @@
       "md_tables": 14,
       "md_rows": 142,
       "db_chunks": 21,
-      "db_tables": 13,
-      "db_rows": 127,
-      "coverage_pct": 89.4,
+      "db_tables": 22,
+      "db_rows": 145,
+      "coverage_pct": 102.1,
       "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 142행 vs DB 127행 (coverage 89.4%)"
-        },
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
@@ -13922,32 +13899,32 @@
           "chunk_id": "C-0270-H",
           "raw_section_id": "8-2-12",
           "title": "크러셔",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0270-I",
           "raw_section_id": "8-2-12",
           "title": "크러셔",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0270-F",
           "raw_section_id": "8-2-12",
           "title": "크러셔",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0270-G",
           "raw_section_id": "8-2-12",
           "title": "크러셔",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
@@ -14050,40 +14027,40 @@
           "chunk_id": "C-0270-J",
           "raw_section_id": "8-2-12",
           "title": "크러셔",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0270-K",
           "raw_section_id": "8-2-12",
           "title": "크러셔",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0270-L",
           "raw_section_id": "8-2-12",
           "title": "크러셔",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0270-M",
           "raw_section_id": "8-2-12",
           "title": "크러셔",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0270-N",
           "raw_section_id": "8-2-12",
           "title": "크러셔",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         }
       ]
@@ -14332,9 +14309,9 @@
       "md_tables": 11,
       "md_rows": 54,
       "db_chunks": 6,
-      "db_tables": 18,
-      "db_rows": 92,
-      "coverage_pct": 170.4,
+      "db_tables": 21,
+      "db_rows": 113,
+      "coverage_pct": 209.3,
       "issues": [],
       "chunk_details": [
         {
@@ -14362,28 +14339,28 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0280-A-a",
-          "raw_section_id": "8-2-22",
-          "title": "디젤 파일 해머",
-          "table_count": 10,
-          "total_rows": 54,
-          "has_text": true
-        },
-        {
           "chunk_id": "C-0280-B",
           "raw_section_id": "8-2-22",
           "title": "디젤 파일 해머",
-          "table_count": 3,
-          "total_rows": 20,
+          "table_count": 5,
+          "total_rows": 34,
           "has_text": false
         },
         {
           "chunk_id": "C-0280-C",
           "raw_section_id": "8-2-22",
           "title": "디젤 파일 해머",
-          "table_count": 2,
-          "total_rows": 10,
+          "table_count": 3,
+          "total_rows": 17,
           "has_text": false
+        },
+        {
+          "chunk_id": "C-0280-A-a",
+          "raw_section_id": "8-2-22",
+          "title": "디젤 파일 해머",
+          "table_count": 10,
+          "total_rows": 54,
+          "has_text": true
         }
       ]
     },
@@ -14394,9 +14371,9 @@
       "md_tables": 16,
       "md_rows": 28,
       "db_chunks": 16,
-      "db_tables": 14,
-      "db_rows": 31,
-      "coverage_pct": 110.7,
+      "db_tables": 16,
+      "db_rows": 33,
+      "coverage_pct": 117.9,
       "issues": [
         {
           "type": "COL_MISMATCH",
@@ -14415,6 +14392,14 @@
         },
         {
           "chunk_id": "C-0281-A-j",
+          "raw_section_id": "8-2-23",
+          "title": "유압 파일 해머",
+          "table_count": 1,
+          "total_rows": 1,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0281-A-g",
           "raw_section_id": "8-2-23",
           "title": "유압 파일 해머",
           "table_count": 1,
@@ -14478,19 +14463,11 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0281-A-g",
-          "raw_section_id": "8-2-23",
-          "title": "유압 파일 해머",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0281-A-h",
           "raw_section_id": "8-2-23",
           "title": "유압 파일 해머",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
@@ -14542,9 +14519,9 @@
       "md_tables": 21,
       "md_rows": 52,
       "db_chunks": 13,
-      "db_tables": 38,
-      "db_rows": 91,
-      "coverage_pct": 175.0,
+      "db_tables": 41,
+      "db_rows": 100,
+      "coverage_pct": 192.3,
       "issues": [],
       "chunk_details": [
         {
@@ -14567,16 +14544,16 @@
           "chunk_id": "C-0282-A-g",
           "raw_section_id": "8-2-24",
           "title": "진동파일 해머",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0282-D",
           "raw_section_id": "8-2-24",
           "title": "진동파일 해머",
-          "table_count": 3,
-          "total_rows": 3,
+          "table_count": 4,
+          "total_rows": 7,
           "has_text": false
         },
         {
@@ -14612,6 +14589,14 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0282-C",
+          "raw_section_id": "8-2-24",
+          "title": "진동파일 해머",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0282-A-h",
           "raw_section_id": "8-2-24",
           "title": "진동파일 해머",
@@ -14633,14 +14618,6 @@
           "title": "진동파일 해머",
           "table_count": 4,
           "total_rows": 7,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0282-C",
-          "raw_section_id": "8-2-24",
-          "title": "진동파일 해머",
-          "table_count": 0,
-          "total_rows": 0,
           "has_text": false
         },
         {
@@ -14787,11 +14764,19 @@
       "md_tables": 15,
       "md_rows": 82,
       "db_chunks": 9,
-      "db_tables": 26,
-      "db_rows": 138,
-      "coverage_pct": 168.3,
+      "db_tables": 29,
+      "db_rows": 165,
+      "coverage_pct": 201.2,
       "issues": [],
       "chunk_details": [
+        {
+          "chunk_id": "C-0287-A-c",
+          "raw_section_id": "8-2-29",
+          "title": "펌프식 준설선",
+          "table_count": 1,
+          "total_rows": 9,
+          "has_text": false
+        },
         {
           "chunk_id": "C-0287-A-d",
           "raw_section_id": "8-2-29",
@@ -14814,14 +14799,6 @@
           "title": "펌프식 준설선",
           "table_count": 1,
           "total_rows": 1,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0287-A-c",
-          "raw_section_id": "8-2-29",
-          "title": "펌프식 준설선",
-          "table_count": 0,
-          "total_rows": 0,
           "has_text": false
         },
         {
@@ -14852,16 +14829,16 @@
           "chunk_id": "C-0287-A-e",
           "raw_section_id": "8-2-29",
           "title": "펌프식 준설선",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 9,
           "has_text": false
         },
         {
           "chunk_id": "C-0287-B",
           "raw_section_id": "8-2-29",
           "title": "펌프식 준설선",
-          "table_count": 5,
-          "total_rows": 28,
+          "table_count": 6,
+          "total_rows": 37,
           "has_text": false
         }
       ]
@@ -14949,25 +14926,25 @@
       "md_tables": 15,
       "md_rows": 69,
       "db_chunks": 6,
-      "db_tables": 25,
-      "db_rows": 116,
-      "coverage_pct": 168.1,
+      "db_tables": 29,
+      "db_rows": 144,
+      "coverage_pct": 208.7,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0288-A",
           "raw_section_id": "8-2-30",
           "title": "그래브 준설선",
-          "table_count": 5,
-          "total_rows": 14,
+          "table_count": 7,
+          "total_rows": 20,
           "has_text": true
         },
         {
           "chunk_id": "C-0288-E",
           "raw_section_id": "8-2-30",
           "title": "그래브 준설선",
-          "table_count": 2,
-          "total_rows": 3,
+          "table_count": 3,
+          "total_rows": 14,
           "has_text": false
         },
         {
@@ -14998,8 +14975,8 @@
           "chunk_id": "C-0288-D",
           "raw_section_id": "8-2-30",
           "title": "그래브 준설선",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 11,
           "has_text": false
         }
       ]
@@ -15400,19 +15377,14 @@
     {
       "base_section_id": "8-3-1",
       "title": "[00]토공기계",
-      "status": "WARN",
+      "status": "INFO",
       "md_tables": 22,
       "md_rows": 87,
       "db_chunks": 16,
-      "db_tables": 15,
-      "db_rows": 58,
-      "coverage_pct": 66.7,
+      "db_tables": 26,
+      "db_rows": 99,
+      "coverage_pct": 113.8,
       "issues": [
-        {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 87행 vs DB 58행 (coverage 66.7%)"
-        },
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
@@ -15424,16 +15396,24 @@
           "chunk_id": "C-0292-A",
           "raw_section_id": "8-3-1",
           "title": "[00]토공기계",
-          "table_count": 2,
-          "total_rows": 8,
+          "table_count": 3,
+          "total_rows": 9,
           "has_text": true
         },
         {
           "chunk_id": "C-0292-F",
           "raw_section_id": "8-3-1",
           "title": "[00]토공기계",
+          "table_count": 3,
+          "total_rows": 7,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0292-C",
+          "raw_section_id": "8-3-1",
+          "title": "[00]토공기계",
           "table_count": 1,
-          "total_rows": 2,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -15453,19 +15433,19 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0292-C",
-          "raw_section_id": "8-3-1",
-          "title": "[00]토공기계",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0292-D",
           "raw_section_id": "8-3-1",
           "title": "[00]토공기계",
+          "table_count": 3,
+          "total_rows": 7,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0292-G",
+          "raw_section_id": "8-3-1",
+          "title": "[00]토공기계",
           "table_count": 1,
-          "total_rows": 2,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -15493,35 +15473,27 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0292-G",
-          "raw_section_id": "8-3-1",
-          "title": "[00]토공기계",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0292-H",
           "raw_section_id": "8-3-1",
           "title": "[00]토공기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 8,
           "has_text": false
         },
         {
           "chunk_id": "C-0292-I",
           "raw_section_id": "8-3-1",
           "title": "[00]토공기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0292-M",
           "raw_section_id": "8-3-1",
           "title": "[00]토공기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
@@ -15557,9 +15529,9 @@
       "md_tables": 9,
       "md_rows": 81,
       "db_chunks": 15,
-      "db_tables": 34,
-      "db_rows": 178,
-      "coverage_pct": 219.8,
+      "db_tables": 43,
+      "db_rows": 235,
+      "coverage_pct": 290.1,
       "issues": [],
       "chunk_details": [
         {
@@ -15582,8 +15554,8 @@
           "chunk_id": "C-0301-B",
           "raw_section_id": "8-3-10",
           "title": "[90]해상장비",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 6,
           "has_text": false
         },
         {
@@ -15603,51 +15575,51 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0301-J",
+          "raw_section_id": "8-3-10",
+          "title": "[90]해상장비",
+          "table_count": 1,
+          "total_rows": 6,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0301-C",
           "raw_section_id": "8-3-10",
           "title": "[90]해상장비",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0301-E",
           "raw_section_id": "8-3-10",
           "title": "[90]해상장비",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0301-G",
           "raw_section_id": "8-3-10",
           "title": "[90]해상장비",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0301-H",
           "raw_section_id": "8-3-10",
           "title": "[90]해상장비",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0301-I",
           "raw_section_id": "8-3-10",
           "title": "[90]해상장비",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0301-J",
-          "raw_section_id": "8-3-10",
-          "title": "[90]해상장비",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -15659,6 +15631,14 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0301-M",
+          "raw_section_id": "8-3-10",
+          "title": "[90]해상장비",
+          "table_count": 1,
+          "total_rows": 7,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0301-N",
           "raw_section_id": "8-3-10",
           "title": "[90]해상장비",
@@ -15667,19 +15647,11 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0301-M",
-          "raw_section_id": "8-3-10",
-          "title": "[90]해상장비",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0301-O",
           "raw_section_id": "8-3-10",
           "title": "[90]해상장비",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         }
       ]
@@ -15687,20 +15659,14 @@
     {
       "base_section_id": "8-3-2",
       "title": "[10]다짐기계",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 14,
       "md_rows": 57,
       "db_chunks": 8,
-      "db_tables": 14,
-      "db_rows": 53,
-      "coverage_pct": 93.0,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 57행 vs DB 53행 (coverage 93.0%)"
-        }
-      ],
+      "db_tables": 18,
+      "db_rows": 69,
+      "coverage_pct": 121.1,
+      "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0293-D",
@@ -15722,24 +15688,16 @@
           "chunk_id": "C-0293-A",
           "raw_section_id": "8-3-2",
           "title": "[10]다짐기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 6,
           "has_text": true
-        },
-        {
-          "chunk_id": "C-0293-C",
-          "raw_section_id": "8-3-2",
-          "title": "[10]다짐기계",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
         },
         {
           "chunk_id": "C-0293-E",
           "raw_section_id": "8-3-2",
           "title": "[10]다짐기계",
-          "table_count": 1,
-          "total_rows": 5,
+          "table_count": 2,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -15748,6 +15706,14 @@
           "title": "[10]다짐기계",
           "table_count": 9,
           "total_rows": 29,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0293-C",
+          "raw_section_id": "8-3-2",
+          "title": "[10]다짐기계",
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
@@ -15775,33 +15741,33 @@
       "md_tables": 18,
       "md_rows": 68,
       "db_chunks": 14,
-      "db_tables": 29,
-      "db_rows": 113,
-      "coverage_pct": 166.2,
+      "db_tables": 37,
+      "db_rows": 141,
+      "coverage_pct": 207.4,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0294-A",
           "raw_section_id": "8-3-3",
           "title": "[20]운반 및 하역기계",
-          "table_count": 1,
-          "total_rows": 1,
+          "table_count": 3,
+          "total_rows": 3,
           "has_text": true
         },
         {
           "chunk_id": "C-0294-K",
           "raw_section_id": "8-3-3",
           "title": "[20]운반 및 하역기계",
-          "table_count": 1,
-          "total_rows": 4,
+          "table_count": 2,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0294-H",
           "raw_section_id": "8-3-3",
           "title": "[20]운반 및 하역기계",
-          "table_count": 1,
-          "total_rows": 1,
+          "table_count": 3,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -15840,24 +15806,24 @@
           "chunk_id": "C-0294-D",
           "raw_section_id": "8-3-3",
           "title": "[20]운반 및 하역기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 8,
           "has_text": false
         },
         {
           "chunk_id": "C-0294-E",
           "raw_section_id": "8-3-3",
           "title": "[20]운반 및 하역기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 8,
           "has_text": false
         },
         {
           "chunk_id": "C-0294-F",
           "raw_section_id": "8-3-3",
           "title": "[20]운반 및 하역기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
@@ -15901,9 +15867,9 @@
       "md_tables": 14,
       "md_rows": 34,
       "db_chunks": 7,
-      "db_tables": 10,
-      "db_rows": 36,
-      "coverage_pct": 105.9,
+      "db_tables": 15,
+      "db_rows": 43,
+      "coverage_pct": 126.5,
       "issues": [
         {
           "type": "COL_MISMATCH",
@@ -15916,8 +15882,16 @@
           "chunk_id": "C-0295-E",
           "raw_section_id": "8-3-4",
           "title": "[30]포장기계",
+          "table_count": 4,
+          "total_rows": 8,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0295-B",
+          "raw_section_id": "8-3-4",
+          "title": "[30]포장기계",
           "table_count": 2,
-          "total_rows": 6,
+          "total_rows": 7,
           "has_text": false
         },
         {
@@ -15937,14 +15911,6 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0295-B",
-          "raw_section_id": "8-3-4",
-          "title": "[30]포장기계",
-          "table_count": 1,
-          "total_rows": 5,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0295-D",
           "raw_section_id": "8-3-4",
           "title": "[30]포장기계",
@@ -15956,8 +15922,8 @@
           "chunk_id": "C-0295-F",
           "raw_section_id": "8-3-4",
           "title": "[30]포장기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 3,
           "has_text": false
         },
         {
@@ -15977,9 +15943,9 @@
       "md_tables": 15,
       "md_rows": 45,
       "db_chunks": 7,
-      "db_tables": 26,
-      "db_rows": 75,
-      "coverage_pct": 166.7,
+      "db_tables": 28,
+      "db_rows": 83,
+      "coverage_pct": 184.4,
       "issues": [],
       "chunk_details": [
         {
@@ -16007,19 +15973,19 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0296-D",
-          "raw_section_id": "8-3-5",
-          "title": "[40]콘크리트기계",
-          "table_count": 1,
-          "total_rows": 1,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0296-E",
           "raw_section_id": "8-3-5",
           "title": "[40]콘크리트기계",
+          "table_count": 3,
+          "total_rows": 8,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0296-D",
+          "raw_section_id": "8-3-5",
+          "title": "[40]콘크리트기계",
           "table_count": 2,
-          "total_rows": 4,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -16047,9 +16013,9 @@
       "md_tables": 30,
       "md_rows": 110,
       "db_chunks": 22,
-      "db_tables": 54,
-      "db_rows": 197,
-      "coverage_pct": 179.1,
+      "db_tables": 61,
+      "db_rows": 227,
+      "coverage_pct": 206.4,
       "issues": [],
       "chunk_details": [
         {
@@ -16064,16 +16030,16 @@
           "chunk_id": "C-0297-B",
           "raw_section_id": "8-3-6",
           "title": "[50]골재생산기계 등",
-          "table_count": 1,
-          "total_rows": 5,
+          "table_count": 2,
+          "total_rows": 6,
           "has_text": false
         },
         {
           "chunk_id": "C-0297-J",
           "raw_section_id": "8-3-6",
           "title": "[50]골재생산기계 등",
-          "table_count": 1,
-          "total_rows": 3,
+          "table_count": 3,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -16101,6 +16067,14 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0297-C",
+          "raw_section_id": "8-3-6",
+          "title": "[50]골재생산기계 등",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0297-D",
           "raw_section_id": "8-3-6",
           "title": "[50]골재생산기계 등",
@@ -16109,27 +16083,27 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0297-C",
-          "raw_section_id": "8-3-6",
-          "title": "[50]골재생산기계 등",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0297-E",
           "raw_section_id": "8-3-6",
           "title": "[50]골재생산기계 등",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0297-F",
           "raw_section_id": "8-3-6",
           "title": "[50]골재생산기계 등",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 8,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0297-I",
+          "raw_section_id": "8-3-6",
+          "title": "[50]골재생산기계 등",
+          "table_count": 1,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -16170,14 +16144,6 @@
           "title": "[50]골재생산기계 등",
           "table_count": 1,
           "total_rows": 4,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0297-I",
-          "raw_section_id": "8-3-6",
-          "title": "[50]골재생산기계 등",
-          "table_count": 0,
-          "total_rows": 0,
           "has_text": false
         },
         {
@@ -16237,17 +16203,17 @@
       "md_tables": 22,
       "md_rows": 67,
       "db_chunks": 16,
-      "db_tables": 38,
-      "db_rows": 119,
-      "coverage_pct": 177.6,
+      "db_tables": 43,
+      "db_rows": 141,
+      "coverage_pct": 210.4,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0298-K",
           "raw_section_id": "8-3-7",
           "title": "[60]기초공사용 기계",
-          "table_count": 2,
-          "total_rows": 2,
+          "table_count": 3,
+          "total_rows": 6,
           "has_text": false
         },
         {
@@ -16294,24 +16260,24 @@
           "chunk_id": "C-0298-G",
           "raw_section_id": "8-3-7",
           "title": "[60]기초공사용 기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0298-H",
           "raw_section_id": "8-3-7",
           "title": "[60]기초공사용 기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0298-B",
           "raw_section_id": "8-3-7",
           "title": "[60]기초공사용 기계",
-          "table_count": 1,
-          "total_rows": 2,
+          "table_count": 2,
+          "total_rows": 6,
           "has_text": false
         },
         {
@@ -16358,8 +16324,8 @@
           "chunk_id": "C-0298-J",
           "raw_section_id": "8-3-7",
           "title": "[60]기초공사용 기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -16379,15 +16345,10 @@
       "md_tables": 47,
       "md_rows": 122,
       "db_chunks": 29,
-      "db_tables": 32,
-      "db_rows": 111,
-      "coverage_pct": 91.0,
+      "db_tables": 49,
+      "db_rows": 156,
+      "coverage_pct": 127.9,
       "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 122행 vs DB 111행 (coverage 91.0%)"
-        },
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
@@ -16396,19 +16357,35 @@
       ],
       "chunk_details": [
         {
-          "chunk_id": "C-0299-I",
+          "chunk_id": "C-0299-A-d",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
           "table_count": 1,
-          "total_rows": 4,
+          "total_rows": 1,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0299-G",
+          "raw_section_id": "8-3-8",
+          "title": "[70]기타기계",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0299-I",
+          "raw_section_id": "8-3-8",
+          "title": "[70]기타기계",
+          "table_count": 2,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0299-M",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 2,
-          "total_rows": 7,
+          "table_count": 3,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -16428,7 +16405,15 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0299-A-d",
+          "chunk_id": "C-0299-E",
+          "raw_section_id": "8-3-8",
+          "title": "[70]기타기계",
+          "table_count": 2,
+          "total_rows": 6,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0299-A-b",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
           "table_count": 1,
@@ -16452,35 +16437,19 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0299-A-b",
-          "raw_section_id": "8-3-8",
-          "title": "[70]기타기계",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0299-C",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 2,
-          "total_rows": 3,
+          "table_count": 3,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0299-D",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 1,
-          "total_rows": 5,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0299-E",
-          "raw_section_id": "8-3-8",
-          "title": "[70]기타기계",
-          "table_count": 1,
-          "total_rows": 2,
+          "table_count": 2,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -16492,11 +16461,11 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0299-G",
+          "chunk_id": "C-0299-V",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
           "table_count": 1,
-          "total_rows": 3,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -16527,16 +16496,8 @@
           "chunk_id": "C-0299-L",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 1,
-          "total_rows": 6,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0299-V",
-          "raw_section_id": "8-3-8",
-          "title": "[70]기타기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 7,
           "has_text": false
         },
         {
@@ -16575,56 +16536,56 @@
           "chunk_id": "C-0299-R",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 2,
-          "total_rows": 5,
+          "table_count": 3,
+          "total_rows": 6,
           "has_text": false
         },
         {
           "chunk_id": "C-0299-S",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0299-T",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0299-U",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0299-W",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0299-X",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 4,
-          "total_rows": 12,
+          "table_count": 6,
+          "total_rows": 14,
           "has_text": false
         },
         {
           "chunk_id": "C-0299-Y",
           "raw_section_id": "8-3-8",
           "title": "[70]기타기계",
-          "table_count": 1,
-          "total_rows": 4,
+          "table_count": 2,
+          "total_rows": 5,
           "has_text": false
         }
       ]
@@ -16813,11 +16774,19 @@
       "md_tables": 3,
       "md_rows": 69,
       "db_chunks": 6,
-      "db_tables": 7,
-      "db_rows": 104,
-      "coverage_pct": 150.7,
+      "db_tables": 8,
+      "db_rows": 121,
+      "coverage_pct": 175.4,
       "issues": [],
       "chunk_details": [
+        {
+          "chunk_id": "C-0305-D",
+          "raw_section_id": "8-4-3",
+          "title": "[20]운반 및 하역기계",
+          "table_count": 1,
+          "total_rows": 17,
+          "has_text": false
+        },
         {
           "chunk_id": "C-0305-E",
           "raw_section_id": "8-4-3",
@@ -16840,14 +16809,6 @@
           "title": "[20]운반 및 하역기계",
           "table_count": 1,
           "total_rows": 10,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0305-D",
-          "raw_section_id": "8-4-3",
-          "title": "[20]운반 및 하역기계",
-          "table_count": 0,
-          "total_rows": 0,
           "has_text": false
         },
         {
@@ -17260,9 +17221,9 @@
       "md_tables": 2,
       "md_rows": 76,
       "db_chunks": 3,
-      "db_tables": 3,
-      "db_rows": 78,
-      "coverage_pct": 102.6,
+      "db_tables": 4,
+      "db_rows": 115,
+      "coverage_pct": 151.3,
       "issues": [],
       "chunk_details": [
         {
@@ -17274,19 +17235,19 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-0318-B",
+          "raw_section_id": "8-5-6",
+          "title": "[50]골재생산기계 등",
+          "table_count": 1,
+          "total_rows": 37,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0318-C",
           "raw_section_id": "8-5-6",
           "title": "[50]골재생산기계 등",
           "table_count": 1,
           "total_rows": 2,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0318-B",
-          "raw_section_id": "8-5-6",
-          "title": "[50]골재생산기계 등",
-          "table_count": 0,
-          "total_rows": 0,
           "has_text": false
         }
       ]
@@ -17460,9 +17421,9 @@
       "md_tables": 10,
       "md_rows": 42,
       "db_chunks": 4,
-      "db_tables": 10,
-      "db_rows": 52,
-      "coverage_pct": 123.8,
+      "db_tables": 12,
+      "db_rows": 58,
+      "coverage_pct": 138.1,
       "issues": [],
       "chunk_details": [
         {
@@ -17474,19 +17435,19 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0509-A",
-          "raw_section_id": "9-1-2",
-          "title": "1급 기준점 측량",
-          "table_count": 1,
-          "total_rows": 8,
-          "has_text": true
-        },
-        {
           "chunk_id": "C-0741",
           "raw_section_id": "9-1-2#2",
           "title": "모르타르 바름",
           "table_count": 2,
           "total_rows": 7,
+          "has_text": true
+        },
+        {
+          "chunk_id": "C-0509-A",
+          "raw_section_id": "9-1-2",
+          "title": "1급 기준점 측량",
+          "table_count": 3,
+          "total_rows": 14,
           "has_text": true
         },
         {
@@ -17506,15 +17467,10 @@
       "md_tables": 6,
       "md_rows": 28,
       "db_chunks": 8,
-      "db_tables": 6,
-      "db_rows": 23,
-      "coverage_pct": 82.1,
+      "db_tables": 8,
+      "db_rows": 37,
+      "coverage_pct": 132.1,
       "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 28행 vs DB 23행 (coverage 82.1%)"
-        },
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
@@ -17566,16 +17522,16 @@
           "chunk_id": "C-0510-A-b",
           "raw_section_id": "9-1-3",
           "title": "2급 기준점 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0510-B",
           "raw_section_id": "9-1-3",
           "title": "2급 기준점 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
@@ -17625,9 +17581,9 @@
       "md_tables": 6,
       "md_rows": 20,
       "db_chunks": 4,
-      "db_tables": 6,
-      "db_rows": 22,
-      "coverage_pct": 110.0,
+      "db_tables": 8,
+      "db_rows": 24,
+      "coverage_pct": 120.0,
       "issues": [
         {
           "type": "COL_MISMATCH",
@@ -17637,6 +17593,14 @@
       ],
       "chunk_details": [
         {
+          "chunk_id": "C-0512-B",
+          "raw_section_id": "9-1-5",
+          "title": "4급 기준점 측량",
+          "table_count": 3,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0512-A",
           "raw_section_id": "9-1-5",
           "title": "4급 기준점 측량",
@@ -17645,19 +17609,11 @@
           "has_text": true
         },
         {
-          "chunk_id": "C-0512-B",
-          "raw_section_id": "9-1-5",
-          "title": "4급 기준점 측량",
-          "table_count": 2,
-          "total_rows": 3,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0512-C",
           "raw_section_id": "9-1-5",
           "title": "4급 기준점 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
@@ -17986,9 +17942,9 @@
       "md_tables": 4,
       "md_rows": 42,
       "db_chunks": 6,
-      "db_tables": 8,
-      "db_rows": 52,
-      "coverage_pct": 123.8,
+      "db_tables": 11,
+      "db_rows": 72,
+      "coverage_pct": 171.4,
       "issues": [],
       "chunk_details": [
         {
@@ -18003,9 +17959,17 @@
           "chunk_id": "C-0609-A",
           "raw_section_id": "9-13-1",
           "title": "지적재조사측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": true
+        },
+        {
+          "chunk_id": "C-0564-B",
+          "raw_section_id": "9-13-1",
+          "title": "지적재조사측량",
+          "table_count": 1,
+          "total_rows": 6,
+          "has_text": false
         },
         {
           "chunk_id": "C-0564-C",
@@ -18016,11 +17980,11 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0564-B",
+          "chunk_id": "C-0609-B",
           "raw_section_id": "9-13-1",
           "title": "지적재조사측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
@@ -18029,14 +17993,6 @@
           "title": "지적재조사측량",
           "table_count": 2,
           "total_rows": 4,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0609-B",
-          "raw_section_id": "9-13-1",
-          "title": "지적재조사측량",
-          "table_count": 0,
-          "total_rows": 0,
           "has_text": false
         }
       ]
@@ -18124,9 +18080,9 @@
       "md_tables": 16,
       "md_rows": 50,
       "db_chunks": 8,
-      "db_tables": 22,
-      "db_rows": 85,
-      "coverage_pct": 170.0,
+      "db_tables": 30,
+      "db_rows": 96,
+      "coverage_pct": 192.0,
       "issues": [],
       "chunk_details": [
         {
@@ -18149,17 +18105,25 @@
           "chunk_id": "C-0569-A",
           "raw_section_id": "9-15-1",
           "title": "지적현황 측량(도해)",
-          "table_count": 3,
-          "total_rows": 14,
+          "table_count": 6,
+          "total_rows": 17,
           "has_text": true
         },
         {
           "chunk_id": "C-0569-B",
           "raw_section_id": "9-15-1",
           "title": "지적현황 측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
+        },
+        {
+          "chunk_id": "C-0614-A",
+          "raw_section_id": "9-15-1",
+          "title": "지적현황 측량(도해)",
+          "table_count": 5,
+          "total_rows": 16,
+          "has_text": true
         },
         {
           "chunk_id": "C-0614-B",
@@ -18170,27 +18134,19 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0614-A",
-          "raw_section_id": "9-15-1",
-          "title": "지적현황 측량(도해)",
-          "table_count": 3,
-          "total_rows": 14,
-          "has_text": true
-        },
-        {
           "chunk_id": "C-0614-C",
           "raw_section_id": "9-15-1",
           "title": "지적현황 측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0614-D",
           "raw_section_id": "9-15-1",
           "title": "지적현황 측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         }
       ]
@@ -18198,40 +18154,29 @@
     {
       "base_section_id": "9-15-2",
       "title": "지적현황 측량(수치)",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 33,
       "db_chunks": 2,
-      "db_tables": 4,
-      "db_rows": 28,
-      "coverage_pct": 84.8,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 33행 vs DB 28행 (coverage 84.8%)"
-        },
-        {
-          "type": "COL_MISMATCH",
-          "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {4} (MD: [4, 5, 6], DB: [5, 6])"
-        }
-      ],
+      "db_tables": 8,
+      "db_rows": 32,
+      "coverage_pct": 97.0,
+      "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0570",
           "raw_section_id": "9-15-2",
           "title": "지적현황 측량(수치)",
-          "table_count": 2,
-          "total_rows": 14,
+          "table_count": 4,
+          "total_rows": 16,
           "has_text": true
         },
         {
           "chunk_id": "C-0615",
           "raw_section_id": "9-15-2",
           "title": "지적현황 측량(수치)",
-          "table_count": 2,
-          "total_rows": 14,
+          "table_count": 4,
+          "total_rows": 16,
           "has_text": true
         }
       ]
@@ -18243,9 +18188,9 @@
       "md_tables": 10,
       "md_rows": 40,
       "db_chunks": 12,
-      "db_tables": 18,
-      "db_rows": 70,
-      "coverage_pct": 175.0,
+      "db_tables": 20,
+      "db_rows": 78,
+      "coverage_pct": 195.0,
       "issues": [],
       "chunk_details": [
         {
@@ -18292,8 +18237,16 @@
           "chunk_id": "C-0571-b",
           "raw_section_id": "9-15-3",
           "title": "지적불부합지조사 측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0616-A-b",
+          "raw_section_id": "9-15-3",
+          "title": "지적불부합지조사 측량(도해)",
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -18335,54 +18288,35 @@
           "table_count": 1,
           "total_rows": 1,
           "has_text": false
-        },
-        {
-          "chunk_id": "C-0616-A-b",
-          "raw_section_id": "9-15-3",
-          "title": "지적불부합지조사 측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
         }
       ]
     },
     {
       "base_section_id": "9-16-1",
       "title": "도시계획선명시 측량(도해)",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 12,
       "md_rows": 34,
       "db_chunks": 2,
-      "db_tables": 8,
-      "db_rows": 30,
-      "coverage_pct": 88.2,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 34행 vs DB 30행 (coverage 88.2%)"
-        },
-        {
-          "type": "COL_MISMATCH",
-          "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {4} (MD: [3, 4, 5, 6], DB: [3, 5, 6])"
-        }
-      ],
+      "db_tables": 12,
+      "db_rows": 34,
+      "coverage_pct": 100.0,
+      "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0573",
           "raw_section_id": "9-16-1",
           "title": "도시계획선명시 측량(도해)",
-          "table_count": 4,
-          "total_rows": 15,
+          "table_count": 6,
+          "total_rows": 17,
           "has_text": true
         },
         {
           "chunk_id": "C-0618",
           "raw_section_id": "9-16-1",
           "title": "도시계획선명시 측량(도해)",
-          "table_count": 4,
-          "total_rows": 15,
+          "table_count": 6,
+          "total_rows": 17,
           "has_text": true
         }
       ]
@@ -18394,11 +18328,19 @@
       "md_tables": 15,
       "md_rows": 50,
       "db_chunks": 14,
-      "db_tables": 25,
-      "db_rows": 87,
-      "coverage_pct": 174.0,
+      "db_tables": 28,
+      "db_rows": 99,
+      "coverage_pct": 198.0,
       "issues": [],
       "chunk_details": [
+        {
+          "chunk_id": "C-0574-A-b",
+          "raw_section_id": "9-16-2",
+          "title": "도시계획선명시 측량(수치)",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
         {
           "chunk_id": "C-0574-A-c",
           "raw_section_id": "9-16-2",
@@ -18432,19 +18374,11 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0574-A-b",
-          "raw_section_id": "9-16-2",
-          "title": "도시계획선명시 측량(수치)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0574-B",
           "raw_section_id": "9-16-2",
           "title": "도시계획선명시 측량(수치)",
-          "table_count": 1,
-          "total_rows": 1,
+          "table_count": 2,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -18507,8 +18441,8 @@
           "chunk_id": "C-0619-A-b",
           "raw_section_id": "9-16-2",
           "title": "도시계획선명시 측량(수치)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         }
       ]
@@ -18520,36 +18454,31 @@
       "md_tables": 4,
       "md_rows": 20,
       "db_chunks": 4,
-      "db_tables": 4,
-      "db_rows": 18,
-      "coverage_pct": 90.0,
+      "db_tables": 6,
+      "db_rows": 20,
+      "coverage_pct": 100.0,
       "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 20행 vs DB 18행 (coverage 90.0%)"
-        },
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {3, 14} (MD: [3, 14], DB: [11])"
+          "detail": "원본에만 있는 컬럼 수: {14} (MD: [3, 14], DB: [3, 11])"
         }
       ],
       "chunk_details": [
         {
-          "chunk_id": "C-0576-B",
-          "raw_section_id": "9-17-1",
-          "title": "자동제도(좌표독취)",
-          "table_count": 1,
-          "total_rows": 2,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0621-B",
           "raw_section_id": "9-17-1",
           "title": "자동제도(좌표독취)",
-          "table_count": 1,
-          "total_rows": 2,
+          "table_count": 2,
+          "total_rows": 3,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0576-B",
+          "raw_section_id": "9-17-1",
+          "title": "자동제도(좌표독취)",
+          "table_count": 2,
+          "total_rows": 3,
           "has_text": false
         },
         {
@@ -18599,9 +18528,9 @@
       "md_tables": 10,
       "md_rows": 24,
       "db_chunks": 4,
-      "db_tables": 8,
-      "db_rows": 24,
-      "coverage_pct": 100.0,
+      "db_tables": 10,
+      "db_rows": 26,
+      "coverage_pct": 108.3,
       "issues": [
         {
           "type": "COL_MISMATCH",
@@ -18614,16 +18543,16 @@
           "chunk_id": "C-0578-A",
           "raw_section_id": "9-17-4",
           "title": "도면작성",
-          "table_count": 2,
-          "total_rows": 4,
+          "table_count": 3,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0623-B",
           "raw_section_id": "9-17-4",
           "title": "도면작성",
-          "table_count": 1,
-          "total_rows": 7,
+          "table_count": 2,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -18679,9 +18608,9 @@
       "md_tables": 3,
       "md_rows": 42,
       "db_chunks": 8,
-      "db_tables": 9,
-      "db_rows": 66,
-      "coverage_pct": 157.1,
+      "db_tables": 11,
+      "db_rows": 80,
+      "coverage_pct": 190.5,
       "issues": [],
       "chunk_details": [
         {
@@ -18696,8 +18625,8 @@
           "chunk_id": "C-0514-C",
           "raw_section_id": "9-2-1",
           "title": "기본 수준측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
@@ -18736,8 +18665,8 @@
           "chunk_id": "C-0514-E",
           "raw_section_id": "9-2-1",
           "title": "기본 수준측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
@@ -18814,9 +18743,9 @@
       "md_tables": 4,
       "md_rows": 19,
       "db_chunks": 11,
-      "db_tables": 10,
-      "db_rows": 33,
-      "coverage_pct": 173.7,
+      "db_tables": 12,
+      "db_rows": 41,
+      "coverage_pct": 215.8,
       "issues": [
         {
           "type": "COL_MISMATCH",
@@ -18829,8 +18758,8 @@
           "chunk_id": "C-0516-B",
           "raw_section_id": "9-2-3",
           "title": "2급 수준측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -18893,8 +18822,8 @@
           "chunk_id": "C-0516-F",
           "raw_section_id": "9-2-3",
           "title": "2급 수준측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -19020,9 +18949,9 @@
       "md_tables": 16,
       "md_rows": 67,
       "db_chunks": 13,
-      "db_tables": 31,
-      "db_rows": 110,
-      "coverage_pct": 164.2,
+      "db_tables": 32,
+      "db_rows": 117,
+      "coverage_pct": 174.6,
       "issues": [],
       "chunk_details": [
         {
@@ -19074,6 +19003,14 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-0520-F",
+          "raw_section_id": "9-3-1",
+          "title": "지형현황",
+          "table_count": 1,
+          "total_rows": 7,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0520-G",
           "raw_section_id": "9-3-1",
           "title": "지형현황",
@@ -19087,14 +19024,6 @@
           "title": "지형현황",
           "table_count": 1,
           "total_rows": 1,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0520-F",
-          "raw_section_id": "9-3-1",
-          "title": "지형현황",
-          "table_count": 0,
-          "total_rows": 0,
           "has_text": false
         },
         {
@@ -19138,14 +19067,14 @@
       "md_tables": 7,
       "md_rows": 49,
       "db_chunks": 10,
-      "db_tables": 15,
-      "db_rows": 75,
-      "coverage_pct": 153.1,
+      "db_tables": 20,
+      "db_rows": 99,
+      "coverage_pct": 202.0,
       "issues": [
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {9} (MD: [6, 8, 9, 11, 12], DB: [3, 4, 5, 6, 7, 8, 11, 12])"
+          "detail": "원본에만 있는 컬럼 수: {9} (MD: [6, 8, 9, 11, 12], DB: [3, 4, 5, 6, 7, 8, 10, 11, 12])"
         }
       ],
       "chunk_details": [
@@ -19161,24 +19090,24 @@
           "chunk_id": "C-0521-C",
           "raw_section_id": "9-3-2",
           "title": "하천측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
           "chunk_id": "C-0521-D",
           "raw_section_id": "9-3-2",
           "title": "하천측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0521-E",
           "raw_section_id": "9-3-2",
           "title": "하천측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -19193,8 +19122,8 @@
           "chunk_id": "C-0521-F",
           "raw_section_id": "9-3-2",
           "title": "하천측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -19217,8 +19146,8 @@
           "chunk_id": "C-0521-B",
           "raw_section_id": "9-3-2",
           "title": "하천측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -19238,9 +19167,9 @@
       "md_tables": 8,
       "md_rows": 78,
       "db_chunks": 7,
-      "db_tables": 12,
-      "db_rows": 108,
-      "coverage_pct": 138.5,
+      "db_tables": 15,
+      "db_rows": 144,
+      "coverage_pct": 184.6,
       "issues": [],
       "chunk_details": [
         {
@@ -19279,24 +19208,24 @@
           "chunk_id": "C-0522-E",
           "raw_section_id": "9-3-3",
           "title": "택지조성측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 12,
           "has_text": false
         },
         {
           "chunk_id": "C-0522-F",
           "raw_section_id": "9-3-3",
           "title": "택지조성측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 12,
           "has_text": false
         },
         {
           "chunk_id": "C-0522-G",
           "raw_section_id": "9-3-3",
           "title": "택지조성측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 12,
           "has_text": false
         }
       ]
@@ -19308,9 +19237,9 @@
       "md_tables": 18,
       "md_rows": 95,
       "db_chunks": 22,
-      "db_tables": 25,
-      "db_rows": 152,
-      "coverage_pct": 160.0,
+      "db_tables": 39,
+      "db_rows": 180,
+      "coverage_pct": 189.5,
       "issues": [],
       "chunk_details": [
         {
@@ -19325,8 +19254,8 @@
           "chunk_id": "C-0523-M",
           "raw_section_id": "9-3-4",
           "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
@@ -19373,64 +19302,72 @@
           "chunk_id": "C-0523-D",
           "raw_section_id": "9-3-4",
           "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0523-F",
           "raw_section_id": "9-3-4",
           "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0523-G",
-          "raw_section_id": "9-3-4",
-          "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0523-H",
-          "raw_section_id": "9-3-4",
-          "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0523-I",
-          "raw_section_id": "9-3-4",
-          "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0523-J",
-          "raw_section_id": "9-3-4",
-          "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0523-K",
           "raw_section_id": "9-3-4",
           "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0523-L",
           "raw_section_id": "9-3-4",
           "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0523-G",
+          "raw_section_id": "9-3-4",
+          "title": "구획정리 확정측량",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0523-H",
+          "raw_section_id": "9-3-4",
+          "title": "구획정리 확정측량",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0523-I",
+          "raw_section_id": "9-3-4",
+          "title": "구획정리 확정측량",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0523-J",
+          "raw_section_id": "9-3-4",
+          "title": "구획정리 확정측량",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0523-N",
+          "raw_section_id": "9-3-4",
+          "title": "구획정리 확정측량",
+          "table_count": 2,
+          "total_rows": 3,
           "has_text": false
         },
         {
@@ -19450,43 +19387,35 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0523-N",
-          "raw_section_id": "9-3-4",
-          "title": "구획정리 확정측량",
-          "table_count": 1,
-          "total_rows": 1,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0523-O",
-          "raw_section_id": "9-3-4",
-          "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0523-P",
-          "raw_section_id": "9-3-4",
-          "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0523-Q",
           "raw_section_id": "9-3-4",
           "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0523-R",
           "raw_section_id": "9-3-4",
           "title": "구획정리 확정측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0523-O",
+          "raw_section_id": "9-3-4",
+          "title": "구획정리 확정측량",
+          "table_count": 1,
+          "total_rows": 2,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0523-P",
+          "raw_section_id": "9-3-4",
+          "title": "구획정리 확정측량",
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         }
       ]
@@ -19498,22 +19427,25 @@
       "md_tables": 4,
       "md_rows": 22,
       "db_chunks": 4,
-      "db_tables": 3,
-      "db_rows": 18,
-      "coverage_pct": 81.8,
+      "db_tables": 5,
+      "db_rows": 24,
+      "coverage_pct": 109.1,
       "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 22행 vs DB 18행 (coverage 81.8%)"
-        },
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {16, 21} (MD: [4, 5, 16, 21], DB: [4, 5, 10])"
+          "detail": "원본에만 있는 컬럼 수: {16, 21} (MD: [4, 5, 16, 21], DB: [4, 5, 10, 18])"
         }
       ],
       "chunk_details": [
+        {
+          "chunk_id": "C-0524-C",
+          "raw_section_id": "9-3-5",
+          "title": "용지측량",
+          "table_count": 1,
+          "total_rows": 3,
+          "has_text": false
+        },
         {
           "chunk_id": "C-0524-A",
           "raw_section_id": "9-3-5",
@@ -19534,16 +19466,8 @@
           "chunk_id": "C-0524-B",
           "raw_section_id": "9-3-5",
           "title": "용지측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0524-C",
-          "raw_section_id": "9-3-5",
-          "title": "용지측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         }
       ]
@@ -19551,20 +19475,14 @@
     {
       "base_section_id": "9-4-1",
       "title": "노선측량(철도, 도로 신설)",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 40,
       "db_chunks": 4,
-      "db_tables": 8,
-      "db_rows": 46,
-      "coverage_pct": 115.0,
-      "issues": [
-        {
-          "type": "COL_MISMATCH",
-          "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {7} (MD: [3, 5, 7, 8, 14, 19], DB: [3, 4, 5, 8, 14, 19])"
-        }
-      ],
+      "db_tables": 9,
+      "db_rows": 50,
+      "coverage_pct": 125.0,
+      "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0526-a",
@@ -19575,19 +19493,19 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-0526-c",
+          "raw_section_id": "9-4-1",
+          "title": "노선측량(철도, 도로 신설)",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0526-b",
           "raw_section_id": "9-4-1",
           "title": "노선측량(철도, 도로 신설)",
           "table_count": 1,
           "total_rows": 8,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0526-c",
-          "raw_section_id": "9-4-1",
-          "title": "노선측량(철도, 도로 신설)",
-          "table_count": 0,
-          "total_rows": 0,
           "has_text": false
         },
         {
@@ -19651,15 +19569,10 @@
       "md_tables": 18,
       "md_rows": 75,
       "db_chunks": 8,
-      "db_tables": 14,
-      "db_rows": 60,
-      "coverage_pct": 80.0,
+      "db_tables": 18,
+      "db_rows": 76,
+      "coverage_pct": 101.3,
       "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 75행 vs DB 60행 (coverage 80.0%)"
-        },
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
@@ -19671,16 +19584,16 @@
           "chunk_id": "C-0528-B",
           "raw_section_id": "9-4-3",
           "title": "디지털 도로대장 작성",
-          "table_count": 1,
-          "total_rows": 8,
+          "table_count": 2,
+          "total_rows": 11,
           "has_text": false
         },
         {
           "chunk_id": "C-0528-F",
           "raw_section_id": "9-4-3",
           "title": "디지털 도로대장 작성",
-          "table_count": 4,
-          "total_rows": 9,
+          "table_count": 6,
+          "total_rows": 17,
           "has_text": false
         },
         {
@@ -19700,6 +19613,14 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-0528-E",
+          "raw_section_id": "9-4-3",
+          "title": "디지털 도로대장 작성",
+          "table_count": 3,
+          "total_rows": 14,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0528-C",
           "raw_section_id": "9-4-3",
           "title": "디지털 도로대장 작성",
@@ -19716,14 +19637,6 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0528-E",
-          "raw_section_id": "9-4-3",
-          "title": "디지털 도로대장 작성",
-          "table_count": 2,
-          "total_rows": 9,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0528-G",
           "raw_section_id": "9-4-3",
           "title": "디지털 도로대장 작성",
@@ -19736,18 +19649,18 @@
     {
       "base_section_id": "9-5-1",
       "title": "항공사진촬영",
-      "status": "WARN",
+      "status": "INFO",
       "md_tables": 15,
       "md_rows": 103,
       "db_chunks": 12,
-      "db_tables": 14,
-      "db_rows": 72,
-      "coverage_pct": 69.9,
+      "db_tables": 16,
+      "db_rows": 88,
+      "coverage_pct": 85.4,
       "issues": [
         {
-          "type": "ROW_PARTIAL",
-          "severity": "WARNING",
-          "detail": "원본 103행 vs DB 72행 (coverage 69.9%)"
+          "type": "ROW_MINOR_DIFF",
+          "severity": "INFO",
+          "detail": "원본 103행 vs DB 88행 (coverage 85.4%)"
         },
         {
           "type": "COL_MISMATCH",
@@ -19760,8 +19673,8 @@
           "chunk_id": "C-0530-D",
           "raw_section_id": "9-5-1",
           "title": "항공사진촬영",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -19832,8 +19745,8 @@
           "chunk_id": "C-0530-E",
           "raw_section_id": "9-5-1",
           "title": "항공사진촬영",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 8,
           "has_text": false
         },
         {
@@ -19861,25 +19774,25 @@
       "md_tables": 18,
       "md_rows": 70,
       "db_chunks": 21,
-      "db_tables": 32,
-      "db_rows": 177,
-      "coverage_pct": 252.9,
+      "db_tables": 58,
+      "db_rows": 243,
+      "coverage_pct": 347.1,
       "issues": [],
       "chunk_details": [
-        {
-          "chunk_id": "C-0584-H",
-          "raw_section_id": "9-5-10",
-          "title": "무인비행장치 측량",
-          "table_count": 1,
-          "total_rows": 4,
-          "has_text": false
-        },
         {
           "chunk_id": "C-0584-A-b",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
           "table_count": 13,
           "total_rows": 103,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0584-H",
+          "raw_section_id": "9-5-10",
+          "title": "무인비행장치 측량",
+          "table_count": 9,
+          "total_rows": 15,
           "has_text": false
         },
         {
@@ -19915,67 +19828,67 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-0539-G",
+          "raw_section_id": "9-5-10",
+          "title": "무인비행장치 측량",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0539-A-b",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0539-D",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0539-E",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0539-F",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0539-G",
-          "raw_section_id": "9-5-10",
-          "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0539-H",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 4,
+          "total_rows": 10,
           "has_text": false
         },
         {
           "chunk_id": "C-0539-I",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 4,
+          "total_rows": 6,
           "has_text": false
         },
         {
           "chunk_id": "C-0539-J",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 6,
           "has_text": false
         },
         {
@@ -20003,35 +19916,35 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-0584-G",
+          "raw_section_id": "9-5-10",
+          "title": "무인비행장치 측량",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0584-E",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0584-F",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0584-G",
-          "raw_section_id": "9-5-10",
-          "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0584-I",
           "raw_section_id": "9-5-10",
           "title": "무인비행장치 측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         }
       ]
@@ -20043,9 +19956,9 @@
       "md_tables": 6,
       "md_rows": 22,
       "db_chunks": 3,
-      "db_tables": 7,
-      "db_rows": 28,
-      "coverage_pct": 127.3,
+      "db_tables": 9,
+      "db_rows": 33,
+      "coverage_pct": 150.0,
       "issues": [],
       "chunk_details": [
         {
@@ -20060,16 +19973,16 @@
           "chunk_id": "C-0531-A",
           "raw_section_id": "9-5-2",
           "title": "대공표지",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": true
         },
         {
           "chunk_id": "C-0531-B",
           "raw_section_id": "9-5-2",
           "title": "대공표지",
-          "table_count": 1,
-          "total_rows": 6,
+          "table_count": 2,
+          "total_rows": 7,
           "has_text": false
         }
       ]
@@ -20081,61 +19994,21 @@
       "md_tables": 207,
       "md_rows": 439,
       "db_chunks": 68,
-      "db_tables": 308,
-      "db_rows": 707,
-      "coverage_pct": 161.0,
+      "db_tables": 406,
+      "db_rows": 876,
+      "coverage_pct": 199.5,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0533-30",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 1,
-          "total_rows": 6,
+          "table_count": 3,
+          "total_rows": 10,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-34",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 1,
-          "total_rows": 6,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0533-38",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 1,
-          "total_rows": 1,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0533-47",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0533-48",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 2,
-          "total_rows": 2,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0533-52",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0533-57",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
           "table_count": 2,
@@ -20143,43 +20016,51 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0533-38",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 2,
+          "total_rows": 5,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-48",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 3,
+          "total_rows": 6,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0533-A-f",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-P",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 6,
-          "total_rows": 14,
+          "table_count": 11,
+          "total_rows": 18,
           "has_text": false
         },
         {
-          "chunk_id": "C-0533-N",
+          "chunk_id": "C-0533-52",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 8,
-          "total_rows": 15,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-Q",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 6,
-          "total_rows": 9,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0533-X",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 13,
+          "total_rows": 12,
           "has_text": false
         },
         {
@@ -20191,7 +20072,39 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0533-26",
+          "chunk_id": "C-0533-A-g",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 1,
+          "total_rows": 1,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-N",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 10,
+          "total_rows": 17,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-V",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 3,
+          "total_rows": 8,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-X",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 4,
+          "total_rows": 15,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-Y",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
           "table_count": 7,
@@ -20199,27 +20112,75 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0533-27",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 7,
+          "total_rows": 13,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-35",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 5,
+          "total_rows": 11,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-47",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-54",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-57",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 3,
+          "total_rows": 8,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-26",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 12,
+          "total_rows": 16,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0533-A-e",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-R",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 3,
-          "total_rows": 4,
+          "table_count": 12,
+          "total_rows": 14,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-T",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 9,
-          "total_rows": 7,
+          "table_count": 14,
+          "total_rows": 13,
           "has_text": false
         },
         {
@@ -20239,27 +20200,19 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0533-27",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 2,
-          "total_rows": 2,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0533-28",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 3,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-29",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 3,
-          "total_rows": 2,
+          "table_count": 4,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -20271,51 +20224,43 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0533-32",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 3,
-          "total_rows": 6,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0533-33",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 3,
-          "total_rows": 14,
+          "table_count": 4,
+          "total_rows": 15,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0533-32",
+          "raw_section_id": "9-5-4",
+          "title": "수치지도 작성",
+          "table_count": 4,
+          "total_rows": 9,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-A-i",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0533-35",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 4,
-          "total_rows": 10,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-36",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 1,
-          "total_rows": 5,
+          "table_count": 2,
+          "total_rows": 9,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-37",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -20362,16 +20307,16 @@
           "chunk_id": "C-0533-46",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-A-j",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
@@ -20394,8 +20339,8 @@
           "chunk_id": "C-0533-51",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 4,
-          "total_rows": 5,
+          "table_count": 5,
+          "total_rows": 9,
           "has_text": false
         },
         {
@@ -20407,27 +20352,19 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0533-54",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0533-55",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 4,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-O",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 3,
-          "total_rows": 6,
+          "table_count": 5,
+          "total_rows": 11,
           "has_text": false
         },
         {
@@ -20476,14 +20413,6 @@
           "title": "수치지도 작성",
           "table_count": 1,
           "total_rows": 3,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0533-A-g",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
           "has_text": false
         },
         {
@@ -20583,51 +20512,35 @@
           "has_text": true
         },
         {
-          "chunk_id": "C-0533-S",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 7,
-          "total_rows": 9,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0533-U",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0533-V",
-          "raw_section_id": "9-5-4",
-          "title": "수치지도 작성",
-          "table_count": 1,
-          "total_rows": 6,
+          "table_count": 3,
+          "total_rows": 4,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-W",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 5,
-          "total_rows": 5,
+          "table_count": 8,
+          "total_rows": 10,
           "has_text": false
         },
         {
-          "chunk_id": "C-0533-Y",
+          "chunk_id": "C-0533-S",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 2,
-          "total_rows": 4,
+          "table_count": 17,
+          "total_rows": 19,
           "has_text": false
         },
         {
           "chunk_id": "C-0533-Z",
           "raw_section_id": "9-5-4",
           "title": "수치지도 작성",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 4,
+          "total_rows": 15,
           "has_text": false
         }
       ]
@@ -20639,9 +20552,9 @@
       "md_tables": 12,
       "md_rows": 14,
       "db_chunks": 2,
-      "db_tables": 14,
-      "db_rows": 16,
-      "coverage_pct": 114.3,
+      "db_tables": 18,
+      "db_rows": 21,
+      "coverage_pct": 150.0,
       "issues": [],
       "chunk_details": [
         {
@@ -20656,8 +20569,8 @@
           "chunk_id": "C-0579",
           "raw_section_id": "9-5-5",
           "title": "건물 및 지상물체 항공사진 ｢판독작업｣",
-          "table_count": 2,
-          "total_rows": 1,
+          "table_count": 6,
+          "total_rows": 6,
           "has_text": true
         }
       ]
@@ -20669,33 +20582,17 @@
       "md_tables": 34,
       "md_rows": 45,
       "db_chunks": 31,
-      "db_tables": 38,
-      "db_rows": 53,
-      "coverage_pct": 117.8,
+      "db_tables": 64,
+      "db_rows": 89,
+      "coverage_pct": 197.8,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0535-A-b",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0580-A-o",
-          "raw_section_id": "9-5-6",
-          "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0580-A-b",
-          "raw_section_id": "9-5-6",
-          "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -20710,16 +20607,32 @@
           "chunk_id": "C-0535-A-d",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0535-A-f",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
+          "table_count": 1,
           "total_rows": 0,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0580-A-b",
+          "raw_section_id": "9-5-6",
+          "title": "지도제작(기본도)",
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0580-A-o",
+          "raw_section_id": "9-5-6",
+          "title": "지도제작(기본도)",
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
@@ -20734,8 +20647,8 @@
           "chunk_id": "C-0580-A-n",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
@@ -20750,8 +20663,8 @@
           "chunk_id": "C-0535-B",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 4,
+          "total_rows": 4,
           "has_text": false
         },
         {
@@ -20779,59 +20692,59 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0535-A-c",
-          "raw_section_id": "9-5-6",
-          "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0535-A-g",
-          "raw_section_id": "9-5-6",
-          "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0535-A-h",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0535-A-i",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0535-A-c",
+          "raw_section_id": "9-5-6",
+          "title": "지도제작(기본도)",
+          "table_count": 1,
+          "total_rows": 1,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0535-A-g",
+          "raw_section_id": "9-5-6",
+          "title": "지도제작(기본도)",
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0535-A-j",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0535-A-n",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0580-B",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 1,
-          "total_rows": 1,
+          "table_count": 3,
+          "total_rows": 3,
           "has_text": false
         },
         {
@@ -20859,67 +20772,67 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0580-A-c",
-          "raw_section_id": "9-5-6",
-          "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0580-A-d",
-          "raw_section_id": "9-5-6",
-          "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0580-A-e",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0580-A-f",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
+          "table_count": 1,
           "total_rows": 0,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0580-A-c",
+          "raw_section_id": "9-5-6",
+          "title": "지도제작(기본도)",
+          "table_count": 1,
+          "total_rows": 1,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0580-A-d",
+          "raw_section_id": "9-5-6",
+          "title": "지도제작(기본도)",
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0580-A-g",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         },
         {
           "chunk_id": "C-0580-A-h",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0580-A-i",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0580-A-j",
           "raw_section_id": "9-5-6",
           "title": "지도제작(기본도)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 2,
           "has_text": false
         }
       ]
@@ -20931,9 +20844,9 @@
       "md_tables": 10,
       "md_rows": 10,
       "db_chunks": 2,
-      "db_tables": 13,
-      "db_rows": 14,
-      "coverage_pct": 140.0,
+      "db_tables": 15,
+      "db_rows": 16,
+      "coverage_pct": 160.0,
       "issues": [],
       "chunk_details": [
         {
@@ -20948,8 +20861,8 @@
           "chunk_id": "C-0536",
           "raw_section_id": "9-5-7",
           "title": "토지이용 현황도 제작",
-          "table_count": 3,
-          "total_rows": 3,
+          "table_count": 5,
+          "total_rows": 5,
           "has_text": true
         }
       ]
@@ -20957,20 +20870,14 @@
     {
       "base_section_id": "9-5-9",
       "title": "정밀도로지도 구축",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 8,
       "md_rows": 44,
       "db_chunks": 2,
-      "db_tables": 5,
-      "db_rows": 51,
-      "coverage_pct": 115.9,
-      "issues": [
-        {
-          "type": "COL_MISMATCH",
-          "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {3} (MD: [3, 7, 12], DB: [7, 12])"
-        }
-      ],
+      "db_tables": 7,
+      "db_rows": 53,
+      "coverage_pct": 120.5,
+      "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0538",
@@ -20984,8 +20891,8 @@
           "chunk_id": "C-0583",
           "raw_section_id": "9-5-9",
           "title": "정밀도로지도 구축",
-          "table_count": 1,
-          "total_rows": 11,
+          "table_count": 3,
+          "total_rows": 13,
           "has_text": true
         }
       ]
@@ -20997,25 +20904,25 @@
       "md_tables": 4,
       "md_rows": 40,
       "db_chunks": 6,
-      "db_tables": 4,
-      "db_rows": 40,
-      "coverage_pct": 100.0,
+      "db_tables": 11,
+      "db_rows": 73,
+      "coverage_pct": 182.5,
       "issues": [],
       "chunk_details": [
-        {
-          "chunk_id": "C-0541-B",
-          "raw_section_id": "9-6-1",
-          "title": "지적삼각측량",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
         {
           "chunk_id": "C-0541-C",
           "raw_section_id": "9-6-1",
           "title": "지적삼각측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 6,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0541-B",
+          "raw_section_id": "9-6-1",
+          "title": "지적삼각측량",
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
@@ -21030,24 +20937,24 @@
           "chunk_id": "C-0586-A",
           "raw_section_id": "9-6-1",
           "title": "지적삼각측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": true
         },
         {
           "chunk_id": "C-0586-B",
           "raw_section_id": "9-6-1",
           "title": "지적삼각측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         },
         {
           "chunk_id": "C-0586-C",
           "raw_section_id": "9-6-1",
           "title": "지적삼각측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 2,
+          "total_rows": 6,
           "has_text": false
         }
       ]
@@ -21059,17 +20966,17 @@
       "md_tables": 11,
       "md_rows": 57,
       "db_chunks": 8,
-      "db_tables": 20,
-      "db_rows": 88,
-      "coverage_pct": 154.4,
+      "db_tables": 25,
+      "db_rows": 113,
+      "coverage_pct": 198.2,
       "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0587-C",
           "raw_section_id": "9-6-2",
           "title": "지적도근점측량",
-          "table_count": 1,
-          "total_rows": 1,
+          "table_count": 3,
+          "total_rows": 10,
           "has_text": false
         },
         {
@@ -21092,16 +20999,16 @@
           "chunk_id": "C-0542-C",
           "raw_section_id": "9-6-2",
           "title": "지적도근점측량",
-          "table_count": 1,
-          "total_rows": 1,
+          "table_count": 2,
+          "total_rows": 8,
           "has_text": false
         },
         {
           "chunk_id": "C-0542-D",
           "raw_section_id": "9-6-2",
           "title": "지적도근점측량",
-          "table_count": 3,
-          "total_rows": 9,
+          "table_count": 4,
+          "total_rows": 11,
           "has_text": false
         },
         {
@@ -21124,8 +21031,8 @@
           "chunk_id": "C-0587-B",
           "raw_section_id": "9-6-2",
           "title": "지적도근점측량",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 7,
           "has_text": false
         }
       ]
@@ -21189,9 +21096,9 @@
       "md_tables": 15,
       "md_rows": 46,
       "db_chunks": 4,
-      "db_tables": 21,
-      "db_rows": 77,
-      "coverage_pct": 167.4,
+      "db_tables": 29,
+      "db_rows": 85,
+      "coverage_pct": 184.8,
       "issues": [],
       "chunk_details": [
         {
@@ -21203,6 +21110,14 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0545-A",
+          "raw_section_id": "9-7-1",
+          "title": "신규등록측량(도해)",
+          "table_count": 6,
+          "total_rows": 17,
+          "has_text": true
+        },
+        {
           "chunk_id": "C-0545-B",
           "raw_section_id": "9-7-1",
           "title": "신규등록측량(도해)",
@@ -21211,19 +21126,11 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0545-A",
-          "raw_section_id": "9-7-1",
-          "title": "신규등록측량(도해)",
-          "table_count": 2,
-          "total_rows": 13,
-          "has_text": true
-        },
-        {
           "chunk_id": "C-0590-A",
           "raw_section_id": "9-7-1",
           "title": "신규등록측량(도해)",
-          "table_count": 3,
-          "total_rows": 14,
+          "table_count": 7,
+          "total_rows": 18,
           "has_text": true
         }
       ]
@@ -21235,9 +21142,9 @@
       "md_tables": 8,
       "md_rows": 37,
       "db_chunks": 2,
-      "db_tables": 12,
-      "db_rows": 62,
-      "coverage_pct": 167.6,
+      "db_tables": 13,
+      "db_rows": 63,
+      "coverage_pct": 170.3,
       "issues": [],
       "chunk_details": [
         {
@@ -21252,8 +21159,8 @@
           "chunk_id": "C-0591",
           "raw_section_id": "9-7-2",
           "title": "신규등록측량(수치)",
-          "table_count": 3,
-          "total_rows": 13,
+          "table_count": 4,
+          "total_rows": 14,
           "has_text": true
         }
       ]
@@ -21265,19 +21172,19 @@
       "md_tables": 6,
       "md_rows": 48,
       "db_chunks": 8,
-      "db_tables": 6,
-      "db_rows": 42,
-      "coverage_pct": 87.5,
+      "db_tables": 8,
+      "db_rows": 44,
+      "coverage_pct": 91.7,
       "issues": [
         {
           "type": "ROW_MINOR_DIFF",
           "severity": "INFO",
-          "detail": "원본 48행 vs DB 42행 (coverage 87.5%)"
+          "detail": "원본 48행 vs DB 44행 (coverage 91.7%)"
         },
         {
           "type": "COL_MISMATCH",
           "severity": "INFO",
-          "detail": "원본에만 있는 컬럼 수: {8, 5} (MD: [5, 7, 8], DB: [6, 7])"
+          "detail": "원본에만 있는 컬럼 수: {5} (MD: [5, 7, 8], DB: [6, 7, 8])"
         }
       ],
       "chunk_details": [
@@ -21285,8 +21192,8 @@
           "chunk_id": "C-0592-D",
           "raw_section_id": "9-7-3",
           "title": "토지구획정리 신규등록 측량(수치)",
-          "table_count": 2,
-          "total_rows": 8,
+          "table_count": 3,
+          "total_rows": 9,
           "has_text": false
         },
         {
@@ -21298,19 +21205,19 @@
           "has_text": true
         },
         {
+          "chunk_id": "C-0547-B",
+          "raw_section_id": "9-7-3",
+          "title": "토지구획정리 신규등록 측량(수치)",
+          "table_count": 3,
+          "total_rows": 9,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0547-A-b",
           "raw_section_id": "9-7-3",
           "title": "토지구획정리 신규등록 측량(수치)",
           "table_count": 1,
           "total_rows": 13,
-          "has_text": false
-        },
-        {
-          "chunk_id": "C-0547-B",
-          "raw_section_id": "9-7-3",
-          "title": "토지구획정리 신규등록 측량(수치)",
-          "table_count": 2,
-          "total_rows": 8,
           "has_text": false
         },
         {
@@ -21407,35 +21314,29 @@
     {
       "base_section_id": "9-8-1",
       "title": "등록전환 측량(도해)",
-      "status": "INFO",
+      "status": "PASS",
       "md_tables": 11,
       "md_rows": 42,
       "db_chunks": 4,
-      "db_tables": 9,
-      "db_rows": 39,
-      "coverage_pct": 92.9,
-      "issues": [
-        {
-          "type": "ROW_MINOR_DIFF",
-          "severity": "INFO",
-          "detail": "원본 42행 vs DB 39행 (coverage 92.9%)"
-        }
-      ],
+      "db_tables": 11,
+      "db_rows": 41,
+      "coverage_pct": 97.6,
+      "issues": [],
       "chunk_details": [
         {
           "chunk_id": "C-0550-A",
           "raw_section_id": "9-8-1",
           "title": "등록전환 측량(도해)",
-          "table_count": 3,
-          "total_rows": 15,
+          "table_count": 4,
+          "total_rows": 16,
           "has_text": true
         },
         {
           "chunk_id": "C-0595-B",
           "raw_section_id": "9-8-1",
           "title": "등록전환 측량(도해)",
-          "table_count": 1,
-          "total_rows": 4,
+          "table_count": 2,
+          "total_rows": 5,
           "has_text": false
         },
         {
@@ -21499,19 +21400,11 @@
       "md_tables": 14,
       "md_rows": 42,
       "db_chunks": 16,
-      "db_tables": 19,
-      "db_rows": 71,
-      "coverage_pct": 169.0,
+      "db_tables": 25,
+      "db_rows": 80,
+      "coverage_pct": 190.5,
       "issues": [],
       "chunk_details": [
-        {
-          "chunk_id": "C-0598-A-e",
-          "raw_section_id": "9-9-1",
-          "title": "분할측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
         {
           "chunk_id": "C-0553-B",
           "raw_section_id": "9-9-1",
@@ -21521,27 +21414,35 @@
           "has_text": false
         },
         {
+          "chunk_id": "C-0598-A-e",
+          "raw_section_id": "9-9-1",
+          "title": "분할측량(도해)",
+          "table_count": 1,
+          "total_rows": 1,
+          "has_text": false
+        },
+        {
           "chunk_id": "C-0553-A-e",
           "raw_section_id": "9-9-1",
           "title": "분할측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0553-A-f",
           "raw_section_id": "9-9-1",
           "title": "분할측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
           "chunk_id": "C-0553-A-d",
           "raw_section_id": "9-9-1",
           "title": "분할측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         },
         {
@@ -21617,19 +21518,19 @@
           "has_text": false
         },
         {
-          "chunk_id": "C-0598-A-f",
-          "raw_section_id": "9-9-1",
-          "title": "분할측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
-          "has_text": false
-        },
-        {
           "chunk_id": "C-0598-B",
           "raw_section_id": "9-9-1",
           "title": "분할측량(도해)",
-          "table_count": 0,
-          "total_rows": 0,
+          "table_count": 1,
+          "total_rows": 4,
+          "has_text": false
+        },
+        {
+          "chunk_id": "C-0598-A-f",
+          "raw_section_id": "9-9-1",
+          "title": "분할측량(도해)",
+          "table_count": 1,
+          "total_rows": 1,
           "has_text": false
         }
       ]
