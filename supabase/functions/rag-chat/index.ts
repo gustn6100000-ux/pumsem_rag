@@ -687,10 +687,31 @@ async function fullViewPipeline(
             }
         }
 
+        // 💡 [Type Filter] subKeyword(예: "전기아크용접(U형)")에서 타입(U, V, X, H, Fillet 등)을 추출하여
+        // 청크의 section_id (예: "13-2-4#V") 서픽스와 불일치하면 엄격히 배제함.
+        // Why: Ingestion 단계에서 한 WT에 여러 유형의 chunk ID가 섞여 들어간 경우를 런타임에서 방어
+        let expectedSuffix = "";
+        if (subKeyword) {
+            const match = subKeyword.match(/\(([a-zA-Z]+)(?:형)?\)/i) || subKeyword.match(/\((Fillet|Gouging)\)/i) || subKeyword.match(/([a-zA-Z]+)형/i);
+            if (match) expectedSuffix = match[1].toUpperCase();
+        }
+
+        const isWrongTypeChunk = (c: any): boolean => {
+            if (!expectedSuffix) return false;
+            // c.section_id 가 "13-2-4#V" 같은 형태인지 확인
+            const parts = c.section_id.split('#');
+            if (parts.length > 1) {
+                const chunkSuffix = parts[1].toUpperCase();
+                // 청크 서픽스와 현재 기대 서픽스가 다르면 배제 (단, 둘 다 알파벳/단어일 때)
+                if (chunkSuffix !== expectedSuffix) {
+                    return true;
+                }
+            }
+            return false;
+        };
+
         // 총괄/설명 chunk 제외: text에 다른 용접 유형명(V형, U형, H형 등)이 포함된 chunk는
         // sub_section과 무관한 데이터이므로 제외. 이 chunk의 tables는 V형 등의 표를 담고 있음.
-        // Why: W-0525(Fillet 총괄)의 chunk_ids에 C-0956-A(V형 설명 chunk)가 포함되어
-        //      V형 3~6mm 데이터가 Fillet 컨텍스트에 혼입되는 문제 방지
         const otherTypePatterns = ['V형', 'U형', 'H형', 'X형', 'K형', 'J형'];
         const isDescriptionChunk = (c: any): boolean => {
             const txt = c.text || '';
@@ -707,10 +728,14 @@ async function fullViewPipeline(
 
         const targetChunkIds = [...wtChunkIds];
         let targetChunks = targetChunkIds.length > 0
-            ? allChunks.filter(c => targetChunkIds.includes(c.id) && !isDescriptionChunk(c))
-            : allChunks;
-        // 폴백: 모두 제외되면 전체 사용
-        if (targetChunks.length === 0) targetChunks = allChunks.filter(c => targetChunkIds.includes(c.id));
+            ? allChunks.filter(c => targetChunkIds.includes(c.id) && !isDescriptionChunk(c) && !isWrongTypeChunk(c))
+            : allChunks.filter(c => !isWrongTypeChunk(c));
+
+        // 폴백: 모두 제외되면 (혹은 너무 엄격했다면) 타입 필터만 남기고 재시도
+        if (targetChunks.length === 0) {
+            targetChunks = allChunks.filter(c => targetChunkIds.includes(c.id) && !isWrongTypeChunk(c));
+            if (targetChunks.length === 0) targetChunks = allChunks.filter(c => targetChunkIds.includes(c.id));
+        }
 
         // ─── 동일 헤더 표 자동 병합 ───
         // Why: 5개 chunk × 17컬럼 표를 개별 전달하면 LLM이 토큰 과부하로 압축/요약.
